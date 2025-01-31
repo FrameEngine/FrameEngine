@@ -1,5 +1,5 @@
 #include "rendering/RendererAPI.hpp"
-#include "adapters/X11Renderer.hpp"
+#include "adapters/X11RendererAdapter.hpp"
 
 // For now I'll use X11, but in future it is possible to add openGL support
 // (probably :D)

@@ -1,7 +1,9 @@
-#include "adapters/X11Renderer.hpp"
+#include "adapters/X11RendererAdapter.hpp"
 #include "core/Engine.hpp"
 
 /* My testing playground */
+
+void Engine::on_start() {}
 
 void Engine::fixed_update() {
   RendererAPI::clear();
