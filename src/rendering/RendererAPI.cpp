@@ -3,7 +3,7 @@
 
 // For now I'll use X11, but in future it is possible to add openGL support
 // (probably :D)
-static X11Renderer defaultRenderer;
+static X11RendererAdapter defaultRenderer;
 
 IRenderer *RendererAPI::renderer = &defaultRenderer;
 
