@@ -9,8 +9,8 @@
 
 // Yeah, could use vector, but MAX_COMPONENTS allows to use bitset for
 // fast lookup, might be handy in physics engine. And I doubt that I'll
-// need more billions of objects, if so, I'll make particle system, that
-// will work as stand alone component
+// need billions of objects. Anyways, even if I'll need to run simulation with
+// lots of objects, I'll make particle system or shader components
 constexpr int MAX_COMPONENTS = 32;
 
 // Each entity must have unique ID; Why not store objects? Well, it looks like
