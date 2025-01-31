@@ -3,7 +3,6 @@
 
 #include <algorithm>
 #include <bitset>
-#include <iostream>
 #include <memory>
 #include <unordered_map>
 #include <vector>
@@ -74,6 +73,8 @@ public:
   }
 
   template <typename T> void add_component(Entity entity, const T &component) {
+    // Why hash? Just faster than type_index. Like O(log n) vs O(1), but there
+    // are might be hash collisions, not critical though, just restart sim.
     size_t typeID = typeid(T).hash_code();
     // If this is the first time this component type is used, create a storage
     // bucket
