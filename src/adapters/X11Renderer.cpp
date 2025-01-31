@@ -1,4 +1,4 @@
-#include "adapters/X11Renderer.hpp"
+#include "adapters/X11RendererAdapter.hpp"
 #include <stdexcept>
 
 X11Renderer::X11Renderer() : display(nullptr), window(0), gc(0) {}

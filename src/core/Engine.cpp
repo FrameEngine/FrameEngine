@@ -9,13 +9,12 @@ Engine::~Engine() {}
 // Bootstrap
 void Engine::init() { RendererAPI::init(); }
 
-void Engine::render() {
-} // TODO 3D rendering of entities, call entity.render() probably
-
 void Engine::run() {
   using clock = std::chrono::high_resolution_clock;
   auto previousTime = clock::now();
   float accumulator = 0.0f;
+
+  on_start();
 
   while (true) {
     auto currentTime = clock::now();
@@ -35,8 +34,6 @@ void Engine::run() {
       fixed_update();
       accumulator -= fixedTimeStep;
     }
-
-    render();
 
     // Compute how much time is left in the frame
     auto frameEnd = clock::now();
