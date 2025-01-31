@@ -21,7 +21,7 @@ public:
   void run();  // Main loop
 
   // User can write logic in this functions
-  virtual void fixed_update();
+  virtual void fixed_update(float dt);
   virtual void on_start();
 };
 

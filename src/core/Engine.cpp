@@ -32,7 +32,7 @@ void Engine::run() {
 
     // Fixed time step updates
     while (accumulator >= fixedTimeStep) {
-      fixed_update();
+      fixed_update(deltaTime);
       accumulator -= fixedTimeStep;
     }
 

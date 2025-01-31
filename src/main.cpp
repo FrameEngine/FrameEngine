@@ -3,10 +3,12 @@
 
 /* My testing playground */
 
-void Engine::on_start() {
-  Entity cube = Engine::registry.create_entity();
+Entity cube;
 
-  // GPT generated, hope it works :D
+void Engine::on_start() {
+  cube = Engine::registry.create_entity();
+
+  // GPT generated mesh, hope it works :D
   MeshComponent cubeMesh = {// Vertices
                             {
                                 {-1, -1, -1},
@@ -32,13 +34,18 @@ void Engine::on_start() {
                                 {2, 6},
                                 {3, 7} // Connecting edges
                             }};
+
   Engine::registry.add_component<MeshComponent>(cube, {cubeMesh});
 }
 
-void Engine::fixed_update() {
-  RendererAPI::clear();
-  RendererAPI::draw_line(10, 20, 100, 100);
-  RendererAPI::present();
+void Engine::fixed_update(float dt) {
+  auto &mesh = registry.get_component<MeshComponent>(cube);
+
+  Quaternion rotationX = Quaternion::from_axis_angle({1, 0, 0}, 30.0f * dt);
+  Quaternion rotationY = Quaternion::from_axis_angle({0, 1, 0}, 30.0f * dt);
+  Quaternion rotationZ = Quaternion::from_axis_angle({0, 0, 1}, 30.0f * dt);
+
+  mesh.rotation = rotationX * rotationY * rotationZ * mesh.rotation;
 }
 
 int main() {
