@@ -1,5 +1,6 @@
 #include "core/Engine.hpp"
 #include "chrono"
+#include "rendering/RenderSystem.hpp"
 #include "thread"
 
 Engine::Engine() {}
@@ -34,6 +35,8 @@ void Engine::run() {
       fixed_update();
       accumulator -= fixedTimeStep;
     }
+
+    RenderSystem::render(registry);
 
     // Compute how much time is left in the frame
     auto frameEnd = clock::now();

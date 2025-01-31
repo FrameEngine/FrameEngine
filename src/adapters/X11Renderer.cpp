@@ -41,10 +41,21 @@ void X11RendererAdapter::draw_line(int x1, int y1, int x2, int y2) {
   XDrawLine(display, window, gc, x1, y1, x2, y2);
 }
 
-void X11RendererAdapter::draw_mesh(int meshID) {
-  // Placeholder for future 3D rendering
-  // For now, just draw a simple square
-  XFillRectangle(display, window, gc, 100, 100, 50, 50);
+// Simple orthographic projection
+Vector3 X11RendererAdapter::project(const Vector3 &point) {
+  float scale = 100.0f;                   // Scale factor for projection
+  return {(width / 2) + point.x * scale,  // Centered X
+          (height / 2) - point.y * scale, // Inverted Y
+          point.z};
+}
+
+void X11RendererAdapter::draw_mesh(const MeshComponent &mesh) {
+  for (const auto &edge : mesh.edges) {
+    Vector3 v1 = project(mesh.vertices[edge.first]);
+    Vector3 v2 = project(mesh.vertices[edge.second]);
+    draw_line(static_cast<int>(v1.x), static_cast<int>(v1.y),
+              static_cast<int>(v2.x), static_cast<int>(v2.y));
+  }
 }
 
 void X11RendererAdapter::present() { XFlush(display); }

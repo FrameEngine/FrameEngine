@@ -12,7 +12,7 @@ public:
   static void init();
   static void clear();
   static void draw_line(int x1, int y1, int x2, int y2);
-  static void draw_mesh(int mesh_ID);
+  static void draw_mesh(const MeshComponent &mesh);
   static void present();
 };
 

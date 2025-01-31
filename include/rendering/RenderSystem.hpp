@@ -13,8 +13,7 @@ public:
     for (Entity entity :
          registry.get_entities_with_component<MeshComponent>()) {
       auto &mesh = registry.get_component<MeshComponent>(entity);
-
-      RendererAPI::draw_mesh(mesh.meshID);
+      RendererAPI::draw_mesh(mesh);
     }
 
     RendererAPI::present();

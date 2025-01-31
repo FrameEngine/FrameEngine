@@ -21,4 +21,8 @@ void RendererAPI::draw_line(int x1, int y1, int x2, int y2) {
   renderer->draw_line(x1, y1, x2, y2);
 }
 
+void RendererAPI::draw_mesh(const MeshComponent &mesh) {
+  renderer->draw_mesh(mesh);
+}
+
 void RendererAPI::present() { renderer->present(); }

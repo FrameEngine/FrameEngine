@@ -11,7 +11,7 @@ private:
   float accumulator = 0.0f; // Used to store current dt
 
 protected:
-  Registry regestry;
+  Registry registry;
 
 public:
   Engine();

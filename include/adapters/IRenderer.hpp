@@ -1,6 +1,8 @@
 #ifndef IRENDERER_HPP
 #define IRENDERER_HPP
 
+#include "components/MeshComponent.hpp"
+
 class IRenderer {
 public:
   virtual ~IRenderer() = default;
@@ -8,7 +10,7 @@ public:
   virtual void init() = 0;
   virtual void clear() = 0;
   virtual void draw_line(int x1, int y1, int x2, int y2) = 0;
-  virtual void draw_mesh(int meshID) = 0;
+  virtual void draw_mesh(const MeshComponent &mesh) = 0;
   virtual void present() = 0;
 };
 
