@@ -6,12 +6,16 @@
 #include <vector>
 
 struct MeshComponent {
-  // List of 3D points
-  // Pairs of vertex indices defining edges
-  std::vector<Vector3> vertices;
-  std::vector<std::pair<int, int>> edges;
-
-  Quaternion rotation = Quaternion(); // Quaternion for rotation
+  std::vector<Vector3> vertices; // Local mesh
+  std::vector<std::pair<int, int>>
+      edges; // Pairs of vertex indices defining edges
+  std::vector<Vector3> transformedVertices; // Global verticies
+  //
+  MeshComponent() = default;
+  MeshComponent(std::vector<Vector3> verts,
+                std::vector<std::pair<int, int>> eds)
+      : vertices(std::move(verts)), edges(std::move(eds)),
+        transformedVertices(vertices) {}
 };
 
 #endif // MESH_COMPONENT_HPP

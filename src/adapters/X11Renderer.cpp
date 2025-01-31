@@ -50,16 +50,9 @@ Vector3 X11RendererAdapter::project(const Vector3 &point) {
 }
 
 void X11RendererAdapter::draw_mesh(const MeshComponent &mesh) {
-  Matrix4 rotationMatrix = Matrix4::from_quaternion(mesh.rotation);
-
-  std::vector<Vector3> transformedVertices;
-  for (const auto &vertex : mesh.vertices) {
-    transformedVertices.push_back(rotationMatrix.transform(vertex));
-  }
-
   for (const auto &edge : mesh.edges) {
-    Vector3 v1 = project(transformedVertices[edge.first]);
-    Vector3 v2 = project(transformedVertices[edge.second]);
+    Vector3 v1 = project(mesh.transformedVertices[edge.first]);
+    Vector3 v2 = project(mesh.transformedVertices[edge.second]);
 
     draw_line(static_cast<int>(v1.x), static_cast<int>(v1.y),
               static_cast<int>(v2.x), static_cast<int>(v2.y));
