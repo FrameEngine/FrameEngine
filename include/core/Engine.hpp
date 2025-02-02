@@ -1,27 +1,82 @@
+/**
+ * @file Engine.hpp
+ * @brief Defines the core Engine class responsible for running simulation.
+ */
+
 #ifndef ENGINE_HPP
 #define ENGINE_HPP
 
 #include "Registry.hpp"
-#include "rendering/RendererAPI.hpp"
+#include "rendering/RenderSystem.hpp"
 
+/**
+ * @class Engine
+ * @brief Core engine class that manages the main loop, physics, and rendering.
+ *
+ * The Engine serves as the entry point for simulations and games.
+ * It uses a fixed timestep update system
+ *
+ * Users should extend this class and override:
+ * - on_start(): For initialization logic.
+ * - fixed_update(float dt): For physics and game logic updates.
+ */
 class Engine {
 private:
-  // TODO Specify in the init function, not const
+  // TODO Make it variable
   const float fixedTimeStep = 1.0f / 60.0f;
-  float accumulator = 0.0f; // Used to store current dt
+
+  /// To handle time difference between frames
+  float accumulator = 0.0f;
+
+  bool isRunning = true;
 
 protected:
-  Registry regestry;
+  /// ECS registry that stores and manages all entities and components
+  Registry registry;
+
+  /// Rendering system that handles drawing
+  RenderSystem renderSystem;
 
 public:
   Engine();
   ~Engine();
 
-  void init(); // Bootstrap function
-  void run();  // Main loop
+  /**
+   * @brief Bootstrap
+   * This function should be called before 'run()' to ensure all components
+   * are properly set up (e.g., renderer, ECS initialization, etc).
+   */
+  void init();
 
-  // User can write logic in this functions
-  virtual void fixed_update();
+  /**
+   * @brief Starts the main game loop.
+   *
+   * - Calls on_start()
+   * The loop:
+   * - Calls 'fixed_update(float dt)'
+   * - Calls 'RenderSystem::render()'
+   */
+  void run();
+
+  /**
+   * @brief Stops the engine gracefully.
+   */
+  void stop();
+
+  /**
+   * @brief User-defined logic that updates every fixed timestep.
+   * @param dt The fixed time step duration.
+   *
+   * Users should override this function to define physics updates
+   */
+  virtual void fixed_update(float dt);
+
+  /**
+   * @brief Called once at the start of execution.
+   *
+   * Users should override this function to handle initialization, entity
+   * creation etc
+   */
   virtual void on_start();
 };
 

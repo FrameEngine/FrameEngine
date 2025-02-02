@@ -9,8 +9,8 @@ find_package(X11 REQUIRED)
 include_directories(include)
 
 file(GLOB_RECURSE SOURCES src/*.cpp)
-add_executable(simulation ${SOURCES})
-target_link_libraries(simulation ${X11_LIBRARIES})
+add_executable(frame_engine ${SOURCES})
+target_link_libraries(frame_engine ${X11_LIBRARIES})
 
 enable_testing()
 

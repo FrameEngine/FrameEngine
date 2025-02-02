@@ -18,5 +18,5 @@ clean:
 rebuild: clean build
 
 run: build
-	@$(BUILD_DIR)/simulation
+	@$(BUILD_DIR)/frame_engine
 
