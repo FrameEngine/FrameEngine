@@ -74,7 +74,8 @@ TEST_CASE("Physics System updates TransformComponent correctly",
   Entity entity = registry.create_entity();
 
   registry.add_component<TransformComponent>(entity, {{0.0f, 0.0f, 0.0f}});
-  registry.add_component<PhysicsComponent>(entity, {{1.0f, 0.0f, 0.0f}});
+  registry.add_component<PhysicsComponent>(
+      entity, {{1.0f, 0.0f, 0.0f}, {0, 0, 0}, 1.0f});
 
   float dt = 1.0f;
   PhysicsSystem::update(registry, dt);

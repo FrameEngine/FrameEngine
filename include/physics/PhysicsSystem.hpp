@@ -1,3 +1,17 @@
+/**
+ * @file PhysicsSystem.hpp
+ * @brief Defines the PhysicsSystem for ECS-based physics simulation.
+ *
+ * The PhysicsSystem processes all entities with 'PhysicsComponent' (stores
+ * velocity, acceleration, and mass).
+ *
+ * It applies acceleration to velocity, then integrates velocity into position.
+ * This system should be called every frame with a fixed timestamp to maintain
+ * stable physics updates.
+ *
+ * In the future will extend it with collision checks and other physics stuff
+ */
+
 #ifndef PHYSICS_SYSTEM_HPP
 #define PHYSICS_SYSTEM_HPP
 
@@ -15,9 +29,11 @@ public:
         continue;
 
       auto &transform = registry.get_component<TransformComponent>(entity);
-      auto &velocity = registry.get_component<PhysicsComponent>(entity);
+      auto &physics = registry.get_component<PhysicsComponent>(entity);
 
-      transform.position = transform.position + velocity.velocity * dt;
+      physics.velocity = physics.velocity + physics.acceleration * dt;
+
+      transform.position = transform.position + physics.velocity * dt;
     }
   }
 };

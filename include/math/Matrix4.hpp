@@ -1,7 +1,6 @@
 #ifndef MATRIX4_HPP
 #define MATRIX4_HPP
 
-#include "Quaternion.hpp"
 #include "Vector3.hpp"
 
 struct Matrix4 {
@@ -20,25 +19,39 @@ struct Matrix4 {
             v.x * m[0][2] + v.y * m[1][2] + v.z * m[2][2] + m[3][2]};
   }
 
-  // Create a rotation matrix from a quaternion
-  // Stole formulae from here: https://www.3dgep.com/understanding-quaternions/
-  static Matrix4 from_quaternion(const Quaternion &q) {
+  Matrix4 operator*(const Matrix4 &other) const {
+    Matrix4 result;
+
+    for (int row = 0; row < 4; row++) {
+      for (int col = 0; col < 4; col++) {
+        result.m[row][col] = 0.0f;
+        for (int i = 0; i < 4; i++) {
+          result.m[row][col] += m[row][i] * other.m[i][col];
+        }
+      }
+    }
+
+    return result;
+  }
+
+  // Create a translation matrix from a Vector3
+  static Matrix4 from_translation(const Vector3 &pos) {
     Matrix4 mat;
-    float xx = q.x * q.x, xy = q.x * q.y, xz = q.x * q.z, xw = q.x * q.w;
-    float yy = q.y * q.y, yz = q.y * q.z, yw = q.y * q.w;
-    float zz = q.z * q.z, zw = q.z * q.w;
 
-    mat.m[0][0] = 1 - 2 * (yy + zz);
-    mat.m[0][1] = 2 * (xy - zw);
-    mat.m[0][2] = 2 * (xz + yw);
+    mat.m[3][0] = pos.x;
+    mat.m[3][1] = pos.y;
+    mat.m[3][2] = pos.z;
 
-    mat.m[1][0] = 2 * (xy + zw);
-    mat.m[1][1] = 1 - 2 * (xx + zz);
-    mat.m[1][2] = 2 * (yz - xw);
+    return mat;
+  }
 
-    mat.m[2][0] = 2 * (xz - yw);
-    mat.m[2][1] = 2 * (yz + xw);
-    mat.m[2][2] = 1 - 2 * (xx + yy);
+  // Create a scaling matrix from a Vector3
+  static Matrix4 from_scaling(const Vector3 &s) {
+    Matrix4 mat;
+
+    mat.m[0][0] = s.x;
+    mat.m[1][1] = s.y;
+    mat.m[2][2] = s.z;
 
     return mat;
   }
