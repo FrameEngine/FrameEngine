@@ -1,6 +1,7 @@
 # FrameEngine - physics engine  
 
-I love doing physics simulations and math-related stuff, it's fun, but rewriting window management, ui, objects and other stuff each time is kinda borring. So I decided to make my own engine, and also practice my C++ and general project maintaining skills. 
+I love doing physics simulations and math-related projects! However, rewriting window management, UI, objects, and other related things every time can be tedious. So I decided to build my own engine
+
 <div align="center">
 <img src="https://github.com/user-attachments/assets/ccf7c572-5bd8-4c58-899f-363636e1946a" alt="Demo">
 </div>
@@ -9,13 +10,13 @@ I love doing physics simulations and math-related stuff, it's fun, but rewriting
 
 ## Overview
 
-The core of **FrameEngine** is built around ECS(Entity-component-system) and include:
+The core of **FrameEngine** is built around [ECS](https://en.wikipedia.org/wiki/Entity_component_system)(Entity-component-system) and includes:
 - **Registry**: A simple ECS `Registry` that allows creating entities and attaching components.
-- **Components**: Data containers that define behaviors or properties like transforms, physics, or rendering details.
-- **Systems**: Logic units that iterate through all entities with certain components. For instance, now the `PhysicsSystem` handles velocity and position updates, while the `RenderSystem` renderes meshes
+- **Components**: Data containers that define behaviors or properties such as transforms, physics, or rendering details.
+- **Systems**: Logic units that iterate through all entities with specific components. For instance, the `PhysicsSystem` handles velocity and position updates, while the `RenderSystem` renderes meshes
 - **Engine**: A base `Engine` class that provides a main loop with a **fixed timestep** for physics and a simple rendering pass.
 
-Currently, **X11** rendering is implemented (via `X11RendererAdapter`), though you can add your own (e.g. OpenGL, Vulkan) by implementing the `IRenderer` interface. (How to do it you can find in [Contributing](#Contributing) section)
+Currently, **X11** rendering is implemented (via `X11RendererAdapter`), though you can add your own (e.g. OpenGL, Vulkan or even selfmade one) by implementing the `IRenderer` interface. (Instructions for doing so can be found in the [Contributing](#Contributing) section)
 
 ---
 
@@ -26,10 +27,11 @@ Currently, **X11** rendering is implemented (via `X11RendererAdapter`), though y
 - A **C++17** compiler
 - **CMake** >= 3.10
 - **Make** (or Ninja, etc., whichever you prefer)
-- **X11** development libraries (if you want to run the X11 example, in the future will switch to OpenGL)
-- **Catch2** test library (for running unit tests)
+- **X11** development libraries (required for running the X11 example; future versions may use OpenGL)
+- **Catch2** test library (for running tests)
 
-On many Linux distributions, you can install these with package managers (e.g., `sudo apt-get install libx11-dev cmake build-essential`).
+On many Linux distributions, you can install these with package managers 
+`sudo apt-get install libx11-dev cmake build-essential`
 
 ### How to install?
 
@@ -61,14 +63,13 @@ or manually:
 ```
 
 This launches a simple **X11** window showing a rotating cube with orbiting spheres.  
-
 Press `Ctrl+C` in the terminal to terminate (or just close the X11 window).
 
 ---
 
 ## How to use the engine?
 
-Copy this directory into your project and include FrameEngine in your CMakeLists:
+Include the FrameEngine directory in your project and update your `CMakeLists.txt` as follows:
 ```
 cmake_minimum_required(VERSION 3.10)
 project(MySimulation)
@@ -97,11 +98,11 @@ Now you can use **FrameEngine**
    ```cpp
    class MySimulation : public Engine {
      void on_start() override {
-       // Add your objects/entities here
+       // Add your initialization logic here
      }
 
      void fixed_update(float dt) override {
-       // Add your physics or custom logic here
+       // Add your physics logic here
      }
    };
    ```
@@ -128,9 +129,9 @@ Now you can use **FrameEngine**
 
 ## Contributing
 
-1. **Fork** the repo and create a new branch for your feature. (feature-xyz)
+1. **Fork** the repo and create a new branch for your feature. (e.g., `feature-xyz`)
 2. Implement changes or new features.
-3. **Add tests** (where it makes sense :D) in the `tests/` directory.
+3. **Add tests** where applicable in the `tests/` directory.
 4. Submit a **Pull Request**.
 
 If you’re adding a **new renderer**, see [`include/rendering/adapters/README.md`](./include/rendering/adapters/README.md) for guidelines.
@@ -141,8 +142,9 @@ If you’re adding a **new renderer**, see [`include/rendering/adapters/README.m
 
 - **OpenGL Renderer** or **Vulkan Renderer** for real 3D drawing.
 - Add a more comprehensive **Camera** system.
-- Extend the **PhysicsSystem** with collision detection, constraints, etc.
+- Extend the **PhysicsSystem** with collision detection, constraints etc.
 - A **GUI** for runtime parameter tweaking.
+- **Wiki** and **more comprehensive documentation**
 
 ---
 
