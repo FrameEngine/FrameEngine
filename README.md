@@ -1,7 +1,9 @@
 # FrameEngine - physics engine  
 
 I love doing physics simulations and math-related stuff, it's fun, but rewriting window management, ui, objects and other stuff each time is kinda borring. So I decided to make my own engine, and also practice my C++ and general project maintaining skills. 
-
+<div align="center">
+<img src="https://github.com/user-attachments/assets/ccf7c572-5bd8-4c58-899f-363636e1946a" alt="Demo">
+</div>
 ---
 
 ## Overview
