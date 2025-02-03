@@ -4,6 +4,7 @@ I love doing physics simulations and math-related stuff, it's fun, but rewriting
 <div align="center">
 <img src="https://github.com/user-attachments/assets/ccf7c572-5bd8-4c58-899f-363636e1946a" alt="Demo">
 </div>
+
 ---
 
 ## Overview
