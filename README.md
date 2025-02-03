@@ -129,12 +129,14 @@ Now you can use **FrameEngine**
 
 ## Contributing
 
-1. **Fork** the repo and create a new branch for your feature. (e.g., `feature-xyz`)
-2. Implement changes or new features.
-3. **Add tests** where applicable in the `tests/` directory.
-4. Submit a **Pull Request**.
+We welcome contributions 🎉
 
-If you’re adding a **new renderer**, see [`include/rendering/adapters/README.md`](./include/rendering/adapters/README.md) for guidelines.
+- Please view the [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on submitting issues, pull requests, and coding standards.
+- If you’re adding a **renderer**, check out [renderer adapter guidelines ](./include/rendering/adapters/README.md) before you start
+
+Thank you for helping improve this project!
+
+> If you have any questions you can **start a disscusion** or PM me directly on [my socials](https://github.com/Perchinka)
 
 ---
 
