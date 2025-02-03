@@ -28,7 +28,7 @@ constexpr int MAX_COMPONENTS = 32;
 
 // Each entity must have unique ID; Why not store whole objects? Well, it looks
 // like storing only int IDs is way more efficient
-using Entity = int;
+using EntityID = int;
 
 /**
  * @class IComponentStorage
@@ -50,7 +50,7 @@ public:
 template <typename T> class ComponentStorage : public IComponentStorage {
 private:
   /// Stores component data, mapped to an entity ID.
-  std::unordered_map<Entity, T> components;
+  std::unordered_map<EntityID, T> components;
 
 public:
   /**
@@ -58,7 +58,7 @@ public:
    * @param entity The entity ID.
    * @param component The component instance to store.
    */
-  void add(Entity entity, const T &component) {
+  void add(EntityID entity, const T &component) {
     components[entity] = component;
   }
 
@@ -66,14 +66,14 @@ public:
    * @brief Removes a component from an entity.
    * @param entity The entity ID.
    */
-  void remove(Entity entity) { components.erase(entity); }
+  void remove(EntityID entity) { components.erase(entity); }
 
   /**
    * @brief Checks if an entity has this component.
    * @param entity The entity ID.
    * @return True if the entity has the component.
    */
-  bool has(Entity entity) const {
+  bool has(EntityID entity) const {
     return components.find(entity) != components.end();
   }
   /**
@@ -82,7 +82,7 @@ public:
    * @return Reference to the component.
    * @throws std::out_of_range if the component does not exist.
    */
-  T &get(Entity entity) { return components.at(entity); }
+  T &get(EntityID entity) { return components.at(entity); }
 };
 
 /**
@@ -98,13 +98,14 @@ public:
 class Registry {
 private:
   /// Active entities
-  std::vector<Entity> entities;
+  std::vector<EntityID> entities;
 
   /// Storage pools for each component type (mapped by type hash).
   std::unordered_map<size_t, std::unique_ptr<IComponentStorage>> componentPools;
 
   /// Bitmask representation of which components each entity has.
-  std::unordered_map<Entity, std::bitset<MAX_COMPONENTS>> entityComponentMasks;
+  std::unordered_map<EntityID, std::bitset<MAX_COMPONENTS>>
+      entityComponentMasks;
 
   // As entities are stored as integers, this is fast way to make them "unique"
   int nextEntityID = 0;
@@ -114,8 +115,8 @@ public:
    * @brief Creates a new entity and assigns it a unique ID.
    * @return New entity ID.
    */
-  Entity create_entity() {
-    Entity entity = nextEntityID++;
+  EntityID create_entity() {
+    EntityID entity = nextEntityID++;
     entities.push_back(entity);
     return entity;
   }
@@ -124,7 +125,7 @@ public:
    * @brief Destroys an entity and removes all its components.
    * @param entity The entity ID to destroy.
    */
-  void destroy_entity(Entity entity) {
+  void destroy_entity(EntityID entity) {
     entities.erase(std::remove(entities.begin(), entities.end(), entity),
                    entities.end());
     entityComponentMasks.erase(entity);
@@ -136,7 +137,8 @@ public:
    * @param entity The entity ID.
    * @param component The component instance to store.
    */
-  template <typename T> void add_component(Entity entity, const T &component) {
+  template <typename T>
+  void add_component(EntityID entity, const T &component) {
     // Why hash? Just faster than type_index. Like O(log n) vs O(1), but there
     // are might be hash collisions, not critical though, just restart sim.
     size_t typeID = typeid(T).hash_code();
@@ -161,7 +163,7 @@ public:
    * @param entity The entity ID.
    * @return True if the entity has the component.
    */
-  template <typename T> bool has_component(Entity entity) {
+  template <typename T> bool has_component(EntityID entity) {
     size_t typeID = typeid(T).hash_code();
     return entityComponentMasks[entity].test(typeID % MAX_COMPONENTS);
   }
@@ -173,7 +175,7 @@ public:
    * @return Reference to the component.
    * @throws std::runtime_error if the component does not exist.
    */
-  template <typename T> T &get_component(Entity entity) {
+  template <typename T> T &get_component(EntityID entity) {
     size_t typeID = typeid(T).hash_code();
     if (componentPools.find(typeID) == componentPools.end()) {
       throw std::runtime_error("Component not found in registry!");
@@ -187,7 +189,7 @@ public:
    * @tparam T The component type.
    * @param entity The entity ID.
    */
-  template <typename T> void remove_component(Entity entity) {
+  template <typename T> void remove_component(EntityID entity) {
     size_t typeID = typeid(T).hash_code();
 
     if (componentPools.find(typeID) != componentPools.end()) {
@@ -206,8 +208,8 @@ public:
    * ComponentMask, saves a lot of time on cycles, but amount of entities must
    * be specified before simulation starts (before compilation? not sure)
    */
-  template <typename T> std::vector<Entity> get_entities_with_component() {
-    std::vector<Entity> result;
+  template <typename T> std::vector<EntityID> get_entities_with_component() {
+    std::vector<EntityID> result;
     size_t typeID = typeid(T).hash_code();
     for (auto &[entity, mask] : entityComponentMasks) {
       if (mask.test(typeID % MAX_COMPONENTS)) {

@@ -1,6 +1,6 @@
 /**
  * @file PhysicsSystem.hpp
- * @brief Defines the PhysicsSystem for ECS-based physics simulation.
+ * @brief Defines the PhysicsSystem
  *
  * The PhysicsSystem processes all entities with 'PhysicsComponent' (stores
  * velocity, acceleration, and mass).
@@ -18,12 +18,11 @@
 #include "components/PhysicsComponent.hpp"
 #include "components/TransformComponent.hpp"
 #include "core/Registry.hpp"
-#include <iostream>
 
 class PhysicsSystem {
 public:
   static void update(Registry &registry, float dt) {
-    for (Entity entity :
+    for (EntityID entity :
          registry.get_entities_with_component<PhysicsComponent>()) {
       if (!registry.has_component<TransformComponent>(entity))
         continue;

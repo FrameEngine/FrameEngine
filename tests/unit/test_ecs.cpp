@@ -6,11 +6,11 @@
 #include "core/Registry.hpp"
 #include "physics/PhysicsSystem.hpp"
 
-TEST_CASE("Entity creation and deletion", "[ECS]") {
+TEST_CASE("EntityID creation and deletion", "[ECS]") {
   Registry registry;
 
-  Entity e1 = registry.create_entity();
-  Entity e2 = registry.create_entity();
+  EntityID e1 = registry.create_entity();
+  EntityID e2 = registry.create_entity();
 
   REQUIRE(e1 != e2); // Entities should have unique IDs
 
@@ -22,7 +22,7 @@ TEST_CASE("Entity creation and deletion", "[ECS]") {
 
 TEST_CASE("Component addition and retrieval", "[ECS]") {
   Registry registry;
-  Entity entity = registry.create_entity();
+  EntityID entity = registry.create_entity();
 
   // Add a TransformComponent to the entity
   TransformComponent transform = {{1.0f, 2.0f, 3.0f}};
@@ -42,7 +42,7 @@ TEST_CASE("Component addition and retrieval", "[ECS]") {
 
 TEST_CASE("Component removal", "[ECS]") {
   Registry registry;
-  Entity entity = registry.create_entity();
+  EntityID entity = registry.create_entity();
 
   registry.add_component<TransformComponent>(entity, {{1.0f, 2.0f, 3.0f}});
   registry.remove_component<TransformComponent>(entity);
@@ -56,8 +56,8 @@ TEST_CASE("Query entities with a specific component", "[ECS]") {
 
   // Create two entities, but only add a component to one, test should return
   // only entities with components
-  Entity e1 = registry.create_entity();
-  Entity e2 = registry.create_entity();
+  EntityID e1 = registry.create_entity();
+  EntityID e2 = registry.create_entity();
   registry.add_component<TransformComponent>(e1, {{1.0f, 2.0f, 3.0f}});
 
   auto entities = registry.get_entities_with_component<TransformComponent>();
@@ -71,7 +71,7 @@ TEST_CASE("Query entities with a specific component", "[ECS]") {
 TEST_CASE("Physics System updates TransformComponent correctly",
           "[ECS][Physics]") {
   Registry registry;
-  Entity entity = registry.create_entity();
+  EntityID entity = registry.create_entity();
 
   registry.add_component<TransformComponent>(entity, {{0.0f, 0.0f, 0.0f}});
   registry.add_component<PhysicsComponent>(

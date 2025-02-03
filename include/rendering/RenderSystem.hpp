@@ -30,7 +30,7 @@ public:
   static void render(Registry &registry) {
     Renderer::clear();
 
-    for (Entity entity :
+    for (EntityID entity :
          registry.get_entities_with_component<MeshComponent>()) {
       if (registry.has_component<TransformComponent>(entity)) {
         auto &mesh = registry.get_component<MeshComponent>(entity);
