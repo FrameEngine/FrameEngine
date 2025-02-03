@@ -1,0 +1,35 @@
+name: FrameEngine CI
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+
+jobs:
+  build-and-test:
+    name: Build & Test on Ubuntu
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libx11-dev cmake build-essential
+          git clone https://github.com/catchorg/Catch2.git
+          cd Catch2
+          cmake -B build -S . -DBUILD_TESTING=OFF
+          sudo cmake --build build/ --target install
+  
+      - name: Configure CMake
+        run: cmake -S . -B build
+
+      - name: Build Project
+        run: cmake --build build
+
+      - name: Run Tests
+        working-directory: build
+        run: ctest --verbose
