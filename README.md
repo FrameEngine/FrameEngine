@@ -1,4 +1,4 @@
-# FrameEngine - Lightweight (Like really **light**) physics engine based on ECS(Entity-Component-System). 
+# FrameEngine - physics engine  
 
 I love doing physics simulations and math-related stuff, it's fun, but rewriting window management, ui, objects and other stuff each time is kinda borring. So I decided to make my own engine, and also practice my C++ and general project maintaining skills. 
 
