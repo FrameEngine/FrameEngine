@@ -6,7 +6,7 @@ I love doing physics simulations and math-related stuff, it's fun, but rewriting
 
 ## Overview
 
-The core of **FrameEngine** is built around ECS idea and include:
+The core of **FrameEngine** is built around ECS(Entity-component-system) and include:
 - **Registry**: A simple ECS `Registry` that allows creating entities and attaching components.
 - **Components**: Data containers that define behaviors or properties like transforms, physics, or rendering details.
 - **Systems**: Logic units that iterate through all entities with certain components. For instance, now the `PhysicsSystem` handles velocity and position updates, while the `RenderSystem` renderes meshes
