@@ -26,7 +26,7 @@ Thank you for considering contributing to FrameEngine! Here’s how you can help
 
 ## Reporting Issues
 
-To report a bug use the [Issue Template](./ISSUE_TEMPLATE.md)
+To report a bug use the Issues Templates
 
 Before submitting a bug report, please:
 - Search the issue tracker for similar issues.
