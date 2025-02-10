@@ -10,7 +10,7 @@
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
 
-#include "core/Registry.hpp"
+#include "Registry.hpp"
 #include <iostream>
 
 /**

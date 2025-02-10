@@ -1,91 +1,47 @@
-#include "components/PhysicsComponent.hpp"
-#include "core/Engine.hpp"
-#include "core/Object.hpp"
-#include "physics/PhysicsSystem.hpp"
-#include "rendering/Mesh.hpp"
-#include "rendering/adapters/X11RendererAdapter.hpp"
+#include <glad/glad.h>
 
-class Simulation : public Engine {
-private:
-  Object *cube;
-  Object *spheres[3];
+#include <GLFW/glfw3.h>
+#include <iostream>
 
-  float orbitRadius = 3.0f;
-  float cubeMass = 5.0f;
-  float gravityConstant = 5.0f;
-
-public:
-  void on_start() override {
-    // Create cube
-    cube = new Object(registry, Mesh::createCube());
-    cube->transform->position = Vector3(1.0f, -2.0f, -7.0f);
-    cube->add_component<PhysicsComponent>(Vector3(), Vector3(), cubeMass);
-
-    // Create spheres
-    for (int i = 0; i < 3; i++) {
-      spheres[i] = new Object(registry, Mesh::createSphere());
-      spheres[i]->add_component<PhysicsComponent>(Vector3(), Vector3(), 1.0f);
-    }
-
-    // Place spheres around cube with initial orbital velocity
-    spheres[0]->transform->position =
-        cube->transform->position + Vector3(orbitRadius, 0.0f, 0.0f);
-    spheres[1]->transform->position =
-        cube->transform->position + Vector3(-orbitRadius, 0.0f, 0.0f);
-    spheres[2]->transform->position =
-        cube->transform->position + Vector3(orbitRadius / 2, orbitRadius, 0.0f);
-
-    // Stable orbits velocity (GM/r)
-    float initialSpeed = sqrt(gravityConstant * cubeMass / orbitRadius);
-    spheres[0]->get_component<PhysicsComponent>()->velocity =
-        Vector3(0.0f, initialSpeed, 0.0f);
-    spheres[1]->get_component<PhysicsComponent>()->velocity =
-        Vector3(0.0f, -initialSpeed, 0.0f);
-    spheres[2]->get_component<PhysicsComponent>()->velocity =
-        Vector3(-initialSpeed, 0.0f, 0.0f);
-  }
-
-  void fixed_update(float dt) override {
-    // Rotate cube over time
-    Quaternion rotationStep =
-        Quaternion::from_axis_angle(Vector3(.5, 1, 1), 45.0f * dt);
-    cube->transform->rotation = rotationStep * cube->transform->rotation;
-
-    for (int i = 0; i < 3; i++) {
-      auto &spherePhysics = *spheres[i]->get_component<PhysicsComponent>();
-
-      // Gravitational force
-      Vector3 direction =
-          cube->transform->position - spheres[i]->transform->position;
-      float distance = direction.magnitude();
-      if (distance > 0.1f) { // Avoid extreme forces at very small distances
-        Vector3 force = direction.normalized() *
-                        (gravityConstant * cubeMass / (distance * distance));
-
-        spherePhysics.acceleration = force;
-      }
-
-      // Rotate spheres
-      Quaternion selfRotationStep =
-          Quaternion::from_axis_angle(Vector3((random() % 90 + 10) / 100.f, 1,
-                                              (random() % 90 + 10) / 100.f),
-                                      90.0f * dt);
-      spheres[i]->transform->rotation =
-          selfRotationStep * spheres[i]->transform->rotation;
-    }
-
-    // Apply physics updates
-    PhysicsSystem::update(registry, dt);
-  }
-};
+void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
+  glViewport(0, 0, width, height);
+}
 
 int main() {
-  X11RendererAdapter X11Renderer;
-  Renderer::set_renderer(&X11Renderer);
-  Renderer::init();
+  if (!glfwInit()) {
+    std::cerr << "Failed to initialize GLFW" << std::endl;
+    return -1;
+  }
 
-  Simulation sim;
-  sim.init();
-  sim.run();
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
+  glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+  GLFWwindow *window =
+      glfwCreateWindow(800, 600, "OpenGL Window", nullptr, nullptr);
+  if (!window) {
+    std::cerr << "Failed to create GLFW window" << std::endl;
+    glfwTerminate();
+    return -1;
+  }
+
+  glfwMakeContextCurrent(window);
+  glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
+
+  if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+    std::cerr << "Failed to initialize GLAD" << std::endl;
+    return -1;
+  }
+
+  while (!glfwWindowShouldClose(window)) {
+    glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glfwSwapBuffers(window);
+    glfwPollEvents();
+  }
+
+  glfwTerminate();
+
   return 0;
 }

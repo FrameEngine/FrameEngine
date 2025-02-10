@@ -3,7 +3,7 @@
  * @brief Defines the core Engine class responsible for running simulation.
  */
 
-#include "core/Engine.hpp"
+#include "Engine.hpp"
 #include <chrono>
 #include <iostream>
 #include <thread>
@@ -62,8 +62,6 @@ void Engine::run() {
       fixed_update(fixedTimeStep);
       accumulator -= fixedTimeStep;
     }
-
-    renderSystem.render(registry);
 
     // Compute time left in the frame
     auto frameEnd = clock::now();

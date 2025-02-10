@@ -7,7 +7,6 @@
 #define ENGINE_HPP
 
 #include "Registry.hpp"
-#include "rendering/RenderSystem.hpp"
 
 /**
  * @class Engine
@@ -34,12 +33,9 @@ protected:
   /// ECS registry that stores and manages all entities and components
   Registry registry;
 
-  /// Rendering system that handles drawing
-  RenderSystem renderSystem;
-
 public:
   Engine();
-  ~Engine();
+  virtual ~Engine();
 
   /**
    * @brief Bootstrap

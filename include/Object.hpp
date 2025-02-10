@@ -16,9 +16,8 @@
 #ifndef OBJECT_HPP
 #define OBJECT_HPP
 
-#include "components/MeshComponent.hpp"
+#include "Entity.hpp"
 #include "components/TransformComponent.hpp"
-#include "core/Entity.hpp"
 
 /**
  * @class Object
@@ -29,15 +28,12 @@
  */
 class Object : public Entity {
 public:
-  Object(Registry &registry, const Mesh &mesh) : Entity(registry) {
+  Object(Registry &registry) : Entity(registry) {
     add_component<TransformComponent>();
-    add_component<MeshComponent>(mesh);
     transform = get_component<TransformComponent>();
-    meshComponent = get_component<MeshComponent>();
   }
 
   TransformComponent *transform;
-  MeshComponent *meshComponent;
 };
 
 // TODO  consider creating separate classes such as StaticObject or

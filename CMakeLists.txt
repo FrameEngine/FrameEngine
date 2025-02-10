@@ -4,13 +4,19 @@ project(FrameEngine)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-find_package(X11 REQUIRED)
+add_subdirectory(external/glfw)
+include_directories(external/glfw/include)
+
+add_library(glad STATIC external/glad/src/glad.c)
+include_directories(external/glad/include)
+
+find_package(OpenGL REQUIRED)
 
 include_directories(include)
 
 file(GLOB_RECURSE SOURCES src/*.cpp)
 add_executable(frame_engine ${SOURCES})
-target_link_libraries(frame_engine ${X11_LIBRARIES})
+target_link_libraries(frame_engine OpenGL::GL glfw glad)
 
 enable_testing()
 

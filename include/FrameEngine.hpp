@@ -11,13 +11,12 @@
 #define FRAME_ENGINE_HPP
 
 // Core systems
-#include "core/Engine.hpp"
-#include "core/Entity.hpp"
-#include "core/Object.hpp"
-#include "core/Registry.hpp"
+#include "Engine.hpp"
+#include "Entity.hpp"
+#include "Object.hpp"
+#include "Registry.hpp"
 
 // Components
-#include "components/MeshComponent.hpp"
 #include "components/PhysicsComponent.hpp"
 #include "components/TransformComponent.hpp"
 
@@ -28,11 +27,5 @@
 
 // Physics
 #include "physics/PhysicsSystem.hpp"
-
-// Rendering
-#include "rendering/IRenderer.hpp"
-#include "rendering/Mesh.hpp"
-#include "rendering/RenderSystem.hpp"
-#include "rendering/Renderer.hpp"
 
 #endif // FRAME_ENGINE_HPP
