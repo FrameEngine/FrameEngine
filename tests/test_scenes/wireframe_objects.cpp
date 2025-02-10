@@ -1,6 +1,6 @@
+#include "Engine.hpp"
+#include "Object.hpp"
 #include "components/PhysicsComponent.hpp"
-#include "core/Engine.hpp"
-#include "core/Object.hpp"
 #include "physics/PhysicsSystem.hpp"
 #include "rendering/Mesh.hpp"
 #include "rendering/adapters/X11RendererAdapter.hpp"

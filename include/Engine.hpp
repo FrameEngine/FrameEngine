@@ -7,6 +7,8 @@
 #define ENGINE_HPP
 
 #include "Registry.hpp"
+#include "Window.hpp"
+#include "rendering/Renderer.hpp"
 
 /**
  * @class Engine
@@ -23,15 +25,14 @@ class Engine {
 private:
   // TODO Make it variable
   const float fixedTimeStep = 1.0f / 60.0f;
-
   /// To handle time difference between frames
   float accumulator = 0.0f;
-
   bool isRunning = true;
 
 protected:
   /// ECS registry that stores and manages all entities and components
   Registry registry;
+  Window window;
 
 public:
   Engine();

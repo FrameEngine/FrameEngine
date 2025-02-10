@@ -8,7 +8,7 @@
 #include <iostream>
 #include <thread>
 
-Engine::Engine() {}
+Engine::Engine() : window(800, 600, "FrameEngine"), isRunning(true) {}
 
 Engine::~Engine() { stop(); }
 
@@ -17,7 +17,10 @@ Engine::~Engine() { stop(); }
  * This function should be called before 'run()' to ensure all components
  * are properly set up (e.g., renderer, ECS initialization, etc).
  */
-void Engine::init() {}
+void Engine::init() {
+  Renderer::initialize();
+  on_start();
+}
 
 /**
  * @brief Stops the engine gracefully.
@@ -28,6 +31,7 @@ void Engine::stop() { isRunning = false; }
 
 // Default implementation (empty), user should override these
 void Engine::on_start() {}
+
 void Engine::fixed_update(float dt) {}
 
 /**
@@ -57,11 +61,16 @@ void Engine::run() {
     }
 
     accumulator += deltaTime;
-
     while (accumulator >= fixedTimeStep) {
       fixed_update(fixedTimeStep);
       accumulator -= fixedTimeStep;
     }
+
+    Renderer::clear();
+    Renderer::present();
+
+    window.swapBuffers();
+    window.pollEvents();
 
     // Compute time left in the frame
     auto frameEnd = clock::now();
