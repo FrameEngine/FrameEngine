@@ -47,9 +47,7 @@ void Engine::run() {
   auto previousTime = clock::now();
   float accumulator = 0.0f;
 
-  on_start();
-
-  while (isRunning) {
+  while (isRunning && window.isOpen()) {
     auto currentTime = clock::now();
     float deltaTime =
         std::chrono::duration<float>(currentTime - previousTime).count();
@@ -67,7 +65,7 @@ void Engine::run() {
     }
 
     Renderer::clear();
-    Renderer::present();
+    Renderer::render();
 
     window.swapBuffers();
     window.pollEvents();

@@ -1,7 +1,21 @@
+/**
+ * @file Renderer.hpp
+ * @brief Manages the rendering pipeline and object submission.
+ */
+
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 
+#include "Mesh.hpp"
+#include "Shader.hpp"
+#include <memory>
+#include <vector>
+
 class Renderer {
+private:
+  static Shader *shader;
+  static std::vector<Mesh *> renderQueue;
+
 public:
   /**
    * @brief Initializes the rendering system.
@@ -19,12 +33,19 @@ public:
   static void clear();
 
   /**
+   * @brief Submits an object to the rendering queue.
+   * @param mesh The mesh to render.
+   * @param shader The shader to use.
+   */
+  static void submit(Mesh *mesh);
+
+  /**
    * @brief Swaps the front and back buffers.
    *
    * This function should be called at the end of the frame to present
    * the rendered image on the screen.
    */
-  static void present();
+  static void render();
 
   /**
    * @brief Shuts down the rendering system and releases resources.
