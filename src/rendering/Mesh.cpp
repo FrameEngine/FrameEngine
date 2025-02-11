@@ -2,8 +2,8 @@
 #include <iostream>
 
 Mesh::Mesh(float *vertices, unsigned int *indices, unsigned int numVertices,
-           unsigned int numIndices, const Vector3 &color)
-    : color(color), vertexCount(numVertices), indexCount(numIndices) {
+           unsigned int numIndices)
+    : vertexCount(numVertices), indexCount(numIndices) {
 
   glGenVertexArrays(1, &VAO);
   glGenBuffers(1, &VBO);
@@ -36,5 +36,3 @@ void Mesh::draw() const {
   glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, 0);
   glBindVertexArray(0);
 }
-
-Vector3 Mesh::getColor() const { return color; }

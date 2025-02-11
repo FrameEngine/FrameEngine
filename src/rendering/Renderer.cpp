@@ -7,7 +7,7 @@ Shader *Renderer::shader = nullptr;
 std::vector<Object *> Renderer::renderQueue;
 
 // TODO SO far it's hardcoded, replace with actual width and height
-Renderer::Renderer() : camera(Camera(800.0f / 600.0f)) {
+Renderer::Renderer() : camera(Camera(1920.0f / 1080.0f)) {
   glEnable(GL_DEPTH_TEST);
   glDisable(GL_CULL_FACE);
   shader =

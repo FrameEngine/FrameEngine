@@ -1,7 +1,8 @@
 #include "Window.hpp"
 #include <iostream>
 
-Window::Window(int width, int height, const std::string &title) {
+Window::Window(int width, int height, const std::string &title)
+    : width(width), height(height) {
   if (!glfwInit()) {
     std::cerr << "Failed to initialize GLFW" << std::endl;
     exit(-1);
@@ -44,4 +45,10 @@ void Window::swapBuffers() const { glfwSwapBuffers(handle); }
 void Window::framebufferSizeCallback(GLFWwindow *window, int width,
                                      int height) {
   glViewport(0, 0, width, height);
+
+  Window *win = static_cast<Window *>(glfwGetWindowUserPointer(window));
+  if (win) {
+    win->width = width;
+    win->height = height;
+  }
 }

@@ -4,12 +4,16 @@
 #include "rendering/Camera.hpp"
 #include "rendering/Mesh.hpp"
 #include "rendering/Shader.hpp"
+#include <iostream>
 
 class Simulation : public Engine {
 private:
   Mesh *cubeMesh;
   Object *cube1;
   Object *cube2;
+
+  float timeElapsed = 0.0f;
+  Camera &camera = renderer.getCamera();
 
 public:
   void on_start() override {
@@ -36,23 +40,31 @@ public:
         1, 2, 6, 6, 5, 1  // Right face
     };
     // Create a single cube mesh
-    cubeMesh =
-        new Mesh(cubeVertices, cubeIndices, 8, 36, Vector3(1.0f, 0.5f, 0.2f));
+    cubeMesh = new Mesh(cubeVertices, cubeIndices, 8, 36);
 
     // And reuse it :D
     cube1 = new Object(registry, cubeMesh);
     cube1->transform->position = Vector3(0.0f, 0.0f, 0.0f);
+    cube1->transform->scale = cube1->transform->scale * .3;
+
+    cube2 = new Object(registry, cubeMesh);
+    cube2->transform->scale = cube1->transform->scale * .5;
+    cube2->transform->position = Vector3(1.5f, 2.0f, 3);
+    cube2->setColor(Vector3(1, 0, 0));
 
     renderer.submit(cube1);
+    renderer.submit(cube2);
 
-    Camera camera = renderer.getCamera();
-    camera.setPosition(Vector3(0.0f, 2.0f, -4.0f));
+    camera.setPosition(Vector3(0, 0, -2.0f));
     camera.lookAt(Vector3(0.0f, 0.0f, 0.0f));
   }
 
   void fixed_update(float dt) override {
+    timeElapsed += dt;
+
     cube1->rotate(Vector3(0.5f, 1.0f, 0.0f), dt * 50.0f);
-    cube2->rotate(Vector3(1.0f, 0.0f, 0.5f), dt * 30.0f);
+    cube2->rotate(Vector3(1.0f, 1.0f, 2.0f), dt * 50.0f);
+    cube2->move(Vector3(sin(timeElapsed) / 20.0f, 0, 0));
   }
 };
 

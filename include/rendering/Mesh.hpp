@@ -7,16 +7,14 @@
 class Mesh {
 private:
   GLuint VAO, VBO, EBO;
-  Vector3 color;
   int vertexCount, indexCount;
 
 public:
   Mesh(float *vertices, unsigned int *indices, unsigned int numVertices,
-       unsigned int numIndices, const Vector3 &color);
+       unsigned int numIndices);
   ~Mesh();
 
   void draw() const;
-  Vector3 getColor() const;
 
   GLuint getVAO() const { return VAO; }
   GLuint getVBO() const { return VBO; }

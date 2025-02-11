@@ -67,23 +67,27 @@ struct Matrix4 {
   static Matrix4 lookAt(const Vector3 &eye, const Vector3 &target,
                         const Vector3 &up) {
     Vector3 f = (target - eye).normalized(); // Forward direction
-    Vector3 r = f.cross(up).normalized();    // Right direction
-    Vector3 u = r.cross(f);                  // Up direction
+    Vector3 r = up.cross(f).normalized();    // Right direction
+    Vector3 u = f.cross(r).normalized();     // Corrected Up direction
 
     Matrix4 mat;
+
     mat.m[0][0] = r.x;
     mat.m[1][0] = r.y;
     mat.m[2][0] = r.z;
+    mat.m[3][0] = -r.dot(eye);
     mat.m[0][1] = u.x;
     mat.m[1][1] = u.y;
     mat.m[2][1] = u.z;
+    mat.m[3][1] = -u.dot(eye);
     mat.m[0][2] = -f.x;
     mat.m[1][2] = -f.y;
     mat.m[2][2] = -f.z;
-
-    mat.m[3][0] = -eye.dot(r);
-    mat.m[3][1] = -eye.dot(u);
-    mat.m[3][2] = eye.dot(f);
+    mat.m[3][2] = f.dot(eye);
+    mat.m[0][3] = 0;
+    mat.m[1][3] = 0;
+    mat.m[2][3] = 0;
+    mat.m[3][3] = 1;
 
     return mat;
   }

@@ -8,7 +8,7 @@
 #include <iostream>
 #include <thread>
 
-Engine::Engine() : window(800, 600, "FrameEngine"), isRunning(true) {}
+Engine::Engine() : window(1920, 1080, "FrameEngine"), isRunning(true) {}
 
 Engine::~Engine() { stop(); }
 

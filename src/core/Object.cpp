@@ -12,9 +12,9 @@ void Object::render(Renderer &renderer) {
     return;
   }
 
-  Matrix4 modelMatrix = this->transform->get_transformation_matrix();
+  Matrix4 modelMatrix = transform->get_transformation_matrix();
 
-  shader->setUniformVec3("objectColor", mesh->getColor());
+  shader->setUniformVec3("objectColor", color);
   shader->setUniformMat4("model", modelMatrix);
   mesh->draw();
 }

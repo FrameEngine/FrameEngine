@@ -33,9 +33,11 @@ class Renderer;
 class Object : public Entity {
 private:
   Mesh *mesh;
+  Vector3 color;
 
 public:
-  Object(Registry &registry, Mesh *mesh) : Entity(registry), mesh(mesh) {
+  Object(Registry &registry, Mesh *mesh)
+      : Entity(registry), mesh(mesh), color(Vector3(1.0f, .5f, 1.0f)) {
     add_component<TransformComponent>();
     transform = get_component<TransformComponent>();
   }
@@ -64,6 +66,9 @@ public:
    * @brief Updates the model matrix and draws the mesh.
    */
   void render(Renderer &renderer);
+
+  Vector3 getColor() const { return color; }
+  void setColor(const Vector3 &c) { color = c; }
 };
 
 // TODO  consider creating separate classes such as StaticObject or
