@@ -1,6 +1,7 @@
 #ifndef MATRIX4_HPP
 #define MATRIX4_HPP
 
+#include "Quaternion.hpp"
 #include "Vector3.hpp"
 
 struct Matrix4 {
@@ -10,6 +11,12 @@ struct Matrix4 {
     for (int i = 0; i < 4; i++)
       for (int j = 0; j < 4; j++)
         m[i][j] = (i == j) ? 1.0f : 0.0f; // Identity matrix
+  }
+
+  static Matrix4 from_rotation(const Vector3 &axis, float angleDegrees) {
+    float angle = angleDegrees * M_PI / 180.0f; // Convert to radians
+    Quaternion q = Quaternion::from_axis_angle(axis, angle);
+    return q.toMatrix();
   }
 
   // Apply matrix transformation to a vector

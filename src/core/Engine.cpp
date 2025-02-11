@@ -18,7 +18,7 @@ Engine::~Engine() { stop(); }
  * are properly set up (e.g., renderer, ECS initialization, etc).
  */
 void Engine::init() {
-  Renderer::initialize();
+  renderer = Renderer();
   on_start();
 }
 
@@ -64,8 +64,8 @@ void Engine::run() {
       accumulator -= fixedTimeStep;
     }
 
-    Renderer::clear();
-    Renderer::render();
+    renderer.clear();
+    renderer.render();
 
     window.swapBuffers();
     window.pollEvents();

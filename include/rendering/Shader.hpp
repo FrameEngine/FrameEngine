@@ -6,6 +6,7 @@
 #ifndef SHADER_HPP
 #define SHADER_HPP
 
+#include "math/Matrix4.hpp"
 #include "math/Vector3.hpp"
 #include <glad/glad.h>
 #include <string>
@@ -24,6 +25,9 @@ public:
   void unbind() const;
 
   void setUniformVec3(const std::string &name, const Vector3 &value) const;
+  void setUniformMat4(const std::string &name, const Matrix4 &mat) const;
+
+  GLuint getProgramID() const { return programID; }
 };
 
 #endif // SHADER_HPP

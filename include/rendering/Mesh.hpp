@@ -6,12 +6,13 @@
 
 class Mesh {
 private:
-  GLuint VAO, VBO;
+  GLuint VAO, VBO, EBO;
   Vector3 color;
-  int vertexCount;
+  int vertexCount, indexCount;
 
 public:
-  Mesh(float *vertices, int vertexCount, const Vector3 &color);
+  Mesh(float *vertices, unsigned int *indices, unsigned int numVertices,
+       unsigned int numIndices, const Vector3 &color);
   ~Mesh();
 
   void draw() const;

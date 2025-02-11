@@ -18,6 +18,10 @@
 
 #include "Entity.hpp"
 #include "components/TransformComponent.hpp"
+#include "rendering/Mesh.hpp"
+
+// Forward declare Renderer to avoid circular dependency
+class Renderer;
 
 /**
  * @class Object
@@ -27,13 +31,39 @@
  * with predefined rendering and transform components.
  */
 class Object : public Entity {
+private:
+  Mesh *mesh;
+
 public:
-  Object(Registry &registry) : Entity(registry) {
+  Object(Registry &registry, Mesh *mesh) : Entity(registry), mesh(mesh) {
     add_component<TransformComponent>();
     transform = get_component<TransformComponent>();
   }
 
   TransformComponent *transform;
+
+  /**
+   * @brief Rotates the object.
+   * @param axis The axis to rotate around.
+   * @param angle The angle in degrees.
+   */
+  void rotate(const Vector3 &axis = Vector3(0, 1, 0), float angle = 1.0f) {
+    transform->rotation =
+        Quaternion::from_axis_angle(axis, angle) * transform->rotation;
+  }
+
+  /**
+   * @brief Moves the object in world space.
+   * @param translation The translation vector.
+   */
+  void move(const Vector3 &translation) {
+    transform->position = transform->position + translation;
+  }
+
+  /**
+   * @brief Updates the model matrix and draws the mesh.
+   */
+  void render(Renderer &renderer);
 };
 
 // TODO  consider creating separate classes such as StaticObject or

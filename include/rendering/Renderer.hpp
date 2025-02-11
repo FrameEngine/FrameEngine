@@ -6,7 +6,9 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 
+#include "Camera.hpp"
 #include "Mesh.hpp"
+#include "Object.hpp"
 #include "Shader.hpp"
 #include <memory>
 #include <vector>
@@ -14,9 +16,12 @@
 class Renderer {
 private:
   static Shader *shader;
-  static std::vector<Mesh *> renderQueue;
+  static std::vector<Object *> renderQueue;
+  Camera camera;
 
 public:
+  Renderer();
+
   /**
    * @brief Initializes the rendering system.
    *
@@ -37,7 +42,8 @@ public:
    * @param mesh The mesh to render.
    * @param shader The shader to use.
    */
-  static void submit(Mesh *mesh);
+  static void submit(Object *obj);
+  void clearObjects();
 
   /**
    * @brief Swaps the front and back buffers.
@@ -45,7 +51,7 @@ public:
    * This function should be called at the end of the frame to present
    * the rendered image on the screen.
    */
-  static void render();
+  void render();
 
   /**
    * @brief Shuts down the rendering system and releases resources.
@@ -54,6 +60,10 @@ public:
    * to properly clean up the rendering context.
    */
   static void shutdown();
+
+  void setShader(Shader *shader);
+  static Shader *getShader() { return shader; }
+  Camera &getCamera();
 };
 
 #endif // RENDERER_HPP

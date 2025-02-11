@@ -33,6 +33,7 @@ protected:
   /// ECS registry that stores and manages all entities and components
   Registry registry;
   Window window;
+  Renderer renderer;
 
 public:
   Engine();
@@ -47,11 +48,6 @@ public:
 
   /**
    * @brief Starts the main game loop.
-   *
-   * - Calls on_start()
-   * The loop:
-   * - Calls 'fixed_update(float dt)'
-   * - Calls 'RenderSystem::render()'
    */
   void run();
 
