@@ -6,10 +6,11 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 
-#include "Camera.hpp"
-#include "Mesh.hpp"
-#include "Object.hpp"
-#include "Shader.hpp"
+#include "objects/Object.hpp"
+#include "objects/PointLight.hpp"
+#include "rendering/Camera.hpp"
+#include "rendering/Mesh.hpp"
+#include "rendering/Shader.hpp"
 #include <memory>
 #include <vector>
 
@@ -17,6 +18,7 @@ class Renderer {
 private:
   static Shader *shader;
   static std::vector<Object *> renderQueue;
+  static std::vector<PointLight *> lights;
   Camera camera;
 
 public:
@@ -44,6 +46,8 @@ public:
    */
   static void submit(Object *obj);
   void clearObjects();
+
+  static void submitLight(PointLight *light);
 
   /**
    * @brief Swaps the front and back buffers.

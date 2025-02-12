@@ -56,6 +56,8 @@ public:
    */
   void stop();
 
+  // ===== User Defined Funcitons =====
+
   /**
    * @brief User-defined logic that updates every fixed timestep.
    * @param dt The fixed time step duration.

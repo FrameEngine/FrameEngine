@@ -10,8 +10,8 @@ private:
   int vertexCount, indexCount;
 
 public:
-  Mesh(float *vertices, unsigned int *indices, unsigned int numVertices,
-       unsigned int numIndices);
+  Mesh(float *vertices, float *normals, unsigned int *indices,
+       unsigned int numVertices, unsigned int numIndices);
   ~Mesh();
 
   void draw() const;

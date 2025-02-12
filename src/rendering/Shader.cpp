@@ -57,12 +57,22 @@ void Shader::bind() const { glUseProgram(programID); }
 
 void Shader::unbind() const { glUseProgram(0); }
 
+// ===== SetUniform =====
+
+void Shader::setUniformFloat(const std::string &name, float value) const {
+  GLint location = glGetUniformLocation(programID, name.c_str());
+  if (location == -1) {
+    std::cerr << "Warning: Uniform '" << name << "' not found!" << std::endl;
+    return;
+  }
+  glUniform1f(location, value);
+}
+
 void Shader::setUniformVec3(const std::string &name,
                             const Vector3 &value) const {
   GLint location = glGetUniformLocation(programID, name.c_str());
   if (location == -1) {
-    std::cerr << "Warning! Uniform '" << name << "' not found in shader!"
-              << std::endl;
+    std::cerr << "Warning! Uniform '" << name << "' not found!" << std::endl;
     return;
   }
   glUniform3f(location, value.x, value.y, value.z);
@@ -71,7 +81,7 @@ void Shader::setUniformVec3(const std::string &name,
 void Shader::setUniformMat4(const std::string &name, const Matrix4 &mat) const {
   GLint location = glGetUniformLocation(programID, name.c_str());
   if (location == -1) {
-    std::cerr << "⚠ Warning: Uniform '" << name << "' not found!" << std::endl;
+    std::cerr << "Warning: Uniform '" << name << "' not found!" << std::endl;
   }
   glUniformMatrix4fv(location, 1, GL_FALSE, &mat.m[0][0]);
 }

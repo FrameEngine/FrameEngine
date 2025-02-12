@@ -28,7 +28,7 @@ class Renderer;
  * @brief A high-level ECS entity wrapper with default components.
  *
  * The Object class extends Entity to provide a ready-to-use object
- * with predefined rendering and transform components.
+ * with predefined components.
  */
 class Object : public Entity {
 private:

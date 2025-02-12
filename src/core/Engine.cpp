@@ -4,6 +4,7 @@
  */
 
 #include "Engine.hpp"
+#include "components/LightComponent.hpp"
 #include <chrono>
 #include <iostream>
 #include <thread>
@@ -19,6 +20,7 @@ Engine::~Engine() { stop(); }
  */
 void Engine::init() {
   renderer = Renderer();
+
   on_start();
 }
 

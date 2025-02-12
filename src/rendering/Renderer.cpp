@@ -1,10 +1,12 @@
 #include "rendering/Renderer.hpp"
-#include "Object.hpp"
+#include "components/LightComponent.hpp"
+#include "objects/Object.hpp"
 #include <glad/glad.h>
 #include <iostream>
 
 Shader *Renderer::shader = nullptr;
 std::vector<Object *> Renderer::renderQueue;
+std::vector<PointLight *> Renderer::lights;
 
 // TODO SO far it's hardcoded, replace with actual width and height
 Renderer::Renderer() : camera(Camera(1920.0f / 1080.0f)) {
@@ -27,11 +29,20 @@ void Renderer::submit(Object *obj) {
   renderQueue.push_back(obj); // Store for later rendering
 }
 
+void Renderer::submitLight(PointLight *light) { lights.push_back(light); }
+
 void Renderer::render() {
   shader->bind();
-
   shader->setUniformMat4("view", camera.getViewMatrix());
   shader->setUniformMat4("projection", camera.getProjectionMatrix());
+
+  // Handle multiple lights (for now we assume 1 light)
+  if (!lights.empty()) {
+    PointLight *light = lights[0]; // Take first light
+    shader->setUniformVec3("lightPos", light->transform->position);
+    shader->setUniformVec3("lightColor", light->getColor());
+    shader->setUniformFloat("lightIntensity", light->getIntensity());
+  }
 
   for (auto *obj : renderQueue) {
     obj->render(*this);

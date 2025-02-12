@@ -24,6 +24,7 @@ public:
   void bind() const;
   void unbind() const;
 
+  void setUniformFloat(const std::string &name, float value) const;
   void setUniformVec3(const std::string &name, const Vector3 &value) const;
   void setUniformMat4(const std::string &name, const Matrix4 &mat) const;
 

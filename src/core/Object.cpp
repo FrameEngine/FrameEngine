@@ -1,4 +1,4 @@
-#include "Object.hpp"
+#include "objects/Object.hpp"
 #include "rendering/Renderer.hpp"
 #include <iostream>
 

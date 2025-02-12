@@ -1,16 +1,15 @@
 #include "Engine.hpp"
-#include "Object.hpp"
-#include "math/Matrix4.hpp"
+#include "objects/Object.hpp"
 #include "rendering/Camera.hpp"
 #include "rendering/Mesh.hpp"
-#include "rendering/Shader.hpp"
-#include <iostream>
 
 class Simulation : public Engine {
 private:
   Mesh *cubeMesh;
   Object *cube1;
   Object *cube2;
+
+  PointLight *pointLight;
 
   float timeElapsed = 0.0f;
   Camera &camera = renderer.getCamera();
@@ -39,8 +38,10 @@ public:
         0, 3, 7, 7, 4, 0, // Left face
         1, 2, 6, 6, 5, 1  // Right face
     };
-    // Create a single cube mesh
-    cubeMesh = new Mesh(cubeVertices, cubeIndices, 8, 36);
+
+    float cubeNormals[] = {};
+
+    cubeMesh = new Mesh(cubeVertices, cubeNormals, cubeIndices, 8, 36);
 
     // And reuse it :D
     cube1 = new Object(registry, cubeMesh);
@@ -54,6 +55,9 @@ public:
 
     renderer.submit(cube1);
     renderer.submit(cube2);
+
+    pointLight = new PointLight(registry, Vector3(5.0f, 5.0f, 0.0f));
+    renderer.submitLight(pointLight);
 
     camera.setPosition(Vector3(0, 0, -2.0f));
     camera.lookAt(Vector3(0.0f, 0.0f, 0.0f));

@@ -5,8 +5,8 @@
       "-c",
       "CMakeCCompilerId.c"
     ],
-    "directory": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/3.31.2/CompilerIdC",
-    "file": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/3.31.2/CompilerIdC/CMakeCCompilerId.c"
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/3.31.5/CompilerIdC",
+    "file": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/3.31.5/CompilerIdC/CMakeCCompilerId.c"
   },
   {
     "arguments": [
@@ -14,8 +14,8 @@
       "-c",
       "CMakeCXXCompilerId.cpp"
     ],
-    "directory": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/3.31.2/CompilerIdCXX",
-    "file": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/3.31.2/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/3.31.5/CompilerIdCXX",
+    "file": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/3.31.5/CompilerIdCXX/CMakeCXXCompilerId.cpp"
   },
   {
     "arguments": [
@@ -23,12 +23,12 @@
       "-v",
       "-c",
       "-o",
-      "CMakeFiles/cmTC_6b812.dir/CMakeCCompilerABI.c.o",
+      "CMakeFiles/cmTC_f719c.dir/CMakeCCompilerABI.c.o",
       "/usr/share/cmake/Modules/CMakeCCompilerABI.c"
     ],
-    "directory": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-NAaIGj",
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-16M5gR",
     "file": "/usr/share/cmake/Modules/CMakeCCompilerABI.c",
-    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-NAaIGj/CMakeFiles/cmTC_6b812.dir/CMakeCCompilerABI.c.o"
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-16M5gR/CMakeFiles/cmTC_f719c.dir/CMakeCCompilerABI.c.o"
   },
   {
     "arguments": [
@@ -36,12 +36,12 @@
       "-v",
       "-c",
       "-o",
-      "CMakeFiles/cmTC_9baca.dir/CMakeCXXCompilerABI.cpp.o",
+      "CMakeFiles/cmTC_34101.dir/CMakeCXXCompilerABI.cpp.o",
       "/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp"
     ],
-    "directory": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-97uCZc",
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-6O5t0z",
     "file": "/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp",
-    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-97uCZc/CMakeFiles/cmTC_9baca.dir/CMakeCXXCompilerABI.cpp.o"
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-6O5t0z/CMakeFiles/cmTC_34101.dir/CMakeCXXCompilerABI.cpp.o"
   },
   {
     "arguments": [
@@ -639,12 +639,44 @@
       "-std=gnu++17",
       "-c",
       "-o",
-      "CMakeFiles/frame_engine.dir/src/Engine.cpp.o",
-      "/home/alex/Documents/Projects/FrameEngine/src/Engine.cpp"
+      "CMakeFiles/frame_engine.dir/src/core/Engine.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Engine.cpp"
     ],
     "directory": "/home/alex/Documents/Projects/FrameEngine/build",
-    "file": "/home/alex/Documents/Projects/FrameEngine/src/Engine.cpp",
-    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/frame_engine.dir/src/Engine.cpp.o"
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Engine.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/frame_engine.dir/src/core/Engine.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/frame_engine.dir/src/core/Object.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Object.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Object.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/frame_engine.dir/src/core/Object.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/frame_engine.dir/src/core/Window.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Window.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Window.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/frame_engine.dir/src/core/Window.cpp.o"
   },
   {
     "arguments": [
@@ -671,12 +703,76 @@
       "-std=gnu++17",
       "-c",
       "-o",
-      "CMakeFiles/frame_engine.dir/src/rendering/OpenGLRenderer.cpp.o",
-      "/home/alex/Documents/Projects/FrameEngine/src/rendering/OpenGLRenderer.cpp"
+      "CMakeFiles/frame_engine.dir/src/math/Quaternion.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/math/Quaternion.cpp"
     ],
     "directory": "/home/alex/Documents/Projects/FrameEngine/build",
-    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/OpenGLRenderer.cpp",
-    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/frame_engine.dir/src/rendering/OpenGLRenderer.cpp.o"
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/math/Quaternion.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/frame_engine.dir/src/math/Quaternion.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/frame_engine.dir/src/rendering/Camera.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Camera.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Camera.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/frame_engine.dir/src/rendering/Camera.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/frame_engine.dir/src/rendering/Mesh.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Mesh.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Mesh.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/frame_engine.dir/src/rendering/Mesh.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/frame_engine.dir/src/rendering/Renderer.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Renderer.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Renderer.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/frame_engine.dir/src/rendering/Renderer.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/frame_engine.dir/src/rendering/Shader.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Shader.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Shader.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/frame_engine.dir/src/rendering/Shader.cpp.o"
   },
   {
     "arguments": [
