@@ -32,3 +32,17 @@ target_link_libraries(test_ecs PRIVATE Catch2::Catch2WithMain)
 # Register the tests
 add_test(NAME Vector3Tests COMMAND test_vector3)
 add_test(NAME ECSTests COMMAND test_ecs)
+
+find_package(Doxygen REQUIRED)
+
+if(DOXYGEN_FOUND)
+    set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile)
+    set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/docs)
+
+    add_custom_target(doc
+        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_IN}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        COMMENT "Generating Doxygen documentation"
+        VERBATIM
+    )
+endif()

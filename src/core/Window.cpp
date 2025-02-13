@@ -1,5 +1,8 @@
 #include "Window.hpp"
+#include "Logger.hpp"
 #include <iostream>
+
+Logger &logger = Logger::getInstance();
 
 Window::Window(int width, int height, const std::string &title)
     : width(width), height(height) {
@@ -14,7 +17,7 @@ Window::Window(int width, int height, const std::string &title)
 
   handle = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
   if (!handle) {
-    std::cerr << "Failed to create GLFW window" << std::endl;
+    Logger::getInstance().log(CRITICAL, "Failed to create GLFW window");
     glfwTerminate();
     exit(-1);
   }
@@ -27,7 +30,7 @@ Window::Window(int width, int height, const std::string &title)
     exit(-1);
   }
 
-  std::cout << "Window successfully created!" << std::endl;
+  logger.log(INFO, "Window successfully created!");
   glViewport(0, 0, width, height);
 }
 
