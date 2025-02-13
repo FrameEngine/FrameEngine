@@ -5,6 +5,10 @@ on:
     branches:
       - develop
       - main
+  push:
+    branches:
+      - develop
+      - main
 
 jobs:
   build-and-test:
@@ -18,12 +22,14 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libx11-dev cmake build-essential
+          sudo apt-get install -y libx11-dev cmake build-essential \
+                                  libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev \
+                                  doxygen graphviz
           git clone https://github.com/catchorg/Catch2.git
           cd Catch2
           cmake -B build -S . -DBUILD_TESTING=OFF
           sudo cmake --build build/ --target install
-  
+
       - name: Configure CMake
         run: cmake -S . -B build
 
@@ -33,3 +39,12 @@ jobs:
       - name: Run Tests
         working-directory: build
         run: ctest --verbose
+
+      - name: Generate Documentation
+        run: cmake --build build --target doc
+
+      - name: Upload Documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: DoxygenDocs
+          path: build/docs

@@ -51,7 +51,7 @@ public:
     timeElapsed += dt;
 
     // cube1->rotate(Vector3(0.5f, 1.0f, 0.0f), dt * 50.0f);
-    // cube2->rotate(Vector3(1.0f, 1.0f, 2.0f), dt * 50.0f);
+    cube2->rotate(Vector3(1.0f, 1.0f, 2.0f), dt * 50.0f);
     cube2->move(Vector3(sin(timeElapsed) / 20.0f, 0, 0));
 
     float radius = .5;
