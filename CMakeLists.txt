@@ -7,9 +7,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 cmake_policy(SET CMP0072 NEW)
 
+# GLFW
+add_subdirectory(external/glfw)
+include_directories(external/glfw/include)
+
+# GLAD
+add_library(glad STATIC external/glad/src/glad.c)
+include_directories(external/glad/include)
+
+# OpenGL
 find_package(OpenGL REQUIRED)
-find_package(GLFW3 REQUIRED)
-find_package(fmt QUIET)
 
 # fmt through FetchContent if missing
 find_package(fmt QUIET)
@@ -26,10 +33,6 @@ endif()
 # Include
 include_directories(${CMAKE_SOURCE_DIR}/include)
 file(GLOB_RECURSE SOURCES src/*.cpp)
-
-# GLAD
-add_library(glad STATIC external/glad/src/glad.c)
-include_directories(external/glad/include)
 
 # Executable
 add_executable(frame_engine ${SOURCES})
