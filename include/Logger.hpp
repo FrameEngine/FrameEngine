@@ -15,12 +15,12 @@ enum class LogLevel { DEBUG, INFO, WARNING, ERROR, CRITICAL };
 class Logger {
 private:
   std::ofstream logFile;
-  static Logger instance;
+  static Logger *instance;
   static std::mutex logMutex;
 
   Logger() {}
 
-  std::string levelToString(LogLevel level) {
+  static std::string levelToString(LogLevel level) {
     switch (level) {
     case LogLevel::DEBUG:
       return "DEBUG";
@@ -38,7 +38,10 @@ private:
   }
 
 public:
-  static Logger &getInstance() { return instance; }
+  static Logger &getInstance() {
+    static Logger instance; // Thread-safe singleton
+    return instance;
+  }
 
   void setLogFile(const std::string &filename) {
     std::lock_guard<std::mutex> lock(logMutex);
@@ -75,10 +78,7 @@ public:
   }
 };
 
-Logger Logger::instance;
-std::mutex Logger::logMutex;
-
-// Macros to avoid Logger &logger = Logger::getInstance() in each file
+// Macro for simplified usage
 #define LOG(level, fmt, ...)                                                   \
   Logger::getInstance().log(LogLevel::level, fmt, ##__VA_ARGS__)
 

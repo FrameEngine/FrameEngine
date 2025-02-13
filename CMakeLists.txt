@@ -17,6 +17,9 @@ include_directories(${CMAKE_SOURCE_DIR}/include)
 file(GLOB_RECURSE SOURCES src/*.cpp)
 add_executable(frame_engine ${SOURCES})
 
+find_package(fmt REQUIRED)
+target_link_libraries(frame_engine fmt::fmt)
+
 target_link_libraries(frame_engine OpenGL::GL glfw glad)
 
 enable_testing()
