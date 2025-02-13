@@ -1,7 +1,10 @@
 #include "Engine.hpp"
+#include "Logger.hpp"
 #include "objects/Object.hpp"
 #include "rendering/Camera.hpp"
 #include "rendering/Mesh.hpp"
+
+Logger &logger = Logger::getInstance();
 
 class Simulation : public Engine {
 private:
@@ -18,7 +21,7 @@ public:
   void on_start() override {
     cubeMesh = Mesh::loadFromOBJ("demo_assets/monkey.obj");
     if (!cubeMesh) {
-      std::cout << "Error while loading .obj file" << std::endl;
+      LOG(ERROR, "Error while loading .obj file");
     }
 
     // And reuse it :D

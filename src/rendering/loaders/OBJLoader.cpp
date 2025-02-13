@@ -1,3 +1,4 @@
+#include "Logger.hpp"
 #include "rendering/Mesh.hpp"
 #include <fstream>
 #include <iostream>
@@ -14,7 +15,7 @@ Mesh *Mesh::loadFromOBJ(const std::string &filePath) {
 
   std::ifstream file(filePath);
   if (!file.is_open()) {
-    std::cerr << "Failed to open OBJ file: " << filePath << std::endl;
+    LOG(ERROR, "Failed to open OBJ file: %s", filePath);
     return nullptr;
   }
 

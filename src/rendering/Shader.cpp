@@ -1,4 +1,5 @@
 #include "rendering/Shader.hpp"
+#include "Logger.hpp"
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -21,7 +22,7 @@ GLuint Shader::compileShader(const std::string &source, GLenum type) {
   if (!success) {
     char log[512];
     glGetShaderInfoLog(shader, 512, nullptr, log);
-    std::cerr << "Shader Compilation Error: " << log << std::endl;
+    LOG(ERROR, "Shader Compilation Error: %s", log);
   }
 
   return shader;
@@ -44,7 +45,7 @@ Shader::Shader(const std::string &vertexPath, const std::string &fragmentPath) {
   if (!success) {
     char log[512];
     glGetProgramInfoLog(programID, 512, nullptr, log);
-    std::cerr << "Shader Linking Error: " << log << std::endl;
+    LOG(ERROR, "Shader Linking Error: %s", log);
   }
 
   glDeleteShader(vertexShader);
@@ -62,7 +63,7 @@ void Shader::unbind() const { glUseProgram(0); }
 void Shader::setUniformFloat(const std::string &name, float value) const {
   GLint location = glGetUniformLocation(programID, name.c_str());
   if (location == -1) {
-    std::cerr << "Warning: Uniform '" << name << "' not found!" << std::endl;
+    LOG(WARNING, "Uniform '%s' not found!", name);
     return;
   }
   glUniform1f(location, value);
@@ -72,7 +73,7 @@ void Shader::setUniformVec3(const std::string &name,
                             const Vector3 &value) const {
   GLint location = glGetUniformLocation(programID, name.c_str());
   if (location == -1) {
-    std::cerr << "Warning! Uniform '" << name << "' not found!" << std::endl;
+    LOG(WARNING, "Uniform '%s' not found!", name);
     return;
   }
   glUniform3f(location, value.x, value.y, value.z);
@@ -81,7 +82,7 @@ void Shader::setUniformVec3(const std::string &name,
 void Shader::setUniformMat4(const std::string &name, const Matrix4 &mat) const {
   GLint location = glGetUniformLocation(programID, name.c_str());
   if (location == -1) {
-    std::cerr << "Warning: Uniform '" << name << "' not found!" << std::endl;
+    LOG(WARNING, "Uniform '%s' not found!", name);
   }
   glUniformMatrix4fv(location, 1, GL_FALSE, &mat.m[0][0]);
 }

@@ -7,10 +7,9 @@ void Object::render(Renderer &renderer) {
   if (!shader)
     return;
 
-  // if (!mesh) {
-  //   std::cerr << "Warning: Object has no mesh!\n";
-  //   return;
-  // }
+  if (!mesh) {
+    return;
+  }
 
   Matrix4 modelMatrix = transform->get_transformation_matrix();
 

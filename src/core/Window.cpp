@@ -2,12 +2,10 @@
 #include "Logger.hpp"
 #include <iostream>
 
-Logger &logger = Logger::getInstance();
-
 Window::Window(int width, int height, const std::string &title)
     : width(width), height(height) {
   if (!glfwInit()) {
-    std::cerr << "Failed to initialize GLFW" << std::endl;
+    LOG(CRITICAL, "Failed to initialize GLFW");
     exit(-1);
   }
 
@@ -17,7 +15,7 @@ Window::Window(int width, int height, const std::string &title)
 
   handle = glfwCreateWindow(width, height, title.c_str(), nullptr, nullptr);
   if (!handle) {
-    Logger::getInstance().log(CRITICAL, "Failed to create GLFW window");
+    LOG(CRITICAL, "Failed to create GLFW window");
     glfwTerminate();
     exit(-1);
   }
@@ -26,11 +24,11 @@ Window::Window(int width, int height, const std::string &title)
   glfwSetFramebufferSizeCallback(handle, framebufferSizeCallback);
 
   if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-    std::cerr << "Failed to initialize GLAD" << std::endl;
+    LOG(CRITICAL, "Failed to initialize GLAD");
     exit(-1);
   }
 
-  logger.log(INFO, "Window successfully created!");
+  LOG(INFO, "Window successfully created!");
   glViewport(0, 0, width, height);
 }
 

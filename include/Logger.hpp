@@ -1,37 +1,36 @@
-#include <ctime>
-#include <fstream>
-#include <iostream>
-#include <sstream>
-using namespace std;
+#ifndef LOGGER_HPP
+#define LOGGER_HPP
 
-enum LogLevel { DEBUG, INFO, WARNING, ERROR, CRITICAL };
+#include <chrono>
+#include <fmt/printf.h>
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <mutex>
+#include <sstream>
+#include <string>
+
+enum class LogLevel { DEBUG, INFO, WARNING, ERROR, CRITICAL };
 
 class Logger {
 private:
-  Logger(const string &filename) {
-    logFile.open(filename, ios::app);
-    if (!logFile.is_open()) {
-      cerr << "Error opening log file." << endl;
-    }
-  }
+  std::ofstream logFile;
+  static Logger instance;
+  static std::mutex logMutex;
 
-  ~Logger() { logFile.close(); }
-  ofstream logFile;
+  Logger() {}
 
-  static Logger *instance;
-
-  // Converts log level to a string for output
-  string levelToString(LogLevel level) {
+  std::string levelToString(LogLevel level) {
     switch (level) {
-    case DEBUG:
+    case LogLevel::DEBUG:
       return "DEBUG";
-    case INFO:
+    case LogLevel::INFO:
       return "INFO";
-    case WARNING:
+    case LogLevel::WARNING:
       return "WARNING";
-    case ERROR:
+    case LogLevel::ERROR:
       return "ERROR";
-    case CRITICAL:
+    case LogLevel::CRITICAL:
       return "CRITICAL";
     default:
       return "UNKNOWN";
@@ -39,27 +38,35 @@ private:
   }
 
 public:
-  static Logger &getInstance() {
-    if (!instance) {
-      instance = new Logger("main.log"); // TODO make it "flexible"
+  static Logger &getInstance() { return instance; }
+
+  void setLogFile(const std::string &filename) {
+    std::lock_guard<std::mutex> lock(logMutex);
+    if (logFile.is_open()) {
+      logFile.close();
     }
-    return *instance;
+    logFile.open(filename, std::ios::app);
+    if (!logFile) {
+      std::cerr << "Error opening log file: " << filename << std::endl;
+    }
   }
 
-  Logger(Logger const &) = delete;
-  void operator=(Logger const &) = delete;
+  template <typename... Args>
+  void log(LogLevel level, const char *format, Args &&...args) {
+    std::lock_guard<std::mutex> lock(logMutex);
 
-  void log(LogLevel level, const string &message) {
-    time_t now = time(0);
-    tm *timeinfo = localtime(&now);
-    char timestamp[20];
-    strftime(timestamp, sizeof(timestamp), "%Y-%m-%d %H:%M:%S", timeinfo);
+    std::string formattedMessage =
+        fmt::sprintf(format, std::forward<Args>(args)...);
 
-    ostringstream logEntry;
-    logEntry << "[" << timestamp << "] " << levelToString(level) << ": "
-             << message << endl;
+    auto now = std::chrono::system_clock::now();
+    std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+    std::tm timeinfo = *std::localtime(&now_c);
 
-    cout << logEntry.str();
+    std::ostringstream logEntry;
+    logEntry << "[" << std::put_time(&timeinfo, "%Y-%m-%d %H:%M:%S") << "] "
+             << levelToString(level) << ": " << formattedMessage << "\n";
+
+    std::cout << logEntry.str();
 
     if (logFile.is_open()) {
       logFile << logEntry.str();
@@ -68,4 +75,11 @@ public:
   }
 };
 
-Logger *Logger::instance = nullptr;
+Logger Logger::instance;
+std::mutex Logger::logMutex;
+
+// Macros to avoid Logger &logger = Logger::getInstance() in each file
+#define LOG(level, fmt, ...)                                                   \
+  Logger::getInstance().log(LogLevel::level, fmt, ##__VA_ARGS__)
+
+#endif // LOGGER_HPP
