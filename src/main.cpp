@@ -28,6 +28,7 @@ public:
     cube1 = new Object(registry, cubeMesh);
     cube1->transform->position = Vector3(0.0f, 0.0f, 0.0f);
     cube1->transform->scale = cube1->transform->scale * .3;
+    cube1->rotate(Vector3(0, 1, 0), 180);
 
     cube2 = new Object(registry, cubeMesh);
     cube2->transform->scale = cube1->transform->scale * .5;
@@ -37,8 +38,9 @@ public:
     renderer.submit(cube1);
     renderer.submit(cube2);
 
-    pointLight = new PointLight(registry, Vector3(5.0f, 5.0f, 0.0f),
-                                Vector3(1, 1, 1), 3.f);
+    pointLight =
+        new PointLight(registry, Vector3(5.0f, 5.0f, 0.0f),
+                       Vector3(0xf9 / 256.f, 0xd7 / 256.f, 0x1c / 256.f), .7f);
     renderer.submitLight(pointLight);
 
     camera.setPosition(Vector3(0, 0, -2.0f));
@@ -48,9 +50,15 @@ public:
   void fixed_update(float dt) override {
     timeElapsed += dt;
 
-    cube1->rotate(Vector3(0.5f, 1.0f, 0.0f), dt * 50.0f);
-    cube2->rotate(Vector3(1.0f, 1.0f, 2.0f), dt * 50.0f);
+    // cube1->rotate(Vector3(0.5f, 1.0f, 0.0f), dt * 50.0f);
+    // cube2->rotate(Vector3(1.0f, 1.0f, 2.0f), dt * 50.0f);
     cube2->move(Vector3(sin(timeElapsed) / 20.0f, 0, 0));
+
+    float radius = .5;
+    float ang_speed = 1;
+    pointLight->transform->position =
+        (Vector3(radius * cos(ang_speed * timeElapsed), 0,
+                 radius * sin(ang_speed * timeElapsed)));
   }
 };
 
