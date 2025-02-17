@@ -21,7 +21,7 @@ FetchContent_Declare(
     GIT_TAG master
 )
 FetchContent_MakeAvailable(glad)
-target_include_directories(glad PUBLIC ${glad_SOURCE_DIR}/include)
+target_include_directories(glad INTERFACE ${glad_SOURCE_DIR}/include)
 
 # OpenGL
 find_package(OpenGL REQUIRED)

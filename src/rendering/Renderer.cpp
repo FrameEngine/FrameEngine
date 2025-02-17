@@ -1,8 +1,6 @@
 #include "rendering/Renderer.hpp"
-#include "components/LightComponent.hpp"
 #include "objects/Object.hpp"
 #include <glad/glad.h>
-#include <iostream>
 
 Shader *Renderer::shader = nullptr;
 std::vector<Object *> Renderer::renderQueue;
@@ -18,7 +16,12 @@ Renderer::Renderer() : camera(Camera(1920.0f / 1080.0f)) {
 
 Camera &Renderer::getCamera() { return camera; }
 
-void Renderer::setShader(Shader *shader) { this->shader = shader; }
+void Renderer::setShader(Shader *newShader) {
+  if (shader) {
+    delete shader;
+  }
+  shader = newShader;
+}
 
 void Renderer::clear() {
   glClearColor(0.f, 0.f, 0.f, 1.0f);
@@ -53,4 +56,8 @@ void Renderer::render() {
 
 void Renderer::clearObjects() { renderQueue.clear(); }
 
-void Renderer::shutdown() { delete shader; }
+void Renderer::shutdown() {
+  delete shader;
+  renderQueue.clear();
+  lights.clear();
+}
