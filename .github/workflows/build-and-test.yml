@@ -14,11 +14,20 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libx11-dev cmake build-essential
+          sudo apt-get install -y \
+              libx11-dev \
+              libxext-dev \
+              libxrandr-dev \
+              libxinerama-dev \
+              libxcursor-dev \
+              libxi-dev \
+              libgl1-mesa-dev pkg-config doxygen graphviz
           git clone https://github.com/catchorg/Catch2.git
           cd Catch2
           cmake -B build -S . -DBUILD_TESTING=OFF
