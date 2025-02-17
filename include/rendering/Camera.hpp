@@ -3,35 +3,24 @@
 
 #include "math/Matrix4.hpp"
 #include "math/Vector3.hpp"
+#include "objects/Object.hpp"
 
-class Camera {
+class Camera : public Object {
 private:
-  Vector3 right;
-  Vector3 worldUp;
+  float fov, aspectRatio, nearPlane, farPlane;
 
 public:
-  Vector3 position;
-  Vector3 front;
-  Vector3 up;
-
-  float fov;
-  float aspectRatio;
-  float nearPlane;
-  float farPlane;
-
-  Camera(float aspectRatio)
-      : position(0.0f, 0.0f, 3.0f), front(0.0f, 0.0f, -1.0f),
-        up(0.0f, 1.0f, 0.0f), worldUp(0.0f, 1.0f, 0.0f), fov(45.0f),
-        aspectRatio(aspectRatio), nearPlane(0.1f), farPlane(100.0f) {
-    right = front.cross(worldUp).normalized();
+  Camera(Registry &registry, float aspectRatio)
+      : Object(registry, nullptr), fov(45.0f), aspectRatio(aspectRatio),
+        nearPlane(0.1f), farPlane(100.0f) {
+    transform->position = Vector3(0.0f, 1.0f, -2.5f);
+    transform->rotation = Quaternion();
   }
 
   Matrix4 getViewMatrix() const;
   Matrix4 getProjectionMatrix() const;
 
-  void setPosition(const Vector3 &newPosition);
-  void setDirection(const Vector3 &newDirection);
-  void lookAt(const Vector3 &target);
+  Vector3 getFrontVector() const;
 };
 
 #endif // CAMERA_HPP

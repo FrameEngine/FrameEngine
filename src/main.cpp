@@ -51,8 +51,8 @@ public:
     renderer.submitLight(pointLight2);
     renderer.submitLight(pointLight3);
 
-    camera.setPosition(Vector3(0, 1, -2.5f));
-    camera.lookAt(Vector3(0.0f, 0.0f, 0.0f));
+    camera.transform->position = Vector3(0, 0, -3.f);
+    camera.lookAt(Vector3(0, 0, 0));
   }
 
   void fixed_update(float dt) override {
@@ -60,13 +60,15 @@ public:
 
     // cube1->rotate(Vector3(0.5f, 1.0f, 0.0f), dt * 50.0f);
     // cube2->rotate(Vector3(1.0f, 1.0f, 2.0f), dt * 50.0f);
-    cube2->move(Vector3(sin(timeElapsed) / 20.0f, 0, 0));
+    cube1->move(Vector3(sin(timeElapsed) / 20.0f, 0, 0));
 
     float radius = .5;
     float ang_speed = 1;
     pointLight1->transform->position =
         (Vector3(radius * cos(ang_speed * timeElapsed), 0,
                  radius * sin(ang_speed * timeElapsed)));
+
+    camera.lookAt(cube1->transform->position);
   }
 };
 

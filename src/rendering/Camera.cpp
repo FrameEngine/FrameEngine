@@ -1,11 +1,17 @@
 #include "rendering/Camera.hpp"
 
 /**
- * @brief Computes the view matrix based on position and front vector.
+ * @brief Computes the view matrix based on position and rotation.
  * @return View matrix for transformations
  */
 Matrix4 Camera::getViewMatrix() const {
-  return Matrix4::lookAt(position, position + front, up);
+
+  Vector3 front = getFrontVector();
+
+  Vector3 right = Vector3(0, 1, 0).cross(front).normalized();
+  Vector3 up = front.cross(right).normalized();
+
+  return Matrix4::lookAt(transform->position, transform->position + front, up);
 }
 
 /**
@@ -16,32 +22,12 @@ Matrix4 Camera::getProjectionMatrix() const {
   return Matrix4::perspective(fov, aspectRatio, nearPlane, farPlane);
 }
 
-/**
- * @brief Sets the camera position.
- * @param newPosition The new camera position
- */
-void Camera::setPosition(const Vector3 &newPosition) { position = newPosition; }
+Vector3 Camera::getFrontVector() const {
+  Vector3 front = transform->rotation.rotateVector(Vector3(0, 0, -1));
 
-/**
- * @brief Updates the camera direction.
- * @param newDirection The new forward direction
- */
-void Camera::setDirection(const Vector3 &newDirection) {
-  front = newDirection.normalized();
-  right = front.cross(worldUp).normalized();
-  up = right.cross(front).normalized();
-}
+  if (front.magnitude() < 0.0001f) {
+    return Vector3(0, 0, -1);
+  }
 
-/**
- * @brief Rotates the camera to look at a target point.
- * @param target Target position
- */
-void Camera::lookAt(const Vector3 &target) {
-  Vector3 direction = (target - position).normalized();
-  if (direction.magnitude() == 0)
-    return; // Prevent divide by zero
-
-  front = direction;
-  right = front.cross(worldUp).normalized();
-  up = right.cross(front).normalized();
+  return front.normalized();
 }

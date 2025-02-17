@@ -3,6 +3,8 @@
 
 #include "Quaternion.hpp"
 #include "Vector3.hpp"
+#include <iomanip>
+#include <sstream>
 
 struct Matrix4 {
   float m[4][4];
@@ -26,6 +28,20 @@ struct Matrix4 {
             v.x * m[0][2] + v.y * m[1][2] + v.z * m[2][2] + m[3][2]};
   }
 
+  std::string toString() const {
+    std::ostringstream oss;
+    oss << std::fixed << std::setprecision(4);
+
+    for (int row = 0; row < 4; row++) {
+      oss << "[ ";
+      for (int col = 0; col < 4; col++) {
+        oss << std::setw(8) << m[row][col] << " ";
+      }
+      oss << "]\n";
+    }
+
+    return oss.str();
+  }
   Matrix4 operator*(const Matrix4 &other) const {
     Matrix4 result;
 
@@ -66,12 +82,12 @@ struct Matrix4 {
   // Create a view matrix (Camera LookAt)
   static Matrix4 lookAt(const Vector3 &eye, const Vector3 &target,
                         const Vector3 &up) {
-    Vector3 f = (target - eye).normalized(); // Forward direction
-    Vector3 r = up.cross(f).normalized();    // Right direction
-    Vector3 u = f.cross(r).normalized();     // Corrected Up direction
+    Vector3 f = (target - eye).normalized(); // Forward
+    Vector3 r = up.cross(f).normalized();    // Right
+    Vector3 u = f.cross(r).normalized();     // Correct Up
 
+    // Create the view matrix
     Matrix4 mat;
-
     mat.m[0][0] = r.x;
     mat.m[1][0] = r.y;
     mat.m[2][0] = r.z;

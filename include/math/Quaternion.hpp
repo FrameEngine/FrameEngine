@@ -33,7 +33,7 @@ struct Quaternion {
             w * q.z + x * q.y - y * q.x + z * q.w};
   }
 
-  Vector3 rotate(const Vector3 &v) const {
+  Vector3 rotateVector(const Vector3 &v) const {
     Quaternion vecQuat(0, v.x, v.y, v.z);
     Quaternion invQuat(w, -x, -y, -z);
     Quaternion result = (*this) * vecQuat * invQuat;
@@ -43,6 +43,7 @@ struct Quaternion {
 
   // Create a rotation matrix from a quaternion
   Matrix4 toMatrix() const;
+  static Quaternion fromMatrix(const Matrix4 &matrix);
 
   /**
    * @brief Creates a quaternion that rotates vector `from` to vector `to`.
@@ -79,10 +80,6 @@ struct Quaternion {
    *
    * Basically wrap for from_vectors function
    */
-  static Quaternion lookAt(const Vector3 &position, const Vector3 &target,
-                           const Vector3 &up = {0.0f, 1.0f, 0.0f}) {
-    Vector3 forward = (target - position).normalized();
-    return from_vectors(Vector3(0.0f, 0.0f, -1.0f), forward);
-  }
+  static Quaternion lookAt(const Vector3 &direction, const Vector3 &up);
 };
 #endif // QUATERNION_HPP

@@ -69,6 +69,25 @@ public:
 
   Vector3 getColor() const { return color; }
   void setColor(const Vector3 &c) { color = c; }
+
+  /**
+   * @brief Makes the camera look at a target.
+   * @param target Target position
+   */
+  void lookAt(const Vector3 &target) {
+    Vector3 direction = (target - transform->position).normalized();
+
+    if (direction.magnitude() < 0.0001f) {
+      LOG(WARNING, "lookAt() called with same position, ignoring.");
+      return;
+    }
+
+    // Avoid gimbal lock when looking up/down
+    Vector3 worldUp =
+        fabs(direction.y) > 0.99f ? Vector3(0, 0, 1) : Vector3(0, 1, 0);
+
+    transform->rotation = Quaternion::lookAt(direction, worldUp);
+  }
 };
 
 // TODO  consider creating separate classes such as StaticObject or

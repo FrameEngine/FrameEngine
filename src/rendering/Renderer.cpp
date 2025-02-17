@@ -7,7 +7,8 @@ std::vector<Object *> Renderer::renderQueue;
 std::vector<PointLight *> Renderer::lights;
 
 // TODO SO far it's hardcoded, replace with actual width and height
-Renderer::Renderer() : camera(Camera(1920.0f / 1080.0f)) {
+Renderer::Renderer(Registry &registry)
+    : camera(Camera(registry, 1920.0f / 1080.0f)) {
   glEnable(GL_DEPTH_TEST);
   glDisable(GL_CULL_FACE);
   shader =
@@ -36,10 +37,16 @@ void Renderer::submitLight(PointLight *light) { lights.push_back(light); }
 
 void Renderer::render() {
   shader->bind();
+
+  LOG(INFO, "Camera Position: %s", camera.transform->position.toString());
+  LOG(INFO, "Front Vector: %s", camera.getFrontVector().toString());
+  LOG(INFO, "View Matrix:\n%s", camera.getViewMatrix().toString());
+  LOG(INFO, "Projection Matrix:\n%s", camera.getProjectionMatrix().toString());
+
   shader->setUniformMat4("view", camera.getViewMatrix());
   shader->setUniformMat4("projection", camera.getProjectionMatrix());
 
-  shader->setUniformInt("numLights", lights.size()); // Set light count
+  shader->setUniformInt("numLights", lights.size());
 
   for (size_t i = 0; i < lights.size(); ++i) {
     std::string lightIndex = "lights[" + std::to_string(i) + "]";
@@ -51,6 +58,7 @@ void Renderer::render() {
   }
 
   for (auto *obj : renderQueue) {
+    LOG(INFO, "Rendering object at %s", obj->transform->position.toString());
     obj->render(*this);
   }
 
