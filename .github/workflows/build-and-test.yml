@@ -20,9 +20,14 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libx11-dev cmake build-essential libxinerama \
-                                  libglfw3-dev libglfw3 libgl1-mesa-dev \
-                                  libglu1-mesa-dev pkg-config doxygen graphviz
+          sudo apt-get install -y \
+              libx11-dev \
+              libxext-dev \
+              libxrandr-dev \
+              libxinerama-dev \
+              libxcursor-dev \
+              libxi-dev \
+              libgl1-mesa-dev pkg-config doxygen graphviz
           git clone https://github.com/catchorg/Catch2.git
           cd Catch2
           cmake -B build -S . -DBUILD_TESTING=OFF
