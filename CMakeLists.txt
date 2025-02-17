@@ -14,8 +14,14 @@ add_subdirectory(external/glfw)
 include_directories(external/glfw/include)
 
 # GLAD
-add_library(glad STATIC external/glad/src/glad.c)
-include_directories(external/glad/include)
+include(FetchContent)
+FetchContent_Declare(
+    glad
+    GIT_REPOSITORY https://github.com/Dav1dde/glad.git
+    GIT_TAG master
+)
+FetchContent_MakeAvailable(glad)
+target_include_directories(glad PUBLIC ${glad_SOURCE_DIR}/include)
 
 # OpenGL
 find_package(OpenGL REQUIRED)
