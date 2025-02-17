@@ -20,8 +20,9 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libx11-dev cmake build-essential
-          git clone https://github.com/catchorg/Catch2.git
+          sudo apt-get install -y libx11-dev cmake build-essential \
+                                  libglfw3-dev libglfw3 libgl1-mesa-dev \
+                                  libglu1-mesa-dev pkg-config doxygen graphviz
           cd Catch2
           cmake -B build -S . -DBUILD_TESTING=OFF
           sudo cmake --build build/ --target install

@@ -7,7 +7,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 cmake_policy(SET CMP0072 NEW)
 
+
 # GLFW
+set(GLFW_BUILD_WAYLAND OFF CACHE BOOL "" FORCE)
 add_subdirectory(external/glfw)
 include_directories(external/glfw/include)
 
