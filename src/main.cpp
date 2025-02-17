@@ -1,6 +1,7 @@
 #include "Engine.hpp"
 #include "Logger.hpp"
 #include "objects/Object.hpp"
+#include "objects/PointLight.hpp"
 #include "rendering/Camera.hpp"
 #include "rendering/Mesh.hpp"
 
@@ -12,7 +13,7 @@ private:
   Object *cube1;
   Object *cube2;
 
-  PointLight *pointLight;
+  PointLight *pointLight1;
 
   float timeElapsed = 0.0f;
   Camera &camera = renderer.getCamera();
@@ -33,17 +34,24 @@ public:
 
     cube2 = new Object(registry, cubeMesh);
     cube2->transform->scale = cube1->transform->scale * .5;
-    cube2->transform->position = Vector3(1.5f, 2.0f, 3);
+    cube2->transform->position = Vector3(1.5f, 2.0f, 1.f);
     cube2->setColor(Vector3(1, 0, 0));
 
     renderer.submit(cube1);
     renderer.submit(cube2);
 
-    pointLight = new PointLight(registry, Vector3(5.0f, 5.0f, 0.0f),
-                                Vector3(1, 1, 1), .7f);
-    renderer.submitLight(pointLight);
+    pointLight1 = new PointLight(registry, Vector3(5.0f, 5.0f, 0.0f),
+                                 Vector3(1, 1, 1), .7f);
+    PointLight *pointLight2 = new PointLight(
+        registry, Vector3(5.0f, 5.0f, 0.0f), Vector3(1, 0, 1), 1.5f);
+    PointLight *pointLight3 = new PointLight(
+        registry, Vector3(-5.0f, 5.0f, 0.0f), Vector3(0, 1, 0), 1.5f);
 
-    camera.setPosition(Vector3(0, 0, -2.0f));
+    renderer.submitLight(pointLight1);
+    renderer.submitLight(pointLight2);
+    renderer.submitLight(pointLight3);
+
+    camera.setPosition(Vector3(0, 1, -2.5f));
     camera.lookAt(Vector3(0.0f, 0.0f, 0.0f));
   }
 
@@ -56,7 +64,7 @@ public:
 
     float radius = .5;
     float ang_speed = 1;
-    pointLight->transform->position =
+    pointLight1->transform->position =
         (Vector3(radius * cos(ang_speed * timeElapsed), 0,
                  radius * sin(ang_speed * timeElapsed)));
   }

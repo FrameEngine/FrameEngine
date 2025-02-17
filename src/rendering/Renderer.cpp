@@ -39,12 +39,15 @@ void Renderer::render() {
   shader->setUniformMat4("view", camera.getViewMatrix());
   shader->setUniformMat4("projection", camera.getProjectionMatrix());
 
-  // Handle multiple lights (for now we assume 1 light)
-  if (!lights.empty()) {
-    PointLight *light = lights[0]; // Take first light
-    shader->setUniformVec3("lightPos", light->transform->position);
-    shader->setUniformVec3("lightColor", light->getColor());
-    shader->setUniformFloat("lightIntensity", light->getIntensity());
+  shader->setUniformInt("numLights", lights.size()); // Set light count
+
+  for (size_t i = 0; i < lights.size(); ++i) {
+    std::string lightIndex = "lights[" + std::to_string(i) + "]";
+    shader->setUniformVec3(lightIndex + ".position",
+                           lights[i]->transform->position);
+    shader->setUniformVec3(lightIndex + ".color", lights[i]->getColor());
+    shader->setUniformFloat(lightIndex + ".intensity",
+                            lights[i]->getIntensity());
   }
 
   for (auto *obj : renderQueue) {
