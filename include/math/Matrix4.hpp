@@ -15,6 +15,24 @@ struct Matrix4 {
         m[i][j] = (i == j) ? 1.0f : 0.0f; // Identity matrix
   }
 
+  Matrix4(std::initializer_list<double> values) {
+    if (values.size() != 16) {
+      throw std::invalid_argument(
+          "Matrix4 must be initialized with exactly 16 values");
+    }
+
+    auto it = values.begin();
+    for (int row = 0; row < 4; row++) {
+      for (int col = 0; col < 4; col++) {
+        m[row][col] = *it++;
+      }
+    }
+  }
+
+  float *operator[](int row) { return m[row]; }
+
+  const float *operator[](int row) const { return m[row]; }
+
   static Matrix4 from_rotation(const Vector3 &axis, float angleDegrees) {
     float angle = angleDegrees * M_PI / 180.0f; // Convert to radians
     Quaternion q = Quaternion::from_axis_angle(axis, angle);
@@ -23,9 +41,9 @@ struct Matrix4 {
 
   // Apply matrix transformation to a vector
   Vector3 transform(const Vector3 &v) const {
-    return {v.x * m[0][0] + v.y * m[1][0] + v.z * m[2][0] + m[3][0],
-            v.x * m[0][1] + v.y * m[1][1] + v.z * m[2][1] + m[3][1],
-            v.x * m[0][2] + v.y * m[1][2] + v.z * m[2][2] + m[3][2]};
+    return {v.x * m[0][0] + v.y * m[1][0] + v.z * m[2][0],
+            v.x * m[0][1] + v.y * m[1][1] + v.z * m[2][1],
+            v.x * m[0][2] + v.y * m[1][2] + v.z * m[2][2]};
   }
 
   std::string toString() const {
@@ -42,6 +60,7 @@ struct Matrix4 {
 
     return oss.str();
   }
+
   Matrix4 operator*(const Matrix4 &other) const {
     Matrix4 result;
 
@@ -56,6 +75,62 @@ struct Matrix4 {
 
     return result;
   }
+
+  Matrix4 operator+(const Matrix4 &other) const {
+    Matrix4 result;
+    for (int row = 0; row < 4; row++) {
+      for (int col = 0; col < 4; col++) {
+        result.m[row][col] = m[row][col] + other.m[row][col];
+      }
+    }
+    return result;
+  }
+
+  Matrix4 operator-(const Matrix4 &other) const {
+    Matrix4 result;
+    for (int row = 0; row < 4; row++) {
+      for (int col = 0; col < 4; col++) {
+        result.m[row][col] = m[row][col] - other.m[row][col];
+      }
+    }
+    return result;
+  }
+
+  Matrix4 operator*(float scalar) const {
+    Matrix4 result;
+    for (int row = 0; row < 4; row++) {
+      for (int col = 0; col < 4; col++) {
+        result.m[row][col] = m[row][col] * scalar;
+      }
+    }
+    return result;
+  }
+
+  Matrix4 operator/(float scalar) const {
+    if (scalar == 0.0f)
+      return *this;
+    Matrix4 result;
+    for (int row = 0; row < 4; row++) {
+      for (int col = 0; col < 4; col++) {
+        result.m[row][col] = m[row][col] / scalar;
+      }
+    }
+    return result;
+  }
+
+  bool operator==(const Matrix4 &other) const {
+    constexpr float EPSILON = 1e-5f;
+    for (int row = 0; row < 4; row++) {
+      for (int col = 0; col < 4; col++) {
+        if (std::fabs(m[row][col] - other.m[row][col]) > EPSILON) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  bool operator!=(const Matrix4 &other) const { return !(*this == other); }
 
   // Create a translation matrix from a Vector3
   static Matrix4 from_translation(const Vector3 &pos) {
@@ -75,35 +150,6 @@ struct Matrix4 {
     mat.m[0][0] = s.x;
     mat.m[1][1] = s.y;
     mat.m[2][2] = s.z;
-
-    return mat;
-  }
-
-  // Create a view matrix (Camera LookAt)
-  static Matrix4 lookAt(const Vector3 &eye, const Vector3 &target,
-                        const Vector3 &up) {
-    Vector3 f = (target - eye).normalized(); // Forward
-    Vector3 r = up.cross(f).normalized();    // Right
-    Vector3 u = f.cross(r).normalized();     // Correct Up
-
-    // Create the view matrix
-    Matrix4 mat;
-    mat.m[0][0] = r.x;
-    mat.m[1][0] = r.y;
-    mat.m[2][0] = r.z;
-    mat.m[3][0] = -r.dot(eye);
-    mat.m[0][1] = u.x;
-    mat.m[1][1] = u.y;
-    mat.m[2][1] = u.z;
-    mat.m[3][1] = -u.dot(eye);
-    mat.m[0][2] = -f.x;
-    mat.m[1][2] = -f.y;
-    mat.m[2][2] = -f.z;
-    mat.m[3][2] = f.dot(eye);
-    mat.m[0][3] = 0;
-    mat.m[1][3] = 0;
-    mat.m[2][3] = 0;
-    mat.m[3][3] = 1;
 
     return mat;
   }

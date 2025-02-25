@@ -4,6 +4,7 @@
 #include "objects/PointLight.hpp"
 #include "rendering/Camera.hpp"
 #include "rendering/Mesh.hpp"
+#include <algorithm>
 
 Logger &logger = Logger::getInstance();
 
@@ -51,8 +52,8 @@ public:
     renderer.submitLight(pointLight2);
     renderer.submitLight(pointLight3);
 
-    camera.transform->position = Vector3(0, 0, -3.f);
-    camera.lookAt(Vector3(0, 0, 0));
+    camera.transform->position = Vector3(0, 0, 0);
+    camera.setProjection(60.0f, 16.0f / 9.0f, 0.1f, 100.0f);
   }
 
   void fixed_update(float dt) override {
@@ -60,7 +61,7 @@ public:
 
     // cube1->rotate(Vector3(0.5f, 1.0f, 0.0f), dt * 50.0f);
     // cube2->rotate(Vector3(1.0f, 1.0f, 2.0f), dt * 50.0f);
-    cube1->move(Vector3(sin(timeElapsed) / 20.0f, 0, 0));
+    cube1->transform->position = Vector3(sin(timeElapsed) * 5, 0, 10.f);
 
     float radius = .5;
     float ang_speed = 1;

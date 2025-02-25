@@ -38,10 +38,9 @@ void Renderer::submitLight(PointLight *light) { lights.push_back(light); }
 void Renderer::render() {
   shader->bind();
 
-  LOG(INFO, "Camera Position: %s", camera.transform->position.toString());
-  LOG(INFO, "Front Vector: %s", camera.getFrontVector().toString());
-  LOG(INFO, "View Matrix:\n%s", camera.getViewMatrix().toString());
-  LOG(INFO, "Projection Matrix:\n%s", camera.getProjectionMatrix().toString());
+  LOG(DEBUG, "Camera Position: %s", camera.transform->position.toString());
+  LOG(DEBUG, "Front Vector: %s", camera.getFrontVector().toString());
+  LOG(DEBUG, "View Matrix:\n%s", camera.getViewMatrix().toString());
 
   shader->setUniformMat4("view", camera.getViewMatrix());
   shader->setUniformMat4("projection", camera.getProjectionMatrix());
@@ -58,7 +57,7 @@ void Renderer::render() {
   }
 
   for (auto *obj : renderQueue) {
-    LOG(INFO, "Rendering object at %s", obj->transform->position.toString());
+    LOG(DEBUG, "Rendering object at %s", obj->transform->position.toString());
     obj->render(*this);
   }
 

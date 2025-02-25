@@ -50,8 +50,13 @@ target_link_libraries(frame_engine OpenGL::GL glfw glad fmt::fmt)
 enable_testing()
 find_package(Catch2 REQUIRED)
 
+file(GLOB_RECURSE SOURCES src/*.cpp)
+# Remove main.cpp from the list of sources
+list(FILTER SOURCES EXCLUDE REGEX ".*src/main\\.cpp$")
+
+
 function(add_unit_test TEST_NAME TEST_SOURCE)
-    add_executable(${TEST_NAME} ${TEST_SOURCE})
+  add_executable(${TEST_NAME} ${TEST_SOURCE} ${SOURCES})
     target_link_libraries(${TEST_NAME} PRIVATE Catch2::Catch2WithMain glad glfw OpenGL::GL fmt::fmt)
     add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
 endfunction()
@@ -59,6 +64,7 @@ endfunction()
 add_unit_test(test_vector3 tests/unit/test_vector3.cpp)
 add_unit_test(test_ecs tests/unit/test_ecs.cpp)
 add_unit_test(test_camera tests/unit/test_camera.cpp)
+add_unit_test(test_matrix4 tests/unit/test_matrix4.cpp)
 
 
 # Doxygen Documentation

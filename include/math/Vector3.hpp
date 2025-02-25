@@ -32,6 +32,7 @@ public:
   };
 
   double magnitude() const { return std::sqrt(x * x + y * y + z * z); }
+
   Vector3 normalized() const {
     double length = magnitude();
     return (length == 0) ? Vector3(0, 0, 0) : *this / magnitude();

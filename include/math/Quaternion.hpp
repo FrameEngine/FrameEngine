@@ -13,7 +13,21 @@ struct Quaternion {
 
   Quaternion(float w, float x, float y, float z) : w(w), x(x), y(y), z(z) {}
 
-  Quaternion normalize() const {
+  Quaternion operator-() const { return Quaternion(-w, -x, -y, -z); }
+
+  Quaternion operator+(const Quaternion &q) const {
+    return Quaternion(w + q.w, x + q.x, y + q.y, z + q.z);
+  }
+
+  Quaternion operator-(const Quaternion &q) const {
+    return Quaternion(w - q.w, x - q.x, y - q.y, z - q.z);
+  }
+
+  Quaternion operator*(float scalar) const {
+    return Quaternion(w * scalar, x * scalar, y * scalar, z * scalar);
+  }
+
+  Quaternion normalized() const {
     float mag = std::sqrt(w * w + x * x + y * y + z * z);
     return {w / mag, x / mag, y / mag, z / mag};
   }
@@ -21,9 +35,17 @@ struct Quaternion {
   static Quaternion from_axis_angle(const Vector3 &axis, float angle) {
     float rad = angle * M_PI / 180.0f;
     float sinHalf = std::sin(rad / 2);
-    return Quaternion(std::cos(rad / 2), axis.x * sinHalf, axis.y * sinHalf,
-                      axis.z * sinHalf)
-        .normalize();
+    Vector3 normalizedAxis = axis.normalized();
+    return Quaternion(std::cos(rad / 2),          //
+                      normalizedAxis.x * sinHalf, //
+                      normalizedAxis.y * sinHalf, //
+                      normalizedAxis.z * sinHalf  //
+                      )
+        .normalized();
+  }
+
+  float dot(const Quaternion &q) const {
+    return x * q.x + y * q.y + z * q.z + w * q.w;
   }
 
   Quaternion operator*(const Quaternion &q) const {
@@ -34,11 +56,14 @@ struct Quaternion {
   }
 
   Vector3 rotateVector(const Vector3 &v) const {
+    Quaternion normalized = this->normalized();
     Quaternion vecQuat(0, v.x, v.y, v.z);
-    Quaternion invQuat(w, -x, -y, -z);
-    Quaternion result = (*this) * vecQuat * invQuat;
+    Quaternion invQuat(normalized.w, -normalized.x, -normalized.y,
+                       -normalized.z); // Conjugate
 
-    return {result.x, result.y, result.z};
+    Quaternion result = normalized * vecQuat * invQuat;
+
+    return Vector3(result.x, result.y, result.z);
   }
 
   // Create a rotation matrix from a quaternion
@@ -67,7 +92,7 @@ struct Quaternion {
                    (t.magnitude() * t.magnitude())) +
               dotProd;
     Quaternion q(w, crossProd.x, crossProd.y, crossProd.z);
-    return q.normalize();
+    return q.normalized();
   }
 
   /**
@@ -80,6 +105,7 @@ struct Quaternion {
    *
    * Basically wrap for from_vectors function
    */
-  static Quaternion lookAt(const Vector3 &direction, const Vector3 &up);
+  static Quaternion lookRotation(const Vector3 &direction,
+                                 const Vector3 &up = Vector3(0.0f, 1.0f, 0.0f));
 };
 #endif // QUATERNION_HPP

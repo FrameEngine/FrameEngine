@@ -57,27 +57,27 @@ Quaternion Quaternion::fromMatrix(const Matrix4 &matrix) {
     }
   }
 
-  return q.normalize();
+  return q.normalized();
 }
 
-Quaternion Quaternion::lookAt(const Vector3 &direction, const Vector3 &up) {
+Quaternion Quaternion::lookRotation(const Vector3 &direction,
+                                    const Vector3 &up) {
   Vector3 forward = direction.normalized();
 
-  Vector3 right = forward.cross(up).normalized() *
-                  -1; // TODO Have no idea why does it work XD
-  Vector3 newUp = right.cross(forward).normalized();
+  Vector3 currentUp = up;
+  if (fabs(forward.dot(up)) > 0.999f) {
+    currentUp = Vector3(0, 0, 1);
+  }
 
-  // Create rotation matrix
-  Matrix4 rotationMatrix;
-  rotationMatrix.m[0][0] = right.x;
-  rotationMatrix.m[0][1] = right.y;
-  rotationMatrix.m[0][2] = right.z;
-  rotationMatrix.m[1][0] = newUp.x;
-  rotationMatrix.m[1][1] = newUp.y;
-  rotationMatrix.m[1][2] = newUp.z;
-  rotationMatrix.m[2][0] = -forward.x;
-  rotationMatrix.m[2][1] = -forward.y;
-  rotationMatrix.m[2][2] = -forward.z;
+  Vector3 right = currentUp.cross(forward).normalized();
+  Vector3 correctedUp = forward.cross(right);
+
+  Matrix4 rotationMatrix({
+      right.x, correctedUp.x, forward.x, 0.0f, //
+      right.y, correctedUp.y, forward.y, 0.0f, //
+      right.z, correctedUp.z, forward.z, 0.0f, //
+      0.0f, 0.0f, 0.0f, 1.0f                   //
+  });
 
   return Quaternion::fromMatrix(rotationMatrix);
 }

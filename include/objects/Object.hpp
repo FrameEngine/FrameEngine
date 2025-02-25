@@ -78,15 +78,28 @@ public:
     Vector3 direction = (target - transform->position).normalized();
 
     if (direction.magnitude() < 0.0001f) {
-      LOG(WARNING, "lookAt() called with same position, ignoring.");
+      LOG(WARNING, "lookAt() called with the same position, ignoring.");
       return;
     }
 
-    // Avoid gimbal lock when looking up/down
-    Vector3 worldUp =
-        fabs(direction.y) > 0.99f ? Vector3(0, 0, 1) : Vector3(0, 1, 0);
+    Vector3 up(0.f, 1.f, 0.f);
 
-    transform->rotation = Quaternion::lookAt(direction, worldUp);
+    // Handle gimbal lock
+    if (fabs(direction.dot(up)) > 0.999f) {
+      up = Vector3(0.f, 0.f, 1.f);
+    }
+
+    Vector3 right = up.cross(direction).normalized();
+    Vector3 adjustedUp = direction.cross(right).normalized();
+
+    Matrix4 rotationMatrix = Matrix4({
+        right.x, adjustedUp.x, direction.x, 0.0f, //
+        right.y, adjustedUp.y, direction.y, 0.0f, //
+        right.z, adjustedUp.z, direction.z, 0.0f, //
+        0.0f, 0.0f, 0.0f, 1.0f                    //
+    });
+
+    transform->rotation = Quaternion::fromMatrix(rotationMatrix);
   }
 };
 

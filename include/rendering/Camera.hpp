@@ -8,6 +8,7 @@
 class Camera : public Object {
 private:
   float fov, aspectRatio, nearPlane, farPlane;
+  Matrix4 projectionMatrix;
 
 public:
   Camera(Registry &registry, float aspectRatio)
@@ -21,6 +22,9 @@ public:
   Matrix4 getProjectionMatrix() const;
 
   Vector3 getFrontVector() const;
+
+  void setProjection(float fov, float aspectRatio, float nearPlane,
+                     float farPlane);
 };
 
 #endif // CAMERA_HPP
