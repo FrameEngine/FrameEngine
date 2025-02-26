@@ -34,4 +34,4 @@
 build/
 .cache/
 
-*.log/
+*.log
