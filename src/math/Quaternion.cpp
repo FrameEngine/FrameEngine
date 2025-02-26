@@ -2,25 +2,23 @@
 #include "math/Matrix4.hpp"
 
 Matrix4 Quaternion::toMatrix() const {
-  Matrix4 mat;
-  float xx = x * x, xy = x * y, xz = x * z, xw = x * w;
-  float yy = y * y, yz = y * z, yw = y * w;
-  float zz = z * z, zw = z * w;
+  float xx = x * x;
+  float yy = y * y;
+  float zz = z * z;
+  float xy = x * y;
+  float xz = x * z;
+  float yz = y * z;
+  float wx = w * x;
+  float wy = w * y;
+  float wz = w * z;
 
-  mat.m[0][0] = 1 - 2 * (yy + zz);
-  mat.m[0][1] = 2 * (xy - zw);
-  mat.m[0][2] = 2 * (xz + yw);
-
-  mat.m[1][0] = 2 * (xy + zw);
-  mat.m[1][1] = 1 - 2 * (xx + zz);
-  mat.m[1][2] = 2 * (yz - xw);
-
-  mat.m[2][0] = 2 * (xz - yw);
-  mat.m[2][1] = 2 * (yz + xw);
-  mat.m[2][2] = 1 - 2 * (xx + yy);
-
-  return mat;
-};
+  return Matrix4(
+      {1.0f - 2.0f * (yy + zz), 2.0f * (xy - wz), 2.0f * (xz + wy),
+       0.0f,                                                              //
+       2.0f * (xy + wz), 1.0f - 2.0f * (xx + zz), 2.0f * (yz - wx), 0.0f, //
+       2.0f * (xz - wy), 2.0f * (yz + wx), 1.0f - 2.0f * (xx + yy), 0.0f, //
+       0.0f, 0.0f, 0.0f, 1.0f});                                          //
+}
 
 Quaternion Quaternion::fromMatrix(const Matrix4 &matrix) {
   float trace = matrix.m[0][0] + matrix.m[1][1] + matrix.m[2][2];

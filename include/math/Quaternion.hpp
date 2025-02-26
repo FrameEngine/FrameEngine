@@ -34,14 +34,13 @@ struct Quaternion {
 
   static Quaternion from_axis_angle(const Vector3 &axis, float angle) {
     float rad = angle * M_PI / 180.0f;
-    float sinHalf = std::sin(rad / 2);
+    float sinHalf = -std::sin(rad / 2);
     Vector3 normalizedAxis = axis.normalized();
     return Quaternion(std::cos(rad / 2),          //
                       normalizedAxis.x * sinHalf, //
                       normalizedAxis.y * sinHalf, //
                       normalizedAxis.z * sinHalf  //
-                      )
-        .normalized();
+    );
   }
 
   float dot(const Quaternion &q) const {

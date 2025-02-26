@@ -34,8 +34,7 @@ struct Matrix4 {
   const float *operator[](int row) const { return m[row]; }
 
   static Matrix4 from_rotation(const Vector3 &axis, float angleDegrees) {
-    float angle = angleDegrees * M_PI / 180.0f; // Convert to radians
-    Quaternion q = Quaternion::from_axis_angle(axis, angle);
+    Quaternion q = Quaternion::from_axis_angle(axis, angleDegrees);
     return q.toMatrix();
   }
 
