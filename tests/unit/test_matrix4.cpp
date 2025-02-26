@@ -43,16 +43,26 @@ TEST_CASE("Matrix4: Should rotate vector 90 degrees around Y-axis",
   float angle = 90.0f;
   Matrix4 rotationMat = Matrix4::from_rotation(axis, angle);
 
-  LOG(DEBUG, "RotationMatrix: \n%s", rotationMat.toString());
-
   Vector3 v(1.0f, 0.0f, 0.0f);
   Vector3 result = rotationMat.transform(v);
-
-  LOG(DEBUG, "resultVector: %s", result.toString());
 
   REQUIRE(result.x == Catch::Approx(0.0f).margin(0.0001));
   REQUIRE(result.y == Catch::Approx(0.0f).margin(0.0001));
   REQUIRE(result.z == Catch::Approx(-1.0f).margin(0.0001));
+}
+
+TEST_CASE("Matrix4: Should rotate vector 45 degrees around Y-axis",
+          "[Matrix4][Rotation]") {
+  Vector3 axis(0.0f, 1.0f, 0.0f);
+  float angle = 45.0f;
+  Matrix4 rotationMat = Matrix4::from_rotation(axis, angle);
+
+  Vector3 v(1.0f, 0.0f, 0.0f);
+  Vector3 result = rotationMat.transform(v);
+
+  REQUIRE(result.x == Catch::Approx(0.7071).margin(0.0001));
+  REQUIRE(result.y == Catch::Approx(0.0).margin(0.0001));
+  REQUIRE(result.z == Catch::Approx(-0.7071).margin(0.0001));
 }
 
 TEST_CASE("Matrix4: Should correctly multiply scaling and translation matrices",
