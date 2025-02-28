@@ -1,47 +1,52 @@
 #include "rendering/Camera.hpp"
 
 /**
- * @brief Computes the view matrix based on position and front vector.
+ * @brief Computes the view matrix based on position and rotation.
  * @return View matrix for transformations
  */
 Matrix4 Camera::getViewMatrix() const {
-  return Matrix4::lookAt(position, position + front, up);
+  Vector3 front = getFrontVector();
+  Vector3 cameraPos = transform->position;
+  Vector3 worldUp(0, 1, 0);
+
+  Vector3 right = front.cross(worldUp).normalized();
+  Vector3 up = right.cross(front).normalized();
+
+  return Matrix4({
+      right.x, up.x, front.x, 0.0f,                                          //
+      right.y, up.y, front.y, 0.0f,                                          //
+      right.z, up.z, front.z, 0.0f,                                          //
+      -right.dot(cameraPos), -up.dot(cameraPos), -front.dot(cameraPos), 1.0f //
+  });
+}
+
+void Camera::setProjection(float fov, float aspectRatio, float nearPlane,
+                           float farPlane) {
+  this->fov = fov;
+  if (aspectRatio <= 0.0f) {
+    this->aspectRatio = 16.0f / 9.0f;
+  } else {
+    this->aspectRatio = aspectRatio;
+  }
+  this->nearPlane = nearPlane;
+  this->farPlane = farPlane;
+
+  projectionMatrix =
+      Matrix4::perspective(fov, this->aspectRatio, nearPlane, farPlane);
 }
 
 /**
  * @brief Returns the perspective projection matrix.
  * @return Projection matrix
  */
-Matrix4 Camera::getProjectionMatrix() const {
-  return Matrix4::perspective(fov, aspectRatio, nearPlane, farPlane);
-}
+Matrix4 Camera::getProjectionMatrix() const { return projectionMatrix; }
 
-/**
- * @brief Sets the camera position.
- * @param newPosition The new camera position
- */
-void Camera::setPosition(const Vector3 &newPosition) { position = newPosition; }
+Vector3 Camera::getFrontVector() const {
+  Vector3 front = transform->rotation.rotateVector(Vector3(0, 0, -1));
 
-/**
- * @brief Updates the camera direction.
- * @param newDirection The new forward direction
- */
-void Camera::setDirection(const Vector3 &newDirection) {
-  front = newDirection.normalized();
-  right = front.cross(worldUp).normalized();
-  up = right.cross(front).normalized();
-}
+  if (front.magnitude() < 0.0001f) {
+    return Vector3(0, 0, -1);
+  }
 
-/**
- * @brief Rotates the camera to look at a target point.
- * @param target Target position
- */
-void Camera::lookAt(const Vector3 &target) {
-  Vector3 direction = (target - position).normalized();
-  if (direction.magnitude() == 0)
-    return; // Prevent divide by zero
-
-  front = direction;
-  right = front.cross(worldUp).normalized();
-  up = right.cross(front).normalized();
+  return front.normalized();
 }

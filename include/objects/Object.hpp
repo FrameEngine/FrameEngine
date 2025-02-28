@@ -69,6 +69,38 @@ public:
 
   Vector3 getColor() const { return color; }
   void setColor(const Vector3 &c) { color = c; }
+
+  /**
+   * @brief Makes the camera look at a target.
+   * @param target Target position
+   */
+  void lookAt(const Vector3 &target) {
+    Vector3 direction = (target - transform->position).normalized();
+
+    if (direction.magnitude() < 0.0001f) {
+      LOG(WARNING, "lookAt() called with the same position, ignoring.");
+      return;
+    }
+
+    Vector3 up(0.f, 1.f, 0.f);
+
+    // Handle gimbal lock
+    if (fabs(direction.dot(up)) > 0.999f) {
+      up = Vector3(0.f, 0.f, 1.f);
+    }
+
+    Vector3 right = up.cross(direction).normalized();
+    Vector3 adjustedUp = direction.cross(right).normalized();
+
+    Matrix4 rotationMatrix = Matrix4({
+        right.x, adjustedUp.x, direction.x, 0.0f, //
+        right.y, adjustedUp.y, direction.y, 0.0f, //
+        right.z, adjustedUp.z, direction.z, 0.0f, //
+        0.0f, 0.0f, 0.0f, 1.0f                    //
+    });
+
+    transform->rotation = Quaternion::fromMatrix(rotationMatrix);
+  }
 };
 
 // TODO  consider creating separate classes such as StaticObject or

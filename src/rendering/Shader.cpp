@@ -60,6 +60,18 @@ void Shader::unbind() const { glUseProgram(0); }
 
 // ===== SetUniform =====
 
+// TODO Surely there is a better way to work with multiple types. It's basicaly
+// wrap around openGL setUniform. Rewrite it
+
+void Shader::setUniformInt(const std::string &name, int value) const {
+  GLint location = glGetUniformLocation(programID, name.c_str());
+  if (location == -1) {
+    LOG(WARNING, "Uniform '%s' not found!", name);
+    return;
+  }
+  glUniform1i(location, value);
+}
+
 void Shader::setUniformFloat(const std::string &name, float value) const {
   GLint location = glGetUniformLocation(programID, name.c_str());
   if (location == -1) {

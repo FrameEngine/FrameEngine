@@ -1,15 +1,14 @@
 #include "rendering/Renderer.hpp"
-#include "components/LightComponent.hpp"
 #include "objects/Object.hpp"
 #include <glad/glad.h>
-#include <iostream>
 
 Shader *Renderer::shader = nullptr;
 std::vector<Object *> Renderer::renderQueue;
 std::vector<PointLight *> Renderer::lights;
 
 // TODO SO far it's hardcoded, replace with actual width and height
-Renderer::Renderer() : camera(Camera(1920.0f / 1080.0f)) {
+Renderer::Renderer(Registry &registry)
+    : camera(Camera(registry, 1920.0f / 1080.0f)) {
   glEnable(GL_DEPTH_TEST);
   glDisable(GL_CULL_FACE);
   shader =
@@ -18,7 +17,12 @@ Renderer::Renderer() : camera(Camera(1920.0f / 1080.0f)) {
 
 Camera &Renderer::getCamera() { return camera; }
 
-void Renderer::setShader(Shader *shader) { this->shader = shader; }
+void Renderer::setShader(Shader *newShader) {
+  if (shader) {
+    delete shader;
+  }
+  shader = newShader;
+}
 
 void Renderer::clear() {
   glClearColor(0.f, 0.f, 0.f, 1.0f);
@@ -33,18 +37,27 @@ void Renderer::submitLight(PointLight *light) { lights.push_back(light); }
 
 void Renderer::render() {
   shader->bind();
+
+  LOG(DEBUG, "Camera Position: %s", camera.transform->position.toString());
+  LOG(DEBUG, "Front Vector: %s", camera.getFrontVector().toString());
+  LOG(DEBUG, "View Matrix:\n%s", camera.getViewMatrix().toString());
+
   shader->setUniformMat4("view", camera.getViewMatrix());
   shader->setUniformMat4("projection", camera.getProjectionMatrix());
 
-  // Handle multiple lights (for now we assume 1 light)
-  if (!lights.empty()) {
-    PointLight *light = lights[0]; // Take first light
-    shader->setUniformVec3("lightPos", light->transform->position);
-    shader->setUniformVec3("lightColor", light->getColor());
-    shader->setUniformFloat("lightIntensity", light->getIntensity());
+  shader->setUniformInt("numLights", lights.size());
+
+  for (size_t i = 0; i < lights.size(); ++i) {
+    std::string lightIndex = "lights[" + std::to_string(i) + "]";
+    shader->setUniformVec3(lightIndex + ".position",
+                           lights[i]->transform->position);
+    shader->setUniformVec3(lightIndex + ".color", lights[i]->getColor());
+    shader->setUniformFloat(lightIndex + ".intensity",
+                            lights[i]->getIntensity());
   }
 
   for (auto *obj : renderQueue) {
+    LOG(DEBUG, "Rendering object at %s", obj->transform->position.toString());
     obj->render(*this);
   }
 
@@ -53,4 +66,8 @@ void Renderer::render() {
 
 void Renderer::clearObjects() { renderQueue.clear(); }
 
-void Renderer::shutdown() { delete shader; }
+void Renderer::shutdown() {
+  delete shader;
+  renderQueue.clear();
+  lights.clear();
+}

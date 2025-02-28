@@ -18,7 +18,7 @@ private:
   static Logger *instance;
   static std::mutex logMutex;
 
-  Logger() {}
+  Logger() { setLogFile("main.log"); }
 
   static std::string levelToString(LogLevel level) {
     switch (level) {
@@ -48,6 +48,7 @@ public:
     if (logFile.is_open()) {
       logFile.close();
     }
+
     logFile.open(filename, std::ios::app);
     if (!logFile) {
       std::cerr << "Error opening log file: " << filename << std::endl;

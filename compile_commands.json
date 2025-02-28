@@ -23,12 +23,12 @@
       "-v",
       "-c",
       "-o",
-      "CMakeFiles/cmTC_f719c.dir/CMakeCCompilerABI.c.o",
+      "CMakeFiles/cmTC_6dfc1.dir/CMakeCCompilerABI.c.o",
       "/usr/share/cmake/Modules/CMakeCCompilerABI.c"
     ],
-    "directory": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-16M5gR",
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-o3YS1a",
     "file": "/usr/share/cmake/Modules/CMakeCCompilerABI.c",
-    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-16M5gR/CMakeFiles/cmTC_f719c.dir/CMakeCCompilerABI.c.o"
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-o3YS1a/CMakeFiles/cmTC_6dfc1.dir/CMakeCCompilerABI.c.o"
   },
   {
     "arguments": [
@@ -36,34 +36,31 @@
       "-v",
       "-c",
       "-o",
-      "CMakeFiles/cmTC_34101.dir/CMakeCXXCompilerABI.cpp.o",
+      "CMakeFiles/cmTC_8d9d9.dir/CMakeCXXCompilerABI.cpp.o",
       "/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp"
     ],
-    "directory": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-6O5t0z",
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-xrxqZb",
     "file": "/usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp",
-    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-6O5t0z/CMakeFiles/cmTC_34101.dir/CMakeCXXCompilerABI.cpp.o"
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/CMakeScratch/TryCompile-xrxqZb/CMakeFiles/cmTC_8d9d9.dir/CMakeCXXCompilerABI.cpp.o"
   },
   {
     "arguments": [
       "/usr/bin/cc",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
       "-c",
       "-o",
-      "CMakeFiles/glad.dir/external/glad/src/glad.c.o",
-      "/home/alex/Documents/Projects/FrameEngine/external/glad/src/glad.c"
+      "CMakeFiles/glad.dir/src/glad.c.o",
+      "/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/src/glad.c"
     ],
-    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
-    "file": "/home/alex/Documents/Projects/FrameEngine/external/glad/src/glad.c",
-    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/glad.dir/external/glad/src/glad.c.o"
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/src/glad.c",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/CMakeFiles/glad.dir/src/glad.c.o"
   },
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -83,9 +80,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -105,9 +100,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -127,9 +120,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -149,9 +140,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -171,9 +160,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -193,9 +180,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -215,9 +200,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -237,9 +220,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -259,9 +240,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -281,9 +260,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -303,9 +280,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -325,9 +300,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -347,9 +320,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -369,9 +340,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -391,9 +360,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -413,9 +380,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -435,9 +400,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -457,9 +420,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -479,9 +440,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -501,9 +460,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -523,75 +480,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
-      "-D_GLFW_X11",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
-      "-I/home/alex/Documents/Projects/FrameEngine/build/external/glfw/src",
-      "-std=c99",
-      "-fPIC",
-      "-Wall",
-      "-c",
-      "-o",
-      "CMakeFiles/glfw.dir/wl_init.c.o",
-      "/home/alex/Documents/Projects/FrameEngine/external/glfw/src/wl_init.c"
-    ],
-    "directory": "/home/alex/Documents/Projects/FrameEngine/build/external/glfw/src",
-    "file": "/home/alex/Documents/Projects/FrameEngine/external/glfw/src/wl_init.c",
-    "output": "/home/alex/Documents/Projects/FrameEngine/build/external/glfw/src/CMakeFiles/glfw.dir/wl_init.c.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
-      "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
-      "-D_GLFW_X11",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
-      "-I/home/alex/Documents/Projects/FrameEngine/build/external/glfw/src",
-      "-std=c99",
-      "-fPIC",
-      "-Wall",
-      "-c",
-      "-o",
-      "CMakeFiles/glfw.dir/wl_monitor.c.o",
-      "/home/alex/Documents/Projects/FrameEngine/external/glfw/src/wl_monitor.c"
-    ],
-    "directory": "/home/alex/Documents/Projects/FrameEngine/build/external/glfw/src",
-    "file": "/home/alex/Documents/Projects/FrameEngine/external/glfw/src/wl_monitor.c",
-    "output": "/home/alex/Documents/Projects/FrameEngine/build/external/glfw/src/CMakeFiles/glfw.dir/wl_monitor.c.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
-      "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
-      "-D_GLFW_X11",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
-      "-I/home/alex/Documents/Projects/FrameEngine/build/external/glfw/src",
-      "-std=c99",
-      "-fPIC",
-      "-Wall",
-      "-c",
-      "-o",
-      "CMakeFiles/glfw.dir/wl_window.c.o",
-      "/home/alex/Documents/Projects/FrameEngine/external/glfw/src/wl_window.c"
-    ],
-    "directory": "/home/alex/Documents/Projects/FrameEngine/build/external/glfw/src",
-    "file": "/home/alex/Documents/Projects/FrameEngine/external/glfw/src/wl_window.c",
-    "output": "/home/alex/Documents/Projects/FrameEngine/build/external/glfw/src/CMakeFiles/glfw.dir/wl_window.c.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
-      "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -611,9 +500,7 @@
   {
     "arguments": [
       "/usr/bin/cc",
-      "-DHAVE_MEMFD_CREATE",
       "-D_DEFAULT_SOURCE",
-      "-D_GLFW_WAYLAND",
       "-D_GLFW_X11",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/src",
@@ -633,9 +520,11 @@
   {
     "arguments": [
       "/usr/bin/c++",
+      "-DFMT_SHARED",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
       "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
       "-std=gnu++17",
       "-c",
       "-o",
@@ -649,9 +538,29 @@
   {
     "arguments": [
       "/usr/bin/c++",
+      "-DFMT_SHARED",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
       "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/frame_engine.dir/src/core/Logger.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Logger.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Logger.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/frame_engine.dir/src/core/Logger.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
       "-std=gnu++17",
       "-c",
       "-o",
@@ -665,9 +574,11 @@
   {
     "arguments": [
       "/usr/bin/c++",
+      "-DFMT_SHARED",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
       "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
       "-std=gnu++17",
       "-c",
       "-o",
@@ -681,9 +592,11 @@
   {
     "arguments": [
       "/usr/bin/c++",
+      "-DFMT_SHARED",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
       "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
       "-std=gnu++17",
       "-c",
       "-o",
@@ -697,9 +610,11 @@
   {
     "arguments": [
       "/usr/bin/c++",
+      "-DFMT_SHARED",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
       "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
       "-std=gnu++17",
       "-c",
       "-o",
@@ -713,9 +628,11 @@
   {
     "arguments": [
       "/usr/bin/c++",
+      "-DFMT_SHARED",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
       "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
       "-std=gnu++17",
       "-c",
       "-o",
@@ -729,9 +646,11 @@
   {
     "arguments": [
       "/usr/bin/c++",
+      "-DFMT_SHARED",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
       "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
       "-std=gnu++17",
       "-c",
       "-o",
@@ -745,9 +664,11 @@
   {
     "arguments": [
       "/usr/bin/c++",
+      "-DFMT_SHARED",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
       "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
       "-std=gnu++17",
       "-c",
       "-o",
@@ -761,9 +682,11 @@
   {
     "arguments": [
       "/usr/bin/c++",
+      "-DFMT_SHARED",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
       "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
       "-std=gnu++17",
       "-c",
       "-o",
@@ -777,9 +700,29 @@
   {
     "arguments": [
       "/usr/bin/c++",
+      "-DFMT_SHARED",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
       "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/frame_engine.dir/src/rendering/loaders/OBJLoader.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/loaders/OBJLoader.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/loaders/OBJLoader.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/frame_engine.dir/src/rendering/loaders/OBJLoader.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
       "-std=gnu++17",
       "-c",
       "-o",
@@ -793,9 +736,191 @@
   {
     "arguments": [
       "/usr/bin/c++",
+      "-DFMT_SHARED",
       "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
-      "-I/home/alex/Documents/Projects/FrameEngine/external/glad/include",
       "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_vector3.dir/src/core/Engine.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Engine.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Engine.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_vector3.dir/src/core/Engine.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_vector3.dir/src/core/Logger.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Logger.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Logger.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_vector3.dir/src/core/Logger.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_vector3.dir/src/core/Object.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Object.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Object.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_vector3.dir/src/core/Object.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_vector3.dir/src/core/Window.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Window.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Window.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_vector3.dir/src/core/Window.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_vector3.dir/src/math/Quaternion.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/math/Quaternion.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/math/Quaternion.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_vector3.dir/src/math/Quaternion.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_vector3.dir/src/rendering/Camera.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Camera.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Camera.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_vector3.dir/src/rendering/Camera.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_vector3.dir/src/rendering/Mesh.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Mesh.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Mesh.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_vector3.dir/src/rendering/Mesh.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_vector3.dir/src/rendering/Renderer.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Renderer.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Renderer.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_vector3.dir/src/rendering/Renderer.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_vector3.dir/src/rendering/Shader.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Shader.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Shader.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_vector3.dir/src/rendering/Shader.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_vector3.dir/src/rendering/loaders/OBJLoader.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/loaders/OBJLoader.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/loaders/OBJLoader.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_vector3.dir/src/rendering/loaders/OBJLoader.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
       "-std=gnu++17",
       "-c",
       "-o",
@@ -805,5 +930,383 @@
     "directory": "/home/alex/Documents/Projects/FrameEngine/build",
     "file": "/home/alex/Documents/Projects/FrameEngine/tests/unit/test_ecs.cpp",
     "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_ecs.dir/tests/unit/test_ecs.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_ecs.dir/src/core/Engine.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Engine.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Engine.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_ecs.dir/src/core/Engine.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_ecs.dir/src/core/Logger.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Logger.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Logger.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_ecs.dir/src/core/Logger.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_ecs.dir/src/core/Object.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Object.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Object.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_ecs.dir/src/core/Object.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_ecs.dir/src/core/Window.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Window.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Window.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_ecs.dir/src/core/Window.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_ecs.dir/src/math/Quaternion.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/math/Quaternion.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/math/Quaternion.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_ecs.dir/src/math/Quaternion.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_ecs.dir/src/rendering/Camera.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Camera.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Camera.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_ecs.dir/src/rendering/Camera.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_ecs.dir/src/rendering/Mesh.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Mesh.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Mesh.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_ecs.dir/src/rendering/Mesh.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_ecs.dir/src/rendering/Renderer.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Renderer.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Renderer.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_ecs.dir/src/rendering/Renderer.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_ecs.dir/src/rendering/Shader.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Shader.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Shader.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_ecs.dir/src/rendering/Shader.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_ecs.dir/src/rendering/loaders/OBJLoader.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/loaders/OBJLoader.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/loaders/OBJLoader.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_ecs.dir/src/rendering/loaders/OBJLoader.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_camera.dir/tests/unit/test_camera.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/tests/unit/test_camera.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/tests/unit/test_camera.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_camera.dir/tests/unit/test_camera.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_camera.dir/src/core/Engine.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Engine.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Engine.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_camera.dir/src/core/Engine.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_camera.dir/src/core/Logger.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Logger.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Logger.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_camera.dir/src/core/Logger.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_camera.dir/src/core/Object.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Object.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Object.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_camera.dir/src/core/Object.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_camera.dir/src/core/Window.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/core/Window.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/core/Window.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_camera.dir/src/core/Window.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_camera.dir/src/math/Quaternion.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/math/Quaternion.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/math/Quaternion.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_camera.dir/src/math/Quaternion.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_camera.dir/src/rendering/Camera.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Camera.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Camera.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_camera.dir/src/rendering/Camera.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_camera.dir/src/rendering/Mesh.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Mesh.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Mesh.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_camera.dir/src/rendering/Mesh.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_camera.dir/src/rendering/Renderer.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Renderer.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Renderer.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_camera.dir/src/rendering/Renderer.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_camera.dir/src/rendering/Shader.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/Shader.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/Shader.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_camera.dir/src/rendering/Shader.cpp.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/c++",
+      "-DFMT_SHARED",
+      "-I/home/alex/Documents/Projects/FrameEngine/external/glfw/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-build/include",
+      "-I/home/alex/Documents/Projects/FrameEngine/build/_deps/glad-src/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/test_camera.dir/src/rendering/loaders/OBJLoader.cpp.o",
+      "/home/alex/Documents/Projects/FrameEngine/src/rendering/loaders/OBJLoader.cpp"
+    ],
+    "directory": "/home/alex/Documents/Projects/FrameEngine/build",
+    "file": "/home/alex/Documents/Projects/FrameEngine/src/rendering/loaders/OBJLoader.cpp",
+    "output": "/home/alex/Documents/Projects/FrameEngine/build/CMakeFiles/test_camera.dir/src/rendering/loaders/OBJLoader.cpp.o"
   }
 ]

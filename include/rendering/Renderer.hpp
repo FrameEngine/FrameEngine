@@ -6,6 +6,7 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 
+#include "Registry.hpp"
 #include "objects/Object.hpp"
 #include "objects/PointLight.hpp"
 #include "rendering/Camera.hpp"
@@ -22,7 +23,7 @@ private:
   Camera camera;
 
 public:
-  Renderer();
+  Renderer(Registry &registry);
 
   /**
    * @brief Initializes the rendering system.

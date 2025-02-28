@@ -4,12 +4,11 @@
  */
 
 #include "Engine.hpp"
-#include "components/LightComponent.hpp"
 #include <chrono>
-#include <iostream>
 #include <thread>
 
-Engine::Engine() : window(1920, 1080, "FrameEngine"), isRunning(true) {}
+Engine::Engine()
+    : window(1920, 1080, "FrameEngine"), isRunning(true), renderer(registry) {}
 
 Engine::~Engine() { stop(); }
 
@@ -18,11 +17,7 @@ Engine::~Engine() { stop(); }
  * This function should be called before 'run()' to ensure all components
  * are properly set up (e.g., renderer, ECS initialization, etc).
  */
-void Engine::init() {
-  renderer = Renderer();
-
-  on_start();
-}
+void Engine::init() { on_start(); }
 
 /**
  * @brief Stops the engine gracefully.
@@ -56,8 +51,8 @@ void Engine::run() {
     previousTime = currentTime;
 
     // Prevent excessive time jumps (spiral of death)
-    if (deltaTime > 0.1f) {
-      deltaTime = 0.1f;
+    if (deltaTime > fixedTimeStep * 5) {
+      deltaTime = fixedTimeStep * 5;
     }
 
     accumulator += deltaTime;

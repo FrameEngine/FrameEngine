@@ -111,6 +111,11 @@ private:
   int nextEntityID = 0;
 
 public:
+  Registry(const Registry &) = delete; // Prevent accidental copying
+  Registry &operator=(const Registry &) = delete;
+
+  Registry() = default;
+
   /**
    * @brief Creates a new entity and assigns it a unique ID.
    * @return New entity ID.
