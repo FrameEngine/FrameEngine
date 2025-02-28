@@ -9,8 +9,7 @@ TEST_CASE("Matrix4: Should initialize as Identity Matrix",
   for (int i = 0; i < 4; ++i) {
     for (int j = 0; j < 4; ++j) {
       if (i == j) {
-        REQUIRE(identity[i][j] ==
-                Catch::Approx(1.0f)); // Use overloaded operator[]
+        REQUIRE(identity[i][j] == Catch::Approx(1.0f));
       } else {
         REQUIRE(identity[i][j] == Catch::Approx(0.0f));
       }
@@ -115,4 +114,25 @@ TEST_CASE("Matrix4: Should initialize using the initializer list constructor",
   REQUIRE(customMat[0][1] == Catch::Approx(2.0f));
   REQUIRE(customMat[1][0] == Catch::Approx(5.0f));
   REQUIRE(customMat[3][3] == Catch::Approx(16.0f));
+}
+
+TEST_CASE("Matrix4: Floating-point equality should work correctly",
+          "[Matrix4][Comparison]") {
+  Matrix4 A = Matrix4();
+  Matrix4 B = Matrix4();
+
+  REQUIRE(A == B);
+
+  B.m[0][0] += 1e-6f; // Smaller than EPSILON
+  REQUIRE(A == B);
+
+  B.m[0][0] += 1e-4f; // Larger than EPSILON
+  REQUIRE_FALSE(A == B);
+
+  // -0.0 and 0.0 must be treated as equal
+  Matrix4 C = Matrix4();
+  C[2][2] = -0.0f;
+  A[2][2] = 0.0f;
+
+  REQUIRE(A == C);
 }

@@ -23,12 +23,16 @@ Matrix4 Camera::getViewMatrix() const {
 void Camera::setProjection(float fov, float aspectRatio, float nearPlane,
                            float farPlane) {
   this->fov = fov;
-  this->aspectRatio = aspectRatio;
+  if (aspectRatio <= 0.0f) {
+    this->aspectRatio = 16.0f / 9.0f;
+  } else {
+    this->aspectRatio = aspectRatio;
+  }
   this->nearPlane = nearPlane;
   this->farPlane = farPlane;
 
   projectionMatrix =
-      Matrix4::perspective(fov, aspectRatio, nearPlane, farPlane);
+      Matrix4::perspective(fov, this->aspectRatio, nearPlane, farPlane);
 }
 
 /**

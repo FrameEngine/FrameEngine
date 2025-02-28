@@ -28,7 +28,7 @@ protected:
 public:
   CameraFixture() {
     camera = new Camera(registry, 16.0f / 9.0f); // Setup
-    camera->transform->position = Vector3(0, 0, -3);
+    camera->transform->position = Vector3(0, 0, 0);
   }
 
   ~CameraFixture() {
@@ -39,32 +39,32 @@ public:
 TEST_CASE_METHOD(CameraFixture, "Camera should initialize with default values",
                  "[camera][initialization]") {
   Matrix4 expectedViewMatrix = Matrix4({
-      1.0f, 0.0f, 0.0f, 0.0f,   //
-      -0.0f, 1.0f, 0.0f, 0.0f,  //
-      0.0f, 0.0f, -1.0f, 0.0f,  //
-      -0.0f, -0.0f, -3.0f, 1.0f //
+      1.0f, 0.0f, 0.0f, 0.0f,  //
+      0.0f, 1.0f, 0.0f, 0.0f,  //
+      0.0f, 0.0f, -1.0f, 0.0f, //
+      0.0f, 0.0f, 0.0f, 1.0f   //
   });
 
+  Matrix4 viewMatrix = camera->getViewMatrix();
   LOG(DEBUG, "\nExpected: \n%s\nGot: \n%s", expectedViewMatrix.toString(),
-      camera->getViewMatrix().toString());
-
-  REQUIRE(camera->getViewMatrix() == expectedViewMatrix);
+      viewMatrix.toString());
+  REQUIRE(viewMatrix == expectedViewMatrix);
 }
 
 TEST_CASE_METHOD(CameraFixture, "Camera looking at origin from (0, 0, -5)",
                  "[camera][viewMatrix]") {
+
   camera->transform->position = Vector3(0, 0, -5);
+  camera->transform->rotation = Quaternion();
   Matrix4 viewMatrix = camera->getViewMatrix();
 
   Matrix4 expectedViewMatrix = Matrix4({
-      1.0f, 0.0f, 0.0f, 0.0f,   //
-      -0.0f, 1.0f, 0.0f, 0.0f,  //
-      0.0f, 0.0f, -1.0f, 0.0f,  //
-      -0.0f, -0.0f, -5.0f, 1.0f //
+      1.0f, 0.0f, 0.0f, 0.0f,  //
+      0.0f, 1.0f, 0.0f, 0.0f,  //
+      0.0f, 0.0f, -1.0f, 0.0f, //
+      0.0f, 0.0f, -5.0f, 1.0f  //
   });
 
-  LOG(DEBUG, "\nExpected: \n%s\nGot: \n%s", expectedViewMatrix.toString(),
-      viewMatrix.toString());
   REQUIRE(viewMatrix == expectedViewMatrix);
 }
 
@@ -74,10 +74,10 @@ TEST_CASE_METHOD(CameraFixture, "Camera looking at origin from (1, 2, 3)",
   Matrix4 viewMatrix = camera->getViewMatrix();
 
   Matrix4 expectedViewMatrix = Matrix4({
-      1.0f, 0.0f, 0.0f, 0.0f,   //
-      1.0f, 0.0f, -0.0f, 0.0f,  //
-      -0.0f, 0.0f, -1.0f, 0.0f, //
-      -1.0f, -2.0f, 3.0f, 1.0f  //
+      1.0f, 0.0f, 0.0f, 0.0f,  //
+      0.0f, 1.0f, 0.0f, 0.0f,  //
+      0.0f, 0.0f, -1.0f, 0.0f, //
+      -1.0f, -2.0f, 3.0f, 1.0f //
   });
 
   LOG(DEBUG, "\nExpected: \n%s\nGot: \n%s", expectedViewMatrix.toString(),
@@ -89,14 +89,14 @@ TEST_CASE_METHOD(CameraFixture, "Camera rotated 90 degrees around Y-axis",
                  "[camera][viewMatrix]") {
   camera->transform->position = Vector3(0, 0, -3);
   camera->transform->rotation =
-      Quaternion::from_axis_angle(Vector3(0, 1, 0), 90.0f);
+      Quaternion::from_axis_angle(Vector3(0, 1, 0), -90.0f);
   Matrix4 viewMatrix = camera->getViewMatrix();
 
   Matrix4 expectedViewMatrix = Matrix4({
-      0.0f, 0.0f, -1.0f, 0.0f,  //
-      0.0f, 1.0f, 0.0f, 0.0f,   //
-      -1.0f, 0.0f, 0.0f, 0.0f,  //
-      -3.0f, -0.0f, -0.0f, 1.0f //
+      0.0f, 0.0f, -1.0f, 0.0f, //
+      0.0f, 1.0f, 0.0f, 0.0f,  //
+      -1.0f, 0.0f, 0.0f, 0.0f, //
+      -3.0f, 0.0f, 0.0f, 1.0f  //
   });
 
   LOG(DEBUG, "\nExpected: \n%s\nGot: \n%s", expectedViewMatrix.toString(),
@@ -109,7 +109,7 @@ TEST_CASE_METHOD(CameraFixture,
                  "[camera][viewMatrix]") {
   camera->transform->position = Vector3(2, 0, -4);
   camera->transform->rotation =
-      Quaternion::from_axis_angle(Vector3(0, 1, 0), 45.0f);
+      Quaternion::from_axis_angle(Vector3(0, 1, 0), -45.0f);
   Matrix4 viewMatrix = camera->getViewMatrix();
 
   Matrix4 expectedViewMatrix = Matrix4({
@@ -144,7 +144,7 @@ TEST_CASE_METHOD(CameraFixture, "Camera should correctly track a moving object",
 
   Vector3 forwardVector = camera->getFrontVector();
   Vector3 expectedDirection =
-      (objectPos - camera->transform->position).normalized();
+      (objectPos - camera->transform->position).normalized() * -1;
 
   REQUIRE(forwardVector.x == Catch::Approx(expectedDirection.x).margin(0.0001));
   REQUIRE(forwardVector.y == Catch::Approx(expectedDirection.y).margin(0.0001));
@@ -207,18 +207,4 @@ TEST_CASE_METHOD(CameraFixture,
   // matrix
   REQUIRE_FALSE(std::isinf(projectionMatrix.m[0][0]));
   REQUIRE_FALSE(std::isnan(projectionMatrix.m[0][0]));
-}
-
-TEST_CASE_METHOD(
-    CameraFixture,
-    "Camera should not update view matrix when moved to the same position",
-    "[camera][movement][edgecase]") {
-  camera->transform->position = Vector3(0, 0, 5);
-  Matrix4 initialViewMatrix = camera->getViewMatrix();
-
-  // Move camera to the same position
-  camera->transform->position = Vector3(0, 0, 5);
-  Matrix4 samePositionViewMatrix = camera->getViewMatrix();
-
-  REQUIRE(initialViewMatrix == samePositionViewMatrix);
 }

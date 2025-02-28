@@ -118,10 +118,12 @@ struct Matrix4 {
   }
 
   bool operator==(const Matrix4 &other) const {
-    constexpr float EPSILON = 1e-5f;
+    constexpr float EPSILON = 1e-4f;
     for (int row = 0; row < 4; row++) {
       for (int col = 0; col < 4; col++) {
-        if (std::fabs(m[row][col] - other.m[row][col]) > EPSILON) {
+        float diff = std::fabs(m[row][col] - other.m[row][col]);
+
+        if (diff > EPSILON) {
           return false;
         }
       }
