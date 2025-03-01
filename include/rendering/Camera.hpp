@@ -9,22 +9,26 @@ class Camera : public Object {
 private:
   float fov, aspectRatio, nearPlane, farPlane;
   Matrix4 projectionMatrix;
+  Matrix4 viewMatrix;
 
 public:
-  Camera(Registry &registry, float aspectRatio)
+  Camera(Registry &registry, float aspectRatio = 16.f / 9.f)
       : Object(registry, nullptr), fov(45.0f), aspectRatio(aspectRatio),
         nearPlane(0.1f), farPlane(100.0f) {
-    transform->position = Vector3(0.0f, 1.0f, -2.5f);
+    transform->position = Vector3(0.0f, 0.0f, 0.0f);
     transform->rotation = Quaternion();
+
+    viewMatrix = Matrix4();
   }
 
-  Matrix4 getViewMatrix() const;
+  Matrix4 getViewMatrix();
+  void updateViewMatrix();
+
   Matrix4 getProjectionMatrix() const;
-
-  Vector3 getFrontVector() const;
-
   void setProjection(float fov, float aspectRatio, float nearPlane,
                      float farPlane);
+
+  Vector3 getFrontVector() const;
 };
 
 #endif // CAMERA_HPP

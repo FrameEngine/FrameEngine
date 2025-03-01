@@ -60,6 +60,19 @@ struct Matrix4 {
     return oss.str();
   }
 
+  Matrix4 &operator=(std::initializer_list<float> values) {
+    if (values.size() != 16) {
+      throw std::invalid_argument("Matrix4 must be assigned exactly 16 values");
+    }
+    auto it = values.begin();
+    for (int row = 0; row < 4; row++) {
+      for (int col = 0; col < 4; col++) {
+        m[row][col] = *it++;
+      }
+    }
+    return *this;
+  }
+
   Matrix4 operator*(const Matrix4 &other) const {
     Matrix4 result;
 
@@ -155,9 +168,19 @@ struct Matrix4 {
     return mat;
   }
 
-  // Create a perspective projection matrix
+  Matrix4 transpose() const {
+    Matrix4 result;
+    for (int row = 0; row < 4; row++) {
+      for (int col = 0; col < 4; col++) {
+        result.m[row][col] = m[col][row];
+      }
+    }
+    return result;
+  }
+
   static Matrix4 perspective(float fov, float aspect, float near, float far) {
     float tanHalfFOV = tan(fov * 0.5f * M_PI / 180.0f);
+
     Matrix4 mat;
     mat.m[0][0] = 1.0f / (aspect * tanHalfFOV);
     mat.m[1][1] = 1.0f / tanHalfFOV;

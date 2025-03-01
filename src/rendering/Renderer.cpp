@@ -39,7 +39,6 @@ void Renderer::render() {
   shader->bind();
 
   LOG(DEBUG, "Camera Position: %s", camera.transform->position.toString());
-  LOG(DEBUG, "Front Vector: %s", camera.getFrontVector().toString());
   LOG(DEBUG, "View Matrix:\n%s", camera.getViewMatrix().toString());
 
   shader->setUniformMat4("view", camera.getViewMatrix());
