@@ -4,15 +4,25 @@
  * @brief Computes the view matrix based on position and rotation.
  * @return View matrix for transformations
  */
-Matrix4 Camera::getViewMatrix() const {
+Matrix4 Camera::getViewMatrix() {
+  this->updateViewMatrix();
+  return viewMatrix;
+}
+
+void Camera::updateViewMatrix() {
   Vector3 front = getFrontVector();
-  Vector3 cameraPos = transform->position;
+
   Vector3 worldUp(0, 1, 0);
 
-  Vector3 right = front.cross(worldUp).normalized();
-  Vector3 up = right.cross(front).normalized();
+  if (std::fabs(front.y) > 0.999f) {
+    worldUp = Vector3(0, 0, 1);
+  }
 
-  return Matrix4({
+  Vector3 right = worldUp.cross(front).normalized();
+  Vector3 up = front.cross(right).normalized();
+  Vector3 cameraPos = transform->position.normalized();
+
+  viewMatrix = Matrix4({
       right.x, up.x, front.x, 0.0f,                                          //
       right.y, up.y, front.y, 0.0f,                                          //
       right.z, up.z, front.z, 0.0f,                                          //
