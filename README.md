@@ -16,7 +16,8 @@ The core of **FrameEngine** is built around [ECS](https://en.wikipedia.org/wiki/
 - **Systems**: Logic units that iterate through all entities with specific components. For instance, the `PhysicsSystem` handles velocity and position updates, while the `RenderSystem` renderes meshes
 - **Engine**: A base `Engine` class that provides a main loop with a **fixed timestep** for physics and a simple rendering pass.
 
-Currently, **X11** rendering is implemented (via `X11RendererAdapter`), though you can add your own (e.g. OpenGL, Vulkan or even selfmade one) by implementing the `IRenderer` interface. (Instructions for doing so can be found in the [Contributing](#Contributing) section)
+FrameEngine currently supports **OpenGL rendering** using **X11** as the windowing backend.  
+Currently, it runs on **Linux only**, but we plan to add cross-platform support soon.
 
 ---
 
@@ -26,14 +27,24 @@ Currently, **X11** rendering is implemented (via `X11RendererAdapter`), though y
 
 - A **C++17** compiler
 - **CMake** >= 3.10
-- **Make** (or Ninja, etc., whichever you prefer)
-- **X11** development libraries (required for running the X11 example; future versions may use OpenGL)
-- **Catch2** test library (for running tests)
+- **Make**
+- **Catch2** unit testing library
+- **X11-dev libraries** so far we use x11 as our window-backend
+- **Doxygen** auto-generated documentation
 
-On many Linux distributions, you can install these with package managers 
-`sudo apt-get install libx11-dev cmake build-essential`
+On many Linux systems, you can install these with package managers like `apt`, e.g:
+```bash 
+sudo apt-get install -y \
+              libx11-dev \
+              libxext-dev \
+              libxrandr-dev \
+              libxinerama-dev \
+              libxcursor-dev \
+              libxi-dev \
+              libgl1-mesa-dev pkg-config doxygen graphviz
+```
 
-### How to install?
+### Building the Engine
 
 Clone this repository:
 
@@ -42,6 +53,7 @@ git clone https://github.com/Perchinka/FrameEngine.git
 cd FrameEngine
 make build
 ```
+ 
 After successful compilation, the `build` folder will contain the executables.
 
 ### Running tests
@@ -51,7 +63,7 @@ To run tests and check if everything was installed correctly:
 make test
 ```
 
-### Running demo simulation
+### Running the demo
 
 The demo application is located at `src/main.cpp`. Once built, you can run:
 ```bash
@@ -62,8 +74,8 @@ or manually:
 ./build/frame_engine
 ```
 
-This launches a simple **X11** window showing a rotating cube with orbiting spheres.  
-Press `Ctrl+C` in the terminal to terminate (or just close the X11 window).
+This will launch a simple OpenGL window with a demo scene
+Press `Ctrl+C` in the terminal to terminate (or just close the window).
 
 ---
 
@@ -76,8 +88,8 @@ project(MySimulation)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# Add the FrameEngine directory
-add_subdirectory(FrameEngine)
+# Include the FrameEngine directory
+include_directories(FrameEngine/include)
 
 # Build your own simulation executable
 add_executable(my_sim main.cpp)
@@ -107,23 +119,18 @@ Now you can use **FrameEngine**
    };
    ```
 
-3. **Choose a Renderer** by implementing `IRenderer` or using the provided `X11RendererAdapter`, then set it:
+3. **Init and Run**
    ```cpp
 
    int main() {
-     X11RendererAdapter x11Renderer;
-     Renderer::set_renderer(&x11Renderer);
-     Renderer::init();
-
-     MySimulation sim;
-     sim.init();
-     sim.run(); // main loop
+      Simulation sim;
+      sim.init();
+      sim.run();
+      return 0;
 
      return 0;
    }
    ```
-
-4. **Compile & Run** to see your simulation in action.
 
 ---
 
@@ -131,8 +138,7 @@ Now you can use **FrameEngine**
 
 We welcome contributions 🎉
 
-- Please view the [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on submitting issues, pull requests, and coding standards.
-- If you’re adding a **renderer**, check out [renderer adapter guidelines ](./include/rendering/adapters/README.md) before you start
+Please view the [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on submitting issues, pull requests, and coding standards.
 
 Thank you for helping improve this project!
 
@@ -141,12 +147,9 @@ Thank you for helping improve this project!
 ---
 
 ## Future Plans
+We're continuously improving FrameEngine. Follow our **[roadmap](https://github.com/users/Perchinka/projects/9)** for upcoming features and enhancements
 
-- **OpenGL Renderer** or **Vulkan Renderer** for real 3D drawing.
-- Add a more comprehensive **Camera** system.
-- Extend the **PhysicsSystem** with collision detection, constraints etc.
-- A **GUI** for runtime parameter tweaking.
-- **Wiki** and **more comprehensive documentation**
+**Have feature suggestions or want to contribute?** Feel free to start a discussion or check out our [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
 ---
 
