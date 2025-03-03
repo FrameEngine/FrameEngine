@@ -52,10 +52,10 @@ public:
     renderer.submitLight(pointLight2);
     renderer.submitLight(pointLight3);
 
-    camera.transform->position = Vector3(0, 3, -3);
+    camera.transform->position = Vector3(0.f, 0.f, -3.f);
     camera.setProjection(60.0f, 16.0f / 9.0f, 0.1f, 100.0f);
 
-    cube1->transform->position = Vector3(5.f, 0, 0);
+    cube1->transform->position = Vector3(0, 0, -5.f);
   }
 
   void fixed_update(float dt) override {
@@ -64,8 +64,8 @@ public:
     // cube1->rotate(Vector3(0.5f, 1.0f, 0.0f), dt * 50.0f);
     // cube2->rotate(Vector3(1.0f, 1.0f, 2.0f), dt * 50.0f);
     cube1->transform->position =
-        Vector3(sin(timeElapsed) * 5.f, 0, cos(timeElapsed) * 5.f);
-    camera.move(Vector3(-1, 0, 0));
+        Vector3(sin(timeElapsed) * 5.f, cos(timeElapsed) * 5.f, 0);
+    // camera.move(Vector3(-1, 0, 0));
 
     float radius = .5;
     float ang_speed = 1;
