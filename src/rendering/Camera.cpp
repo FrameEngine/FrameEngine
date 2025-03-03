@@ -18,15 +18,15 @@ void Camera::updateViewMatrix() {
     worldUp = Vector3(0, 0, 1);
   }
 
-  Vector3 right = worldUp.cross(front).normalized();
-  Vector3 up = front.cross(right).normalized();
-  Vector3 cameraPos = transform->position.normalized();
+  Vector3 right = front.cross(worldUp);
+  Vector3 up = right.cross(front);
+  Vector3 cameraPos = transform->position;
 
   viewMatrix = Matrix4({
-      right.x, up.x, front.x, 0.0f,                                          //
-      right.y, up.y, front.y, 0.0f,                                          //
-      right.z, up.z, front.z, 0.0f,                                          //
-      -right.dot(cameraPos), -up.dot(cameraPos), -front.dot(cameraPos), 1.0f //
+      right.x, up.x, -front.x, 0.0f,                                        //
+      right.y, up.y, -front.y, 0.0f,                                        //
+      right.z, up.z, -front.z, 0.0f,                                        //
+      -right.dot(cameraPos), -up.dot(cameraPos), front.dot(cameraPos), 1.0f //
   });
 }
 
@@ -52,11 +52,11 @@ void Camera::setProjection(float fov, float aspectRatio, float nearPlane,
 Matrix4 Camera::getProjectionMatrix() const { return projectionMatrix; }
 
 Vector3 Camera::getFrontVector() const {
-  Vector3 front = transform->rotation.rotateVector(Vector3(0, 0, -1));
+  Vector3 front = transform->rotation.rotateVector(Vector3(0, 0, 1));
 
   if (front.magnitude() < 0.0001f) {
-    return Vector3(0, 0, -1);
+    return Vector3(0, 0, 1);
   }
 
-  return front.normalized();
+  return front;
 }

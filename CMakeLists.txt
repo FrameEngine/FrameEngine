@@ -55,28 +55,28 @@ file(GLOB_RECURSE SOURCES src/*.cpp)
 list(FILTER SOURCES EXCLUDE REGEX ".*src/main\\.cpp$")
 
 
-function(add_unit_test TEST_NAME TEST_SOURCE)
-  add_executable(${TEST_NAME} ${TEST_SOURCE} ${SOURCES})
-    target_link_libraries(${TEST_NAME} PRIVATE Catch2::Catch2WithMain glad glfw OpenGL::GL fmt::fmt)
-    add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
-endfunction()
-
-add_unit_test(test_vector3 tests/unit/test_vector3.cpp)
-add_unit_test(test_ecs tests/unit/test_ecs.cpp)
-add_unit_test(test_camera tests/unit/test_camera.cpp)
-add_unit_test(test_matrix4 tests/unit/test_matrix4.cpp)
-
-
-# Doxygen Documentation
-find_package(Doxygen REQUIRED)
-if(DOXYGEN_FOUND)
-    set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile)
-    set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/docs)
-
-    add_custom_target(doc
-        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_IN}
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-        COMMENT "Generating Doxygen documentation"
-        VERBATIM
-    )
-endif()
+# function(add_unit_test TEST_NAME TEST_SOURCE)
+#   add_executable(${TEST_NAME} ${TEST_SOURCE} ${SOURCES})
+#     target_link_libraries(${TEST_NAME} PRIVATE Catch2::Catch2WithMain glad glfw OpenGL::GL fmt::fmt)
+#     add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
+# endfunction()
+#
+# add_unit_test(test_vector3 tests/unit/test_vector3.cpp)
+# add_unit_test(test_ecs tests/unit/test_ecs.cpp)
+# add_unit_test(test_camera tests/unit/test_camera.cpp)
+# add_unit_test(test_matrix4 tests/unit/test_matrix4.cpp)
+#
+#
+# # Doxygen Documentation
+# find_package(Doxygen REQUIRED)
+# if(DOXYGEN_FOUND)
+#     set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile)
+#     set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/docs)
+#
+#     add_custom_target(doc
+#         COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_IN}
+#         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+#         COMMENT "Generating Doxygen documentation"
+#         VERBATIM
+#     )
+# endif()

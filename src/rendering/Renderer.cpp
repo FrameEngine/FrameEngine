@@ -40,6 +40,7 @@ void Renderer::render() {
 
   LOG(DEBUG, "Camera Position: %s", camera.transform->position.toString());
   LOG(DEBUG, "View Matrix:\n%s", camera.getViewMatrix().toString());
+  LOG(DEBUG, "Projection Matrix \n%s", camera.getProjectionMatrix().toString());
 
   shader->setUniformMat4("view", camera.getViewMatrix());
   shader->setUniformMat4("projection", camera.getProjectionMatrix());

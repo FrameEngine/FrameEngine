@@ -90,7 +90,7 @@ public:
     }
 
     Vector3 right = up.cross(direction).normalized();
-    Vector3 adjustedUp = direction.cross(right).normalized();
+    Vector3 adjustedUp = direction.cross(right);
 
     Matrix4 rotationMatrix = Matrix4({
         right.x, adjustedUp.x, direction.x, 0.0f, //
