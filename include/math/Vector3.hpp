@@ -31,6 +31,13 @@ public:
     return (x == v.x) && (y == v.y) && (z == v.z);
   };
 
+  Vector3 &operator+=(const Vector3 &v) {
+    x += v.x;
+    y += v.y;
+    z += v.z;
+    return *this;
+  }
+
   double magnitude() const { return std::sqrt(x * x + y * y + z * z); }
 
   Vector3 normalized() const {
@@ -53,5 +60,7 @@ public:
     return ss.str();
   }
 };
+
+inline Vector3 operator*(double scalar, const Vector3 &v) { return v * scalar; }
 
 #endif // !VECTOR3_H
