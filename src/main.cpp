@@ -63,7 +63,7 @@ public:
 
     // cube1->rotate(Vector3(0.5f, 1.0f, 0.0f), dt * 50.0f);
     // cube2->rotate(Vector3(1.0f, 1.0f, 2.0f), dt * 50.0f);
-    cube1->transform->position =
+    camera.transform->position =
         Vector3(sin(timeElapsed) * 5.f, cos(timeElapsed) * 5.f, 0);
     // camera.move(Vector3(-1, 0, 0));
 

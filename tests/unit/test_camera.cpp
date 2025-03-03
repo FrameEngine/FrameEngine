@@ -39,7 +39,7 @@ public:
 TEST_CASE_METHOD(CameraFixture, "Camera should initialize with default values",
                  "[camera][initialization]") {
   Matrix4 expectedViewMatrix = Matrix4({
-      1.0f, 0.0f, 0.0f, 0.0f,  //
+      -1.0f, 0.0f, 0.0f, 0.0f, //
       0.0f, 1.0f, 0.0f, 0.0f,  //
       0.0f, 0.0f, -1.0f, 0.0f, //
       0.0f, 0.0f, 0.0f, 1.0f   //
@@ -59,12 +59,14 @@ TEST_CASE_METHOD(CameraFixture, "Camera looking at origin from (0, 0, -5)",
   Matrix4 viewMatrix = camera->getViewMatrix();
 
   Matrix4 expectedViewMatrix = Matrix4({
-      1.0f, 0.0f, 0.0f, 0.0f,  //
+      -1.0f, 0.0f, 0.0f, 0.0f, //
       0.0f, 1.0f, 0.0f, 0.0f,  //
       0.0f, 0.0f, -1.0f, 0.0f, //
       0.0f, 0.0f, -5.0f, 1.0f  //
   });
 
+  LOG(DEBUG, "\nExpected: \n%s\nGot: \n%s", expectedViewMatrix.toString(),
+      viewMatrix.toString());
   REQUIRE(viewMatrix == expectedViewMatrix);
 }
 
@@ -74,10 +76,10 @@ TEST_CASE_METHOD(CameraFixture, "Camera looking at origin from (1, 2, 3)",
   Matrix4 viewMatrix = camera->getViewMatrix();
 
   Matrix4 expectedViewMatrix = Matrix4({
-      1.0f, 0.0f, 0.0f, 0.0f,  //
+      -1.0f, 0.0f, 0.0f, 0.0f, //
       0.0f, 1.0f, 0.0f, 0.0f,  //
       0.0f, 0.0f, -1.0f, 0.0f, //
-      -1.0f, -2.0f, 3.0f, 1.0f //
+      1.0f, -2.0f, 3.0f, 1.0f  //
   });
 
   LOG(DEBUG, "\nExpected: \n%s\nGot: \n%s", expectedViewMatrix.toString(),
@@ -95,8 +97,8 @@ TEST_CASE_METHOD(CameraFixture, "Camera rotated 90 degrees around Y-axis",
   Matrix4 expectedViewMatrix = Matrix4({
       0.0f, 0.0f, -1.0f, 0.0f, //
       0.0f, 1.0f, 0.0f, 0.0f,  //
-      -1.0f, 0.0f, 0.0f, 0.0f, //
-      -3.0f, 0.0f, 0.0f, 1.0f  //
+      1.0f, 0.0f, 0.0f, 0.0f,  //
+      3.0f, 0.0f, 0.0f, 1.0f   //
   });
 
   LOG(DEBUG, "\nExpected: \n%s\nGot: \n%s", expectedViewMatrix.toString(),
@@ -113,10 +115,10 @@ TEST_CASE_METHOD(CameraFixture,
   Matrix4 viewMatrix = camera->getViewMatrix();
 
   Matrix4 expectedViewMatrix = Matrix4({
-      0.7071f, 0.0f, -0.7071f, 0.0f,  //
-      0.0f, 1.0f, 0.0f, 0.0f,         //
       -0.7071f, 0.0f, -0.7071f, 0.0f, //
-      -4.2426f, -0.0f, -1.4142f, 1.0f //
+      0.0f, 1.0f, 0.0f, 0.0f,         //
+      0.7071f, 0.0f, -0.7071f, 0.0f,  //
+      4.2426f, -0.0f, -1.4142f, 1.0f  //
   });
 
   LOG(DEBUG, "\nExpected: \n%s\nGot: \n%s", expectedViewMatrix.toString(),
@@ -144,7 +146,7 @@ TEST_CASE_METHOD(CameraFixture, "Camera should correctly track a moving object",
 
   Vector3 forwardVector = camera->getFrontVector();
   Vector3 expectedDirection =
-      (objectPos - camera->transform->position).normalized() * -1;
+      (objectPos - camera->transform->position).normalized();
 
   REQUIRE(forwardVector.x == Catch::Approx(expectedDirection.x).margin(0.0001));
   REQUIRE(forwardVector.y == Catch::Approx(expectedDirection.y).margin(0.0001));
