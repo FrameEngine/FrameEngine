@@ -23,6 +23,13 @@ public:
     return Vector3(x * scalar, y * scalar, z * scalar);
   };
 
+  Vector3 &operator*=(double scalar) {
+    x *= scalar;
+    y *= scalar;
+    z *= scalar;
+    return *this;
+  }
+
   Vector3 operator/(double scalar) const {
     return Vector3(x / scalar, y / scalar, z / scalar);
   };
