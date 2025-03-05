@@ -6,6 +6,7 @@
 #include "rendering/Camera.hpp"
 #include "rendering/Mesh.hpp"
 #include <algorithm>
+#include <cmath>
 
 Logger &logger = Logger::getInstance();
 
@@ -31,12 +32,15 @@ public:
 
     plane = new Object(registry, MeshGenerator::createPlane());
     plane->transform->scale *= 10.f;
+
     cube = new Object(registry, MeshGenerator::createCube());
     cube->setColor(Vector3(1, 0, 0));
     cube->transform->position = Vector3(2.f, 1.f, 0.f);
+
     sphere = new Object(registry, MeshGenerator::createSphere());
     sphere->setColor(Vector3(1, 0, 1));
     sphere->transform->position = Vector3(-2.f, 1.f, 0.f);
+
     monkey = new Object(registry, monkeyMesh);
     monkey->setColor(Vector3(0, 1, .5));
     monkey->transform->position = Vector3(0, 1, 0);
@@ -62,7 +66,17 @@ public:
     camera.lookAt(plane->transform->position);
   }
 
-  void fixed_update(float dt) override { timeElapsed += dt; }
+  void fixed_update(float dt) override {
+    timeElapsed += dt;
+
+    float radius = 2;
+    float ang_speed = 1;
+
+    camera.transform->position =
+        Vector3(radius * cos(ang_speed * timeElapsed), 2,
+                radius * sin(ang_speed * timeElapsed));
+    camera.lookAt(monkey->transform->position);
+  }
 };
 
 int main() {
