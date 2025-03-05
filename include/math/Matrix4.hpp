@@ -1,3 +1,8 @@
+/**
+ * @file Matrix4.hpp
+ * @brief Defines the Matrix4 class for 3D transformation operations.
+ */
+
 #ifndef MATRIX4_HPP
 #define MATRIX4_HPP
 
@@ -6,15 +11,37 @@
 #include <iomanip>
 #include <sstream>
 
+/**
+ * @class Matrix4.
+ * @brief A 4x4 matrix class.
+ *
+ * It provides standard arithmetic operations, matrix multiplication, and
+ * methods for generating specific transformation matrices.
+ *
+ * Matrices are row-major ordered.
+ *
+ * All angles are provided in degrees, unless specified otherwise.
+ */
 struct Matrix4 {
   float m[4][4];
 
+  /**
+   * @brief Default constructor that initializes the matrix as an identity
+   * matrix.
+   */
   Matrix4() {
     for (int i = 0; i < 4; i++)
       for (int j = 0; j < 4; j++)
-        m[i][j] = (i == j) ? 1.0f : 0.0f; // Identity matrix
+        m[i][j] = (i == j) ? 1.0f : 0.0f;
   }
 
+  /**
+   * @brief Constructs a Matrix4 from an initializer list of 16 values.
+   *
+   * @param values An initializer list containing exactly 16 values.
+   * @throws std::invalid_argument if the initializer list does not contain
+   * exactly 16 values.
+   */
   Matrix4(std::initializer_list<double> values) {
     if (values.size() != 16) {
       throw std::invalid_argument(
@@ -29,23 +56,76 @@ struct Matrix4 {
     }
   }
 
+  /**
+   * @brief Assigns the matrix using an initializer list of 16 floats.
+   *
+   * @param values The initializer list containing exactly 16 values.
+   * @return A reference to this matrix.
+   * @throws std::invalid_argument if the initializer list does not contain
+   * exactly 16 values.
+   */
+  Matrix4 &operator=(std::initializer_list<float> values) {
+    if (values.size() != 16) {
+      throw std::invalid_argument("Matrix4 must be assigned exactly 16 values");
+    }
+    auto it = values.begin();
+    for (int row = 0; row < 4; row++) {
+      for (int col = 0; col < 4; col++) {
+        m[row][col] = *it++;
+      }
+    }
+    return *this;
+  }
+
+  /**
+   * @brief Provides non-const access to a row of the matrix.
+   *
+   * @param row The index of the row to access.
+   * @return A pointer to the first element of the row.
+   */
   float *operator[](int row) { return m[row]; }
 
-  const float *operator[](int row) const { return m[row]; }
-
-  static Matrix4 from_rotation(const Vector3 &axis, float angleDegrees) {
-    Quaternion q = Quaternion::from_axis_angle(axis, angleDegrees);
+  /**
+   * @brief Creates a rotation matrix from an axis and angle.
+   *
+   * Constructs a rotation matrix by generating a quaternion from the given
+   * axis and angle, and then converting that quaternion to a matrix.
+   *
+   * @param axis The axis of rotation.
+   * @param angle The rotation angle in degrees.
+   * @return The rotation matrix.
+   */
+  static Matrix4 createRotationMatrix(const Vector3 &axis, float angle) {
+    Quaternion q = Quaternion::from_axis_angle(axis, angle);
     return q.toMatrix();
   }
 
-  // Apply matrix transformation to a vector
-  Vector3 transform(const Vector3 &v) const {
+  /**
+   * @brief Transforms a vector using the upper 3x3 submatrix.
+   *
+   * Applies the matrix transformation to the given vector, ignoring any
+   * translation (Vector always the same, so translation doesn't matter).
+   *
+   * @param v The vector to transform.
+   * @return The transformed vector.
+   */
+  Vector3 transformVector(const Vector3 &v) const {
     return {v.x * m[0][0] + v.y * m[1][0] + v.z * m[2][0],
             v.x * m[0][1] + v.y * m[1][1] + v.z * m[2][1],
             v.x * m[0][2] + v.y * m[1][2] + v.z * m[2][2]};
   }
 
+  /**
+   * @brief Returns a string representation of the matrix.
+   *
+   * The matrix is formatted using fixed-point notation with four decimal
+   * places.
+   *
+   * @return A formatted string representing the matrix.
+   */
   std::string toString() const {
+    // TODO Add formating options, like floating point precision, output format
+    // etc.
     std::ostringstream oss;
     oss << std::fixed << std::setprecision(4);
 
@@ -60,19 +140,12 @@ struct Matrix4 {
     return oss.str();
   }
 
-  Matrix4 &operator=(std::initializer_list<float> values) {
-    if (values.size() != 16) {
-      throw std::invalid_argument("Matrix4 must be assigned exactly 16 values");
-    }
-    auto it = values.begin();
-    for (int row = 0; row < 4; row++) {
-      for (int col = 0; col < 4; col++) {
-        m[row][col] = *it++;
-      }
-    }
-    return *this;
-  }
-
+  /**
+   * @brief Multiplies this matrix with another matrix.
+   *
+   * @param other The matrix to multiply with.
+   * @return The resulting matrix after multiplication.
+   */
   Matrix4 operator*(const Matrix4 &other) const {
     Matrix4 result;
 
@@ -88,6 +161,12 @@ struct Matrix4 {
     return result;
   }
 
+  /**
+   * @brief Adds another matrix to this matrix.
+   *
+   * @param other The matrix to add.
+   * @return The sum of the two matrices.
+   */
   Matrix4 operator+(const Matrix4 &other) const {
     Matrix4 result;
     for (int row = 0; row < 4; row++) {
@@ -98,6 +177,12 @@ struct Matrix4 {
     return result;
   }
 
+  /**
+   * @brief Subtracts another matrix from this matrix.
+   *
+   * @param other The matrix to subtract.
+   * @return The resulting matrix after subtraction.
+   */
   Matrix4 operator-(const Matrix4 &other) const {
     Matrix4 result;
     for (int row = 0; row < 4; row++) {
@@ -108,6 +193,12 @@ struct Matrix4 {
     return result;
   }
 
+  /**
+   * @brief Multiplies the matrix by a scalar.
+   *
+   * @param scalar The scalar to multiply each element by.
+   * @return The scaled matrix.
+   */
   Matrix4 operator*(float scalar) const {
     Matrix4 result;
     for (int row = 0; row < 4; row++) {
@@ -118,7 +209,16 @@ struct Matrix4 {
     return result;
   }
 
+  /**
+   * @brief Divides the matrix by a scalar.
+   *
+   * If the scalar is zero, the matrix is returned unchanged.
+   *
+   * @param scalar The scalar to divide by.
+   * @return The resulting matrix.
+   */
   Matrix4 operator/(float scalar) const {
+    // TODO Throw an error if division by zero
     if (scalar == 0.0f)
       return *this;
     Matrix4 result;
@@ -130,7 +230,17 @@ struct Matrix4 {
     return result;
   }
 
+  /**
+   * @brief Compares this matrix with another for approximate equality.
+   *
+   * Two matrices are considered equal if the difference between each
+   * corresponding element is within a small epsilon value.
+   *
+   * @param other The matrix to compare against.
+   * @return True if the matrices are approximately equal, false otherwise.
+   */
   bool operator==(const Matrix4 &other) const {
+    // TODO Probably should make epsilon customizable
     constexpr float EPSILON = 1e-4f;
     for (int row = 0; row < 4; row++) {
       for (int col = 0; col < 4; col++) {
@@ -144,10 +254,25 @@ struct Matrix4 {
     return true;
   }
 
+  /**
+   * @brief Checks whether this matrix is not equal to another
+   * matrix.
+   *
+   * @param other The matrix to compare against.
+   * @return True if the matrices differ by more than the epsilon threshold,
+   * false otherwise.
+   */
   bool operator!=(const Matrix4 &other) const { return !(*this == other); }
 
-  // Create a translation matrix from a Vector3
-  static Matrix4 from_translation(const Vector3 &pos) {
+  /**
+   * @brief Generates a translation matrix.
+   *
+   * Constructs a matrix that translates by the specified vector.
+   *
+   * @param pos The translation vector.
+   * @return The resulting translation matrix.
+   */
+  static Matrix4 createTranslationMatrix(const Vector3 &pos) {
     Matrix4 mat;
 
     mat.m[3][0] = pos.x;
@@ -157,8 +282,16 @@ struct Matrix4 {
     return mat;
   }
 
-  // Create a scaling matrix from a Vector3
-  static Matrix4 from_scaling(const Vector3 &s) {
+  /**
+   * @brief Generates a scaling matrix.
+   *
+   * Constructs a matrix that scales along the x, y, and z axes by the given
+   * factors.
+   *
+   * @param s The scaling factors.
+   * @return The resulting scaling matrix.
+   */
+  static Matrix4 createScalingMatrix(const Vector3 &s) {
     Matrix4 mat;
 
     mat.m[0][0] = s.x;
@@ -168,7 +301,12 @@ struct Matrix4 {
     return mat;
   }
 
-  Matrix4 transpose() const {
+  /**
+   * @brief Computes and returns the transpose of the matrix.
+   *
+   * @return The transposed matrix.
+   */
+  Matrix4 getTranspose() const {
     Matrix4 result;
     for (int row = 0; row < 4; row++) {
       for (int col = 0; col < 4; col++) {
@@ -178,7 +316,17 @@ struct Matrix4 {
     return result;
   }
 
-  static Matrix4 perspective(float fov, float aspect, float near, float far) {
+  /**
+   * @brief Constructs a perspective projection matrix.
+   *
+   * @param fov The field of view in degrees.
+   * @param aspect The aspect ratio (width/height).
+   * @param near The near clipping plane distance.
+   * @param far The far clipping plane distance.
+   * @return The perspective projection matrix.
+   */
+  static Matrix4 createPerspectiveMatrix(float fov, float aspect, float near,
+                                         float far) {
     float tanHalfFOV = tan(fov * 0.5f * M_PI / 180.0f);
 
     Matrix4 mat;

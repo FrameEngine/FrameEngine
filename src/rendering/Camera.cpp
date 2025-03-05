@@ -41,8 +41,8 @@ void Camera::setProjection(float fov, float aspectRatio, float nearPlane,
   this->nearPlane = nearPlane;
   this->farPlane = farPlane;
 
-  projectionMatrix =
-      Matrix4::perspective(fov, this->aspectRatio, nearPlane, farPlane);
+  projectionMatrix = Matrix4::createPerspectiveMatrix(fov, this->aspectRatio,
+                                                      nearPlane, farPlane);
 }
 
 /**
