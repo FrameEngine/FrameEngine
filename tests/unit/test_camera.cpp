@@ -91,7 +91,7 @@ TEST_CASE_METHOD(CameraFixture, "Camera rotated 90 degrees around Y-axis",
                  "[camera][viewMatrix]") {
   camera->transform->position = Vector3(0, 0, -3);
   camera->transform->rotation =
-      Quaternion::from_axis_angle(Vector3(0, 1, 0), -90.0f);
+      Quaternion::fromAxisAngle(Vector3(0, 1, 0), -90.0f);
   Matrix4 viewMatrix = camera->getViewMatrix();
 
   Matrix4 expectedViewMatrix = Matrix4({
@@ -111,7 +111,7 @@ TEST_CASE_METHOD(CameraFixture,
                  "[camera][viewMatrix]") {
   camera->transform->position = Vector3(2, 0, -4);
   camera->transform->rotation =
-      Quaternion::from_axis_angle(Vector3(0, 1, 0), -45.0f);
+      Quaternion::fromAxisAngle(Vector3(0, 1, 0), -45.0f);
   Matrix4 viewMatrix = camera->getViewMatrix();
 
   Matrix4 expectedViewMatrix = Matrix4({

@@ -53,7 +53,7 @@ public:
    */
   void rotate(const Vector3 &axis = Vector3(0, 1, 0), float angle = 1.0f) {
     transform->rotation =
-        Quaternion::from_axis_angle(axis, angle) * transform->rotation;
+        Quaternion::fromAxisAngle(axis, angle) * transform->rotation;
   }
 
   /**

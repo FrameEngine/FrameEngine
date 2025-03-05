@@ -96,7 +96,7 @@ struct Matrix4 {
    * @return The rotation matrix.
    */
   static Matrix4 createRotationMatrix(const Vector3 &axis, float angle) {
-    Quaternion q = Quaternion::from_axis_angle(axis, angle);
+    Quaternion q = Quaternion::fromAxisAngle(axis, angle);
     return q.toMatrix();
   }
 
@@ -231,7 +231,7 @@ struct Matrix4 {
   }
 
   /**
-   * @brief Compares this matrix with another for approximate equality.
+   * @brief Compares this matrix with another.
    *
    * Two matrices are considered equal if the difference between each
    * corresponding element is within a small epsilon value.
