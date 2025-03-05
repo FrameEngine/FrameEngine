@@ -66,7 +66,7 @@ Mesh *MeshGenerator::createCube() {
     normals.push_back(vertices[i + 4]);
     normals.push_back(vertices[i + 5]);
   }
-  // Create index buffer for 36 vertices (each vertex is unique here)
+
   std::vector<unsigned int> indices(vertices.size() / 6);
   for (unsigned int i = 0; i < indices.size(); i++) {
     indices[i] = i;
