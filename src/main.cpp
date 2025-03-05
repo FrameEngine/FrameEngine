@@ -1,19 +1,22 @@
 #include "Engine.hpp"
 #include "Logger.hpp"
+#include "MeshGenerator.hpp"
 #include "objects/Object.hpp"
 #include "objects/PointLight.hpp"
 #include "rendering/Camera.hpp"
 #include "rendering/Mesh.hpp"
 #include <algorithm>
+#include <cmath>
 
 Logger &logger = Logger::getInstance();
 
 class Simulation : public Engine {
 private:
-  Mesh *cubeMesh;
-  Object *sun;
-  Object *earth;
-  Object *moon;
+  Mesh *monkeyMesh;
+  Object *monkey;
+  Object *plane;
+  Object *cube;
+  Object *sphere;
 
   PointLight *pointLight1;
 
@@ -22,47 +25,58 @@ private:
 
 public:
   void on_start() override {
-    cubeMesh = Mesh::loadFromOBJ("demo_assets/monkey.obj");
-    if (!cubeMesh) {
+    monkeyMesh = Mesh::loadFromOBJ("demo_assets/monkey.obj");
+    if (!monkeyMesh) {
       LOG(ERROR, "Error while loading .obj file");
     }
 
-    // And reuse it :D
-    sun = new Object(registry, cubeMesh);
-    sun->transform->position = Vector3(0.0f, 0.0f, 0.0f);
-    sun->transform->scale = sun->transform->scale * 5.f;
-    sun->setColor(Vector3(0xff / 256.f, 0xdd / 256.f, 0x40 / 256.f));
+    plane = new Object(registry, MeshGenerator::createPlane());
+    plane->transform->scale *= 10.f;
 
-    earth = new Object(registry, cubeMesh);
-    earth->transform->scale = sun->transform->scale / 109.f * 5.f;
-    earth->transform->position = Vector3(2.5f, 0.f, 0.f);
-    earth->setColor(Vector3(0, 0, 1));
+    cube = new Object(registry, MeshGenerator::createCube());
+    cube->setColor(Vector3(1, 0, 0));
+    cube->transform->position = Vector3(2.f, 1.f, 0.f);
 
-    moon = new Object(registry, cubeMesh);
-    moon->transform->scale = earth->transform->scale * 0.27f;
-    moon->transform->position =
-        earth->transform->position + Vector3(0.6f, 0.0f, 0.f);
-    moon->setColor(Vector3(.8f, .8f, .8f));
+    sphere = new Object(registry, MeshGenerator::createSphere());
+    sphere->setColor(Vector3(1, 0, 1));
+    sphere->transform->position = Vector3(-2.f, 1.f, 0.f);
 
-    // TODO put in the component. smth like Renderer
-    renderer.submit(sun);
-    renderer.submit(earth);
+    monkey = new Object(registry, monkeyMesh);
+    monkey->setColor(Vector3(0, 1, .5));
+    monkey->transform->position = Vector3(0, 1, 0);
+    monkey->transform->scale *= .5f;
+    monkey->rotate(Vector3(0, 1, 0), 180);
+
+    renderer.submit(plane);
+    renderer.submit(cube);
+    renderer.submit(sphere);
+    renderer.submit(monkey);
 
     pointLight1 = new PointLight(registry, Vector3(5.0f, 5.0f, 0.0f),
-                                 Vector3(1, 1, 0), 10.f);
+                                 Vector3(1, 1, 0), .7f);
     PointLight *pointLight2 = new PointLight(
-        registry, Vector3(0.0f, 0.0f, 0.0f), Vector3(1, 1, 1), 50.f);
+        registry, Vector3(0.0f, 3.0f, 0.0f), Vector3(1, 1, 1), 1.f);
 
     renderer.submitLight(pointLight1);
     renderer.submitLight(pointLight2);
 
-    camera.transform->position = Vector3(0.f, 50.f, 0.f);
+    camera.transform->position = Vector3(0.f, 2.f, -3.f);
     camera.setProjection(60.0f, 16.0f / 9.0f, 0.1f, 100.0f);
 
-    camera.lookAt(sun->transform->position);
+    camera.lookAt(plane->transform->position);
   }
 
-  void fixed_update(float dt) override { timeElapsed += dt; }
+  void fixed_update(float dt) override {
+    timeElapsed += dt;
+
+    float radius = 2;
+    float ang_speed = 1;
+
+    camera.transform->position =
+        Vector3(radius * cos(ang_speed * timeElapsed), 2,
+                radius * sin(ang_speed * timeElapsed));
+    camera.lookAt(monkey->transform->position);
+  }
 };
 
 int main() {
