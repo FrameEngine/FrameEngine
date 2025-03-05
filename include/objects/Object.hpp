@@ -32,7 +32,9 @@ class Renderer;
  */
 class Object : public Entity {
 private:
+  // TODO move it to component
   Mesh *mesh;
+  bool wireframe = false;
   Vector3 color;
 
 public:
@@ -101,9 +103,9 @@ public:
 
     transform->rotation = Quaternion::fromMatrix(rotationMatrix);
   }
-};
 
-// TODO  consider creating separate classes such as StaticObject or
-// PhysicsObject
+  void setWireframe(bool enable) { wireframe = enable; }
+  bool isWireframe() const { return wireframe; }
+};
 
 #endif // OBJECT_HPP
