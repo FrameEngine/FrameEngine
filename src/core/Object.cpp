@@ -5,10 +5,7 @@
 
 void Object::render(Renderer &renderer) {
   Shader *shader = renderer.getShader();
-  if (!shader)
-    return;
-
-  if (!mesh) {
+  if (!shader || !mesh) {
     return;
   }
 
@@ -16,5 +13,13 @@ void Object::render(Renderer &renderer) {
 
   shader->setUniformVec3("objectColor", color);
   shader->setUniformMat4("model", modelMatrix);
-  mesh->draw();
+
+  if (wireframe) {
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    mesh->draw();
+
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+  } else {
+    mesh->draw();
+  }
 }
