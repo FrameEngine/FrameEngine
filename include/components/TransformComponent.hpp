@@ -56,8 +56,8 @@ struct TransformComponent {
    * @return A `Matrix4` representing the entity’s world transformation.
    */
   Matrix4 get_transformation_matrix() const {
-    return rotation.toMatrix() * Matrix4::from_scaling(scale) *
-           Matrix4::from_translation(position);
+    return rotation.toMatrix() * Matrix4::createScalingMatrix(scale) *
+           Matrix4::createTranslationMatrix(position);
   }
 };
 

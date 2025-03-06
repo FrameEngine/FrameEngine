@@ -11,7 +11,7 @@
 constexpr float G = 0.05f;
 
 constexpr float massMonkey = 100.0f;
-constexpr float massSphere = 10.0f;
+constexpr float massSphere = 1.0f;
 constexpr float massSphere2 = 10.0f;
 
 class Simulation : public Engine {
@@ -29,6 +29,7 @@ private:
 
   Vector3 velocitySphere;
   Vector3 velocitySphere2;
+  Vector3 velocityMonkey;
 
   Camera &camera = renderer.getCamera();
 
@@ -53,19 +54,19 @@ public:
     plane->transform->position = Vector3(0.f, 0.f, 0.f);
 
     sphere = new Object(registry, MeshGenerator::createSphere());
-    sphere->setColor(Vector3(1, 0, 1));
-    sphere->transform->position = Vector3(-4.f, 0.f, 0.f);
-    sphere->transform->scale = sphere->transform->scale * 0.3f;
+    sphere->setColor(Vector3(1, 1, 1));
+    sphere->transform->position = Vector3(6.5f, 0.f, 0.f);
+    sphere->transform->scale = sphere->transform->scale * 0.1f * massSphere;
 
     sphere2 = new Object(registry, MeshGenerator::createSphere());
     sphere2->setColor(Vector3(0, 0, 1));
-    sphere2->transform->position = Vector3(4.f, 0.f, 0.f);
-    sphere2->transform->scale = sphere2->transform->scale * 0.3f;
+    sphere2->transform->position = Vector3(5.5f, 0.f, 0.f);
+    sphere2->transform->scale = sphere2->transform->scale * 0.05f * massSphere2;
 
     monkey = new Object(registry, monkeyMesh);
-    monkey->setColor(Vector3(0, 1, 0.5f));
+    monkey->setColor(Vector3(1, .8f, 0));
     monkey->transform->position = Vector3(0.f, 0.f, 0.f);
-    monkey->transform->scale = monkey->transform->scale * 0.5f;
+    monkey->transform->scale = monkey->transform->scale * 0.02f * massMonkey;
     monkey->rotate(Vector3(0, 1, 0), 180);
 
     renderer.submit(plane);
@@ -74,9 +75,9 @@ public:
     renderer.submit(monkey);
 
     pointLight1 = new PointLight(registry, Vector3(5.0f, 5.0f, 0.0f),
-                                 Vector3(1, 1, 0), 0.7f);
+                                 Vector3(1, 1, 0), 1.f);
     PointLight *pointLight2 = new PointLight(
-        registry, Vector3(0.0f, 3.0f, 0.0f), Vector3(1, 1, 1), 1.f);
+        registry, Vector3(0.0f, 3.0f, 0.0f), Vector3(1, 1, 1), 3.f);
     renderer.submitLight(pointLight1);
     renderer.submitLight(pointLight2);
 
@@ -84,8 +85,8 @@ public:
     camera.setProjection(60.0f, 16.0f / 9.0f, 0.1f, 100.0f);
     camera.lookAt(plane->transform->position);
 
-    velocitySphere = Vector3(0.f, 0.f, 0.835f);
-    velocitySphere2 = Vector3(0.f, 0.f, -0.835f);
+    velocitySphere = Vector3(0.f, 0.f, -.3f);
+    velocitySphere2 = Vector3(0.f, 0.f, -1.f);
   }
 
   void fixed_update(float dt) override {
@@ -115,10 +116,31 @@ public:
           sphere2->transform->position + velocitySphere2 * deltaTime;
     }
 
+    {
+      Vector3 acc = Vector3(0.f, 0.f, 0.f);
+      acc = acc + computeAcceleration(monkey->transform->position,
+                                      sphere->transform->position, massSphere);
+      acc =
+          acc + computeAcceleration(monkey->transform->position,
+                                    sphere2->transform->position, massSphere2);
+      velocityMonkey = velocityMonkey + acc * deltaTime;
+      monkey->transform->position =
+          monkey->transform->position + velocityMonkey * deltaTime;
+    }
+
+    // Follow camera
+
+    camera.transform->position =
+        sphere2->transform->position +
+        (sphere2->transform->position - monkey->transform->position)
+                .normalized() *
+            3.f +
+        Vector3(0, 2, 0);
     camera.lookAt(monkey->transform->position);
 
     const float curvatureFactor = 0.2f;
     const float sigma = 2.0f;
+
     auto computeDeformation = [sigma, curvatureFactor](const Vector3 &pos,
                                                        float m, float vx,
                                                        float vz) -> float {
@@ -135,12 +157,14 @@ public:
         float x = vertices[i * 6 + 0];
         float z = vertices[i * 6 + 2];
         float deformation = 0.0f;
+
         deformation +=
             computeDeformation(monkey->transform->position, massMonkey, x, z);
         deformation +=
             computeDeformation(sphere->transform->position, massSphere, x, z);
         deformation +=
             computeDeformation(sphere2->transform->position, massSphere2, x, z);
+
         vertices[i * 6 + 1] = deformation;
       }
       gravityPlane->updateBuffer();

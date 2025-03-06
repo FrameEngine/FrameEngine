@@ -32,12 +32,22 @@ class Renderer;
  */
 class Object : public Entity {
 private:
-  // TODO move it to component
-  Mesh *mesh;
-  bool wireframe = false;
-  Vector3 color;
+  // TODO move it to Renderer component
+  Mesh *mesh;             ///< Pointer to the mesh.
+  bool wireframe = false; ///< Flag indicating wether the object should be
+                          ///< rendered in wireframe mode.
+  Vector3 color;          ///< The color used when rendering the object.
 
 public:
+  /**
+   * @brief Constructs an Object with the specified mesh.
+   *
+   * This constructor automatically adds a TransformComponent to the object and
+   * retrieves a pointer to it for convenience.
+   *
+   * @param registry The ECS registry where the object is registered.
+   * @param mesh Pointer to the Mesh that defines the object's geometry.
+   */
   Object(Registry &registry, Mesh *mesh)
       : Entity(registry), mesh(mesh), color(Vector3(1.0f, .5f, 1.0f)) {
     add_component<TransformComponent>();
@@ -47,34 +57,63 @@ public:
   TransformComponent *transform;
 
   /**
-   * @brief Rotates the object.
-   * @param axis The axis to rotate around.
-   * @param angle The angle in degrees.
+   * @brief Rotates the object around the specified axis.
+   *
+   * The object's current rotation is updated by multiplying it with a rotation
+   * derived from the given axis-angle representation.
+   *
+   * @param axis The axis to rotate around (default is (0, 1, 0)).
+   * @param angle The rotation angle in degrees (default is 1.0).
    */
   void rotate(const Vector3 &axis = Vector3(0, 1, 0), float angle = 1.0f) {
     transform->rotation =
-        Quaternion::from_axis_angle(axis, angle) * transform->rotation;
+        Quaternion::fromAxisAngle(axis, angle) * transform->rotation;
   }
 
   /**
-   * @brief Moves the object in world space.
-   * @param translation The translation vector.
+   * @brief Translates the object in world space.
+   *
+   * The object's position is updated by adding the translation vector.
+   *
+   * @param translation The vector by which to translate the object.
    */
   void move(const Vector3 &translation) {
     transform->position = transform->position + translation;
   }
 
   /**
-   * @brief Updates the model matrix and draws the mesh.
+   * @brief Renders the object.
+   *
+   * This method updates the model matrix and draws the object's mesh.
+   *
+   * @param renderer The Renderer used to draw the object.
    */
   void render(Renderer &renderer);
 
+  /**
+   * @brief Retrieves the object's render color.
+   *
+   * @return The color vector used for rendering.
+   */
   Vector3 getColor() const { return color; }
+
+  /**
+   * @brief Sets the object's render color.
+   *
+   * @param c The color vector to set.
+   */
+  // TODO instead of Vector3 use custom Color datatype, that works with 0-255
   void setColor(const Vector3 &c) { color = c; }
 
   /**
-   * @brief Makes the camera look at a target.
-   * @param target Target position
+   * @brief Orients the object so that it "looks at" a target position.
+   *
+   * This method updates the object's rotation so that its forward direction
+   * points toward the target. It uses a look-at algorithm to compute a rotation
+   * matrix from the current position to the target, which is then converted
+   * into a quaternion and applied to the transform.
+   *
+   * @param target The target position to look at.
    */
   void lookAt(const Vector3 &target) {
     Vector3 direction = (target - transform->position).normalized();
@@ -104,7 +143,18 @@ public:
     transform->rotation = Quaternion::fromMatrix(rotationMatrix);
   }
 
+  /**
+   * @brief Enables or disables wireframe rendering for this object.
+   *
+   * @param enable True to enable wireframe mode; false to disable.
+   */
   void setWireframe(bool enable) { wireframe = enable; }
+
+  /**
+   * @brief Checks if wireframe rendering is enabled for this object.
+   *
+   * @return True if wireframe mode is enabled; false otherwise.
+   */
   bool isWireframe() const { return wireframe; }
 };
 

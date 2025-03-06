@@ -20,7 +20,7 @@ TEST_CASE("Matrix4: Should initialize as Identity Matrix",
 TEST_CASE("Matrix4: Should correctly apply translation",
           "[Matrix4][Translation]") {
   Vector3 translation(3.0f, 4.0f, 5.0f);
-  Matrix4 translationMat = Matrix4::from_translation(translation);
+  Matrix4 translationMat = Matrix4::createTranslationMatrix(translation);
 
   REQUIRE(translationMat[3][0] == Catch::Approx(3.0f));
   REQUIRE(translationMat[3][1] == Catch::Approx(4.0f));
@@ -29,7 +29,7 @@ TEST_CASE("Matrix4: Should correctly apply translation",
 
 TEST_CASE("Matrix4: Should correctly apply scaling", "[Matrix4][Scaling]") {
   Vector3 scale(2.0f, 3.0f, 4.0f);
-  Matrix4 scalingMat = Matrix4::from_scaling(scale);
+  Matrix4 scalingMat = Matrix4::createScalingMatrix(scale);
 
   REQUIRE(scalingMat[0][0] == Catch::Approx(2.0f));
   REQUIRE(scalingMat[1][1] == Catch::Approx(3.0f));
@@ -40,10 +40,10 @@ TEST_CASE("Matrix4: Should rotate vector 90 degrees around Y-axis",
           "[Matrix4][Rotation]") {
   Vector3 axis(0.0f, 1.0f, 0.0f);
   float angle = 90.0f;
-  Matrix4 rotationMat = Matrix4::from_rotation(axis, angle);
+  Matrix4 rotationMat = Matrix4::createRotationMatrix(axis, angle);
 
   Vector3 v(1.0f, 0.0f, 0.0f);
-  Vector3 result = rotationMat.transform(v);
+  Vector3 result = rotationMat.transformVector(v);
 
   REQUIRE(result.x == Catch::Approx(0.0f).margin(0.0001));
   REQUIRE(result.y == Catch::Approx(0.0f).margin(0.0001));
@@ -54,10 +54,10 @@ TEST_CASE("Matrix4: Should rotate vector 45 degrees around Y-axis",
           "[Matrix4][Rotation]") {
   Vector3 axis(0.0f, 1.0f, 0.0f);
   float angle = 45.0f;
-  Matrix4 rotationMat = Matrix4::from_rotation(axis, angle);
+  Matrix4 rotationMat = Matrix4::createRotationMatrix(axis, angle);
 
   Vector3 v(1.0f, 0.0f, 0.0f);
-  Vector3 result = rotationMat.transform(v);
+  Vector3 result = rotationMat.transformVector(v);
 
   REQUIRE(result.x == Catch::Approx(0.7071).margin(0.0001));
   REQUIRE(result.y == Catch::Approx(0.0).margin(0.0001));
@@ -66,8 +66,9 @@ TEST_CASE("Matrix4: Should rotate vector 45 degrees around Y-axis",
 
 TEST_CASE("Matrix4: Should correctly multiply scaling and translation matrices",
           "[Matrix4][Multiplication]") {
-  Matrix4 scaleMat = Matrix4::from_scaling(Vector3(2.0f, 2.0f, 2.0f));
-  Matrix4 translationMat = Matrix4::from_translation(Vector3(1.0f, 2.0f, 3.0f));
+  Matrix4 scaleMat = Matrix4::createScalingMatrix(Vector3(2.0f, 2.0f, 2.0f));
+  Matrix4 translationMat =
+      Matrix4::createTranslationMatrix(Vector3(1.0f, 2.0f, 3.0f));
   Matrix4 result = translationMat * scaleMat;
 
   REQUIRE(result[3][0] == Catch::Approx(2.0f));
@@ -81,7 +82,8 @@ TEST_CASE("Matrix4: Should create a valid perspective projection matrix",
   float aspect = 16.0f / 9.0f;
   float near = 0.1f;
   float far = 100.0f;
-  Matrix4 perspectiveMat = Matrix4::perspective(fov, aspect, near, far);
+  Matrix4 perspectiveMat =
+      Matrix4::createPerspectiveMatrix(fov, aspect, near, far);
 
   REQUIRE(perspectiveMat[0][0] ==
           Catch::Approx(1.0f / (aspect * tan(fov * 0.5f * M_PI / 180.0f))));
@@ -100,7 +102,7 @@ TEST_CASE("Matrix4: Should detect equality and inequality between matrices",
 
   REQUIRE(matA == matB);
 
-  Matrix4 matC = Matrix4::from_translation(Vector3(1.0f, 0.0f, 0.0f));
+  Matrix4 matC = Matrix4::createTranslationMatrix(Vector3(1.0f, 0.0f, 0.0f));
   REQUIRE(matA != matC);
 }
 

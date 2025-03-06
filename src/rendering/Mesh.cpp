@@ -1,6 +1,16 @@
 #include "rendering/Mesh.hpp"
 #include <vector>
 
+/**
+ * @brief Constructs a Mesh with given vertices, normals, and indices.
+ *
+ * The constructor merges the vertex positions and normals into one array
+ * and uploads the data to the GPU.
+ *
+ * @param vertices A vector of vertex positions.
+ * @param normals A vector of vertex normals.
+ * @param indices A vector of indices for drawing the mesh.
+ */
 Mesh::Mesh(const std::vector<float> &vertices,
            const std::vector<float> &normals,
            const std::vector<unsigned int> &indices)
@@ -24,6 +34,7 @@ Mesh::Mesh(const std::vector<float> &vertices,
   glBindVertexArray(VAO);
 
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
   // Use dynamic draw since we plan to update the buffer later
   glBufferData(GL_ARRAY_BUFFER, vertexData.size() * sizeof(float),
                vertexData.data(), GL_DYNAMIC_DRAW);
@@ -42,18 +53,35 @@ Mesh::Mesh(const std::vector<float> &vertices,
   glBindVertexArray(0);
 }
 
+/**
+ * @brief Destructor that releases the OpenGL resources.
+ */
 Mesh::~Mesh() {
   glDeleteVertexArrays(1, &VAO);
   glDeleteBuffers(1, &VBO);
   glDeleteBuffers(1, &EBO);
 }
 
+/**
+ * @brief Draws the mesh.
+ *
+ * Binds the VAO and calls glDrawElements to render the mesh.
+ */
 void Mesh::draw() const {
   glBindVertexArray(VAO);
   glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, 0);
   glBindVertexArray(0);
 }
 
+/**
+ * @brief Updates the position of a vertex in the mesh.
+ *
+ * Changes the position of the vertex at the given index and then updates the
+ * GPU buffer.
+ *
+ * @param vertexIndex The index of the vertex to update.
+ * @param newPosition The new position for the vertex.
+ */
 void Mesh::updateVertexPosition(unsigned int vertexIndex,
                                 const Vector3 &newPosition) {
   size_t offset =
@@ -67,6 +95,11 @@ void Mesh::updateVertexPosition(unsigned int vertexIndex,
   }
 }
 
+/**
+ * @brief Re-uploads the vertex data to the GPU.
+ *
+ * This should be called after modifying the vertex data.
+ */
 void Mesh::updateBuffer() {
   glBindBuffer(GL_ARRAY_BUFFER, VBO);
   glBufferSubData(GL_ARRAY_BUFFER, 0, vertexData.size() * sizeof(float),
