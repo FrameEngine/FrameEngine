@@ -4,12 +4,26 @@
 #include <iostream>
 #include <sstream>
 
+/**
+ * @brief Loads shader source code from a file.
+ *
+ * @param filePath Path to the shader file.
+ * @return A string containing the shader source code.
+ */
 std::string Shader::loadShaderSource(const std::string &filePath) {
   std::ifstream file(filePath);
   std::stringstream buffer;
   buffer << file.rdbuf();
   return buffer.str();
 }
+
+/**
+ * @brief Compiles a shader from source code.
+ *
+ * @param source The shader source code.
+ * @param type The type of shader (GL_VERTEX_SHADER or GL_FRAGMENT_SHADER).
+ * @return The compiled shader ID.
+ */
 
 GLuint Shader::compileShader(const std::string &source, GLenum type) {
   GLuint shader = glCreateShader(type);
@@ -28,6 +42,13 @@ GLuint Shader::compileShader(const std::string &source, GLenum type) {
   return shader;
 }
 
+/**
+ * @brief Constructs a Shader by loading, compiling, and linking vertex and
+ * fragment shaders.
+ *
+ * @param vertexPath Path to the vertex shader file.
+ * @param fragmentPath Path to the fragment shader file.
+ */
 Shader::Shader(const std::string &vertexPath, const std::string &fragmentPath) {
   std::string vertexSrc = loadShaderSource(vertexPath);
   std::string fragmentSrc = loadShaderSource(fragmentPath);
@@ -48,21 +69,28 @@ Shader::Shader(const std::string &vertexPath, const std::string &fragmentPath) {
     LOG(ERROR, "Shader Linking Error: %s", log);
   }
 
+  // Shaders are no longer needed once linked
   glDeleteShader(vertexShader);
   glDeleteShader(fragmentShader);
 }
 
+/**
+ * @brief Destructor that deletes the shader program.
+ */
 Shader::~Shader() { glDeleteProgram(programID); }
 
+/**
+ * @brief Activates the shader program.
+ */
 void Shader::bind() const { glUseProgram(programID); }
 
+/**
+ * @brief Deactivates the shader program.
+ */
 void Shader::unbind() const { glUseProgram(0); }
 
-// ===== SetUniform =====
-
-// TODO Surely there is a better way to work with multiple types. It's basicaly
-// wrap around openGL setUniform. Rewrite it
-
+/// ===== Uniforms =====
+// TODO Surely there is a better way to work with multiple types.
 void Shader::setUniformInt(const std::string &name, int value) const {
   GLint location = glGetUniformLocation(programID, name.c_str());
   if (location == -1) {
