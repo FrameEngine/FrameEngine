@@ -3,16 +3,14 @@ name: Deploy Documentation
 on:
   workflow_run:
     workflows: ["FrameEngine CI"]
-    types:
-      - completed
-  push:
-    branches:
-      - main
+    types: [completed]
+  workflow_dispatch:
 
 permissions:
   pages: write
   contents: write
   id-token: write
+
 jobs:
   deploy-docs:
     runs-on: ubuntu-latest
@@ -23,13 +21,16 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Install Dependencies
+      - name: Install Documentation Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y doxygen graphviz
 
       - name: Generate Documentation
         run: doxygen Doxyfile
+
+      - name: Verify Documentation Exists
+        run: test -d ./docs/html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
