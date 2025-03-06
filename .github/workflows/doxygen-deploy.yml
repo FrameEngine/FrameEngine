@@ -12,7 +12,7 @@ on:
 jobs:
   deploy-docs:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_run' ? (github.event.workflow_run.conclusion == 'success') : true
+    if: ${{ (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') || (github.event_name != 'workflow_run') }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
