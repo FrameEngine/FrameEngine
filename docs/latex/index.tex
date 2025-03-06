@@ -1,0 +1,162 @@
+\chapter{Frame\+Engine -\/ physics engine}
+\hypertarget{index}{}\label{index}\index{FrameEngine -\/ physics engine@{FrameEngine -\/ physics engine}}
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+
+
+I love doing physics simulations and math-\/related projects! However, rewriting window management, UI, objects, and other related things every time can be tedious. So I decided to build my own engine
+
+  
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md2}{}\doxysection{\texorpdfstring{Overview}{Overview}}\label{index_autotoc_md2}
+The core of {\bfseries{Frame\+Engine}} is built around \href{https://en.wikipedia.org/wiki/Entity_component_system}{\texttt{ ECS}}(Entity-\/component-\/system) and includes\+:
+\begin{DoxyItemize}
+\item {\bfseries{\doxylink{classRegistry}{Registry}}}\+: A simple ECS {\ttfamily \doxylink{classRegistry}{Registry}} that allows creating entities and attaching components.
+\item {\bfseries{Components}}\+: Data containers that define behaviors or properties such as transforms, physics, or rendering details.
+\item {\bfseries{Systems}}\+: Logic units that iterate through all entities with specific components. For instance, the {\ttfamily \doxylink{classPhysicsSystem}{Physics\+System}} handles velocity and position updates, while the {\ttfamily Render\+System} renderes meshes
+\item {\bfseries{\doxylink{classEngine}{Engine}}}\+: A base {\ttfamily \doxylink{classEngine}{Engine}} class that provides a main loop with a {\bfseries{fixed timestep}} for physics and a simple rendering pass.
+\end{DoxyItemize}
+
+Frame\+Engine currently supports {\bfseries{Open\+GL rendering}} using {\bfseries{X11}} as the windowing backend. ~\newline
+ Currently, it runs on {\bfseries{Linux only}}, but we plan to add cross-\/platform support soon.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md4}{}\doxysection{\texorpdfstring{Getting Started}{Getting Started}}\label{index_autotoc_md4}
+\hypertarget{index_autotoc_md5}{}\doxysubsection{\texorpdfstring{Prerequisites}{Prerequisites}}\label{index_autotoc_md5}
+
+\begin{DoxyItemize}
+\item A {\bfseries{C++17}} compiler
+\item {\bfseries{CMake}} \texorpdfstring{$>$}{>}= 3.\+10
+\item {\bfseries{Make}}
+\item {\bfseries{Catch2}} unit testing library
+\item {\bfseries{X11-\/dev libraries}} so far we use x11 as our window-\/backend
+\item {\bfseries{Doxygen}} auto-\/generated documentation
+\end{DoxyItemize}
+
+On many Linux systems, you can install these with package managers like {\ttfamily apt}, e.\+g\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo\ apt-\/get\ install\ -\/y\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ libx11-\/dev\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ libxext-\/dev\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ libxrandr-\/dev\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ libxinerama-\/dev\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ libxcursor-\/dev\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ libxi-\/dev\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ libgl1-\/mesa-\/dev\ pkg-\/config\ doxygen\ graphviz}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md6}{}\doxysubsection{\texorpdfstring{Building the Engine}{Building the Engine}}\label{index_autotoc_md6}
+Clone this repository\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/Perchinka/FrameEngine.git}
+\DoxyCodeLine{cd\ FrameEngine}
+\DoxyCodeLine{make\ build}
+
+\end{DoxyCode}
+
+
+After successful compilation, the {\ttfamily build} folder will contain the executables.\hypertarget{index_autotoc_md7}{}\doxysubsection{\texorpdfstring{Running tests}{Running tests}}\label{index_autotoc_md7}
+To run tests and check if everything was installed correctly\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ test}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md8}{}\doxysubsection{\texorpdfstring{Running the demo}{Running the demo}}\label{index_autotoc_md8}
+The demo application is located at {\ttfamily src/main.\+cpp}. Once built, you can run\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make\ run}
+
+\end{DoxyCode}
+ or manually\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./build/frame\_engine}
+
+\end{DoxyCode}
+
+
+This will launch a simple Open\+GL window with a demo scene Press {\ttfamily Ctrl+C} in the terminal to terminate (or just close the window).
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md10}{}\doxysection{\texorpdfstring{How to use the engine?}{How to use the engine?}}\label{index_autotoc_md10}
+Include the Frame\+Engine directory in your project and update your {\ttfamily CMake\+Lists.\+txt} as follows\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake\_minimum\_required(VERSION\ 3.10)}
+\DoxyCodeLine{project(MySimulation)}
+\DoxyCodeLine{}
+\DoxyCodeLine{set(CMAKE\_CXX\_STANDARD\ 17)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Include\ the\ FrameEngine\ directory}
+\DoxyCodeLine{include\_directories(FrameEngine/include)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Build\ your\ own\ simulation\ executable}
+\DoxyCodeLine{add\_executable(my\_sim\ main.cpp)}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#\ Link\ against\ the\ FrameEngine\ library}
+\DoxyCodeLine{target\_link\_libraries(my\_sim\ PRIVATE\ frame\_engine)}
+
+\end{DoxyCode}
+
+
+Now you can use {\bfseries{Frame\+Engine}}
+
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Include}} the engine headers in your project\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}FrameEngine.hpp"{}}}
+
+\end{DoxyCode}
+
+\item {\bfseries{Inherit}} from {\ttfamily \doxylink{classEngine}{Engine}} to create your own simulation/game class\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{class\ }MySimulation\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classEngine}{Engine}}\ \{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEngine_a911e9bb862aba19f61ddf2e6ce7c55b0}{on\_start}}()\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Add\ your\ initialization\ logic\ here}}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEngine_a4b592adb20f2e589acf010e1a9ca4f14}{fixed\_update}}(\textcolor{keywordtype}{float}\ dt)\textcolor{keyword}{\ override\ }\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Add\ your\ physics\ logic\ here}}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\};}
+
+\end{DoxyCode}
+
+\item {\bfseries{Init and Run}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ \ \mbox{\hyperlink{classSimulation}{Simulation}}\ sim;}
+\DoxyCodeLine{\ \ \ sim.\mbox{\hyperlink{classEngine_ab44d76e2ff6057e73d6210cf9af0d89e}{init}}();}
+\DoxyCodeLine{\ \ \ sim.\mbox{\hyperlink{classEngine_a1a210cf30d6bd330b3649439ecd6d6cc}{run}}();}
+\DoxyCodeLine{\ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md12}{}\doxysection{\texorpdfstring{Contributing}{Contributing}}\label{index_autotoc_md12}
+We welcome contributions 🎉
+
+Please view the \doxysectlink{md_CONTRIBUTING}{CONTRIBUTING.md}{0} for guidelines on submitting issues, pull requests, and coding standards.
+
+Thank you for helping improve this project!
+
+\begin{quote}
+If you have any questions you can {\bfseries{start a disscusion}} or PM me directly on \href{https://github.com/Perchinka}{\texttt{ my socials}} \end{quote}
+
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md14}{}\doxysection{\texorpdfstring{Future Plans}{Future Plans}}\label{index_autotoc_md14}
+We\textquotesingle{}re continuously improving Frame\+Engine. Follow our {\bfseries{\href{https://github.com/users/Perchinka/projects/9}{\texttt{ roadmap}}}} for upcoming features and enhancements
+
+{\bfseries{Have feature suggestions or want to contribute?}} Feel free to start a discussion or check out our \doxysectlink{md_CONTRIBUTING}{CONTRIBUTING.md}{0} for guidelines.
+
+\DoxyHorRuler{0}
+\hypertarget{index_autotoc_md16}{}\doxysection{\texorpdfstring{License}{License}}\label{index_autotoc_md16}
+This project is licensed under the \mbox{[}MIT License\mbox{]}(LICENSE). 

@@ -1,0 +1,51 @@
+\chapter{Contributing to Frame\+Engine}
+\hypertarget{md_CONTRIBUTING}{}\label{md_CONTRIBUTING}\index{Contributing to FrameEngine@{Contributing to FrameEngine}}
+\label{md_CONTRIBUTING_autotoc_md17}%
+\Hypertarget{md_CONTRIBUTING_autotoc_md17}%
+
+
+Thank you for considering contributing to Frame\+Engine! Here’s how you can help\+:\hypertarget{md_CONTRIBUTING_autotoc_md18}{}\doxysection{\texorpdfstring{How to Contribute}{How to Contribute}}\label{md_CONTRIBUTING_autotoc_md18}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Fork the repository.}}
+\item {\bfseries{Create a branch}} for your changes. Here some examples of good branch names\+:
+\begin{DoxyItemize}
+\item {\ttfamily feature/add-\/opengl-\/renderer}
+\item {\ttfamily bugfix/fix-\/physics-\/integration}
+\item {\ttfamily docs/update-\/contribution-\/guide}
+\end{DoxyItemize}
+\item {\bfseries{Make your changes}} following our coding style.
+\item {\bfseries{Build the Project}} using {\ttfamily make rebuild}
+\item {\bfseries{Run tests\+:}} Ensure all tests pass by running {\ttfamily make test}.
+\item {\bfseries{Commit your changes}} Make sure your commit {\bfseries{messages are clear}} and {\bfseries{reference issues}} if applicable. Example of good commit header\+: {\ttfamily git commit -\/m "{}\+Fix gravity calculation in Physics\+System (\#42)"{}}
+\item {\bfseries{Open a Pull Request\+:}} Describe your changes following PULL\+\_\+\+REQUEST\+\_\+\+TEMPLATE
+\end{DoxyEnumerate}\hypertarget{md_CONTRIBUTING_autotoc_md19}{}\doxysection{\texorpdfstring{Code Style Guidelines}{Code Style Guidelines}}\label{md_CONTRIBUTING_autotoc_md19}
+
+\begin{DoxyItemize}
+\item Naming Conventions\+: Use names consistent with existing code (e.\+g., {\ttfamily Mesh\+Component}, {\ttfamily \doxylink{structPhysicsComponent}{Physics\+Component}}, etc.).
+\item Follow commit message conventions\+: a short summary, a blank line, and then a detailed description that explains {\itshape What} and {\bfseries{Why}}.
+\item Update or add documentation comments to your code following {\bfseries{Doxygen-\/style}} standarts (Can read more \href{https://www.doxygen.nl/manual/docblocks.html}{\texttt{ here}})
+\end{DoxyItemize}\hypertarget{md_CONTRIBUTING_autotoc_md20}{}\doxysection{\texorpdfstring{Reporting Issues}{Reporting Issues}}\label{md_CONTRIBUTING_autotoc_md20}
+To report a bug use the Issues Templates
+
+Before submitting a bug report, please\+:
+\begin{DoxyItemize}
+\item Search the issue tracker for similar issues.
+\item Include clear steps to reproduce, details about your system (compiler version, OS, etc.), and any error logs.
+\item Include any relevant logs or error messages.
+\item Provide screenshots if applicable
+\end{DoxyItemize}\hypertarget{md_CONTRIBUTING_autotoc_md21}{}\doxysection{\texorpdfstring{Proposing New Features}{Proposing New Features}}\label{md_CONTRIBUTING_autotoc_md21}
+If you’d like to propose a new feature, please {\bfseries{open a discussion before submitting a PR}} to avoid redundant work.\hypertarget{md_CONTRIBUTING_autotoc_md22}{}\doxysubsection{\texorpdfstring{How to suggest a Feature}{How to suggest a Feature}}\label{md_CONTRIBUTING_autotoc_md22}
+
+\begin{DoxyEnumerate}
+\item Check if a similar feature request already exists
+\item Celarly describe\+:
+\begin{DoxyItemize}
+\item What the feature should do
+\item Why is it useful
+\item Possible implementation approach is highly appreciated
+\end{DoxyItemize}
+\item Submit your request in the Issues section using the "{}\+Feature Request"{} template.
+\end{DoxyEnumerate}
+
+Thank you for helping improve Frame\+Engine! 
