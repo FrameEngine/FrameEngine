@@ -1,17 +1,17 @@
 <map id="include/Logger.hpp" name="include/Logger.hpp">
-<area shape="rect" id="Node000001" title="Provides logging functionality." alt="" coords="189,5,333,31"/>
-<area shape="rect" id="Node000002" href="$Entity_8hpp.html" title="Defines the Entity class, which serves as a wrapper for ECS entities." alt="" coords="192,79,329,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="263,44,263,79,258,79,258,44"/>
-<area shape="rect" id="Node000003" href="$Object_8hpp.html" title="Defines the Object class, a special ECS entity wrapper." alt="" coords="163,152,358,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="263,118,263,152,258,152,258,118"/>
-<area shape="rect" id="Node000004" href="$PointLight_8hpp_source.html" title=" " alt="" coords="5,225,223,251"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="226,186,139,228,137,223,224,181"/>
-<area shape="rect" id="Node000005" href="$Renderer_8hpp.html" title="Manages the rendering pipeline and object submission." alt="" coords="148,299,373,324"/>
-<area shape="poly" id="edge8_Node000003_Node000005" title=" " alt="" coords="263,191,263,298,258,298,258,191"/>
-<area shape="rect" id="Node000007" href="$Camera_8hpp.html" title="Defines the Camera class for view and projection." alt="" coords="298,225,517,251"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="297,181,384,223,382,228,295,186"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="151,254,238,296,236,301,148,259"/>
-<area shape="rect" id="Node000006" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="188,372,333,397"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="263,338,263,372,258,372,258,338"/>
-<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="373,259,286,301,284,296,371,254"/>
+<area shape="rect" id="Node000001" title="Provides logging functionality." alt="" coords="187,5,331,33"/>
+<area shape="rect" id="Node000002" href="$Entity_8hpp.html" title="Defines the Entity class, which serves as a wrapper for ECS entities." alt="" coords="191,81,327,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="262,49,262,81,256,81,256,49"/>
+<area shape="rect" id="Node000003" href="$Object_8hpp.html" title="Defines the Object class, a special ECS entity wrapper." alt="" coords="162,157,356,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="262,124,262,156,256,156,256,124"/>
+<area shape="rect" id="Node000004" href="$PointLight_8hpp_source.html" title=" " alt="" coords="5,232,222,260"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="220,194,140,234,138,230,218,189"/>
+<area shape="rect" id="Node000005" href="$Renderer_8hpp.html" title="Manages the rendering pipeline and object submission." alt="" coords="146,308,372,336"/>
+<area shape="poly" id="edge8_Node000003_Node000005" title=" " alt="" coords="262,200,262,307,256,307,256,200"/>
+<area shape="rect" id="Node000007" href="$Camera_8hpp.html" title="Defines the Camera class for view and projection." alt="" coords="297,232,514,260"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="300,189,381,230,378,234,297,194"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="154,265,234,305,232,310,152,270"/>
+<area shape="rect" id="Node000006" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="187,384,331,411"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="262,351,262,383,256,383,256,351"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="367,270,286,310,284,305,365,265"/>
 </map>

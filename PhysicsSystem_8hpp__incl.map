@@ -1,41 +1,41 @@
 <map id="include/physics/PhysicsSystem.hpp" name="include/physics/PhysicsSystem.hpp">
-<area shape="rect" id="Node000001" title="Defines the PhysicsSystem." alt="" coords="583,5,835,31"/>
-<area shape="rect" id="Node000002" href="$Registry_8hpp.html" title="Defines the Registry class for managing ECS entities and components." alt="" coords="291,79,394,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="651,33,408,80,407,75,650,28"/>
-<area shape="rect" id="Node000009" href="$PhysicsComponent_8hpp.html" title="Defines the PhysicsComponent for ECS&#45;based physics simulation." alt="" coords="947,225,1205,251"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="746,28,801,49,860,76,917,111,971,149,1054,214,1050,218,967,153,914,115,857,81,799,54,745,33"/>
-<area shape="rect" id="Node000014" href="$TransformComponent_8hpp.html" title="Defines the TransformComponent for ECS&#45;based spatial transformations." alt="" coords="572,79,847,104"/>
-<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="712,31,712,65,707,65,707,31"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,91,177"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="296,107,105,152,103,147,295,101"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="115,152,173,177"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="312,107,188,151,186,146,310,102"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="197,152,275,177"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="327,106,266,147,263,142,324,102"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="299,152,386,177"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="345,104,345,138,340,138,340,104"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="410,152,534,177"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="365,102,440,143,437,147,362,106"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="558,152,621,177"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="383,101,545,148,544,153,382,107"/>
-<area shape="rect" id="Node000010" href="$Vector3_8hpp.html" title="Defines the Vector3 class." alt="" coords="670,299,807,324"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1022,253,807,298,806,293,1021,248"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="611,372,674,397"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="725,326,671,366,668,361,722,322"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="832,372,907,397"/>
-<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="761,322,837,363,835,368,758,326"/>
-<area shape="rect" id="Node000013" title=" " alt="" coords="709,372,768,397"/>
-<area shape="poly" id="edge12_Node000010_Node000013" title=" " alt="" coords="741,324,741,358,736,358,736,324"/>
-<area shape="poly" id="edge22_Node000014_Node000010" title=" " alt="" coords="714,104,738,285,733,285,708,105"/>
-<area shape="rect" id="Node000015" href="$Matrix4_8hpp.html" title="Defines the Matrix4 class for 3D transformation operations." alt="" coords="747,152,885,177"/>
-<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="728,102,789,142,786,147,725,106"/>
-<area shape="rect" id="Node000016" href="$Quaternion_8hpp.html" title="Defines the Quaternion class for representing 3D rotations." alt="" coords="549,225,672,251"/>
-<area shape="poly" id="edge21_Node000014_Node000016" title=" " alt="" coords="703,106,629,215,624,212,699,103"/>
-<area shape="poly" id="edge18_Node000015_Node000010" title=" " alt="" coords="812,179,754,288,749,285,807,177"/>
-<area shape="poly" id="edge20_Node000015_Node000012" title=" " alt="" coords="839,175,865,195,886,224,896,260,896,297,890,331,881,360,876,358,884,330,890,296,891,261,882,226,861,199,835,180"/>
-<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="784,180,658,223,656,218,782,175"/>
-<area shape="rect" id="Node000017" title=" " alt="" coords="797,225,872,251"/>
-<area shape="poly" id="edge19_Node000015_Node000017" title=" " alt="" coords="822,177,831,212,826,213,817,178"/>
-<area shape="poly" id="edge16_Node000016_Node000010" title=" " alt="" coords="633,248,707,289,704,294,630,253"/>
-<area shape="poly" id="edge17_Node000016_Node000011" title=" " alt="" coords="616,251,640,358,635,359,611,252"/>
+<area shape="rect" id="Node000001" title="Defines the PhysicsSystem." alt="" coords="579,5,830,33"/>
+<area shape="rect" id="Node000002" href="$Registry_8hpp.html" title="Defines the Registry class for managing ECS entities and components." alt="" coords="290,81,392,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="640,36,407,83,406,78,639,31"/>
+<area shape="rect" id="Node000009" href="$PhysicsComponent_8hpp.html" title="Defines the PhysicsComponent for ECS&#45;based physics simulation." alt="" coords="943,232,1200,260"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="746,31,799,51,855,79,912,114,965,152,1048,220,1044,224,962,157,909,118,853,83,797,56,744,36"/>
+<area shape="rect" id="Node000014" href="$TransformComponent_8hpp.html" title="Defines the TransformComponent for ECS&#45;based spatial transformations." alt="" coords="568,81,842,109"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="708,34,708,65,702,65,702,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,157,90,184"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="290,111,105,158,104,152,289,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="114,157,173,184"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="306,112,189,155,187,150,305,107"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="197,157,274,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="324,111,268,150,265,146,320,107"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="298,157,384,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="344,109,344,141,338,141,338,109"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="407,157,530,184"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="365,107,434,147,432,151,362,112"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="555,157,617,184"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="385,107,541,153,539,158,384,112"/>
+<area shape="rect" id="Node000010" href="$Vector3_8hpp.html" title="Defines the Vector3 class." alt="" coords="666,308,803,336"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1011,263,810,307,809,302,1010,258"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="608,384,671,411"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="719,338,670,376,667,372,716,334"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="828,384,902,411"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="759,334,830,374,827,378,756,339"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="705,384,763,411"/>
+<area shape="poly" id="edge12_Node000010_Node000013" title=" " alt="" coords="737,336,737,368,732,368,732,336"/>
+<area shape="poly" id="edge22_Node000014_Node000010" title=" " alt="" coords="709,109,733,292,728,293,704,109"/>
+<area shape="rect" id="Node000015" href="$Matrix4_8hpp.html" title="Defines the Matrix4 class for 3D transformation operations." alt="" coords="743,157,880,184"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="725,107,782,146,779,150,722,111"/>
+<area shape="rect" id="Node000016" href="$Quaternion_8hpp.html" title="Defines the Quaternion class for representing 3D rotations." alt="" coords="546,232,667,260"/>
+<area shape="poly" id="edge21_Node000014_Node000016" title=" " alt="" coords="699,110,625,221,621,218,694,107"/>
+<area shape="poly" id="edge18_Node000015_Node000010" title=" " alt="" coords="807,186,750,295,746,293,803,183"/>
+<area shape="poly" id="edge20_Node000015_Node000012" title=" " alt="" coords="836,183,861,203,882,231,891,267,892,305,886,340,878,369,873,368,881,339,886,304,886,268,877,233,858,207,833,187"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="776,187,658,229,656,224,774,182"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="793,232,867,260"/>
+<area shape="poly" id="edge19_Node000015_Node000017" title=" " alt="" coords="817,184,826,216,820,218,812,186"/>
+<area shape="poly" id="edge16_Node000016_Node000010" title=" " alt="" coords="630,258,700,298,697,302,628,263"/>
+<area shape="poly" id="edge17_Node000016_Node000011" title=" " alt="" coords="612,260,636,368,631,369,606,261"/>
 </map>

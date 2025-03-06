@@ -7,7 +7,10 @@ var searchData=
   ['render_4',['render',['../classObject.html#a951d73df2f0963a0e0e752eea23d60d7',1,'Object::render()'],['../classRenderer.html#af7e5f8f68742f198e315fb4683a605a4',1,'Renderer::render()']]],
   ['renderer_5',['renderer',['../classRenderer.html',1,'Renderer'],['../classRenderer.html#a5c19260ca73eec962fc4177261545aec',1,'Renderer::Renderer()']]],
   ['renderer_2ehpp_6',['Renderer.hpp',['../Renderer_8hpp.html',1,'']]],
-  ['rotate_7',['rotate',['../classObject.html#a2ac65a7bb2b2ed5335f7d2226dba2b11',1,'Object']]],
-  ['rotatevector_8',['rotateVector',['../structQuaternion.html#a0705f01f7669f4a69db459b2288cab75',1,'Quaternion']]],
-  ['run_9',['run',['../classEngine.html#a1a210cf30d6bd330b3649439ecd6d6cc',1,'Engine']]]
+  ['reporting_20issues_7',['Reporting Issues',['../md_CONTRIBUTING.html#autotoc_md20',1,'']]],
+  ['rotate_8',['rotate',['../classObject.html#a2ac65a7bb2b2ed5335f7d2226dba2b11',1,'Object']]],
+  ['rotatevector_9',['rotateVector',['../structQuaternion.html#a0705f01f7669f4a69db459b2288cab75',1,'Quaternion']]],
+  ['run_10',['run',['../classEngine.html#a1a210cf30d6bd330b3649439ecd6d6cc',1,'Engine']]],
+  ['running_20tests_11',['Running tests',['../index.html#autotoc_md7',1,'']]],
+  ['running_20the_20demo_12',['Running the demo',['../index.html#autotoc_md8',1,'']]]
 ];

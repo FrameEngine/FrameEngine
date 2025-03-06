@@ -1,11 +1,11 @@
 <map id="Simulation" name="Simulation">
-<area shape="rect" id="Node000001" title=" " alt="" coords="299,568,420,653"/>
-<area shape="rect" id="Node000002" href="$classEngine.html" title="Core engine class that manages the main loop, physics, and rendering." alt="" coords="299,333,420,519"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="362,532,362,568,357,568,357,532"/>
-<area shape="rect" id="Node000003" href="$classRegistry.html" title="Manages all ECS entities and components." alt="" coords="5,15,236,261"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,259,290,338,286,341,220,262"/>
-<area shape="rect" id="Node000004" href="$classWindow.html" title=" " alt="" coords="260,35,459,241"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="362,241,362,317,357,317,357,241"/>
-<area shape="rect" id="Node000005" href="$classRenderer.html" title="Handles the drawing of scene objects and lights." alt="" coords="483,5,603,271"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="486,251,472,272,432,332,428,329,468,269,481,248"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="296,622,418,716"/>
+<area shape="rect" id="Node000002" href="$classEngine.html" title="Core engine class that manages the main loop, physics, and rendering." alt="" coords="296,366,418,572"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="360,587,360,622,354,622,354,587"/>
+<area shape="rect" id="Node000003" href="$classRegistry.html" title="Manages all ECS entities and components." alt="" coords="5,16,234,290"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="224,288,288,372,284,375,220,291"/>
+<area shape="rect" id="Node000004" href="$classWindow.html" title=" " alt="" coords="258,39,456,268"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="360,267,360,349,354,349,354,267"/>
+<area shape="rect" id="Node000005" href="$classRenderer.html" title="Handles the drawing of scene objects and lights." alt="" coords="481,5,599,301"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="483,279,470,302,430,368,425,365,466,300,479,276"/>
 </map>
