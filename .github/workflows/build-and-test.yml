@@ -3,8 +3,9 @@ name: FrameEngine CI
 on:
   pull_request:
     branches:
-      - develop
+      - dev
       - main
+  workflow_dispatch:
 
 jobs:
   build-and-test:
@@ -17,7 +18,7 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Install Dependencies
+      - name: Install Build Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y \
@@ -27,12 +28,15 @@ jobs:
               libxinerama-dev \
               libxcursor-dev \
               libxi-dev \
-              libgl1-mesa-dev pkg-config doxygen graphviz
+              libgl1-mesa-dev \
+              pkg-config \
+              doxygen \
+              graphviz
           git clone https://github.com/catchorg/Catch2.git
           cd Catch2
           cmake -B build -S . -DBUILD_TESTING=OFF
           sudo cmake --build build/ --target install
-  
+
       - name: Configure CMake
         run: cmake -S . -B build
 
