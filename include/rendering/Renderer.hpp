@@ -10,19 +10,30 @@
 #include "objects/Object.hpp"
 #include "objects/PointLight.hpp"
 #include "rendering/Camera.hpp"
-#include "rendering/Mesh.hpp"
 #include "rendering/Shader.hpp"
-#include <memory>
 #include <vector>
 
+/**
+ * @class Renderer
+ * @brief Handles the drawing of scene objects and lights.
+ *
+ * The Renderer class keeps a list of objects and point lights to render.
+ */
 class Renderer {
 private:
-  static Shader *shader;
-  static std::vector<Object *> renderQueue;
-  static std::vector<PointLight *> lights;
+  static Shader *shader; ///< The active shader used for drawing.
+  static std::vector<Object *>
+      renderQueue; ///< List of objects waiting to be rendered.
+  static std::vector<PointLight *>
+      lights; ///< List of point lights in the scene.
   Camera camera;
 
 public:
+  /**
+   * @brief Constructs a Renderer and sets up the camera.
+   *
+   * @param registry The ECS registry used to initialize the camera.
+   */
   Renderer(Registry &registry);
 
   /**
@@ -42,16 +53,26 @@ public:
 
   /**
    * @brief Submits an object to the rendering queue.
+   *
    * @param mesh The mesh to render.
    * @param shader The shader to use.
    */
   static void submit(Object *obj);
+
+  /**
+   * @brief Removes all objects from the render queue.
+   */
   void clearObjects();
 
+  /**
+   * @brief Adds a point light to the list of lights.
+   *
+   * @param light The point light to submit.
+   */
   static void submitLight(PointLight *light);
 
   /**
-   * @brief Swaps the front and back buffers.
+   * @brief Renders all submitted objects and lights.
    *
    * This function should be called at the end of the frame to present
    * the rendered image on the screen.
@@ -66,8 +87,27 @@ public:
    */
   static void shutdown();
 
+  /**
+   * @brief Sets the active shader.
+   *
+   * This changes the shader used when drawing objects.
+   *
+   * @param shader The new shader to use.
+   */
   void setShader(Shader *shader);
+
+  /**
+   * @brief Returns the currently active shader.
+   *
+   * @return A pointer to the active shader.
+   */
   static Shader *getShader() { return shader; }
+
+  /**
+   * @brief Returns a reference to the camera.
+   *
+   * @return A reference to the camera.
+   */
   Camera &getCamera();
 };
 
