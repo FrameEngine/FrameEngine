@@ -1,0 +1,170 @@
+\doxysection{Mesh Class Reference}
+\hypertarget{classMesh}{}\label{classMesh}\index{Mesh@{Mesh}}
+
+
+Collaboration diagram for Mesh\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classMesh__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMesh_a082b53937d761eeeff58d714153729c1}{Mesh}} (const std\+::vector$<$ float $>$ \&vertices, const std\+::vector$<$ float $>$ \&normals, const std\+::vector$<$ unsigned int $>$ \&indices)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classMesh}{Mesh} with given vertices, normals, and indices. \end{DoxyCompactList}\item 
+\Hypertarget{classMesh_a5efe4da1a4c0971cfb037bd70304c303}\label{classMesh_a5efe4da1a4c0971cfb037bd70304c303} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Mesh} ()
+\begin{DoxyCompactList}\small\item\em Destructor that releases the Open\+GL resources. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMesh_a79b998580025a501675a517e9fc1283f}{draw}} () const
+\begin{DoxyCompactList}\small\item\em Draws the mesh. \end{DoxyCompactList}\item 
+std\+::vector$<$ float $>$ \& \mbox{\hyperlink{classMesh_a77a4ae289a9ef77a3daddbcaa43e3535}{get\+Vertex\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the vertex data. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{classMesh_acd951990276681968cb86beec268fcae}{get\+VAO}} () const
+\begin{DoxyCompactList}\small\item\em Returns the VAO identifier. \end{DoxyCompactList}\item 
+GLuint \mbox{\hyperlink{classMesh_abdba78a715687b4b119d7fbddfd5cb10}{get\+VBO}} () const
+\begin{DoxyCompactList}\small\item\em Returns the VBO identifier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMesh_a9c940b13dc324abfbd8e45b52a0b92ff}{update\+Vertex\+Position}} (unsigned int vertex\+Index, const \mbox{\hyperlink{classVector3}{Vector3}} \&new\+Position)
+\begin{DoxyCompactList}\small\item\em Updates the position of a vertex in the mesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMesh_a4c5fd807a8491a9125a2ce2791a0a591}{update\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Re-\/uploads the vertex data to the GPU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classMesh}{Mesh}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classMesh_aaa89ff8d55ad8ddb3f6279d4e7364f69}{load\+From\+OBJ}} (const std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Loads a mesh from an OBJ file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMesh_a082b53937d761eeeff58d714153729c1}\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{Mesh()}{Mesh()}}
+{\footnotesize\ttfamily \label{classMesh_a082b53937d761eeeff58d714153729c1} 
+Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ float $>$ \&}]{vertices}{, }\item[{const std\+::vector$<$ float $>$ \&}]{normals}{, }\item[{const std\+::vector$<$ unsigned int $>$ \&}]{indices}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classMesh}{Mesh} with given vertices, normals, and indices. 
+
+The constructor merges the vertex positions and normals into one array and uploads the data to the GPU.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & A vector of vertex positions. \\
+\hline
+{\em normals} & A vector of vertex normals. \\
+\hline
+{\em indices} & A vector of indices for drawing the mesh. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMesh_a79b998580025a501675a517e9fc1283f}\index{Mesh@{Mesh}!draw@{draw}}
+\index{draw@{draw}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{classMesh_a79b998580025a501675a517e9fc1283f} 
+void Mesh\+::draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Draws the mesh. 
+
+Binds the VAO and calls gl\+Draw\+Elements to render the mesh. \Hypertarget{classMesh_acd951990276681968cb86beec268fcae}\index{Mesh@{Mesh}!getVAO@{getVAO}}
+\index{getVAO@{getVAO}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{getVAO()}{getVAO()}}
+{\footnotesize\ttfamily \label{classMesh_acd951990276681968cb86beec268fcae} 
+GLuint Mesh\+::get\+VAO (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the VAO identifier. 
+
+\begin{DoxyReturn}{Returns}
+The Open\+GL VAO ID. 
+\end{DoxyReturn}
+\Hypertarget{classMesh_abdba78a715687b4b119d7fbddfd5cb10}\index{Mesh@{Mesh}!getVBO@{getVBO}}
+\index{getVBO@{getVBO}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{getVBO()}{getVBO()}}
+{\footnotesize\ttfamily \label{classMesh_abdba78a715687b4b119d7fbddfd5cb10} 
+GLuint Mesh\+::get\+VBO (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the VBO identifier. 
+
+\begin{DoxyReturn}{Returns}
+The Open\+GL VBO ID. 
+\end{DoxyReturn}
+\Hypertarget{classMesh_a77a4ae289a9ef77a3daddbcaa43e3535}\index{Mesh@{Mesh}!getVertexData@{getVertexData}}
+\index{getVertexData@{getVertexData}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{getVertexData()}{getVertexData()}}
+{\footnotesize\ttfamily \label{classMesh_a77a4ae289a9ef77a3daddbcaa43e3535} 
+std\+::vector$<$ float $>$ \& Mesh\+::get\+Vertex\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a reference to the vertex data. 
+
+The data layout is\+: \mbox{[}x, y, z, nx, ny, nz\mbox{]} per vertex.
+
+\begin{DoxyReturn}{Returns}
+A reference to the vector containing the vertex data. 
+\end{DoxyReturn}
+\Hypertarget{classMesh_aaa89ff8d55ad8ddb3f6279d4e7364f69}\index{Mesh@{Mesh}!loadFromOBJ@{loadFromOBJ}}
+\index{loadFromOBJ@{loadFromOBJ}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{loadFromOBJ()}{loadFromOBJ()}}
+{\footnotesize\ttfamily \label{classMesh_aaa89ff8d55ad8ddb3f6279d4e7364f69} 
+\mbox{\hyperlink{classMesh}{Mesh}} \texorpdfstring{$\ast$}{*} Mesh\+::load\+From\+OBJ (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Loads a mesh from an OBJ file. 
+
+Extracts data from .OBJ, and creates a \doxylink{classMesh}{Mesh} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The path to the OBJ file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the new \doxylink{classMesh}{Mesh}, or nullptr if loading fails. 
+\end{DoxyReturn}
+\Hypertarget{classMesh_a4c5fd807a8491a9125a2ce2791a0a591}\index{Mesh@{Mesh}!updateBuffer@{updateBuffer}}
+\index{updateBuffer@{updateBuffer}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{updateBuffer()}{updateBuffer()}}
+{\footnotesize\ttfamily \label{classMesh_a4c5fd807a8491a9125a2ce2791a0a591} 
+void Mesh\+::update\+Buffer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Re-\/uploads the vertex data to the GPU. 
+
+This should be called after modifying the vertex data. \Hypertarget{classMesh_a9c940b13dc324abfbd8e45b52a0b92ff}\index{Mesh@{Mesh}!updateVertexPosition@{updateVertexPosition}}
+\index{updateVertexPosition@{updateVertexPosition}!Mesh@{Mesh}}
+\doxysubsubsection{\texorpdfstring{updateVertexPosition()}{updateVertexPosition()}}
+{\footnotesize\ttfamily \label{classMesh_a9c940b13dc324abfbd8e45b52a0b92ff} 
+void Mesh\+::update\+Vertex\+Position (\begin{DoxyParamCaption}\item[{unsigned int}]{vertex\+Index}{, }\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{new\+Position}{}\end{DoxyParamCaption})}
+
+
+
+Updates the position of a vertex in the mesh. 
+
+Changes the position of the vertex at the given index and then updates the GPU buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Index} & The index of the vertex to update. \\
+\hline
+{\em new\+Position} & The new position for the vertex. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/rendering/\mbox{\hyperlink{Mesh_8hpp}{Mesh.\+hpp}}\item 
+src/rendering/loaders/OBJLoader.\+cpp\item 
+src/rendering/Mesh.\+cpp\end{DoxyCompactItemize}

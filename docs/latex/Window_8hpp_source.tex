@@ -1,0 +1,40 @@
+\doxysection{Window.\+hpp}
+\hypertarget{Window_8hpp_source}{}\label{Window_8hpp_source}\index{include/Window.hpp@{include/Window.hpp}}
+\mbox{\hyperlink{Window_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ WINDOW\_HPP}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ WINDOW\_HPP}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <GLFW/glfw3.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWindow_a2bf7954f0cf38a7fc4c4742e4a91a190}{Window}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ GLFWwindow\ *handle;\ }
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{int}\ width,\ height;\ \ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{classWindow_a2bf7954f0cf38a7fc4c4742e4a91a190}{Window}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \textcolor{keyword}{const}\ std::string\ \&title);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{classWindow_a245d821e6016fa1f6970ccbbedd635f6}{\string~Window}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classWindow_a761d614931fb5a5daa70e4f580c3e78e}{isOpen}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWindow_ae496f33bc5dd8dd48791ccf16cae1292}{pollEvents}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWindow_a04ab8fcdfcc749a5f5f2c0441528b5b0}{swapBuffers}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classWindow_aee31a875d654a8c8f7d796d072657791}{getWidth}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ width;\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classWindow_a60757b2b0dbcec9889e3a09f5655adbe}{getHeight}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ height;\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00079\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWindow_affb34b6b2caa627576d9be2768e08392}{framebufferSizeCallback}}(GLFWwindow\ *window,\ \textcolor{keywordtype}{int}\ width,}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ WINDOW\_HPP}}
+
+\end{DoxyCode}

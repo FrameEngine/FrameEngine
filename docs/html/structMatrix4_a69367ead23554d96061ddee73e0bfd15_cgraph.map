@@ -1,0 +1,5 @@
+<map id="Matrix4::createTranslationMatrix" name="Matrix4::createTranslationMatrix">
+<area shape="rect" id="Node000001" title="Generates a translation matrix." alt="" coords="5,5,198,50"/>
+<area shape="rect" id="Node000002" href="$structMatrix4.html#a21e70a74447b9b05cf9a06400bc9c661" title="Default constructor that initializes the matrix as an identity matrix." alt="" coords="246,14,375,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,25,230,25,230,30,198,30"/>
+</map>

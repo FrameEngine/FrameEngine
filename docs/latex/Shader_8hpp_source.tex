@@ -1,0 +1,42 @@
+\doxysection{Shader.\+hpp}
+\hypertarget{Shader_8hpp_source}{}\label{Shader_8hpp_source}\index{include/rendering/Shader.hpp@{include/rendering/Shader.hpp}}
+\mbox{\hyperlink{Shader_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ SHADER\_HPP}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ SHADER\_HPP}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Matrix4_8hpp}{math/Matrix4.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Vector3_8hpp}{math/Vector3.hpp}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classShader_ad80a9756b7d9a62adea45fcd82a06f4c}{Shader}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ GLuint\ programID;\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00028\ \ \ std::string\ loadShaderSource(\textcolor{keyword}{const}\ std::string\ \&filePath);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00037\ \ \ GLuint\ compileShader(\textcolor{keyword}{const}\ std::string\ \&source,\ GLenum\ type);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{classShader_ad80a9756b7d9a62adea45fcd82a06f4c}{Shader}}(\textcolor{keyword}{const}\ std::string\ \&vertexPath,\ \textcolor{keyword}{const}\ std::string\ \&fragmentPath);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{classShader_aff01df87e8a102f270b5b135a295e59d}{\string~Shader}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classShader_aadbc0ca0d899238d547f87f19461dfeb}{bind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classShader_a5b9da0e356ab46582b29f55a5d669c74}{unbind}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classShader_a7c5ca9afdc03911753066cb543c4468a}{setUniformInt}}(\textcolor{keyword}{const}\ std::string\ \&name,\ \textcolor{keywordtype}{int}\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{void}\ setUniformFloat(\textcolor{keyword}{const}\ std::string\ \&name,\ \textcolor{keywordtype}{float}\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ \ \ \textcolor{keywordtype}{void}\ setUniformVec3(\textcolor{keyword}{const}\ std::string\ \&name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{void}\ setUniformMat4(\textcolor{keyword}{const}\ std::string\ \&name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structMatrix4}{Matrix4}}\ \&mat)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ GLuint\ \mbox{\hyperlink{classShader_afe245d5bc28d91397df4b018f78df552}{getProgramID}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ programID;\ \}}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SHADER\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,17 @@
+<map id="Matrix4::createRotationMatrix" name="Matrix4::createRotationMatrix">
+<area shape="rect" id="Node000001" title="Creates a rotation matrix from an axis and angle." alt="" coords="5,108,223,136"/>
+<area shape="rect" id="Node000002" href="$structQuaternion.html#afd23f6fe56d5d96f897e20c901ec7d19" title="Creates a quaternion from an axis&#45;angle representation." alt="" coords="271,56,468,84"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,105,282,85,283,90,186,110"/>
+<area shape="rect" id="Node000007" href="$structMatrix4.html#a21e70a74447b9b05cf9a06400bc9c661" title="Default constructor that initializes the matrix as an identity matrix." alt="" coords="305,108,434,136"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="223,119,289,119,289,124,223,124"/>
+<area shape="rect" id="Node000008" href="$structQuaternion.html#ae1a6eef5ea4bb26c6df33504a16bcfa7" title="Converts this quaternion to a rotation matrix." alt="" coords="291,160,448,188"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="186,134,283,154,282,159,185,139"/>
+<area shape="rect" id="Node000003" href="$classVector3.html#a65546070166d4f3dc7aae6dbc1c6d6cb" title="Returns a normalized (unit length) version of this vector." alt="" coords="526,31,679,58"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="468,56,511,52,511,57,469,62"/>
+<area shape="rect" id="Node000006" href="$structQuaternion.html#abcc01358aada56ea5f0db4da18aaf77d" title="Default constructor initializes the quaternion as the identity rotation." alt="" coords="516,83,689,110"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="469,78,501,82,500,87,468,84"/>
+<area shape="rect" id="Node000004" href="$classVector3.html#a7b900ba64852e9a66877e653945e08f6" title="Computes the magnitude of this vector." alt="" coords="737,5,887,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="679,33,721,27,722,33,680,38"/>
+<area shape="rect" id="Node000005" href="$classVector3.html#a6151fc844ddb2aaa316317b922cb8d22" title="Constructs a Vector3 with specified components." alt="" coords="747,57,877,85"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="680,52,732,58,732,64,679,57"/>
+</map>

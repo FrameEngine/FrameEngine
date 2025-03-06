@@ -1,0 +1,42 @@
+<map id="Vector3::Vector3" name="Vector3::Vector3">
+<area shape="rect" id="Node000001" title="Constructs a Vector3 with specified components." alt="" coords="722,317,852,345"/>
+<area shape="rect" id="Node000002" href="$classVector3.html#afa69357b4a1449c640820dc643b6265b" title="Computes the cross product between this vector and another." alt="" coords="540,135,653,162"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="770,305,732,241,705,207,673,177,651,165,654,161,676,173,709,203,736,238,775,302"/>
+<area shape="rect" id="Node000007" href="$classVector3.html#aaa038c8e2f161591e564a57a17e3cfde" title="Computes the dot product between this vector and another." alt="" coords="546,187,646,214"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="762,308,723,268,673,229,646,217,648,212,676,225,726,264,766,304"/>
+<area shape="rect" id="Node000008" href="$classVector3.html#a65546070166d4f3dc7aae6dbc1c6d6cb" title="Returns a normalized (unit length) version of this vector." alt="" coords="520,83,672,110"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="775,303,761,263,740,216,711,167,673,125,653,113,656,109,676,121,715,164,745,213,766,261,780,301"/>
+<area shape="rect" id="Node000012" href="$classVector3.html#ac563eef8f92d127f768f330bb5ea39fc" title="Multiplies this vector by a scalar." alt="" coords="526,239,667,266"/>
+<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="743,313,673,282,641,269,643,264,675,277,745,308"/>
+<area shape="rect" id="Node000013" href="$classVector3.html#aa223c2a45df3d3f0d2ca8a3728eeee27" title="Multiplies this vector by a scalar in&#45;place." alt="" coords="520,291,672,318"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="706,323,672,318,673,313,707,317"/>
+<area shape="rect" id="Node000014" href="$classVector3.html#a79356953b808ee103afc0d445030e778" title="Adds this vector to another vector." alt="" coords="524,343,669,370"/>
+<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="707,344,669,350,669,344,707,339"/>
+<area shape="rect" id="Node000015" href="$classVector3.html#a105b045dd7469eac3c90e8df11a81999" title="Adds another vector to this vector in&#45;place." alt="" coords="518,395,674,422"/>
+<area shape="poly" id="edge19_Node000001_Node000015" title=" " alt="" coords="744,354,675,384,642,397,640,392,673,379,742,349"/>
+<area shape="rect" id="Node000016" href="$classVector3.html#abf9f28941176a900c57dad4596ae52b7" title="Subtracts another vector from this vector." alt="" coords="527,447,665,474"/>
+<area shape="poly" id="edge20_Node000001_Node000016" title=" " alt="" coords="766,358,726,398,676,436,650,449,647,444,673,432,723,394,762,354"/>
+<area shape="rect" id="Node000017" href="$classVector3.html#afb11e612d6f201cfd908b94b87ec115e" title="Divides this vector by a scalar." alt="" coords="527,499,665,526"/>
+<area shape="poly" id="edge21_Node000001_Node000017" title=" " alt="" coords="775,360,736,424,708,458,676,488,654,500,651,496,673,484,705,455,732,421,770,358"/>
+<area shape="rect" id="Node000018" href="$classVector3.html#a3037bb6d6c81c7873652e37515412541" title="Compares two vectors for equality." alt="" coords="518,551,674,578"/>
+<area shape="poly" id="edge22_Node000001_Node000018" title=" " alt="" coords="780,361,766,401,744,449,715,497,676,540,656,552,653,548,673,536,710,494,740,446,761,399,775,359"/>
+<area shape="rect" id="Node000003" href="$classObject.html#a374795fe5a51e8d6bb8bf3a8c95ae536" title="Orients the object so that it &quot;looks at&quot; a target position." alt="" coords="314,83,427,110"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="524,135,427,112,428,107,525,129"/>
+<area shape="rect" id="Node000004" href="$structQuaternion.html#a3d1c40425b42651935cc3bc0dec2a830" title="Creates a &quot;look rotation&quot; quaternion." alt="" coords="278,135,462,162"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="524,151,463,151,463,146,524,146"/>
+<area shape="rect" id="Node000005" href="$classCamera.html#a8fe5c71a390571a861ad8afd99dfdea3" title="Updates the view matrix." alt="" coords="271,187,470,214"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="525,168,434,189,433,183,524,162"/>
+<area shape="rect" id="Node000006" href="$classCamera.html#a995b69e239b35db64c17444ab4ee2d8f" title="Returns the current view matrix." alt="" coords="26,187,202,214"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="255,203,202,203,202,198,255,198"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="531,184,516,176,501,163,492,150,483,137,469,125,426,108,428,104,471,121,487,134,496,147,505,159,520,172,533,179"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="530,188,433,166,434,160,532,183"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="531,203,470,203,470,198,531,198"/>
+<area shape="poly" id="edge14_Node000008_Node000003" title=" " alt="" coords="505,99,427,99,427,94,505,94"/>
+<area shape="poly" id="edge15_Node000008_Node000004" title=" " alt="" coords="518,117,434,137,433,131,517,112"/>
+<area shape="rect" id="Node000009" href="$structQuaternion.html#afd23f6fe56d5d96f897e20c901ec7d19" title="Creates a quaternion from an axis&#45;angle representation." alt="" coords="272,31,469,58"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="517,81,433,62,434,56,518,76"/>
+<area shape="rect" id="Node000010" href="$structMatrix4.html#ac75974947937ab36d3305fe69d8298db" title="Creates a rotation matrix from an axis and angle." alt="" coords="5,57,223,85"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="257,59,223,62,223,57,256,54"/>
+<area shape="rect" id="Node000011" href="$classObject.html#a2ac65a7bb2b2ed5335f7d2226dba2b11" title="Rotates the object around the specified axis." alt="" coords="59,5,169,33"/>
+<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="256,36,169,27,170,22,256,31"/>
+</map>

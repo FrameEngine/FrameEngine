@@ -1,0 +1,8 @@
+<map id="Quaternion::rotateVector" name="Quaternion::rotateVector">
+<area shape="rect" id="Node000001" title="Rotates a vector by this quaternion." alt="" coords="5,31,188,58"/>
+<area shape="rect" id="Node000002" href="$structQuaternion.html#aab148883caba0b669a5803135006ae41" title="Returns a normalized version of this quaternion." alt="" coords="236,5,410,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,32,220,28,221,33,188,37"/>
+<area shape="rect" id="Node000003" href="$structQuaternion.html#abcc01358aada56ea5f0db4da18aaf77d" title="Default constructor initializes the quaternion as the identity rotation." alt="" coords="458,31,631,58"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="188,42,443,42,443,47,188,47"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="410,26,443,30,442,35,410,32"/>
+</map>

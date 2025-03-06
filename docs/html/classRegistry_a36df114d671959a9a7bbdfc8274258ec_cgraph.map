@@ -1,0 +1,5 @@
+<map id="Registry::add_component" name="Registry::add_component">
+<area shape="rect" id="Node000001" title="Adds a component of type &#39;T&#39; to an entity." alt="" coords="5,5,192,33"/>
+<area shape="rect" id="Node000002" href="$classComponentStorage.html#a36ee9f49932f225de0fcde3e1f316566" title="Adds a component to an entity." alt="" coords="240,5,418,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,16,224,16,224,22,192,22"/>
+</map>

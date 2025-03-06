@@ -1,0 +1,35 @@
+\doxysection{Transform\+Component.\+hpp}
+\hypertarget{TransformComponent_8hpp_source}{}\label{TransformComponent_8hpp_source}\index{include/components/TransformComponent.hpp@{include/components/TransformComponent.hpp}}
+\mbox{\hyperlink{TransformComponent_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ TRANSFORM\_COMPONENT\_HPP}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ TRANSFORM\_COMPONENT\_HPP}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Matrix4_8hpp}{math/Matrix4.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Quaternion_8hpp}{math/Quaternion.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Vector3_8hpp}{math/Vector3.hpp}}"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structTransformComponent_ace1cf2d7d2a7468e9cb3eb0ce382f446}{TransformComponent}}\ \{}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ \mbox{\hyperlink{structTransformComponent_a30a9fd1d694fdbc3932943b9ee43ee97}{position}};}
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{structQuaternion}{Quaternion}}\ rotation;}
+\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ scale;}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{structTransformComponent_ace1cf2d7d2a7468e9cb3eb0ce382f446}{TransformComponent}}()}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structTransformComponent_a30a9fd1d694fdbc3932943b9ee43ee97}{position}}(0.0f,\ 0.0f,\ 0.0f),\ rotation(1.0f,\ 0.0f,\ 0.0f,\ 0.0f),}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ scale(1.0f,\ 1.0f,\ 1.0f)\ \{\}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{structTransformComponent_af0d8daa97ffd9f10a9fd498fedce1919}{TransformComponent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&pos,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structQuaternion}{Quaternion}}\ \&rot\ =\ \mbox{\hyperlink{structQuaternion}{Quaternion}}(),}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&scl\ =\ \mbox{\hyperlink{classVector3}{Vector3}}(1.0f,\ 1.0f,\ 1.0f))}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ :\ \mbox{\hyperlink{structTransformComponent_a30a9fd1d694fdbc3932943b9ee43ee97}{position}}(pos),\ rotation(rot),\ scale(scl)\ \{\}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00058\ \ \ \mbox{\hyperlink{structMatrix4}{Matrix4}}\ \mbox{\hyperlink{structTransformComponent_abef71fcfe7a8cf21c10698669f1c9d6a}{get\_transformation\_matrix}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{return}\ rotation.toMatrix()\ *\ \mbox{\hyperlink{structMatrix4_a9dc7abcfd6a2a5e02765c8708276140f}{Matrix4::createScalingMatrix}}(scale)\ *}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structMatrix4_a69367ead23554d96061ddee73e0bfd15}{Matrix4::createTranslationMatrix}}(\mbox{\hyperlink{structTransformComponent_a30a9fd1d694fdbc3932943b9ee43ee97}{position}});}
+\DoxyCodeLine{00061\ \ \ \}}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TRANSFORM\_COMPONENT\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,84 @@
+\doxysection{Object.\+hpp}
+\hypertarget{Object_8hpp_source}{}\label{Object_8hpp_source}\index{include/objects/Object.hpp@{include/objects/Object.hpp}}
+\mbox{\hyperlink{Object_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ OBJECT\_HPP}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ OBJECT\_HPP}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Entity_8hpp}{Entity.hpp}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{TransformComponent_8hpp}{components/TransformComponent.hpp}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Mesh_8hpp}{rendering/Mesh.hpp}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{//\ Forward\ declare\ Renderer\ to\ avoid\ circular\ dependency}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRenderer}{Renderer}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classObject_a52ee70eca2c53e91a6db00a8908a3e93}{Object}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classEntity_a1b3b92780c8075835ac81b237a9f95a0}{Entity}}\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ \textcolor{comment}{//\ TODO\ move\ it\ to\ Renderer\ component}}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{classMesh}{Mesh}}\ *mesh;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{bool}\ wireframe\ =\ \textcolor{keyword}{false};\ }
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ color;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{classObject_a52ee70eca2c53e91a6db00a8908a3e93}{Object}}(\mbox{\hyperlink{classRegistry}{Registry}}\ \&registry,\ \mbox{\hyperlink{classMesh}{Mesh}}\ *mesh)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classEntity_a1b3b92780c8075835ac81b237a9f95a0}{Entity}}(registry),\ mesh(mesh),\ color(\mbox{\hyperlink{classVector3}{Vector3}}(1.0f,\ .5f,\ 1.0f))\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{classEntity_ac42c7a74bd38f40de2664a7a5fcb9110}{add\_component<TransformComponent>}}();}
+\DoxyCodeLine{00054\ \ \ \ \ transform\ =\ \mbox{\hyperlink{classEntity_a37109ed9ba43260d07fa251beec2f4d2}{get\_component<TransformComponent>}}();}
+\DoxyCodeLine{00055\ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{structTransformComponent}{TransformComponent}}\ *transform;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classObject_a2ac65a7bb2b2ed5335f7d2226dba2b11}{rotate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&axis\ =\ \mbox{\hyperlink{classVector3}{Vector3}}(0,\ 1,\ 0),\ \textcolor{keywordtype}{float}\ angle\ =\ 1.0f)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ transform-\/>rotation\ =}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structQuaternion_afd23f6fe56d5d96f897e20c901ec7d19}{Quaternion::fromAxisAngle}}(axis,\ angle)\ *\ transform-\/>rotation;}
+\DoxyCodeLine{00071\ \ \ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00080\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classObject_a8144ef3248d1d23ca6bce579dc97dc16}{move}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&translation)\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ transform-\/>position\ =\ transform-\/>position\ +\ translation;}
+\DoxyCodeLine{00082\ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00091\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classObject_a951d73df2f0963a0e0e752eea23d60d7}{render}}(\mbox{\hyperlink{classRenderer}{Renderer}}\ \&renderer);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ \mbox{\hyperlink{classObject_a6285e8da69fd36c129fa5da33d3842c0}{getColor}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ color;\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00105\ \ \ \textcolor{comment}{//\ TODO\ instead\ of\ Vector3\ use\ custom\ Color\ datatype,\ that\ works\ with\ 0-\/255}}
+\DoxyCodeLine{00106\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classObject_ad69f0db617fe35e8baefb7f13aae1f5c}{setColor}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&c)\ \{\ color\ =\ c;\ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00118\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classObject_a374795fe5a51e8d6bb8bf3a8c95ae536}{lookAt}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&target)\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ direction\ =\ (target\ -\/\ transform-\/>position).normalized();}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (direction.\mbox{\hyperlink{classVector3_a7b900ba64852e9a66877e653945e08f6}{magnitude}}()\ <\ 0.0001f)\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \mbox{\hyperlink{Logger_8hpp_a94e6401c9e46b35182d9dbbce6b99be5}{LOG}}(WARNING,\ \textcolor{stringliteral}{"{}lookAt()\ called\ with\ the\ same\ position,\ ignoring."{}});}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00124\ \ \ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ up(0.f,\ 1.f,\ 0.f);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//\ Handle\ gimbal\ lock}}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{if}\ (fabs(direction.\mbox{\hyperlink{classVector3_aaa038c8e2f161591e564a57a17e3cfde}{dot}}(up))\ >\ 0.999f)\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ up\ =\ \mbox{\hyperlink{classVector3}{Vector3}}(0.f,\ 0.f,\ 1.f);}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ right\ =\ up.\mbox{\hyperlink{classVector3_afa69357b4a1449c640820dc643b6265b}{cross}}(direction).\mbox{\hyperlink{classVector3_a65546070166d4f3dc7aae6dbc1c6d6cb}{normalized}}();}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ adjustedUp\ =\ direction.\mbox{\hyperlink{classVector3_afa69357b4a1449c640820dc643b6265b}{cross}}(right);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{structMatrix4}{Matrix4}}\ rotationMatrix\ =\ \mbox{\hyperlink{structMatrix4}{Matrix4}}(\{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ right.x,\ adjustedUp.x,\ direction.x,\ 0.0f,\ \textcolor{comment}{//}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ right.y,\ adjustedUp.y,\ direction.y,\ 0.0f,\ \textcolor{comment}{//}}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ right.z,\ adjustedUp.z,\ direction.z,\ 0.0f,\ \textcolor{comment}{//}}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ 0.0f,\ 0.0f,\ 0.0f,\ 1.0f\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00141\ \ \ \ \ \});}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ transform-\/>rotation\ =\ \mbox{\hyperlink{structQuaternion_a6890f2398e047db71c6262e0c97241b7}{Quaternion::fromMatrix}}(rotationMatrix);}
+\DoxyCodeLine{00144\ \ \ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00151\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classObject_a4d14f2c5af2122e7653a2623fc389672}{setWireframe}}(\textcolor{keywordtype}{bool}\ enable)\ \{\ wireframe\ =\ enable;\ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00158\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classObject_ad67679e31c891db3152016f52c540dee}{isWireframe}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ wireframe;\ \}}
+\DoxyCodeLine{00159\ \};}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ OBJECT\_HPP}}
+
+\end{DoxyCode}

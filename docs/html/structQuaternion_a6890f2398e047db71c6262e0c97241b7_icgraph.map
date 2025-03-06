@@ -1,0 +1,7 @@
+<map id="Quaternion::fromMatrix" name="Quaternion::fromMatrix">
+<area shape="rect" id="Node000001" title="Constructs a quaternion from a given rotation matrix." alt="" coords="238,32,412,60"/>
+<area shape="rect" id="Node000002" href="$classObject.html#a374795fe5a51e8d6bb8bf3a8c95ae536" title="Orients the object so that it &quot;looks at&quot; a target position." alt="" coords="41,5,154,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,36,154,28,155,23,222,31"/>
+<area shape="rect" id="Node000003" href="$structQuaternion.html#a3d1c40425b42651935cc3bc0dec2a830" title="Creates a &quot;look rotation&quot; quaternion." alt="" coords="5,57,190,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="223,60,190,64,190,58,222,55"/>
+</map>

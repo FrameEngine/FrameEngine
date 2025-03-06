@@ -1,0 +1,7 @@
+<map id="Quaternion::fromAxisAngle" name="Quaternion::fromAxisAngle">
+<area shape="rect" id="Node000001" title="Creates a quaternion from an axis&#45;angle representation." alt="" coords="271,32,468,60"/>
+<area shape="rect" id="Node000002" href="$structMatrix4.html#ac75974947937ab36d3305fe69d8298db" title="Creates a rotation matrix from an axis and angle." alt="" coords="5,5,223,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,37,223,33,224,28,256,31"/>
+<area shape="rect" id="Node000003" href="$classObject.html#a2ac65a7bb2b2ed5335f7d2226dba2b11" title="Rotates the object around the specified axis." alt="" coords="59,57,169,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="256,60,170,68,169,63,255,54"/>
+</map>

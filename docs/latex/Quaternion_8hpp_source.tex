@@ -1,0 +1,83 @@
+\doxysection{Quaternion.\+hpp}
+\hypertarget{Quaternion_8hpp_source}{}\label{Quaternion_8hpp_source}\index{include/math/Quaternion.hpp@{include/math/Quaternion.hpp}}
+\mbox{\hyperlink{Quaternion_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ QUATERNION\_HPP}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ QUATERNION\_HPP}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Vector3_8hpp}{Vector3.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{structMatrix4}{Matrix4}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ \{}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{float}\ w,\ x,\ y,\ z;}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00023\ \ \ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}()\ :\ w(1),\ x(0),\ y(0),\ z(0)\ \{\}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{structQuaternion_ab13d6ced50c96438115b30cb91fc7d6c}{Quaternion}}(\textcolor{keywordtype}{float}\ w,\ \textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z)\ :\ w(w),\ x(x),\ y(y),\ z(z)\ \{\}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ \mbox{\hyperlink{structQuaternion_aff7a0a5aeea4a3fe860cb90a649e389c}{operator-\/}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}(-\/w,\ -\/x,\ -\/y,\ -\/z);\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ \mbox{\hyperlink{structQuaternion_a36087d26b41bb9a72555c448ac797e4c}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ \&q)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}(w\ +\ q.w,\ x\ +\ q.x,\ y\ +\ q.y,\ z\ +\ q.z);}
+\DoxyCodeLine{00047\ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ \mbox{\hyperlink{structQuaternion_a41023b9620b60364be0f9a6a2095ee89}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ \&q)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}(w\ -\/\ q.w,\ x\ -\/\ q.x,\ y\ -\/\ q.y,\ z\ -\/\ q.z);}
+\DoxyCodeLine{00057\ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ \mbox{\hyperlink{structQuaternion_af19d7a5554539ad967b8c913939dacb6}{operator*}}(\textcolor{keywordtype}{float}\ scalar)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}(w\ *\ scalar,\ x\ *\ scalar,\ y\ *\ scalar,\ z\ *\ scalar);}
+\DoxyCodeLine{00067\ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00075\ \ \ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ \mbox{\hyperlink{structQuaternion_aab148883caba0b669a5803135006ae41}{normalized}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{float}\ mag\ =\ std::sqrt(w\ *\ w\ +\ x\ *\ x\ +\ y\ *\ y\ +\ z\ *\ z);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{return}\ \{w\ /\ mag,\ x\ /\ mag,\ y\ /\ mag,\ z\ /\ mag\};}
+\DoxyCodeLine{00078\ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00090\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ \mbox{\hyperlink{structQuaternion_afd23f6fe56d5d96f897e20c901ec7d19}{fromAxisAngle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&axis,\ \textcolor{keywordtype}{float}\ angle)\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{float}\ rad\ =\ angle\ *\ M\_PI\ /\ 180.0f;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{float}\ sinHalf\ =\ -\/std::sin(rad\ /\ 2);}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ normalizedAxis\ =\ axis.\mbox{\hyperlink{classVector3_a65546070166d4f3dc7aae6dbc1c6d6cb}{normalized}}();}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}(std::cos(rad\ /\ 2),\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ normalizedAxis.x\ *\ sinHalf,\ \textcolor{comment}{//}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ normalizedAxis.y\ *\ sinHalf,\ \textcolor{comment}{//}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ normalizedAxis.z\ *\ sinHalf\ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00098\ \ \ \ \ );}
+\DoxyCodeLine{00099\ \ \ \}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00107\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structQuaternion_ad143d42479d690eabc1ca99a5dacf677}{dot}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ \&q)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordflow}{return}\ x\ *\ q.x\ +\ y\ *\ q.y\ +\ z\ *\ q.z\ +\ w\ *\ q.w;}
+\DoxyCodeLine{00109\ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00119\ \ \ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ \mbox{\hyperlink{structQuaternion_ab178e12364d87fb676d85695e491361f}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ \&q)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{return}\ \{w\ *\ q.w\ -\/\ x\ *\ q.x\ -\/\ y\ *\ q.y\ -\/\ z\ *\ q.z,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ w\ *\ q.x\ +\ x\ *\ q.w\ +\ y\ *\ q.z\ -\/\ z\ *\ q.y,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ w\ *\ q.y\ -\/\ x\ *\ q.z\ +\ y\ *\ q.w\ +\ z\ *\ q.x,}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ w\ *\ q.z\ +\ x\ *\ q.y\ -\/\ y\ *\ q.x\ +\ z\ *\ q.w\};}
+\DoxyCodeLine{00124\ \ \ \}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00136\ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ \mbox{\hyperlink{structQuaternion_a0705f01f7669f4a69db459b2288cab75}{rotateVector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&v)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ \mbox{\hyperlink{structQuaternion_aab148883caba0b669a5803135006ae41}{normalized}}\ =\ this-\/>\mbox{\hyperlink{structQuaternion_aab148883caba0b669a5803135006ae41}{normalized}}();}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ vecQuat(0,\ v.x,\ v.y,\ v.z);}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ invQuat(\mbox{\hyperlink{structQuaternion_aab148883caba0b669a5803135006ae41}{normalized}}.w,\ -\/\mbox{\hyperlink{structQuaternion_aab148883caba0b669a5803135006ae41}{normalized}}.x,\ -\/\mbox{\hyperlink{structQuaternion_aab148883caba0b669a5803135006ae41}{normalized}}.y,}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\/\mbox{\hyperlink{structQuaternion_aab148883caba0b669a5803135006ae41}{normalized}}.z);\ \textcolor{comment}{//\ Conjugate}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}{Quaternion}}\ result\ =\ \mbox{\hyperlink{structQuaternion_aab148883caba0b669a5803135006ae41}{normalized}}\ *\ vecQuat\ *\ invQuat;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classVector3}{Vector3}}(result.x,\ result.y,\ result.z);}
+\DoxyCodeLine{00145\ \ \ \}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00152\ \ \ \mbox{\hyperlink{structMatrix4}{Matrix4}}\ \mbox{\hyperlink{structQuaternion_ae1a6eef5ea4bb26c6df33504a16bcfa7}{toMatrix}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00153\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structQuaternion}{Quaternion}}\ \mbox{\hyperlink{structQuaternion_a6890f2398e047db71c6262e0c97241b7}{fromMatrix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structMatrix4}{Matrix4}}\ \&matrix);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00165\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structQuaternion}{Quaternion}}\ \mbox{\hyperlink{structQuaternion_a3d1c40425b42651935cc3bc0dec2a830}{lookRotation}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&direction,}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&up\ =\ \mbox{\hyperlink{classVector3}{Vector3}}(0.0f,\ 1.0f,\ 0.0f));}
+\DoxyCodeLine{00167\ \};}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ QUATERNION\_HPP}}
+
+\end{DoxyCode}

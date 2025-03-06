@@ -1,0 +1,184 @@
+\doxysection{Point\+Light Class Reference}
+\hypertarget{classPointLight}{}\label{classPointLight}\index{PointLight@{PointLight}}
+
+
+An ECS entity representing a point light source.  
+
+
+
+
+{\ttfamily \#include $<$Point\+Light.\+hpp$>$}
+
+
+
+Inheritance diagram for Point\+Light\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classPointLight__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Point\+Light\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classPointLight__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPointLight_ac8ab3e4f409d1c9fa08a28f1d510c41d}{Point\+Light}} (\mbox{\hyperlink{classRegistry}{Registry}} \&registry, const \mbox{\hyperlink{classVector3}{Vector3}} \&pos, const \mbox{\hyperlink{classVector3}{Vector3}} \&col=\mbox{\hyperlink{classVector3}{Vector3}}(1, 1, 1), float inten=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classPointLight}{Point\+Light} at a specified position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classPointLight_a1f6ba4b0ec22df334510b9ba3431edb2}{get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the color of the point light. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPointLight_aa0c453b4478e303c971c1c77cba5b27f}{set\+Color}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&col)
+\begin{DoxyCompactList}\small\item\em Sets the color of the point light. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classPointLight_a959f092b2decd8e8e4a8d0310f408acf}{get\+Intensity}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the intensity of the point light. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPointLight_aca521f9c937d9e7844287c9dd6bf6e05}{set\+Intensity}} (float inten)
+\begin{DoxyCompactList}\small\item\em Sets the intensity of the point light. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classObject}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classObject_a52ee70eca2c53e91a6db00a8908a3e93}{Object}} (\mbox{\hyperlink{classRegistry}{Registry}} \&registry, \mbox{\hyperlink{classMesh}{Mesh}} \texorpdfstring{$\ast$}{*}mesh)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classObject}{Object} with the specified mesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a2ac65a7bb2b2ed5335f7d2226dba2b11}{rotate}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&axis=\mbox{\hyperlink{classVector3}{Vector3}}(0, 1, 0), float angle=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Rotates the object around the specified axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a8144ef3248d1d23ca6bce579dc97dc16}{move}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&translation)
+\begin{DoxyCompactList}\small\item\em Translates the object in world space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a951d73df2f0963a0e0e752eea23d60d7}{render}} (\mbox{\hyperlink{classRenderer}{Renderer}} \&renderer)
+\begin{DoxyCompactList}\small\item\em Renders the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classObject_a6285e8da69fd36c129fa5da33d3842c0}{get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s render color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_ad69f0db617fe35e8baefb7f13aae1f5c}{set\+Color}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&c)
+\begin{DoxyCompactList}\small\item\em Sets the object\textquotesingle{}s render color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a374795fe5a51e8d6bb8bf3a8c95ae536}{look\+At}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&target)
+\begin{DoxyCompactList}\small\item\em Orients the object so that it "{}looks at"{} a target position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a4d14f2c5af2122e7653a2623fc389672}{set\+Wireframe}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables or disables wireframe rendering for this object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classObject_ad67679e31c891db3152016f52c540dee}{is\+Wireframe}} () const
+\begin{DoxyCompactList}\small\item\em Checks if wireframe rendering is enabled for this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classEntity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEntity_a1b3b92780c8075835ac81b237a9f95a0}{Entity}} (\mbox{\hyperlink{classRegistry}{Registry}} \&registry)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classEntity}{Entity} and registers it in the ECS. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename... Args$>$ }\\void \mbox{\hyperlink{classEntity_ac42c7a74bd38f40de2664a7a5fcb9110}{add\+\_\+component}} (Args \&\&...args)
+\begin{DoxyCompactList}\small\item\em Adds a component of type \textquotesingle{}T\textquotesingle{} to the object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{classEntity_a0ecaca9e3770a3872ee3f24706111def}{remove\+\_\+component}} ()
+\begin{DoxyCompactList}\small\item\em Removes a component of type \textquotesingle{}T\textquotesingle{} from the object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEntity_a37109ed9ba43260d07fa251beec2f4d2}{get\+\_\+component}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a pointer to the specified component type \textquotesingle{}T\textquotesingle{}. \end{DoxyCompactList}\item 
+Entity\+ID {\bfseries id} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classObject}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structTransformComponent}{Transform\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries transform}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classEntity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+Entity\+ID {\bfseries id\+\_\+}
+\item 
+\mbox{\hyperlink{classRegistry}{Registry}} \& {\bfseries registry\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An ECS entity representing a point light source. 
+
+\doxylink{classPointLight}{Point\+Light} extends \doxylink{classObject}{Object}, automatically inheriting a \doxylink{structTransformComponent}{Transform\+Component} to manage its spatial position. However, it does not have a mesh associated with it. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPointLight_ac8ab3e4f409d1c9fa08a28f1d510c41d}\index{PointLight@{PointLight}!PointLight@{PointLight}}
+\index{PointLight@{PointLight}!PointLight@{PointLight}}
+\doxysubsubsection{\texorpdfstring{PointLight()}{PointLight()}}
+{\footnotesize\ttfamily \label{classPointLight_ac8ab3e4f409d1c9fa08a28f1d510c41d} 
+Point\+Light\+::\+Point\+Light (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{registry}{, }\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{pos}{, }\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{col}{ = {\ttfamily \mbox{\hyperlink{classVector3}{Vector3}}(1,~1,~1)}, }\item[{float}]{inten}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classPointLight}{Point\+Light} at a specified position. 
+
+This constructor creates a \doxylink{classPointLight}{Point\+Light} without an associated mesh by passing a null pointer to the base \doxylink{classObject}{Object} constructor. The inherited \doxylink{structTransformComponent}{Transform\+Component} is used to position the light within the world.
+
+
+\begin{DoxyParams}{Parameters}
+{\em registry} & The ECS registry in which this light is registered. \\
+\hline
+{\em pos} & The world-\/space position of the point light. \\
+\hline
+{\em col} & The color of the light (default is white\+: (1, 1, 1)). \\
+\hline
+{\em inten} & The intensity of the light (default is 1.\+0). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPointLight_a1f6ba4b0ec22df334510b9ba3431edb2}\index{PointLight@{PointLight}!getColor@{getColor}}
+\index{getColor@{getColor}!PointLight@{PointLight}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \label{classPointLight_a1f6ba4b0ec22df334510b9ba3431edb2} 
+\mbox{\hyperlink{classVector3}{Vector3}} Point\+Light\+::get\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the color of the point light. 
+
+\begin{DoxyReturn}{Returns}
+The current color of the light. 
+\end{DoxyReturn}
+\Hypertarget{classPointLight_a959f092b2decd8e8e4a8d0310f408acf}\index{PointLight@{PointLight}!getIntensity@{getIntensity}}
+\index{getIntensity@{getIntensity}!PointLight@{PointLight}}
+\doxysubsubsection{\texorpdfstring{getIntensity()}{getIntensity()}}
+{\footnotesize\ttfamily \label{classPointLight_a959f092b2decd8e8e4a8d0310f408acf} 
+float Point\+Light\+::get\+Intensity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the intensity of the point light. 
+
+\begin{DoxyReturn}{Returns}
+The current intensity of the light. 
+\end{DoxyReturn}
+\Hypertarget{classPointLight_aa0c453b4478e303c971c1c77cba5b27f}\index{PointLight@{PointLight}!setColor@{setColor}}
+\index{setColor@{setColor}!PointLight@{PointLight}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily \label{classPointLight_aa0c453b4478e303c971c1c77cba5b27f} 
+void Point\+Light\+::set\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{col}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the color of the point light. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em col} & The new color for the light. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPointLight_aca521f9c937d9e7844287c9dd6bf6e05}\index{PointLight@{PointLight}!setIntensity@{setIntensity}}
+\index{setIntensity@{setIntensity}!PointLight@{PointLight}}
+\doxysubsubsection{\texorpdfstring{setIntensity()}{setIntensity()}}
+{\footnotesize\ttfamily \label{classPointLight_aca521f9c937d9e7844287c9dd6bf6e05} 
+void Point\+Light\+::set\+Intensity (\begin{DoxyParamCaption}\item[{float}]{inten}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the intensity of the point light. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inten} & The new intensity value for the light. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/objects/Point\+Light.\+hpp\end{DoxyCompactItemize}

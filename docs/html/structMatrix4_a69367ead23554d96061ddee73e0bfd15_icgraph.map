@@ -1,0 +1,5 @@
+<map id="Matrix4::createTranslationMatrix" name="Matrix4::createTranslationMatrix">
+<area shape="rect" id="Node000001" title="Generates a translation matrix." alt="" coords="216,14,408,58"/>
+<area shape="rect" id="Node000002" href="$structTransformComponent.html#abef71fcfe7a8cf21c10698669f1c9d6a" title="Computes the transformation matrix for the entity." alt="" coords="5,5,168,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,39,168,39,168,34,200,34"/>
+</map>

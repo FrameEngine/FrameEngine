@@ -1,0 +1,328 @@
+\doxysection{Quaternion Struct Reference}
+\hypertarget{structQuaternion}{}\label{structQuaternion}\index{Quaternion@{Quaternion}}
+
+
+Collaboration diagram for Quaternion\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{structQuaternion__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d}\label{structQuaternion_abcc01358aada56ea5f0db4da18aaf77d} 
+{\bfseries Quaternion} ()
+\begin{DoxyCompactList}\small\item\em Default constructor initializes the quaternion as the identity rotation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structQuaternion_ab13d6ced50c96438115b30cb91fc7d6c}{Quaternion}} (float w, float x, float y, float z)
+\begin{DoxyCompactList}\small\item\em Constructs a quaternion with the given components. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} \mbox{\hyperlink{structQuaternion_aff7a0a5aeea4a3fe860cb90a649e389c}{operator-\/}} () const
+\item 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} \mbox{\hyperlink{structQuaternion_a36087d26b41bb9a72555c448ac797e4c}{operator+}} (const \mbox{\hyperlink{structQuaternion}{Quaternion}} \&q) const
+\begin{DoxyCompactList}\small\item\em Adds two quaternions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} \mbox{\hyperlink{structQuaternion_a41023b9620b60364be0f9a6a2095ee89}{operator-\/}} (const \mbox{\hyperlink{structQuaternion}{Quaternion}} \&q) const
+\begin{DoxyCompactList}\small\item\em Subtracts one quaternion from another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} \mbox{\hyperlink{structQuaternion_af19d7a5554539ad967b8c913939dacb6}{operator\texorpdfstring{$\ast$}{*}}} (float scalar) const
+\begin{DoxyCompactList}\small\item\em Multiplies the quaternion by a scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} \mbox{\hyperlink{structQuaternion_aab148883caba0b669a5803135006ae41}{normalized}} () const
+\begin{DoxyCompactList}\small\item\em Returns a normalized version of this quaternion. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{structQuaternion_ad143d42479d690eabc1ca99a5dacf677}{dot}} (const \mbox{\hyperlink{structQuaternion}{Quaternion}} \&q) const
+\begin{DoxyCompactList}\small\item\em Computes the dot product of two quaternions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} \mbox{\hyperlink{structQuaternion_ab178e12364d87fb676d85695e491361f}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{structQuaternion}{Quaternion}} \&q) const
+\begin{DoxyCompactList}\small\item\em Multiplies two quaternions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{structQuaternion_a0705f01f7669f4a69db459b2288cab75}{rotate\+Vector}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&v) const
+\begin{DoxyCompactList}\small\item\em Rotates a vector by this quaternion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} \mbox{\hyperlink{structQuaternion_ae1a6eef5ea4bb26c6df33504a16bcfa7}{to\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Converts this quaternion to a rotation matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structQuaternion}{Quaternion}} \mbox{\hyperlink{structQuaternion_afd23f6fe56d5d96f897e20c901ec7d19}{from\+Axis\+Angle}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&axis, float angle)
+\begin{DoxyCompactList}\small\item\em Creates a quaternion from an axis-\/angle representation. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structQuaternion}{Quaternion}} \mbox{\hyperlink{structQuaternion_a6890f2398e047db71c6262e0c97241b7}{from\+Matrix}} (const \mbox{\hyperlink{structMatrix4}{Matrix4}} \&matrix)
+\begin{DoxyCompactList}\small\item\em Constructs a quaternion from a given rotation matrix. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structQuaternion}{Quaternion}} \mbox{\hyperlink{structQuaternion_a3d1c40425b42651935cc3bc0dec2a830}{look\+Rotation}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&direction, const \mbox{\hyperlink{classVector3}{Vector3}} \&up=\mbox{\hyperlink{classVector3}{Vector3}}(0.\+0f, 1.\+0f, 0.\+0f))
+\begin{DoxyCompactList}\small\item\em Creates a "{}look rotation"{} quaternion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structQuaternion_aa44a65ab99e36f6ab8771030eed8a7ad}\label{structQuaternion_aa44a65ab99e36f6ab8771030eed8a7ad} 
+float {\bfseries w}
+\item 
+\Hypertarget{structQuaternion_a8b80f191a3155cc0158d2b4f4d50b2cb}\label{structQuaternion_a8b80f191a3155cc0158d2b4f4d50b2cb} 
+float {\bfseries x}
+\item 
+\Hypertarget{structQuaternion_a3bd3f270462944423611f44e19d2511b}\label{structQuaternion_a3bd3f270462944423611f44e19d2511b} 
+float {\bfseries y}
+\item 
+\Hypertarget{structQuaternion_a625cb732d8ff3083e7852b86b736ab29}\label{structQuaternion_a625cb732d8ff3083e7852b86b736ab29} 
+float {\bfseries z}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structQuaternion_ab13d6ced50c96438115b30cb91fc7d6c}\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!Quaternion@{Quaternion}}
+\doxysubsubsection{\texorpdfstring{Quaternion()}{Quaternion()}}
+{\footnotesize\ttfamily \label{structQuaternion_ab13d6ced50c96438115b30cb91fc7d6c} 
+Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{float}]{w}{, }\item[{float}]{x}{, }\item[{float}]{y}{, }\item[{float}]{z}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a quaternion with the given components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The scalar component. \\
+\hline
+{\em x} & The x component of the vector part. \\
+\hline
+{\em y} & The y component of the vector part. \\
+\hline
+{\em z} & The z component of the vector part. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structQuaternion_ad143d42479d690eabc1ca99a5dacf677}\index{Quaternion@{Quaternion}!dot@{dot}}
+\index{dot@{dot}!Quaternion@{Quaternion}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily \label{structQuaternion_ad143d42479d690eabc1ca99a5dacf677} 
+float Quaternion\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structQuaternion}{Quaternion}} \&}]{q}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the dot product of two quaternions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The other quaternion. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product. 
+\end{DoxyReturn}
+\Hypertarget{structQuaternion_afd23f6fe56d5d96f897e20c901ec7d19}\index{Quaternion@{Quaternion}!fromAxisAngle@{fromAxisAngle}}
+\index{fromAxisAngle@{fromAxisAngle}!Quaternion@{Quaternion}}
+\doxysubsubsection{\texorpdfstring{fromAxisAngle()}{fromAxisAngle()}}
+{\footnotesize\ttfamily \label{structQuaternion_afd23f6fe56d5d96f897e20c901ec7d19} 
+static \mbox{\hyperlink{structQuaternion}{Quaternion}} Quaternion\+::from\+Axis\+Angle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{axis}{, }\item[{float}]{angle}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Creates a quaternion from an axis-\/angle representation. 
+
+Constructs a quaternion representing a rotation of the given angle (in degrees) about the specified axis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis of rotation. \\
+\hline
+{\em angle} & The rotation angle in degrees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A quaternion representing the rotation. 
+\end{DoxyReturn}
+\Hypertarget{structQuaternion_a6890f2398e047db71c6262e0c97241b7}\index{Quaternion@{Quaternion}!fromMatrix@{fromMatrix}}
+\index{fromMatrix@{fromMatrix}!Quaternion@{Quaternion}}
+\doxysubsubsection{\texorpdfstring{fromMatrix()}{fromMatrix()}}
+{\footnotesize\ttfamily \label{structQuaternion_a6890f2398e047db71c6262e0c97241b7} 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} Quaternion\+::from\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structMatrix4}{Matrix4}} \&}]{matrix}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a quaternion from a given rotation matrix. 
+
+This function uses the standard method of extracting a quaternion from a rotation matrix. It first computes the trace of the matrix to determine which case to use for extraction. The resulting quaternion is normalized before being returned.
+
+TLDR; used formulaes from\+: \href{https://www.euclideanspace.com/maths/geometry/rotations/conversions/matrixToQuaternion/index.htm}{\texttt{ https\+://www.\+euclideanspace.\+com/maths/geometry/rotations/conversions/matrix\+To\+Quaternion/index.\+htm}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em matrix} & The 4x4 rotation matrix to convert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A normalized \doxylink{structQuaternion}{Quaternion} representing the same rotation. 
+\end{DoxyReturn}
+\Hypertarget{structQuaternion_a3d1c40425b42651935cc3bc0dec2a830}\index{Quaternion@{Quaternion}!lookRotation@{lookRotation}}
+\index{lookRotation@{lookRotation}!Quaternion@{Quaternion}}
+\doxysubsubsection{\texorpdfstring{lookRotation()}{lookRotation()}}
+{\footnotesize\ttfamily \label{structQuaternion_a3d1c40425b42651935cc3bc0dec2a830} 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} Quaternion\+::look\+Rotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{direction}{, }\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{up}{ = {\ttfamily \mbox{\hyperlink{classVector3}{Vector3}}(0.0f,~1.0f,~0.0f)}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a "{}look rotation"{} quaternion. 
+
+Generates a "{}look rotation"{} quaternion.
+
+Generates a quaternion that rotates an object to face in the specified direction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & The direction to look at. \\
+\hline
+{\em up} & The up vector. Defaults to (0, 1, 0). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The look rotation quaternion.
+\end{DoxyReturn}
+Constructs a quaternion that rotates an object to face in the specified direction.
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & The desired forward direction. \\
+\hline
+{\em up} & The up vector to align with (default is (0, 1, 0)). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A quaternion that represents the rotation required for the look direction. 
+\end{DoxyReturn}
+\Hypertarget{structQuaternion_aab148883caba0b669a5803135006ae41}\index{Quaternion@{Quaternion}!normalized@{normalized}}
+\index{normalized@{normalized}!Quaternion@{Quaternion}}
+\doxysubsubsection{\texorpdfstring{normalized()}{normalized()}}
+{\footnotesize\ttfamily \label{structQuaternion_aab148883caba0b669a5803135006ae41} 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} Quaternion\+::normalized (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a normalized version of this quaternion. 
+
+\begin{DoxyReturn}{Returns}
+A new quaternion that is the normalized (unit length) version of this quaternion. 
+\end{DoxyReturn}
+\Hypertarget{structQuaternion_ab178e12364d87fb676d85695e491361f}\index{Quaternion@{Quaternion}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Quaternion@{Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{structQuaternion_ab178e12364d87fb676d85695e491361f} 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} Quaternion\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structQuaternion}{Quaternion}} \&}]{q}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplies two quaternions. 
+
+Performs Hamilton product of this quaternion with another.
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to multiply with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting quaternion. 
+\end{DoxyReturn}
+\Hypertarget{structQuaternion_af19d7a5554539ad967b8c913939dacb6}\index{Quaternion@{Quaternion}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Quaternion@{Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{structQuaternion_af19d7a5554539ad967b8c913939dacb6} 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} Quaternion\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{float}]{scalar}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplies the quaternion by a scalar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar value to multiply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new quaternion scaled by the given scalar. 
+\end{DoxyReturn}
+\Hypertarget{structQuaternion_a36087d26b41bb9a72555c448ac797e4c}\index{Quaternion@{Quaternion}!operator+@{operator+}}
+\index{operator+@{operator+}!Quaternion@{Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{structQuaternion_a36087d26b41bb9a72555c448ac797e4c} 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} Quaternion\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structQuaternion}{Quaternion}} \&}]{q}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds two quaternions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sum of this quaternion and q. 
+\end{DoxyReturn}
+\Hypertarget{structQuaternion_aff7a0a5aeea4a3fe860cb90a649e389c}\index{Quaternion@{Quaternion}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Quaternion@{Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{structQuaternion_aff7a0a5aeea4a3fe860cb90a649e389c} 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} Quaternion\+::operator-\/ (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+The negated quaternion. 
+\end{DoxyReturn}
+\Hypertarget{structQuaternion_a41023b9620b60364be0f9a6a2095ee89}\index{Quaternion@{Quaternion}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Quaternion@{Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{structQuaternion_a41023b9620b60364be0f9a6a2095ee89} 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} Quaternion\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structQuaternion}{Quaternion}} \&}]{q}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtracts one quaternion from another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em q} & The quaternion to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The difference between this quaternion and q. 
+\end{DoxyReturn}
+\Hypertarget{structQuaternion_a0705f01f7669f4a69db459b2288cab75}\index{Quaternion@{Quaternion}!rotateVector@{rotateVector}}
+\index{rotateVector@{rotateVector}!Quaternion@{Quaternion}}
+\doxysubsubsection{\texorpdfstring{rotateVector()}{rotateVector()}}
+{\footnotesize\ttfamily \label{structQuaternion_a0705f01f7669f4a69db459b2288cab75} 
+\mbox{\hyperlink{classVector3}{Vector3}} Quaternion\+::rotate\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{v}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Rotates a vector by this quaternion. 
+
+The rotation is applied by converting the vector into a quaternion, performing the quaternion multiplication, and then extracting the rotated vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to rotate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rotated vector. 
+\end{DoxyReturn}
+\Hypertarget{structQuaternion_ae1a6eef5ea4bb26c6df33504a16bcfa7}\index{Quaternion@{Quaternion}!toMatrix@{toMatrix}}
+\index{toMatrix@{toMatrix}!Quaternion@{Quaternion}}
+\doxysubsubsection{\texorpdfstring{toMatrix()}{toMatrix()}}
+{\footnotesize\ttfamily \label{structQuaternion_ae1a6eef5ea4bb26c6df33504a16bcfa7} 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} Quaternion\+::to\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Converts this quaternion to a rotation matrix. 
+
+Converts this quaternion into a 4x4 rotation matrix.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{structMatrix4}{Matrix4} representing the equivalent rotation.
+\end{DoxyReturn}
+The conversion uses the standard formula for constructing a rotation matrix from a normalized quaternion.
+
+\begin{DoxyReturn}{Returns}
+A \doxylink{structMatrix4}{Matrix4} representing the same rotation as this quaternion. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/math/\mbox{\hyperlink{Quaternion_8hpp}{Quaternion.\+hpp}}\item 
+src/math/Quaternion.\+cpp\end{DoxyCompactItemize}

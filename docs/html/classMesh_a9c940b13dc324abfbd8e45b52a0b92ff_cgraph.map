@@ -1,0 +1,5 @@
+<map id="Mesh::updateVertexPosition" name="Mesh::updateVertexPosition">
+<area shape="rect" id="Node000001" title="Updates the position of a vertex in the mesh." alt="" coords="5,5,210,33"/>
+<area shape="rect" id="Node000002" href="$classMesh.html#a4c5fd807a8491a9125a2ce2791a0a591" title="Re&#45;uploads the vertex data to the GPU." alt="" coords="258,5,407,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,16,242,16,242,22,210,22"/>
+</map>

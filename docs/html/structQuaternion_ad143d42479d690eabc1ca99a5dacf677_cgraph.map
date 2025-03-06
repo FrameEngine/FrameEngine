@@ -1,0 +1,5 @@
+<map id="Quaternion::dot" name="Quaternion::dot">
+<area shape="rect" id="Node000001" title="Computes the dot product of two quaternions." alt="" coords="5,5,128,33"/>
+<area shape="rect" id="Node000002" href="$structQuaternion.html#abcc01358aada56ea5f0db4da18aaf77d" title="Default constructor initializes the quaternion as the identity rotation." alt="" coords="176,5,349,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,16,160,16,160,22,128,22"/>
+</map>

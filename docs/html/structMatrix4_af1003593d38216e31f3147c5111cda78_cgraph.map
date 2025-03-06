@@ -1,0 +1,5 @@
+<map id="Matrix4::operator*" name="Matrix4::operator*">
+<area shape="rect" id="Node000001" title="Multiplies the matrix by a scalar." alt="" coords="5,5,147,33"/>
+<area shape="rect" id="Node000002" href="$structMatrix4.html#a21e70a74447b9b05cf9a06400bc9c661" title="Default constructor that initializes the matrix as an identity matrix." alt="" coords="195,5,324,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,16,179,16,179,22,147,22"/>
+</map>

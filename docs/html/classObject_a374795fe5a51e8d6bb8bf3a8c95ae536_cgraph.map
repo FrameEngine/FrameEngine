@@ -1,0 +1,23 @@
+<map id="Object::lookAt" name="Object::lookAt">
+<area shape="rect" id="Node000001" title="Orients the object so that it &quot;looks at&quot; a target position." alt="" coords="5,109,119,137"/>
+<area shape="rect" id="Node000002" href="$classVector3.html#afa69357b4a1449c640820dc643b6265b" title="Computes the cross product between this vector and another." alt="" coords="197,5,310,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,107,116,75,165,43,182,36,184,41,168,48,119,79,81,111"/>
+<area shape="rect" id="Node000004" href="$classVector3.html#aaa038c8e2f161591e564a57a17e3cfde" title="Computes the dot product between this vector and another." alt="" coords="204,57,304,85"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="115,106,188,86,189,91,117,111"/>
+<area shape="rect" id="Node000005" href="$structQuaternion.html#a6890f2398e047db71c6262e0c97241b7" title="Constructs a quaternion from a given rotation matrix." alt="" coords="167,211,341,238"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="83,135,122,162,168,190,195,202,193,207,165,195,119,167,80,140"/>
+<area shape="rect" id="Node000008" href="$classVector3.html#a7b900ba64852e9a66877e653945e08f6" title="Computes the magnitude of this vector." alt="" coords="402,121,551,149"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="112,135,167,146,223,150,281,151,386,144,386,149,281,156,223,155,166,151,111,140"/>
+<area shape="rect" id="Node000009" href="$classVector3.html#a65546070166d4f3dc7aae6dbc1c6d6cb" title="Returns a normalized (unit length) version of this vector." alt="" coords="178,109,330,137"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="119,120,162,120,162,126,119,126"/>
+<area shape="rect" id="Node000003" href="$classVector3.html#a6151fc844ddb2aaa316317b922cb8d22" title="Constructs a Vector3 with specified components." alt="" coords="412,57,541,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="312,30,400,51,399,56,311,35"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="304,68,396,68,396,74,304,74"/>
+<area shape="rect" id="Node000006" href="$structQuaternion.html#aab148883caba0b669a5803135006ae41" title="Returns a normalized version of this quaternion." alt="" coords="389,248,563,276"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="341,236,375,242,374,247,340,242"/>
+<area shape="rect" id="Node000007" href="$structQuaternion.html#abcc01358aada56ea5f0db4da18aaf77d" title="Default constructor initializes the quaternion as the identity rotation." alt="" coords="611,223,785,250"/>
+<area shape="poly" id="edge8_Node000005_Node000007" title=" " alt="" coords="341,224,596,231,596,236,341,230"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="563,249,595,246,596,251,564,255"/>
+<area shape="poly" id="edge12_Node000009_Node000003" title=" " alt="" coords="316,106,398,87,400,92,317,111"/>
+<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="330,125,386,128,386,133,330,130"/>
+</map>

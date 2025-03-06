@@ -1,0 +1,136 @@
+\doxysection{Window Class Reference}
+\hypertarget{classWindow}{}\label{classWindow}\index{Window@{Window}}
+
+
+Collaboration diagram for Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classWindow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWindow_a2bf7954f0cf38a7fc4c4742e4a91a190}{Window}} (int width, int height, const std\+::string \&title)
+\begin{DoxyCompactList}\small\item\em Creates a window with the specified width, height, and title. \end{DoxyCompactList}\item 
+\Hypertarget{classWindow_a245d821e6016fa1f6970ccbbedd635f6}\label{classWindow_a245d821e6016fa1f6970ccbbedd635f6} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Window} ()
+\begin{DoxyCompactList}\small\item\em Destroys the window and cleans up resources. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWindow_a761d614931fb5a5daa70e4f580c3e78e}{is\+Open}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the window is still open. \end{DoxyCompactList}\item 
+\Hypertarget{classWindow_ae496f33bc5dd8dd48791ccf16cae1292}\label{classWindow_ae496f33bc5dd8dd48791ccf16cae1292} 
+void {\bfseries poll\+Events} () const
+\begin{DoxyCompactList}\small\item\em Polls for and processes all pending window events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWindow_a04ab8fcdfcc749a5f5f2c0441528b5b0}{swap\+Buffers}} () const
+\begin{DoxyCompactList}\small\item\em Swaps the front and back buffers. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWindow_aee31a875d654a8c8f7d796d072657791}{get\+Width}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current window width. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classWindow_a60757b2b0dbcec9889e3a09f5655adbe}{get\+Height}} () const
+\begin{DoxyCompactList}\small\item\em Gets the current window height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classWindow_affb34b6b2caa627576d9be2768e08392}{framebuffer\+Size\+Callback}} (GLFWwindow \texorpdfstring{$\ast$}{*}window, int width, int height)
+\begin{DoxyCompactList}\small\item\em Callback function that updates the viewport when the window is resized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classWindow_a2bf7954f0cf38a7fc4c4742e4a91a190}\index{Window@{Window}!Window@{Window}}
+\index{Window@{Window}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{Window()}{Window()}}
+{\footnotesize\ttfamily \label{classWindow_a2bf7954f0cf38a7fc4c4742e4a91a190} 
+Window\+::\+Window (\begin{DoxyParamCaption}\item[{int}]{width}{, }\item[{int}]{height}{, }\item[{const std\+::string \&}]{title}{}\end{DoxyParamCaption})}
+
+
+
+Creates a window with the specified width, height, and title. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the window in pixels. \\
+\hline
+{\em height} & The height of the window in pixels. \\
+\hline
+{\em title} & The window title. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classWindow_affb34b6b2caa627576d9be2768e08392}\index{Window@{Window}!framebufferSizeCallback@{framebufferSizeCallback}}
+\index{framebufferSizeCallback@{framebufferSizeCallback}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{framebufferSizeCallback()}{framebufferSizeCallback()}}
+{\footnotesize\ttfamily \label{classWindow_affb34b6b2caa627576d9be2768e08392} 
+void Window\+::framebuffer\+Size\+Callback (\begin{DoxyParamCaption}\item[{GLFWwindow \texorpdfstring{$\ast$}{*}}]{window}{, }\item[{int}]{width}{, }\item[{int}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Callback function that updates the viewport when the window is resized. 
+
+This function is called automatically by GLFW when the window size changes. Needed to handle aspec ratio properly.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The GLFW window. \\
+\hline
+{\em width} & The new width of the window. \\
+\hline
+{\em height} & The new height of the window. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classWindow_a60757b2b0dbcec9889e3a09f5655adbe}\index{Window@{Window}!getHeight@{getHeight}}
+\index{getHeight@{getHeight}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{getHeight()}{getHeight()}}
+{\footnotesize\ttfamily \label{classWindow_a60757b2b0dbcec9889e3a09f5655adbe} 
+int Window\+::get\+Height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current window height. 
+
+\begin{DoxyReturn}{Returns}
+The height of the window in pixels. 
+\end{DoxyReturn}
+\Hypertarget{classWindow_aee31a875d654a8c8f7d796d072657791}\index{Window@{Window}!getWidth@{getWidth}}
+\index{getWidth@{getWidth}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{getWidth()}{getWidth()}}
+{\footnotesize\ttfamily \label{classWindow_aee31a875d654a8c8f7d796d072657791} 
+int Window\+::get\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the current window width. 
+
+\begin{DoxyReturn}{Returns}
+The width of the window in pixels. 
+\end{DoxyReturn}
+\Hypertarget{classWindow_a761d614931fb5a5daa70e4f580c3e78e}\index{Window@{Window}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}}
+{\footnotesize\ttfamily \label{classWindow_a761d614931fb5a5daa70e4f580c3e78e} 
+bool Window\+::is\+Open (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the window is still open. 
+
+\begin{DoxyReturn}{Returns}
+True if the window is open; false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classWindow_a04ab8fcdfcc749a5f5f2c0441528b5b0}\index{Window@{Window}!swapBuffers@{swapBuffers}}
+\index{swapBuffers@{swapBuffers}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{swapBuffers()}{swapBuffers()}}
+{\footnotesize\ttfamily \label{classWindow_a04ab8fcdfcc749a5f5f2c0441528b5b0} 
+void Window\+::swap\+Buffers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Swaps the front and back buffers. 
+
+Call this after rendering a frame to display the new image. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Window_8hpp}{Window.\+hpp}}\item 
+src/core/Window.\+cpp\end{DoxyCompactItemize}

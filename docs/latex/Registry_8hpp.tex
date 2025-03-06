@@ -1,0 +1,68 @@
+\doxysection{include/\+Registry.hpp File Reference}
+\hypertarget{Registry_8hpp}{}\label{Registry_8hpp}\index{include/Registry.hpp@{include/Registry.hpp}}
+
+
+Defines the \doxylink{classRegistry}{Registry} class for managing ECS entities and components.  
+
+
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$bitset$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for Registry.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Registry_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Registry_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classIComponentStorage}{IComponent\+Storage}}
+\begin{DoxyCompactList}\small\item\em Interface for generic component storage. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classComponentStorage}{Component\+Storage$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em Stores a specific type of component for entities. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classRegistry}{Registry}}
+\begin{DoxyCompactList}\small\item\em Manages all ECS entities and components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{Registry_8hpp_a825da522c1bddefc47c127d5613f108a}\label{Registry_8hpp_a825da522c1bddefc47c127d5613f108a} 
+using {\bfseries Entity\+ID} = int
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr int \mbox{\hyperlink{Registry_8hpp_accef8305f13c3e9de5f7a7bb9466da69}{MAX\+\_\+\+COMPONENTS}} = 32
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the \doxylink{classRegistry}{Registry} class for managing ECS entities and components. 
+
+The \textquotesingle{}\doxylink{classRegistry}{Registry}\textquotesingle{} class is the core of the ECS (Entity-\/\+Component-\/\+System). It manages\+:
+\begin{DoxyItemize}
+\item \doxylink{classEntity}{Entity} creation and destruction.
+\item Component storage and retrieval for each entity.
+\end{DoxyItemize}
+
+It uses a bitset for component tracking, allowing O(1) filtering of entities with specific components, as it can be critical for high-\/performance simulations. 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{Registry_8hpp_accef8305f13c3e9de5f7a7bb9466da69}\index{Registry.hpp@{Registry.hpp}!MAX\_COMPONENTS@{MAX\_COMPONENTS}}
+\index{MAX\_COMPONENTS@{MAX\_COMPONENTS}!Registry.hpp@{Registry.hpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_COMPONENTS}{MAX\_COMPONENTS}}
+{\footnotesize\ttfamily \label{Registry_8hpp_accef8305f13c3e9de5f7a7bb9466da69} 
+int MAX\+\_\+\+COMPONENTS = 32\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+The maximum number of different component types that can exist in the ECS. This allows fast bitset-\/based component lookups. 

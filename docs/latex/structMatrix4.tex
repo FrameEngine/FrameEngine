@@ -1,0 +1,414 @@
+\doxysection{Matrix4 Class Reference}
+\hypertarget{structMatrix4}{}\label{structMatrix4}\index{Matrix4@{Matrix4}}
+
+
+A 4x4 matrix class.  
+
+
+
+
+{\ttfamily \#include $<$Matrix4.\+hpp$>$}
+
+
+
+Collaboration diagram for Matrix4\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{structMatrix4__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}\label{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661} 
+{\bfseries Matrix4} ()
+\begin{DoxyCompactList}\small\item\em Default constructor that initializes the matrix as an identity matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMatrix4_ae580a375986d03d211952dc4bae5706e}{Matrix4}} (std\+::initializer\+\_\+list$<$ double $>$ values)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{structMatrix4}{Matrix4} from an initializer list of 16 values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} \& \mbox{\hyperlink{structMatrix4_ac95c34d9649930c45264013b4a500ac4}{operator=}} (std\+::initializer\+\_\+list$<$ float $>$ values)
+\begin{DoxyCompactList}\small\item\em Assigns the matrix using an initializer list of 16 floats. \end{DoxyCompactList}\item 
+float \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structMatrix4_a74a94cca3f418667e79c40170dc7d635}{operator\mbox{[}$\,$\mbox{]}}} (int row)
+\begin{DoxyCompactList}\small\item\em Provides non-\/const access to a row of the matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{structMatrix4_a943cdcd144c58c21e23b241fa2a554aa}{transform\+Vector}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&v) const
+\begin{DoxyCompactList}\small\item\em Transforms a vector using the upper 3x3 submatrix. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{structMatrix4_a6db37a8b0f398e92f49ffb73848e3b2f}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Returns a string representation of the matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} \mbox{\hyperlink{structMatrix4_a07a0a50c8e4d085e289a9d383040202d}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{structMatrix4}{Matrix4}} \&other) const
+\begin{DoxyCompactList}\small\item\em Multiplies this matrix with another matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} \mbox{\hyperlink{structMatrix4_a0868a975fc746f6812ae58b2e519350d}{operator+}} (const \mbox{\hyperlink{structMatrix4}{Matrix4}} \&other) const
+\begin{DoxyCompactList}\small\item\em Adds another matrix to this matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} \mbox{\hyperlink{structMatrix4_a13a17942d7e307ca4f65f14d3183079e}{operator-\/}} (const \mbox{\hyperlink{structMatrix4}{Matrix4}} \&other) const
+\begin{DoxyCompactList}\small\item\em Subtracts another matrix from this matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} \mbox{\hyperlink{structMatrix4_af1003593d38216e31f3147c5111cda78}{operator\texorpdfstring{$\ast$}{*}}} (float scalar) const
+\begin{DoxyCompactList}\small\item\em Multiplies the matrix by a scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} \mbox{\hyperlink{structMatrix4_a7fc0d09be601cd9e0a3ca832f6aa554a}{operator/}} (float scalar) const
+\begin{DoxyCompactList}\small\item\em Divides the matrix by a scalar. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structMatrix4_a5724c3b529f84d92e50f687810fd6db8}{operator==}} (const \mbox{\hyperlink{structMatrix4}{Matrix4}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares this matrix with another. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structMatrix4_a93750133d8c9bb494621240383e1a107}{operator!=}} (const \mbox{\hyperlink{structMatrix4}{Matrix4}} \&other) const
+\begin{DoxyCompactList}\small\item\em Checks whether this matrix is not equal to another matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} \mbox{\hyperlink{structMatrix4_aff21eee8a48482c36f84345b57aac6c8}{get\+Transpose}} () const
+\begin{DoxyCompactList}\small\item\em Computes and returns the transpose of the matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{structMatrix4}{Matrix4}} \mbox{\hyperlink{structMatrix4_ac75974947937ab36d3305fe69d8298db}{create\+Rotation\+Matrix}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&axis, float angle)
+\begin{DoxyCompactList}\small\item\em Creates a rotation matrix from an axis and angle. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structMatrix4}{Matrix4}} \mbox{\hyperlink{structMatrix4_a69367ead23554d96061ddee73e0bfd15}{create\+Translation\+Matrix}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&pos)
+\begin{DoxyCompactList}\small\item\em Generates a translation matrix. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structMatrix4}{Matrix4}} \mbox{\hyperlink{structMatrix4_a9dc7abcfd6a2a5e02765c8708276140f}{create\+Scaling\+Matrix}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&s)
+\begin{DoxyCompactList}\small\item\em Generates a scaling matrix. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{structMatrix4}{Matrix4}} \mbox{\hyperlink{structMatrix4_a9f88b7eb74bd14087671fdf045a9f2d3}{create\+Perspective\+Matrix}} (float fov, float aspect, float near, float far)
+\begin{DoxyCompactList}\small\item\em Constructs a perspective projection matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structMatrix4_a2627b85debbf7037f3f54c0806d2f34b}\label{structMatrix4_a2627b85debbf7037f3f54c0806d2f34b} 
+float {\bfseries m} \mbox{[}4\mbox{]}\mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A 4x4 matrix class. 
+
+It provides standard arithmetic operations, matrix multiplication, and methods for generating specific transformation matrices.
+
+Matrices are row-\/major ordered.
+
+All angles are provided in degrees, unless specified otherwise. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structMatrix4_ae580a375986d03d211952dc4bae5706e}\index{Matrix4@{Matrix4}!Matrix4@{Matrix4}}
+\index{Matrix4@{Matrix4}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{Matrix4()}{Matrix4()}}
+{\footnotesize\ttfamily \label{structMatrix4_ae580a375986d03d211952dc4bae5706e} 
+Matrix4\+::\+Matrix4 (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ double $>$}]{values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{structMatrix4}{Matrix4} from an initializer list of 16 values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em values} & An initializer list containing exactly 16 values. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the initializer list does not contain exactly 16 values. \\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structMatrix4_a9f88b7eb74bd14087671fdf045a9f2d3}\index{Matrix4@{Matrix4}!createPerspectiveMatrix@{createPerspectiveMatrix}}
+\index{createPerspectiveMatrix@{createPerspectiveMatrix}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{createPerspectiveMatrix()}{createPerspectiveMatrix()}}
+{\footnotesize\ttfamily \label{structMatrix4_a9f88b7eb74bd14087671fdf045a9f2d3} 
+static \mbox{\hyperlink{structMatrix4}{Matrix4}} Matrix4\+::create\+Perspective\+Matrix (\begin{DoxyParamCaption}\item[{float}]{fov}{, }\item[{float}]{aspect}{, }\item[{float}]{near}{, }\item[{float}]{far}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Constructs a perspective projection matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fov} & The field of view in degrees. \\
+\hline
+{\em aspect} & The aspect ratio (width/height). \\
+\hline
+{\em near} & The near clipping plane distance. \\
+\hline
+{\em far} & The far clipping plane distance. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The perspective projection matrix. 
+\end{DoxyReturn}
+\Hypertarget{structMatrix4_ac75974947937ab36d3305fe69d8298db}\index{Matrix4@{Matrix4}!createRotationMatrix@{createRotationMatrix}}
+\index{createRotationMatrix@{createRotationMatrix}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{createRotationMatrix()}{createRotationMatrix()}}
+{\footnotesize\ttfamily \label{structMatrix4_ac75974947937ab36d3305fe69d8298db} 
+static \mbox{\hyperlink{structMatrix4}{Matrix4}} Matrix4\+::create\+Rotation\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{axis}{, }\item[{float}]{angle}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Creates a rotation matrix from an axis and angle. 
+
+Constructs a rotation matrix by generating a quaternion from the given axis and angle, and then converting that quaternion to a matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis of rotation. \\
+\hline
+{\em angle} & The rotation angle in degrees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rotation matrix. 
+\end{DoxyReturn}
+\Hypertarget{structMatrix4_a9dc7abcfd6a2a5e02765c8708276140f}\index{Matrix4@{Matrix4}!createScalingMatrix@{createScalingMatrix}}
+\index{createScalingMatrix@{createScalingMatrix}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{createScalingMatrix()}{createScalingMatrix()}}
+{\footnotesize\ttfamily \label{structMatrix4_a9dc7abcfd6a2a5e02765c8708276140f} 
+static \mbox{\hyperlink{structMatrix4}{Matrix4}} Matrix4\+::create\+Scaling\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{s}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Generates a scaling matrix. 
+
+Constructs a matrix that scales along the x, y, and z axes by the given factors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The scaling factors. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting scaling matrix. 
+\end{DoxyReturn}
+\Hypertarget{structMatrix4_a69367ead23554d96061ddee73e0bfd15}\index{Matrix4@{Matrix4}!createTranslationMatrix@{createTranslationMatrix}}
+\index{createTranslationMatrix@{createTranslationMatrix}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{createTranslationMatrix()}{createTranslationMatrix()}}
+{\footnotesize\ttfamily \label{structMatrix4_a69367ead23554d96061ddee73e0bfd15} 
+static \mbox{\hyperlink{structMatrix4}{Matrix4}} Matrix4\+::create\+Translation\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Generates a translation matrix. 
+
+Constructs a matrix that translates by the specified vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The translation vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting translation matrix. 
+\end{DoxyReturn}
+\Hypertarget{structMatrix4_aff21eee8a48482c36f84345b57aac6c8}\index{Matrix4@{Matrix4}!getTranspose@{getTranspose}}
+\index{getTranspose@{getTranspose}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{getTranspose()}{getTranspose()}}
+{\footnotesize\ttfamily \label{structMatrix4_aff21eee8a48482c36f84345b57aac6c8} 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} Matrix4\+::get\+Transpose (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes and returns the transpose of the matrix. 
+
+\begin{DoxyReturn}{Returns}
+The transposed matrix. 
+\end{DoxyReturn}
+\Hypertarget{structMatrix4_a93750133d8c9bb494621240383e1a107}\index{Matrix4@{Matrix4}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{structMatrix4_a93750133d8c9bb494621240383e1a107} 
+bool Matrix4\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structMatrix4}{Matrix4}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks whether this matrix is not equal to another matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The matrix to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the matrices differ by more than the epsilon threshold, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{structMatrix4_a07a0a50c8e4d085e289a9d383040202d}\index{Matrix4@{Matrix4}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{structMatrix4_a07a0a50c8e4d085e289a9d383040202d} 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} Matrix4\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structMatrix4}{Matrix4}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplies this matrix with another matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The matrix to multiply with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting matrix after multiplication. 
+\end{DoxyReturn}
+\Hypertarget{structMatrix4_af1003593d38216e31f3147c5111cda78}\index{Matrix4@{Matrix4}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{structMatrix4_af1003593d38216e31f3147c5111cda78} 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} Matrix4\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{float}]{scalar}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplies the matrix by a scalar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar to multiply each element by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled matrix. 
+\end{DoxyReturn}
+\Hypertarget{structMatrix4_a0868a975fc746f6812ae58b2e519350d}\index{Matrix4@{Matrix4}!operator+@{operator+}}
+\index{operator+@{operator+}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{structMatrix4_a0868a975fc746f6812ae58b2e519350d} 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} Matrix4\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structMatrix4}{Matrix4}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds another matrix to this matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The matrix to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sum of the two matrices. 
+\end{DoxyReturn}
+\Hypertarget{structMatrix4_a13a17942d7e307ca4f65f14d3183079e}\index{Matrix4@{Matrix4}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{structMatrix4_a13a17942d7e307ca4f65f14d3183079e} 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} Matrix4\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structMatrix4}{Matrix4}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtracts another matrix from this matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The matrix to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting matrix after subtraction. 
+\end{DoxyReturn}
+\Hypertarget{structMatrix4_a7fc0d09be601cd9e0a3ca832f6aa554a}\index{Matrix4@{Matrix4}!operator/@{operator/}}
+\index{operator/@{operator/}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \label{structMatrix4_a7fc0d09be601cd9e0a3ca832f6aa554a} 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} Matrix4\+::operator/ (\begin{DoxyParamCaption}\item[{float}]{scalar}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Divides the matrix by a scalar. 
+
+If the scalar is zero, the matrix is returned unchanged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar to divide by. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The resulting matrix. 
+\end{DoxyReturn}
+\Hypertarget{structMatrix4_ac95c34d9649930c45264013b4a500ac4}\index{Matrix4@{Matrix4}!operator=@{operator=}}
+\index{operator=@{operator=}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{structMatrix4_ac95c34d9649930c45264013b4a500ac4} 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} \& Matrix4\+::operator= (\begin{DoxyParamCaption}\item[{std\+::initializer\+\_\+list$<$ float $>$}]{values}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Assigns the matrix using an initializer list of 16 floats. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em values} & The initializer list containing exactly 16 values. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this matrix. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if the initializer list does not contain exactly 16 values. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{structMatrix4_a5724c3b529f84d92e50f687810fd6db8}\index{Matrix4@{Matrix4}!operator==@{operator==}}
+\index{operator==@{operator==}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{structMatrix4_a5724c3b529f84d92e50f687810fd6db8} 
+bool Matrix4\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structMatrix4}{Matrix4}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compares this matrix with another. 
+
+Two matrices are considered equal if the difference between each corresponding element is within a small epsilon value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The matrix to compare against. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the matrices are approximately equal, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{structMatrix4_a74a94cca3f418667e79c40170dc7d635}\index{Matrix4@{Matrix4}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \label{structMatrix4_a74a94cca3f418667e79c40170dc7d635} 
+float \texorpdfstring{$\ast$}{*} Matrix4\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{row}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Provides non-\/const access to a row of the matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & The index of the row to access. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the first element of the row. 
+\end{DoxyReturn}
+\Hypertarget{structMatrix4_a6db37a8b0f398e92f49ffb73848e3b2f}\index{Matrix4@{Matrix4}!toString@{toString}}
+\index{toString@{toString}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{structMatrix4_a6db37a8b0f398e92f49ffb73848e3b2f} 
+std\+::string Matrix4\+::to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a string representation of the matrix. 
+
+The matrix is formatted using fixed-\/point notation with four decimal places.
+
+\begin{DoxyReturn}{Returns}
+A formatted string representing the matrix. 
+\end{DoxyReturn}
+\Hypertarget{structMatrix4_a943cdcd144c58c21e23b241fa2a554aa}\index{Matrix4@{Matrix4}!transformVector@{transformVector}}
+\index{transformVector@{transformVector}!Matrix4@{Matrix4}}
+\doxysubsubsection{\texorpdfstring{transformVector()}{transformVector()}}
+{\footnotesize\ttfamily \label{structMatrix4_a943cdcd144c58c21e23b241fa2a554aa} 
+\mbox{\hyperlink{classVector3}{Vector3}} Matrix4\+::transform\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{v}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Transforms a vector using the upper 3x3 submatrix. 
+
+Applies the matrix transformation to the given vector, ignoring any translation (Vector always the same, so translation doesn\textquotesingle{}t matter).
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to transform. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The transformed vector. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/\mbox{\hyperlink{Matrix4_8hpp}{Matrix4.\+hpp}}\end{DoxyCompactItemize}

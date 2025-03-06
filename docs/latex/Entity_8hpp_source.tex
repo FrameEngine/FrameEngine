@@ -1,0 +1,53 @@
+\doxysection{Entity.\+hpp}
+\hypertarget{Entity_8hpp_source}{}\label{Entity_8hpp_source}\index{include/Entity.hpp@{include/Entity.hpp}}
+\mbox{\hyperlink{Entity_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifndef\ ENTITY\_HPP}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ ENTITY\_HPP}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Logger_8hpp}{Logger.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Registry_8hpp}{Registry.hpp}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classEntity_a1b3b92780c8075835ac81b237a9f95a0}{Entity}}\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{classEntity_a1b3b92780c8075835ac81b237a9f95a0}{Entity}}(\mbox{\hyperlink{classRegistry}{Registry}}\ \&registry)\ :\ registry\_(registry)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ id\_\ =\ registry\_.create\_entity();}
+\DoxyCodeLine{00045\ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ Args>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEntity_ac42c7a74bd38f40de2664a7a5fcb9110}{add\_component}}(Args\ \&\&...args)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (registry\_.has\_component<T>(id\_))\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \mbox{\hyperlink{Logger_8hpp_a94e6401c9e46b35182d9dbbce6b99be5}{LOG}}(WARNING,\ \textcolor{stringliteral}{"{}Entity\ \%d\ already\ has\ component\ \%s"{}},\ id\_,\ \textcolor{keyword}{typeid}(T).name());}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ registry\_.add\_component<T>(id\_,\ T(std::forward<Args>(args)...));}
+\DoxyCodeLine{00061\ \ \ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEntity_a0ecaca9e3770a3872ee3f24706111def}{remove\_component}}()\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (!registry\_.has\_component<T>(id\_))\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \mbox{\hyperlink{Logger_8hpp_a94e6401c9e46b35182d9dbbce6b99be5}{LOG}}(WARNING,\ \textcolor{stringliteral}{"{}Entity\ \%d\ does\ not\ have\ component\ \%s"{}},\ id\_,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{typeid}(T).name());}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ \ registry\_.remove\_component<T>(id\_);}
+\DoxyCodeLine{00076\ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ T\ *\mbox{\hyperlink{classEntity_a37109ed9ba43260d07fa251beec2f4d2}{get\_component}}()\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{if}\ (!registry\_.has\_component<T>(id\_))\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};\ \textcolor{comment}{//\ component\ doesn't\ exist}}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{return}\ \&registry\_.get\_component<T>(id\_);}
+\DoxyCodeLine{00091\ \ \ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ EntityID\ id()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ id\_;\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00096\ \ \ EntityID\ id\_;}
+\DoxyCodeLine{00097\ \ \ Registry\ \&registry\_;}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !ENTITY\_HPP}}
+
+\end{DoxyCode}

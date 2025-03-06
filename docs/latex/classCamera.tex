@@ -1,0 +1,232 @@
+\doxysection{Camera Class Reference}
+\hypertarget{classCamera}{}\label{classCamera}\index{Camera@{Camera}}
+
+
+A camera.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+hpp$>$}
+
+
+
+Inheritance diagram for Camera\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classCamera__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Camera\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classCamera__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCamera_a54fb1cf5f32c49aa955809f32b5cdb92}{Camera}} (\mbox{\hyperlink{classRegistry}{Registry}} \&registry, float aspect\+Ratio=16.f/9.f)
+\begin{DoxyCompactList}\small\item\em Creates a \doxylink{classCamera}{Camera} with default settings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} \mbox{\hyperlink{classCamera_a995b69e239b35db64c17444ab4ee2d8f}{get\+View\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current view matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCamera_a8fe5c71a390571a861ad8afd99dfdea3}{update\+View\+Matrix}} ()
+\begin{DoxyCompactList}\small\item\em Updates the view matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} \mbox{\hyperlink{classCamera_a501474f84c06e9c895d29ecf182d0819}{get\+Projection\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Returns the current projection matrix. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCamera_ac620ae039ccaddc664a2785ed81d05be}{set\+Projection}} (float fov, float aspect\+Ratio, float near\+Plane, float far\+Plane)
+\begin{DoxyCompactList}\small\item\em Sets the camera\textquotesingle{}s projection parameters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classCamera_a40991e036da9832173d0c317c2fd02a0}{get\+Front\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Gets the direction the camera is facing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classObject}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classObject_a52ee70eca2c53e91a6db00a8908a3e93}{Object}} (\mbox{\hyperlink{classRegistry}{Registry}} \&registry, \mbox{\hyperlink{classMesh}{Mesh}} \texorpdfstring{$\ast$}{*}mesh)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classObject}{Object} with the specified mesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a2ac65a7bb2b2ed5335f7d2226dba2b11}{rotate}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&axis=\mbox{\hyperlink{classVector3}{Vector3}}(0, 1, 0), float angle=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Rotates the object around the specified axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a8144ef3248d1d23ca6bce579dc97dc16}{move}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&translation)
+\begin{DoxyCompactList}\small\item\em Translates the object in world space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a951d73df2f0963a0e0e752eea23d60d7}{render}} (\mbox{\hyperlink{classRenderer}{Renderer}} \&renderer)
+\begin{DoxyCompactList}\small\item\em Renders the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classObject_a6285e8da69fd36c129fa5da33d3842c0}{get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s render color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_ad69f0db617fe35e8baefb7f13aae1f5c}{set\+Color}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&c)
+\begin{DoxyCompactList}\small\item\em Sets the object\textquotesingle{}s render color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a374795fe5a51e8d6bb8bf3a8c95ae536}{look\+At}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&target)
+\begin{DoxyCompactList}\small\item\em Orients the object so that it "{}looks at"{} a target position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a4d14f2c5af2122e7653a2623fc389672}{set\+Wireframe}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables or disables wireframe rendering for this object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classObject_ad67679e31c891db3152016f52c540dee}{is\+Wireframe}} () const
+\begin{DoxyCompactList}\small\item\em Checks if wireframe rendering is enabled for this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classEntity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEntity_a1b3b92780c8075835ac81b237a9f95a0}{Entity}} (\mbox{\hyperlink{classRegistry}{Registry}} \&registry)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classEntity}{Entity} and registers it in the ECS. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename... Args$>$ }\\void \mbox{\hyperlink{classEntity_ac42c7a74bd38f40de2664a7a5fcb9110}{add\+\_\+component}} (Args \&\&...args)
+\begin{DoxyCompactList}\small\item\em Adds a component of type \textquotesingle{}T\textquotesingle{} to the object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{classEntity_a0ecaca9e3770a3872ee3f24706111def}{remove\+\_\+component}} ()
+\begin{DoxyCompactList}\small\item\em Removes a component of type \textquotesingle{}T\textquotesingle{} from the object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEntity_a37109ed9ba43260d07fa251beec2f4d2}{get\+\_\+component}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a pointer to the specified component type \textquotesingle{}T\textquotesingle{}. \end{DoxyCompactList}\item 
+Entity\+ID {\bfseries id} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classObject}{Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structTransformComponent}{Transform\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries transform}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classEntity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+Entity\+ID {\bfseries id\+\_\+}
+\item 
+\mbox{\hyperlink{classRegistry}{Registry}} \& {\bfseries registry\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A camera. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCamera_a54fb1cf5f32c49aa955809f32b5cdb92}\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily \label{classCamera_a54fb1cf5f32c49aa955809f32b5cdb92} 
+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{registry}{, }\item[{float}]{aspect\+Ratio}{ = {\ttfamily 16.f~/~9.f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a \doxylink{classCamera}{Camera} with default settings. 
+
+By default, the camera uses a 45° field of view, a near plane of 0.\+1, and a far plane of 100. The aspect ratio is provided as a parameter, by default is 16\+:9.
+
+
+\begin{DoxyParams}{Parameters}
+{\em registry} & The registry where the camera is registered. TODO, make it singletone and refer directly \\
+\hline
+{\em aspect\+Ratio} & The aspect ratio (width/height) of the viewport. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCamera_a40991e036da9832173d0c317c2fd02a0}\index{Camera@{Camera}!getFrontVector@{getFrontVector}}
+\index{getFrontVector@{getFrontVector}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getFrontVector()}{getFrontVector()}}
+{\footnotesize\ttfamily \label{classCamera_a40991e036da9832173d0c317c2fd02a0} 
+\mbox{\hyperlink{classVector3}{Vector3}} Camera\+::get\+Front\+Vector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Gets the direction the camera is facing. 
+
+Calculates and returns the camera\textquotesingle{}s front (forward) vector.
+
+Calculates the forward direction from the camera\textquotesingle{}s rotation.
+
+\begin{DoxyReturn}{Returns}
+A unit \doxylink{classVector3}{Vector3} representing the forward direction.
+\end{DoxyReturn}
+This method rotates the default forward vector (0, 0, 1) using the camera\textquotesingle{}s current rotation. If the resulting vector is nearly zero, it returns the default forward vector.
+
+\begin{DoxyReturn}{Returns}
+The forward direction of the camera. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a501474f84c06e9c895d29ecf182d0819}\index{Camera@{Camera}!getProjectionMatrix@{getProjectionMatrix}}
+\index{getProjectionMatrix@{getProjectionMatrix}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getProjectionMatrix()}{getProjectionMatrix()}}
+{\footnotesize\ttfamily \label{classCamera_a501474f84c06e9c895d29ecf182d0819} 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} Camera\+::get\+Projection\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the current projection matrix. 
+
+\begin{DoxyReturn}{Returns}
+The projection matrix.
+
+The perspective projection matrix. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a995b69e239b35db64c17444ab4ee2d8f}\index{Camera@{Camera}!getViewMatrix@{getViewMatrix}}
+\index{getViewMatrix@{getViewMatrix}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getViewMatrix()}{getViewMatrix()}}
+{\footnotesize\ttfamily \label{classCamera_a995b69e239b35db64c17444ab4ee2d8f} 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} Camera\+::get\+View\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the current view matrix. 
+
+This method updates the view matrix based on the camera\textquotesingle{}s current position and rotation, then returns it.
+
+\begin{DoxyReturn}{Returns}
+The view matrix.
+\end{DoxyReturn}
+This function updates the view matrix based on the camera\textquotesingle{}s current position and rotation, then returns the updated view matrix.
+
+\begin{DoxyReturn}{Returns}
+The view matrix. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_ac620ae039ccaddc664a2785ed81d05be}\index{Camera@{Camera}!setProjection@{setProjection}}
+\index{setProjection@{setProjection}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setProjection()}{setProjection()}}
+{\footnotesize\ttfamily \label{classCamera_ac620ae039ccaddc664a2785ed81d05be} 
+void Camera\+::set\+Projection (\begin{DoxyParamCaption}\item[{float}]{fov}{, }\item[{float}]{aspect\+Ratio}{, }\item[{float}]{near\+Plane}{, }\item[{float}]{far\+Plane}{}\end{DoxyParamCaption})}
+
+
+
+Sets the camera\textquotesingle{}s projection parameters. 
+
+This updates the field of view, aspect ratio, near plane, and far plane, and recalculates the projection matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fov} & Field of view in degrees. \\
+\hline
+{\em aspect\+Ratio} & Viewport aspect ratio. \\
+\hline
+{\em near\+Plane} & Near clipping plane distance. \\
+\hline
+{\em far\+Plane} & Far clipping plane distance.\\
+\hline
+\end{DoxyParams}
+Updates the field of view, aspect ratio, near plane, and far plane, then calculates a new perspective projection matrix.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fov} & Field of view in degrees. \\
+\hline
+{\em aspect\+Ratio} & The aspect ratio (width/height) of the viewport. \\
+\hline
+{\em near\+Plane} & The near clipping distance. \\
+\hline
+{\em far\+Plane} & The far clipping distance. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCamera_a8fe5c71a390571a861ad8afd99dfdea3}\index{Camera@{Camera}!updateViewMatrix@{updateViewMatrix}}
+\index{updateViewMatrix@{updateViewMatrix}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{updateViewMatrix()}{updateViewMatrix()}}
+{\footnotesize\ttfamily \label{classCamera_a8fe5c71a390571a861ad8afd99dfdea3} 
+void Camera\+::update\+View\+Matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Updates the view matrix. 
+
+Updates the view matrix based on the camera\textquotesingle{}s transform.
+
+Recalculates the view matrix using the camera\textquotesingle{}s current transform. Called in \doxylink{classRenderer_af7e5f8f68742f198e315fb4683a605a4}{Renderer\+::render()}.
+
+This method computes the view matrix using the camera\textquotesingle{}s position and rotation. It calculates the camera\textquotesingle{}s forward vector and then creates the view matrix. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/rendering/\mbox{\hyperlink{Camera_8hpp}{Camera.\+hpp}}\item 
+src/rendering/Camera.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,52 @@
+\doxysection{Renderer.\+hpp}
+\hypertarget{Renderer_8hpp_source}{}\label{Renderer_8hpp_source}\index{include/rendering/Renderer.hpp@{include/rendering/Renderer.hpp}}
+\mbox{\hyperlink{Renderer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ RENDERER\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ RENDERER\_HPP}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Registry_8hpp}{Registry.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Object_8hpp}{objects/Object.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}objects/PointLight.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Camera_8hpp}{rendering/Camera.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Shader_8hpp}{rendering/Shader.hpp}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRenderer_a5c19260ca73eec962fc4177261545aec}{Renderer}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classShader}{Shader}}\ *shader;\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{static}\ std::vector<Object\ *>}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ renderQueue;\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{static}\ std::vector<PointLight\ *>}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ lights;\ }
+\DoxyCodeLine{00029\ \ \ \mbox{\hyperlink{classCamera}{Camera}}\ camera;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{classRenderer_a5c19260ca73eec962fc4177261545aec}{Renderer}}(\mbox{\hyperlink{classRegistry}{Registry}}\ \&registry);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRenderer_aa2ca709fc3249fa3719701f989629834}{initialize}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRenderer_ac46720b3fc0dbb2fc37674766490a8c4}{clear}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRenderer_aeb835748edfe9be56474ad0f578434b5}{submit}}(\mbox{\hyperlink{classObject}{Object}}\ *obj);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRenderer_a2e250e90a300f236fb2ee1e2f78b7d2f}{clearObjects}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRenderer_a27602ed9a32fc75ca43beadbe1ca188d}{submitLight}}(\mbox{\hyperlink{classPointLight}{PointLight}}\ *light);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00080\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRenderer_af7e5f8f68742f198e315fb4683a605a4}{render}}();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRenderer_a9960b06d65c5e659408296e1dbd59ba4}{shutdown}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00097\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRenderer_a27b3429e479ade166b47ca347b9243dc}{setShader}}(\mbox{\hyperlink{classShader}{Shader}}\ *shader);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classShader}{Shader}}\ *\mbox{\hyperlink{classRenderer_ae25c0d14adb9f13b26588ca25fa22ee7}{getShader}}()\ \{\ \textcolor{keywordflow}{return}\ shader;\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00111\ \ \ \mbox{\hyperlink{classCamera}{Camera}}\ \&\mbox{\hyperlink{classRenderer_a54aa85ddc12b8004873456a011932d36}{getCamera}}();}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RENDERER\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,45 @@
+\doxysection{include/objects/\+Object.hpp File Reference}
+\hypertarget{Object_8hpp}{}\label{Object_8hpp}\index{include/objects/Object.hpp@{include/objects/Object.hpp}}
+
+
+Defines the \doxylink{classObject}{Object} class, a special ECS entity wrapper.  
+
+
+{\ttfamily \#include "{}Entity.\+hpp"{}}\newline
+{\ttfamily \#include "{}components/\+Transform\+Component.\+hpp"{}}\newline
+{\ttfamily \#include "{}rendering/\+Mesh.\+hpp"{}}\newline
+Include dependency graph for Object.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Object_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Object_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classObject}{Object}}
+\begin{DoxyCompactList}\small\item\em A high-\/level ECS entity wrapper with default components. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the \doxylink{classObject}{Object} class, a special ECS entity wrapper. 
+
+Every \doxylink{classObject}{Object} {\bfseries{automatically}} includes\+:
+\begin{DoxyItemize}
+\item \doxylink{structTransformComponent}{Transform\+Component} (for position, rotation, and scale).
+\item Mesh\+Component (to store and manage the object\textquotesingle{}s geometry).
+\end{DoxyItemize}
+
+This makes \doxylink{classObject}{Object} good for representing planets, vehicles or any other dynamic renderable objects within the simulation.
+
+\begin{DoxyNote}{Note}
+If an entity does not require rendering, consider using a base \doxylink{classEntity}{Entity} instead. 
+\end{DoxyNote}
