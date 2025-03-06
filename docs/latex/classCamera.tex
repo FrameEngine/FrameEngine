@@ -11,8 +11,7 @@ A camera.
 
 
 
-Inheritance diagram for Camera\+:
-\nopagebreak
+Inheritance diagram for Camera\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for Camera\+:
 \end{figure}
 
 
-Collaboration diagram for Camera\+:
-\nopagebreak
+Collaboration diagram for Camera\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -116,14 +114,6 @@ By default, the camera uses a 45° field of view, a near plane of 0.\+1, and a f
 {\em aspect\+Ratio} & The aspect ratio (width/height) of the viewport. \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classCamera_a54fb1cf5f32c49aa955809f32b5cdb92_cgraph}
-\end{center}
-\end{figure}
 
 
 \doxysubsection{Member Function Documentation}
@@ -149,22 +139,6 @@ This method rotates the default forward vector (0, 0, 1) using the camera\textqu
 \begin{DoxyReturn}{Returns}
 The forward direction of the camera. 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classCamera_a40991e036da9832173d0c317c2fd02a0_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classCamera_a40991e036da9832173d0c317c2fd02a0_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{classCamera_a501474f84c06e9c895d29ecf182d0819}\index{Camera@{Camera}!getProjectionMatrix@{getProjectionMatrix}}
 \index{getProjectionMatrix@{getProjectionMatrix}!Camera@{Camera}}
 \doxysubsubsection{\texorpdfstring{getProjectionMatrix()}{getProjectionMatrix()}}
@@ -200,14 +174,6 @@ This function updates the view matrix based on the camera\textquotesingle{}s cur
 \begin{DoxyReturn}{Returns}
 The view matrix. 
 \end{DoxyReturn}
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classCamera_a995b69e239b35db64c17444ab4ee2d8f_cgraph}
-\end{center}
-\end{figure}
 \Hypertarget{classCamera_ac620ae039ccaddc664a2785ed81d05be}\index{Camera@{Camera}!setProjection@{setProjection}}
 \index{setProjection@{setProjection}!Camera@{Camera}}
 \doxysubsubsection{\texorpdfstring{setProjection()}{setProjection()}}
@@ -244,14 +210,6 @@ Updates the field of view, aspect ratio, near plane, and far plane, then calcula
 {\em far\+Plane} & The far clipping distance. \\
 \hline
 \end{DoxyParams}
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classCamera_ac620ae039ccaddc664a2785ed81d05be_cgraph}
-\end{center}
-\end{figure}
 \Hypertarget{classCamera_a8fe5c71a390571a861ad8afd99dfdea3}\index{Camera@{Camera}!updateViewMatrix@{updateViewMatrix}}
 \index{updateViewMatrix@{updateViewMatrix}!Camera@{Camera}}
 \doxysubsubsection{\texorpdfstring{updateViewMatrix()}{updateViewMatrix()}}
@@ -266,23 +224,7 @@ Updates the view matrix based on the camera\textquotesingle{}s transform.
 
 Recalculates the view matrix using the camera\textquotesingle{}s current transform. Called in \doxylink{classRenderer_af7e5f8f68742f198e315fb4683a605a4}{Renderer\+::render()}.
 
-This method computes the view matrix using the camera\textquotesingle{}s position and rotation. It calculates the camera\textquotesingle{}s forward vector and then creates the view matrix. Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classCamera_a8fe5c71a390571a861ad8afd99dfdea3_cgraph}
-\end{center}
-\end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classCamera_a8fe5c71a390571a861ad8afd99dfdea3_icgraph}
-\end{center}
-\end{figure}
-
+This method computes the view matrix using the camera\textquotesingle{}s position and rotation. It calculates the camera\textquotesingle{}s forward vector and then creates the view matrix. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

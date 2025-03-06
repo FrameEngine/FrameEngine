@@ -11,8 +11,7 @@ A high-\/level ECS entity wrapper.
 
 
 
-Inheritance diagram for Entity\+:
-\nopagebreak
+Inheritance diagram for Entity\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for Entity\+:
 \end{figure}
 
 
-Collaboration diagram for Entity\+:
-\nopagebreak
+Collaboration diagram for Entity\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -87,14 +85,6 @@ When an \doxylink{classEntity}{Entity} is created, it is automatically registere
 \begin{DoxyNote}{Note}
 Entities should NOT store data themselves; all states are stored in components. 
 \end{DoxyNote}
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classEntity_a1b3b92780c8075835ac81b237a9f95a0_icgraph}
-\end{center}
-\end{figure}
 
 
 \doxysubsection{Member Function Documentation}
@@ -121,15 +111,7 @@ Adds a component of type \textquotesingle{}T\textquotesingle{} to the object.
 {\em args} & Arguments forwarded to the component constructor.\\
 \hline
 \end{DoxyParams}
-If the entity already has this component, the function logs a warning. Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classEntity_ac42c7a74bd38f40de2664a7a5fcb9110_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{classEntity_a37109ed9ba43260d07fa251beec2f4d2}\index{Entity@{Entity}!get\_component@{get\_component}}
+If the entity already has this component, the function logs a warning. \Hypertarget{classEntity_a37109ed9ba43260d07fa251beec2f4d2}\index{Entity@{Entity}!get\_component@{get\_component}}
 \index{get\_component@{get\_component}!Entity@{Entity}}
 \doxysubsubsection{\texorpdfstring{get\_component()}{get\_component()}}
 {\footnotesize\ttfamily \label{classEntity_a37109ed9ba43260d07fa251beec2f4d2} 
@@ -148,15 +130,7 @@ Retrieves a pointer to the specified component type \textquotesingle{}T\textquot
 \begin{DoxyReturn}{Returns}
 A pointer to the component, or {\ttfamily nullptr} if not found.
 \end{DoxyReturn}
-This function provides kinda safe component access by returning nullptr if the entity does not have the requested component. Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classEntity_a37109ed9ba43260d07fa251beec2f4d2_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{classEntity_a0ecaca9e3770a3872ee3f24706111def}\index{Entity@{Entity}!remove\_component@{remove\_component}}
+This function provides kinda safe component access by returning nullptr if the entity does not have the requested component. \Hypertarget{classEntity_a0ecaca9e3770a3872ee3f24706111def}\index{Entity@{Entity}!remove\_component@{remove\_component}}
 \index{remove\_component@{remove\_component}!Entity@{Entity}}
 \doxysubsubsection{\texorpdfstring{remove\_component()}{remove\_component()}}
 {\footnotesize\ttfamily \label{classEntity_a0ecaca9e3770a3872ee3f24706111def} 
