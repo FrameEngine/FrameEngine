@@ -25,15 +25,6 @@
 var NAVTREE =
 [
   [ "FrameEngine", "index.html", [
-    [ "FrameEngine - physics engine", "index.html", "index" ],
-    [ "Contributing to FrameEngine", "md_CONTRIBUTING.html", [
-      [ "How to Contribute", "md_CONTRIBUTING.html#autotoc_md18", null ],
-      [ "Code Style Guidelines", "md_CONTRIBUTING.html#autotoc_md19", null ],
-      [ "Reporting Issues", "md_CONTRIBUTING.html#autotoc_md20", null ],
-      [ "Proposing New Features", "md_CONTRIBUTING.html#autotoc_md21", [
-        [ "How to suggest a Feature", "md_CONTRIBUTING.html#autotoc_md22", null ]
-      ] ]
-    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

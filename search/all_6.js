@@ -13,12 +13,10 @@ var searchData=
   ['getprogramid_10',['getProgramID',['../classShader.html#afe245d5bc28d91397df4b018f78df552',1,'Shader']]],
   ['getprojectionmatrix_11',['getProjectionMatrix',['../classCamera.html#a501474f84c06e9c895d29ecf182d0819',1,'Camera']]],
   ['getshader_12',['getShader',['../classRenderer.html#ae25c0d14adb9f13b26588ca25fa22ee7',1,'Renderer']]],
-  ['getting_20started_13',['Getting Started',['../index.html#autotoc_md4',1,'']]],
-  ['gettranspose_14',['getTranspose',['../structMatrix4.html#aff21eee8a48482c36f84345b57aac6c8',1,'Matrix4']]],
-  ['getvao_15',['getVAO',['../classMesh.html#acd951990276681968cb86beec268fcae',1,'Mesh']]],
-  ['getvbo_16',['getVBO',['../classMesh.html#abdba78a715687b4b119d7fbddfd5cb10',1,'Mesh']]],
-  ['getvertexdata_17',['getVertexData',['../classMesh.html#a77a4ae289a9ef77a3daddbcaa43e3535',1,'Mesh']]],
-  ['getviewmatrix_18',['getViewMatrix',['../classCamera.html#a995b69e239b35db64c17444ab4ee2d8f',1,'Camera']]],
-  ['getwidth_19',['getWidth',['../classWindow.html#aee31a875d654a8c8f7d796d072657791',1,'Window']]],
-  ['guidelines_20',['Code Style Guidelines',['../md_CONTRIBUTING.html#autotoc_md19',1,'']]]
+  ['gettranspose_13',['getTranspose',['../structMatrix4.html#aff21eee8a48482c36f84345b57aac6c8',1,'Matrix4']]],
+  ['getvao_14',['getVAO',['../classMesh.html#acd951990276681968cb86beec268fcae',1,'Mesh']]],
+  ['getvbo_15',['getVBO',['../classMesh.html#abdba78a715687b4b119d7fbddfd5cb10',1,'Mesh']]],
+  ['getvertexdata_16',['getVertexData',['../classMesh.html#a77a4ae289a9ef77a3daddbcaa43e3535',1,'Mesh']]],
+  ['getviewmatrix_17',['getViewMatrix',['../classCamera.html#a995b69e239b35db64c17444ab4ee2d8f',1,'Camera']]],
+  ['getwidth_18',['getWidth',['../classWindow.html#aee31a875d654a8c8f7d796d072657791',1,'Window']]]
 ];

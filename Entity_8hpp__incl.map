@@ -1,36 +1,36 @@
 <map id="include/Entity.hpp" name="include/Entity.hpp">
-<area shape="rect" id="Node000001" title="Defines the Entity class, which serves as a wrapper for ECS entities." alt="" coords="650,5,786,33"/>
-<area shape="rect" id="Node000002" href="$Logger_8hpp.html" title="Provides logging functionality." alt="" coords="394,81,487,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="669,36,503,80,501,75,668,31"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="678,157,758,184"/>
-<area shape="poly" id="edge17_Node000001_Node000007" title=" " alt="" coords="721,33,721,141,715,141,715,33"/>
-<area shape="rect" id="Node000011" href="$Registry_8hpp.html" title="Defines the Registry class for managing ECS entities and components." alt="" coords="961,81,1062,109"/>
-<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="771,31,946,75,945,80,770,36"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,157,71,184"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="394,105,260,126,86,159,85,154,259,121,393,100"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="95,157,189,184"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="394,110,205,157,204,151,393,105"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="214,157,286,184"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="408,112,299,153,297,148,406,107"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="310,157,384,184"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="426,111,377,149,374,145,422,107"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="488,106,664,152,663,157,487,111"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="409,157,472,184"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="443,109,443,141,438,141,438,109"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="497,157,571,184"/>
-<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="459,107,507,145,504,149,456,111"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="596,157,654,184"/>
-<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="475,107,582,149,580,154,473,112"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="781,157,866,184"/>
-<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="979,112,872,153,870,148,977,107"/>
-<area shape="rect" id="Node000013" title=" " alt="" coords="890,157,948,184"/>
-<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="997,111,949,149,946,145,993,107"/>
-<area shape="rect" id="Node000014" title=" " alt="" coords="973,157,1050,184"/>
-<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="1014,109,1014,141,1009,141,1009,109"/>
-<area shape="rect" id="Node000015" title=" " alt="" coords="1074,157,1159,184"/>
-<area shape="poly" id="edge14_Node000011_Node000015" title=" " alt="" coords="1032,107,1087,146,1084,150,1029,111"/>
-<area shape="rect" id="Node000016" title=" " alt="" coords="1183,157,1306,184"/>
-<area shape="poly" id="edge15_Node000011_Node000016" title=" " alt="" coords="1054,107,1190,149,1188,154,1052,112"/>
-<area shape="rect" id="Node000017" title=" " alt="" coords="1331,157,1393,184"/>
-<area shape="poly" id="edge16_Node000011_Node000017" title=" " alt="" coords="1063,102,1175,123,1316,154,1315,159,1174,128,1062,108"/>
+<area shape="rect" id="Node000001" title="Defines the Entity class, which serves as a wrapper for ECS entities." alt="" coords="653,5,790,31"/>
+<area shape="rect" id="Node000002" href="$Logger_8hpp.html" title="Provides logging functionality." alt="" coords="397,79,491,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="677,33,503,78,502,73,676,28"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="681,152,761,177"/>
+<area shape="poly" id="edge17_Node000001_Node000007" title=" " alt="" coords="724,31,724,138,719,138,719,31"/>
+<area shape="rect" id="Node000011" href="$Registry_8hpp.html" title="Defines the Registry class for managing ECS entities and components." alt="" coords="965,79,1067,104"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="769,28,956,73,955,78,768,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,72,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="398,102,262,123,86,154,85,149,261,117,397,97"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="97,152,191,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="398,106,205,152,204,146,397,101"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="215,152,289,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="414,107,297,149,295,144,412,102"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="313,152,388,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="431,106,378,146,375,141,427,102"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="489,101,669,147,667,152,488,107"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="412,152,476,177"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="447,104,447,138,441,138,441,104"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="500,152,575,177"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="461,102,513,141,510,146,457,106"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="599,152,657,177"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="475,102,587,145,585,150,473,107"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="785,152,871,177"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="987,107,872,149,871,144,985,102"/>
+<area shape="rect" id="Node000013" title=" " alt="" coords="895,152,953,177"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="1003,106,951,146,948,141,1000,102"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="977,152,1055,177"/>
+<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="1019,104,1019,138,1013,138,1013,104"/>
+<area shape="rect" id="Node000015" title=" " alt="" coords="1079,152,1166,177"/>
+<area shape="poly" id="edge14_Node000011_Node000015" title=" " alt="" coords="1035,102,1095,142,1092,147,1032,106"/>
+<area shape="rect" id="Node000016" title=" " alt="" coords="1190,152,1314,177"/>
+<area shape="poly" id="edge15_Node000011_Node000016" title=" " alt="" coords="1055,101,1201,145,1200,151,1053,107"/>
+<area shape="rect" id="Node000017" title=" " alt="" coords="1338,152,1401,177"/>
+<area shape="poly" id="edge16_Node000011_Node000017" title=" " alt="" coords="1068,99,1182,119,1325,149,1324,154,1181,125,1067,104"/>
 </map>

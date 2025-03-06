@@ -1,7 +1,7 @@
 <map id="include/rendering/Camera.hpp" name="include/rendering/Camera.hpp">
-<area shape="rect" id="Node000001" title="Defines the Camera class for view and projection." alt="" coords="9,5,227,33"/>
-<area shape="rect" id="Node000002" href="$Renderer_8hpp.html" title="Manages the rendering pipeline and object submission." alt="" coords="5,81,231,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,49,121,81,115,81,115,49"/>
-<area shape="rect" id="Node000003" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="46,157,190,184"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="121,124,121,156,115,156,115,124"/>
+<area shape="rect" id="Node000001" title="Defines the Camera class for view and projection." alt="" coords="9,5,227,31"/>
+<area shape="rect" id="Node000002" href="$Renderer_8hpp.html" title="Manages the rendering pipeline and object submission." alt="" coords="5,79,231,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,44,121,79,115,79,115,44"/>
+<area shape="rect" id="Node000003" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="45,152,191,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="121,118,121,152,115,152,115,118"/>
 </map>

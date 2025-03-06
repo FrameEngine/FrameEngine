@@ -11,11 +11,8 @@ var searchData=
   ['shader_2ehpp_8',['Shader.hpp',['../Shader_8hpp.html',1,'']]],
   ['shutdown_9',['shutdown',['../classRenderer.html#a9960b06d65c5e659408296e1dbd59ba4',1,'Renderer']]],
   ['simulation_10',['Simulation',['../classSimulation.html',1,'']]],
-  ['started_11',['Getting Started',['../index.html#autotoc_md4',1,'']]],
-  ['stop_12',['stop',['../classEngine.html#ac88ada17b33bc5ddaf6bb73e0cdc67f3',1,'Engine']]],
-  ['style_20guidelines_13',['Code Style Guidelines',['../md_CONTRIBUTING.html#autotoc_md19',1,'']]],
-  ['submit_14',['submit',['../classRenderer.html#aeb835748edfe9be56474ad0f578434b5',1,'Renderer']]],
-  ['submitlight_15',['submitLight',['../classRenderer.html#a27602ed9a32fc75ca43beadbe1ca188d',1,'Renderer']]],
-  ['suggest_20a_20feature_16',['How to suggest a Feature',['../md_CONTRIBUTING.html#autotoc_md22',1,'']]],
-  ['swapbuffers_17',['swapBuffers',['../classWindow.html#a04ab8fcdfcc749a5f5f2c0441528b5b0',1,'Window']]]
+  ['stop_11',['stop',['../classEngine.html#ac88ada17b33bc5ddaf6bb73e0cdc67f3',1,'Engine']]],
+  ['submit_12',['submit',['../classRenderer.html#aeb835748edfe9be56474ad0f578434b5',1,'Renderer']]],
+  ['submitlight_13',['submitLight',['../classRenderer.html#a27602ed9a32fc75ca43beadbe1ca188d',1,'Renderer']]],
+  ['swapbuffers_14',['swapBuffers',['../classWindow.html#a04ab8fcdfcc749a5f5f2c0441528b5b0',1,'Window']]]
 ];

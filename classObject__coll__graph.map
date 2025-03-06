@@ -1,13 +1,13 @@
 <map id="Object" name="Object">
-<area shape="rect" id="Node000001" title="A high&#45;level ECS entity wrapper with default components." alt="" coords="154,744,280,995"/>
-<area shape="rect" id="Node000002" href="$classEntity.html" title="A high&#45;level ECS entity wrapper." alt="" coords="36,517,203,679"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,692,175,743,170,745,151,694"/>
-<area shape="rect" id="Node000003" href="$classRegistry.html" title="Manages all ECS entities and components." alt="" coords="5,84,234,357"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="122,356,122,500,117,500,117,356"/>
-<area shape="rect" id="Node000004" href="$structTransformComponent.html" title="Represents the transformation properties of an entity." alt="" coords="227,531,405,665"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="294,665,271,729,266,727,289,664"/>
-<area shape="rect" id="Node000005" href="$classVector3.html" title=" " alt="" coords="259,28,373,413"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="318,412,318,514,313,514,313,412"/>
-<area shape="rect" id="Node000006" href="$structQuaternion.html" title=" " alt="" coords="397,5,530,435"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="414,436,390,494,378,518,373,515,385,492,409,434"/>
+<area shape="rect" id="Node000001" title="A high&#45;level ECS entity wrapper with default components." alt="" coords="155,676,283,901"/>
+<area shape="rect" id="Node000002" href="$classEntity.html" title="A high&#45;level ECS entity wrapper." alt="" coords="36,468,205,613"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,625,177,675,172,677,152,627"/>
+<area shape="rect" id="Node000003" href="$classRegistry.html" title="Manages all ECS entities and components." alt="" coords="5,75,236,321"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="123,321,123,451,118,451,118,321"/>
+<area shape="rect" id="Node000004" href="$structTransformComponent.html" title="Represents the transformation properties of an entity." alt="" coords="230,481,409,601"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="298,602,273,662,269,660,293,600"/>
+<area shape="rect" id="Node000005" href="$classVector3.html" title=" " alt="" coords="260,25,376,371"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="321,371,322,464,316,464,316,371"/>
+<area shape="rect" id="Node000006" href="$structQuaternion.html" title=" " alt="" coords="400,5,535,391"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="419,392,395,445,381,468,377,466,390,443,414,390"/>
 </map>

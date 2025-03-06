@@ -1,17 +1,17 @@
 <map id="include/rendering/Mesh.hpp" name="include/rendering/Mesh.hpp">
-<area shape="rect" id="Node000001" title="Defines the Mesh class for managing 3D geometry." alt="" coords="116,5,317,33"/>
-<area shape="rect" id="Node000002" href="$MeshGenerator_8hpp_source.html" title=" " alt="" coords="5,81,206,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,44,127,83,124,78,183,39"/>
-<area shape="rect" id="Node000003" href="$Object_8hpp.html" title="Defines the Object class, a special ECS entity wrapper." alt="" coords="230,81,424,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="250,39,309,78,306,83,247,44"/>
-<area shape="rect" id="Node000004" href="$PointLight_8hpp_source.html" title=" " alt="" coords="73,157,290,184"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="288,118,208,159,206,154,286,114"/>
-<area shape="rect" id="Node000005" href="$Renderer_8hpp.html" title="Manages the rendering pipeline and object submission." alt="" coords="214,232,440,260"/>
-<area shape="poly" id="edge8_Node000003_Node000005" title=" " alt="" coords="330,124,330,232,324,232,324,124"/>
-<area shape="rect" id="Node000007" href="$Camera_8hpp.html" title="Defines the Camera class for view and projection." alt="" coords="365,157,582,184"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="368,114,449,154,446,159,365,118"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="222,189,302,230,300,234,220,194"/>
-<area shape="rect" id="Node000006" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="255,308,399,336"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="330,276,330,308,324,308,324,276"/>
-<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="435,194,354,234,352,230,433,189"/>
+<area shape="rect" id="Node000001" title="Defines the Mesh class for managing 3D geometry." alt="" coords="115,5,317,31"/>
+<area shape="rect" id="Node000002" href="$MeshGenerator_8hpp_source.html" title=" " alt="" coords="5,79,205,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,40,125,81,122,76,185,36"/>
+<area shape="rect" id="Node000003" href="$Object_8hpp.html" title="Defines the Object class, a special ECS entity wrapper." alt="" coords="229,79,424,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="247,36,310,76,307,81,244,40"/>
+<area shape="rect" id="Node000004" href="$PointLight_8hpp_source.html" title=" " alt="" coords="71,152,289,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="292,112,205,154,203,149,290,107"/>
+<area shape="rect" id="Node000005" href="$Renderer_8hpp.html" title="Manages the rendering pipeline and object submission." alt="" coords="214,225,439,251"/>
+<area shape="poly" id="edge8_Node000003_Node000005" title=" " alt="" coords="329,118,329,225,324,225,324,118"/>
+<area shape="rect" id="Node000007" href="$Camera_8hpp.html" title="Defines the Camera class for view and projection." alt="" coords="364,152,583,177"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="363,107,450,149,448,154,361,112"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="217,181,304,223,302,228,214,186"/>
+<area shape="rect" id="Node000006" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="254,299,399,324"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="329,264,329,299,324,299,324,264"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="439,186,352,228,350,223,437,181"/>
 </map>

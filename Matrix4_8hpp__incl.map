@@ -1,18 +1,18 @@
 <map id="include/math/Matrix4.hpp" name="include/math/Matrix4.hpp">
-<area shape="rect" id="Node000001" title="Defines the Matrix4 class for 3D transformation operations." alt="" coords="96,5,284,33"/>
-<area shape="rect" id="Node000002" href="$Quaternion_8hpp.html" title="Defines the Quaternion class for representing 3D rotations." alt="" coords="5,81,127,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,36,103,75,100,71,166,31"/>
-<area shape="rect" id="Node000003" href="$Vector3_8hpp.html" title="Defines the Vector3 class." alt="" coords="79,157,178,184"/>
-<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="187,34,142,143,137,141,182,32"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="180,232,254,260"/>
-<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="194,33,216,216,211,217,189,34"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="253,81,327,109"/>
-<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="209,31,262,70,259,74,206,36"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="79,107,110,143,106,147,75,111"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="11,232,73,260"/>
-<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="67,109,49,217,44,216,61,108"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="115,187,70,224,67,220,111,183"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="146,183,191,220,188,224,143,187"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="97,232,155,260"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="131,185,130,217,124,217,126,185"/>
+<area shape="rect" id="Node000001" title="Defines the Matrix4 class for 3D transformation operations." alt="" coords="96,5,285,31"/>
+<area shape="rect" id="Node000002" href="$Quaternion_8hpp.html" title="Defines the Quaternion class for representing 3D rotations." alt="" coords="5,79,128,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,33,100,74,97,69,169,28"/>
+<area shape="rect" id="Node000003" href="$Vector3_8hpp.html" title="Defines the Vector3 class." alt="" coords="79,152,177,177"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="188,32,141,140,136,138,183,30"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="180,225,255,251"/>
+<area shape="poly" id="edge9_Node000001_Node000005" title=" " alt="" coords="195,31,217,211,212,211,189,31"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="253,79,328,104"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="208,29,265,68,262,73,205,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="79,103,111,140,107,143,75,106"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="10,225,73,251"/>
+<area shape="poly" id="edge6_Node000002_Node000004" title=" " alt="" coords="67,105,48,212,43,211,62,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="116,179,68,219,64,214,112,175"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="144,175,194,214,190,219,141,179"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="97,225,156,251"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="130,178,130,212,124,212,125,178"/>
 </map>

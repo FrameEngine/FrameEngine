@@ -1,12 +1,12 @@
 <map id="include/math/Quaternion.hpp" name="include/math/Quaternion.hpp">
-<area shape="rect" id="Node000001" title="Defines the Quaternion class for representing 3D rotations." alt="" coords="5,5,216,33"/>
-<area shape="rect" id="Node000002" href="$Vector3_8hpp.html" title="Defines the Vector3 class." alt="" coords="106,81,206,109"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,32,142,66,137,69,116,35"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="34,157,96,184"/>
-<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="109,34,76,142,71,141,104,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="141,111,95,149,91,145,138,107"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="120,157,194,184"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="159,109,159,141,154,141,153,109"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="219,157,277,184"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="174,107,222,145,218,149,171,111"/>
+<area shape="rect" id="Node000001" title="Defines the Quaternion class for representing 3D rotations." alt="" coords="5,5,216,31"/>
+<area shape="rect" id="Node000002" href="$Vector3_8hpp.html" title="Defines the Vector3 class." alt="" coords="107,79,205,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,30,144,66,139,69,116,32"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="34,152,97,177"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="110,32,76,140,71,138,104,30"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="143,106,93,145,89,141,140,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="121,152,196,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="159,104,160,138,155,139,154,104"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="220,152,279,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="173,102,225,141,222,146,169,106"/>
 </map>
