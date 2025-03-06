@@ -1,3 +1,11 @@
+/**
+ * @file Logger.hpp
+ * @brief Provides logging functionality.
+ *
+ * The logger is implemented as a thread-safe singleton, writing logs to both
+ * the console and a log file.
+ */
+
 #ifndef LOGGER_HPP
 #define LOGGER_HPP
 
@@ -10,16 +18,33 @@
 #include <sstream>
 #include <string>
 
+/**
+ * @enum LogLevel
+ * @brief Defines the logging levels.
+ *
+ * This enum lists the possible severity levels for log messages.
+ */
 enum class LogLevel { DEBUG, INFO, WARNING, ERROR, CRITICAL };
 
 class Logger {
 private:
-  std::ofstream logFile;
-  static Logger *instance;
-  static std::mutex logMutex;
+  std::ofstream logFile;      ///< The file stream used for logging to a file.
+  static Logger *instance;    ///< Singleton instance of Logger.
+  static std::mutex logMutex; ///< Mutex to protect logging operations.
 
+  /**
+   * @brief Private constructor for the Logger singleton.
+   *
+   * Initializes the logger by setting the default log file.
+   */
   Logger() { setLogFile("main.log"); }
 
+  /**
+   * @brief Converts a log level to a string.
+   *
+   * @param level The log level.
+   * @return A string representing the log level.
+   */
   static std::string levelToString(LogLevel level) {
     switch (level) {
     case LogLevel::DEBUG:
@@ -38,11 +63,26 @@ private:
   }
 
 public:
+  /**
+   * @brief Returns the singleton instance of Logger.
+   *
+   * This method guarantees that only one Logger exists.
+   *
+   * @return A reference to the Logger instance.
+   */
   static Logger &getInstance() {
     static Logger instance; // Thread-safe singleton
     return instance;
   }
 
+  /**
+   * @brief Sets the log file.
+   *
+   * Closes the current log file (if open) and opens a new file for appending
+   * logs.
+   *
+   * @param filename The name of the log file to use.
+   */
   void setLogFile(const std::string &filename) {
     std::lock_guard<std::mutex> lock(logMutex);
     if (logFile.is_open()) {
@@ -55,6 +95,18 @@ public:
     }
   }
 
+  /**
+   * @brief Logs a message with the specified log level.
+   *
+   * This templated function formats the message using the given format string
+   * and arguments, prefixes it with the current timestamp and log level,
+   * and writes the log to both the console and the log file.
+   *
+   * @tparam Args The types of the additional arguments.
+   * @param level The log level for the message.
+   * @param format The format string.
+   * @param args The values to be formatted into the message.
+   */
   template <typename... Args>
   void log(LogLevel level, const char *format, Args &&...args) {
     std::lock_guard<std::mutex> lock(logMutex);
@@ -79,7 +131,12 @@ public:
   }
 };
 
-// Macro for simplified usage
+/**
+ * @brief Macro for simplified logging.
+ *
+ * This macro allows to log messages without explicitly calling getInstance().
+ * Usage: LOG(DEBUG, "Value: %d", value);
+ */
 #define LOG(level, fmt, ...)                                                   \
   Logger::getInstance().log(LogLevel::level, fmt, ##__VA_ARGS__)
 
