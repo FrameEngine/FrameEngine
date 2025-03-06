@@ -1,11 +1,11 @@
 <map id="include/components/PhysicsComponent.hpp" name="include/components/PhysicsComponent.hpp">
-<area shape="rect" id="Node000001" title="Defines the PhysicsComponent for ECS&#45;based physics simulation." alt="" coords="41,5,219,45"/>
-<area shape="rect" id="Node000002" href="$Vector3_8hpp.html" title="Defines the Vector3 class." alt="" coords="61,93,199,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,46,133,79,127,79,127,46"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,167,68,192"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="117,121,64,160,61,156,113,117"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="93,167,167,192"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="133,119,133,153,127,153,127,119"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="191,167,250,192"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="146,117,197,156,193,160,143,121"/>
+<area shape="rect" id="Node000001" title="Defines the PhysicsComponent for ECS&#45;based physics simulation." alt="" coords="40,5,217,50"/>
+<area shape="rect" id="Node000002" href="$Vector3_8hpp.html" title="Defines the Vector3 class." alt="" coords="60,98,197,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,50,131,82,126,82,126,50"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,174,68,201"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="114,128,66,166,63,162,110,124"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="91,174,166,201"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="131,126,131,158,126,158,126,126"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="190,174,248,201"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="146,124,193,162,190,166,143,128"/>
 </map>

@@ -1,15 +1,15 @@
 <map id="include/Registry.hpp" name="include/Registry.hpp">
-<area shape="rect" id="Node000001" title="Defines the Registry class for managing ECS entities and components." alt="" coords="213,5,366,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,91,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="251,33,101,77,100,72,250,28"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="115,79,173,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="267,33,181,75,179,70,265,28"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="197,79,275,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="283,33,255,69,251,66,278,29"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="299,79,386,104"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="300,29,328,66,324,69,296,33"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="410,79,534,104"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="320,28,430,71,428,76,318,33"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="558,79,621,104"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="342,28,545,76,544,81,341,33"/>
+<area shape="rect" id="Node000001" title="Defines the Registry class for managing ECS entities and components." alt="" coords="211,5,364,33"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,81,90,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,36,105,79,104,74,244,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="114,81,173,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="263,36,184,76,181,71,261,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="197,81,274,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="280,35,256,70,251,67,276,32"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="298,81,384,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="299,32,325,67,320,70,295,35"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="407,81,530,109"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="321,31,424,72,422,77,319,36"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="555,81,617,109"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="346,31,541,78,539,83,345,36"/>
 </map>
