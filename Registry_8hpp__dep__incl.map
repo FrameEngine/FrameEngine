@@ -1,0 +1,21 @@
+<map id="include/Registry.hpp" name="include/Registry.hpp">
+<area shape="rect" id="Node000001" title="Defines the Registry class for managing ECS entities and components." alt="" coords="478,5,631,31"/>
+<area shape="rect" id="Node000002" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="79,372,225,397"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="464,27,327,40,251,51,177,66,110,84,56,106,36,119,21,133,11,147,8,164,8,239,11,263,20,284,34,304,51,321,90,350,127,370,124,374,87,354,48,325,30,307,16,287,6,264,3,240,3,163,6,145,17,129,33,115,54,101,108,79,176,60,250,46,326,35,464,22"/>
+<area shape="rect" id="Node000003" href="$Entity_8hpp.html" title="Defines the Entity class, which serves as a wrapper for ECS entities." alt="" coords="339,79,477,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="520,39,433,81,431,76,518,34"/>
+<area shape="rect" id="Node000006" href="$Renderer_8hpp.html" title="Manages the rendering pipeline and object submission." alt="" coords="186,299,411,324"/>
+<area shape="poly" id="edge11_Node000001_Node000006" title=" " alt="" coords="568,43,583,86,594,141,595,171,592,200,584,227,569,252,544,270,506,283,412,302,411,297,505,278,542,265,565,249,579,225,587,199,590,171,588,142,578,87,563,44"/>
+<area shape="rect" id="Node000008" href="$PhysicsSystem_8hpp.html" title="Defines the PhysicsSystem." alt="" coords="630,79,882,104"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="601,33,724,76,722,81,599,38"/>
+<area shape="rect" id="Node000004" href="$Object_8hpp.html" title="Defines the Object class, a special ECS entity wrapper." alt="" coords="237,152,432,177"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="388,116,348,154,345,150,384,112"/>
+<area shape="rect" id="Node000005" href="$PointLight_8hpp_source.html" title=" " alt="" coords="43,225,261,251"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="294,185,183,228,181,223,292,180"/>
+<area shape="poly" id="edge9_Node000004_Node000006" title=" " alt="" coords="331,192,304,299,299,298,326,190"/>
+<area shape="rect" id="Node000007" href="$Camera_8hpp.html" title="Defines the Camera class for view and projection." alt="" coords="336,225,555,251"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="365,183,429,223,426,227,363,187"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="189,254,276,296,274,301,186,259"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="264,332,177,374,175,369,262,327"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="411,259,324,301,322,296,409,254"/>
+</map>

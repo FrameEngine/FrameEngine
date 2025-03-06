@@ -1,0 +1,9 @@
+<map id="Object::Object" name="Object::Object">
+<area shape="rect" id="Node000001" title="Constructs an Object with the specified mesh." alt="" coords="5,57,119,85"/>
+<area shape="rect" id="Node000002" href="$classEntity.html#ac42c7a74bd38f40de2664a7a5fcb9110" title="Adds a component of type &#39;T&#39; to the object." alt="" coords="167,5,337,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,54,183,35,185,40,116,59"/>
+<area shape="rect" id="Node000003" href="$classEntity.html#a1b3b92780c8075835ac81b237a9f95a0" title="Constructs an Entity and registers it in the ECS." alt="" coords="200,57,304,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="119,68,184,68,184,74,119,74"/>
+<area shape="rect" id="Node000004" href="$classEntity.html#a37109ed9ba43260d07fa251beec2f4d2" title="Retrieves a pointer to the specified component type &#39;T&#39;." alt="" coords="168,109,336,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="116,83,185,102,183,107,115,88"/>
+</map>

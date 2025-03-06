@@ -1,0 +1,5 @@
+<map id="IComponentStorage" name="IComponentStorage">
+<area shape="rect" id="Node000001" title="Interface for generic component storage." alt="" coords="5,5,184,71"/>
+<area shape="rect" id="Node000002" href="$classComponentStorage.html" title="Stores a specific type of component for entities." alt="" coords="6,119,183,244"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,85,97,119,92,119,92,85"/>
+</map>

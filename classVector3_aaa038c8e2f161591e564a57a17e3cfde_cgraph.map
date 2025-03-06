@@ -1,0 +1,5 @@
+<map id="Vector3::dot" name="Vector3::dot">
+<area shape="rect" id="Node000001" title="Computes the dot product between this vector and another." alt="" coords="5,5,106,33"/>
+<area shape="rect" id="Node000002" href="$classVector3.html#a6151fc844ddb2aaa316317b922cb8d22" title="Constructs a Vector3 with specified components." alt="" coords="154,5,283,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,16,138,16,138,22,106,22"/>
+</map>

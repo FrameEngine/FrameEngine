@@ -1,0 +1,9 @@
+<map id="Engine" name="Engine">
+<area shape="rect" id="Node000001" title="Core engine class that manages the main loop, physics, and rendering." alt="" coords="299,333,420,519"/>
+<area shape="rect" id="Node000002" href="$classRegistry.html" title="Manages all ECS entities and components." alt="" coords="5,15,236,261"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,259,290,338,286,341,220,262"/>
+<area shape="rect" id="Node000003" href="$classWindow.html" title=" " alt="" coords="260,35,459,241"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="362,241,362,317,357,317,357,241"/>
+<area shape="rect" id="Node000004" href="$classRenderer.html" title="Handles the drawing of scene objects and lights." alt="" coords="483,5,603,271"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="486,251,472,272,432,332,428,329,468,269,481,248"/>
+</map>

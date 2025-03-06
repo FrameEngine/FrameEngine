@@ -1,0 +1,9 @@
+<map id="Object" name="Object">
+<area shape="rect" id="Node000001" title="A high&#45;level ECS entity wrapper with default components." alt="" coords="107,219,235,444"/>
+<area shape="rect" id="Node000003" href="$classCamera.html" title="A camera." alt="" coords="5,492,172,657"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="131,458,119,493,114,491,126,456"/>
+<area shape="rect" id="Node000004" href="$classPointLight.html" title="An ECS entity representing a point light source." alt="" coords="197,502,314,647"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="217,456,233,501,228,503,212,458"/>
+<area shape="rect" id="Node000002" href="$classEntity.html" title="A high&#45;level ECS entity wrapper." alt="" coords="87,5,256,171"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="174,184,174,218,169,218,169,184"/>
+</map>

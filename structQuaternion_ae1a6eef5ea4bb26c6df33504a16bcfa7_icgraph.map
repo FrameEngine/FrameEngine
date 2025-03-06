@@ -1,0 +1,5 @@
+<map id="Quaternion::toMatrix" name="Quaternion::toMatrix">
+<area shape="rect" id="Node000001" title="Converts this quaternion to a rotation matrix." alt="" coords="271,5,427,33"/>
+<area shape="rect" id="Node000002" href="$structMatrix4.html#ac75974947937ab36d3305fe69d8298db" title="Creates a rotation matrix from an axis and angle." alt="" coords="5,5,223,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,22,223,22,223,16,255,16"/>
+</map>

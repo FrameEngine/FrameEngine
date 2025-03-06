@@ -1,0 +1,5 @@
+<map id="ComponentStorage::remove" name="ComponentStorage::remove">
+<area shape="rect" id="Node000001" title="Removes a component from an entity." alt="" coords="266,5,470,33"/>
+<area shape="rect" id="Node000002" href="$classRegistry.html#aa379449b7b4063ad48871b86d1d52322" title="Removes a component of type &#39;T&#39; from an entity." alt="" coords="5,5,218,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,22,218,22,218,16,250,16"/>
+</map>

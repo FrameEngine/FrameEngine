@@ -1,0 +1,10 @@
+<map id="TransformComponent::get_transformation_matrix" name="TransformComponent::get_transformation_matrix">
+<area shape="rect" id="Node000001" title="Computes the transformation matrix for the entity." alt="" coords="5,19,168,81"/>
+<area shape="rect" id="Node000002" href="$structMatrix4.html#a9dc7abcfd6a2a5e02765c8708276140f" title="Generates a scaling matrix." alt="" coords="216,5,425,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="168,37,200,32,201,38,168,42"/>
+<area shape="rect" id="Node000004" href="$structMatrix4.html#a69367ead23554d96061ddee73e0bfd15" title="Generates a translation matrix." alt="" coords="224,57,416,102"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="168,57,209,63,209,68,168,63"/>
+<area shape="rect" id="Node000003" href="$structMatrix4.html#a21e70a74447b9b05cf9a06400bc9c661" title="Default constructor that initializes the matrix as an identity matrix." alt="" coords="473,36,602,64"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="423,31,458,36,457,41,422,36"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="417,63,457,58,458,63,417,69"/>
+</map>

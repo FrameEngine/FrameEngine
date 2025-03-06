@@ -1,0 +1,24 @@
+<map id="include/rendering/Shader.hpp" name="include/rendering/Shader.hpp">
+<area shape="rect" id="Node000001" title="Manages OpenGL shaders." alt="" coords="285,5,496,31"/>
+<area shape="rect" id="Node000002" href="$Matrix4_8hpp.html" title="Defines the Matrix4 class for 3D transformation operations." alt="" coords="147,79,285,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="364,33,258,76,256,71,362,28"/>
+<area shape="rect" id="Node000004" href="$Vector3_8hpp.html" title="Defines the Vector3 class." alt="" coords="260,225,359,251"/>
+<area shape="poly" id="edge11_Node000001_Node000004" title=" " alt="" coords="389,32,321,213,316,211,384,30"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="324,299,383,324"/>
+<area shape="poly" id="edge13_Node000001_Node000007" title=" " alt="" coords="393,31,389,123,383,186,373,251,364,286,359,285,368,250,378,186,383,122,388,31"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="454,79,549,104"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="410,28,473,69,470,73,407,33"/>
+<area shape="rect" id="Node000003" href="$Quaternion_8hpp.html" title="Defines the Quaternion class for representing 3D rotations." alt="" coords="155,152,277,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="219,104,219,138,213,138,213,104"/>
+<area shape="poly" id="edge8_Node000002_Node000004" title=" " alt="" coords="238,102,266,122,292,151,304,181,310,210,305,212,299,182,287,153,263,126,235,106"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="124,299,199,324"/>
+<area shape="poly" id="edge10_Node000002_Node000006" title=" " alt="" coords="194,106,167,126,145,153,136,187,137,223,144,257,153,285,148,287,139,259,132,224,131,187,140,151,163,122,191,102"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="5,152,80,177"/>
+<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="189,106,85,149,83,144,187,102"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="233,175,285,215,282,219,229,179"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="233,299,295,324"/>
+<area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="222,177,258,285,253,286,217,179"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="304,252,281,289,276,286,300,250"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="287,253,199,295,197,290,284,248"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="319,250,341,286,337,288,314,252"/>
+</map>

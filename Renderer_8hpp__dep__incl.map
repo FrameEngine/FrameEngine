@@ -1,0 +1,5 @@
+<map id="include/rendering/Renderer.hpp" name="include/rendering/Renderer.hpp">
+<area shape="rect" id="Node000001" title="Manages the rendering pipeline and object submission." alt="" coords="5,5,231,31"/>
+<area shape="rect" id="Node000002" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="45,79,191,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,44,121,79,115,79,115,44"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="include/components/PhysicsComponent.hpp" name="include/components/PhysicsComponent.hpp">
+<area shape="rect" id="Node000001" title="Defines the PhysicsComponent for ECS&#45;based physics simulation." alt="" coords="42,5,221,45"/>
+<area shape="rect" id="Node000002" href="$PhysicsSystem_8hpp.html" title="Defines the PhysicsSystem." alt="" coords="5,93,257,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,59,134,93,129,93,129,59"/>
+</map>

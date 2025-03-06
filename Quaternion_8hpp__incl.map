@@ -1,0 +1,12 @@
+<map id="include/math/Quaternion.hpp" name="include/math/Quaternion.hpp">
+<area shape="rect" id="Node000001" title="Defines the Quaternion class for representing 3D rotations." alt="" coords="5,5,216,31"/>
+<area shape="rect" id="Node000002" href="$Vector3_8hpp.html" title="Defines the Vector3 class." alt="" coords="107,79,205,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,30,144,66,139,69,116,32"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="34,152,97,177"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="110,32,76,140,71,138,104,30"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="143,106,93,145,89,141,140,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="121,152,196,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="159,104,160,138,155,139,154,104"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="220,152,279,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="173,102,225,141,222,146,169,106"/>
+</map>

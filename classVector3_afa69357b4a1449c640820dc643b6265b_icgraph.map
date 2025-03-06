@@ -1,0 +1,11 @@
+<map id="Vector3::cross" name="Vector3::cross">
+<area shape="rect" id="Node000001" title="Computes the cross product between this vector and another." alt="" coords="476,57,589,85"/>
+<area shape="rect" id="Node000002" href="$classObject.html#a374795fe5a51e8d6bb8bf3a8c95ae536" title="Orients the object so that it &quot;looks at&quot; a target position." alt="" coords="272,5,385,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="460,56,385,36,386,31,462,50"/>
+<area shape="rect" id="Node000003" href="$structQuaternion.html#a3d1c40425b42651935cc3bc0dec2a830" title="Creates a &quot;look rotation&quot; quaternion." alt="" coords="236,57,420,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="461,74,421,74,421,68,461,68"/>
+<area shape="rect" id="Node000004" href="$classCamera.html#a8fe5c71a390571a861ad8afd99dfdea3" title="Updates the view matrix." alt="" coords="229,109,428,137"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="462,92,386,111,385,106,460,87"/>
+<area shape="rect" id="Node000005" href="$classCamera.html#a995b69e239b35db64c17444ab4ee2d8f" title="Returns the current view matrix." alt="" coords="5,109,181,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="213,126,181,126,181,120,213,120"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Engine::on_start" name="Engine::on_start">
+<area shape="rect" id="Node000001" title="Called once at the start of execution." alt="" coords="148,5,274,33"/>
+<area shape="rect" id="Node000002" href="$classEngine.html#ab44d76e2ff6057e73d6210cf9af0d89e" title="Bootstrap This function should be called before &#39;run()&#39; to ensure all components are properly set up ..." alt="" coords="5,5,100,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,22,100,22,100,16,132,16"/>
+</map>

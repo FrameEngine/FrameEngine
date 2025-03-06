@@ -1,0 +1,5 @@
+<map id="Quaternion::normalized" name="Quaternion::normalized">
+<area shape="rect" id="Node000001" title="Returns a normalized version of this quaternion." alt="" coords="5,5,180,33"/>
+<area shape="rect" id="Node000002" href="$structQuaternion.html#abcc01358aada56ea5f0db4da18aaf77d" title="Default constructor initializes the quaternion as the identity rotation." alt="" coords="228,5,401,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,16,212,16,212,22,180,22"/>
+</map>
