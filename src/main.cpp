@@ -140,6 +140,7 @@ public:
 
     const float curvatureFactor = 0.2f;
     const float sigma = 2.0f;
+
     auto computeDeformation = [sigma, curvatureFactor](const Vector3 &pos,
                                                        float m, float vx,
                                                        float vz) -> float {
@@ -156,12 +157,14 @@ public:
         float x = vertices[i * 6 + 0];
         float z = vertices[i * 6 + 2];
         float deformation = 0.0f;
+
         deformation +=
             computeDeformation(monkey->transform->position, massMonkey, x, z);
         deformation +=
             computeDeformation(sphere->transform->position, massSphere, x, z);
         deformation +=
             computeDeformation(sphere2->transform->position, massSphere2, x, z);
+
         vertices[i * 6 + 1] = deformation;
       }
       gravityPlane->updateBuffer();
