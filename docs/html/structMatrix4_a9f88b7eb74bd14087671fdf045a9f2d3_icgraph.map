@@ -1,0 +1,5 @@
+<map id="Matrix4::createPerspectiveMatrix" name="Matrix4::createPerspectiveMatrix">
+<area shape="rect" id="Node000001" title="Constructs a perspective projection matrix." alt="" coords="219,5,415,50"/>
+<area shape="rect" id="Node000002" href="$classCamera.html#ac620ae039ccaddc664a2785ed81d05be" title="Sets the camera&#39;s projection parameters." alt="" coords="5,14,171,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,30,171,30,171,25,203,25"/>
+</map>

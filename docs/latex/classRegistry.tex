@@ -1,0 +1,227 @@
+\doxysection{Registry Class Reference}
+\hypertarget{classRegistry}{}\label{classRegistry}\index{Registry@{Registry}}
+
+
+Manages all ECS entities and components.  
+
+
+
+
+{\ttfamily \#include $<$Registry.\+hpp$>$}
+
+
+
+Collaboration diagram for Registry\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classRegistry__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRegistry_ad931fce350d8ba829b36bab4a427253f}\label{classRegistry_ad931fce350d8ba829b36bab4a427253f} 
+{\bfseries Registry} (const \mbox{\hyperlink{classRegistry}{Registry}} \&)=delete
+\item 
+\Hypertarget{classRegistry_a5f2b6dffd410e565305e1b982d234e30}\label{classRegistry_a5f2b6dffd410e565305e1b982d234e30} 
+\mbox{\hyperlink{classRegistry}{Registry}} \& {\bfseries operator=} (const \mbox{\hyperlink{classRegistry}{Registry}} \&)=delete
+\item 
+Entity\+ID \mbox{\hyperlink{classRegistry_af6ba584e5c062583b166eb1b17ce37eb}{create\+\_\+entity}} ()
+\begin{DoxyCompactList}\small\item\em Creates a new entity and assigns it a unique ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRegistry_a62f09112d2be2c85efa983e62c98f3b1}{destroy\+\_\+entity}} (Entity\+ID entity)
+\begin{DoxyCompactList}\small\item\em Destroys an entity and removes all its components. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{classRegistry_a36df114d671959a9a7bbdfc8274258ec}{add\+\_\+component}} (Entity\+ID entity, const T \&component)
+\begin{DoxyCompactList}\small\item\em Adds a component of type \textquotesingle{}T\textquotesingle{} to an entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\bool \mbox{\hyperlink{classRegistry_ab41930dd59af2dfb0c98781f1d04d68b}{has\+\_\+component}} (Entity\+ID entity)
+\begin{DoxyCompactList}\small\item\em Checks if an entity has a component of type \textquotesingle{}T\textquotesingle{}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\T \& \mbox{\hyperlink{classRegistry_a494920a3e7c4132823a88bd2758e4893}{get\+\_\+component}} (Entity\+ID entity)
+\begin{DoxyCompactList}\small\item\em Retrieves a reference to a component of type \textquotesingle{}T\textquotesingle{} for an entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{classRegistry_aa379449b7b4063ad48871b86d1d52322}{remove\+\_\+component}} (Entity\+ID entity)
+\begin{DoxyCompactList}\small\item\em Removes a component of type \textquotesingle{}T\textquotesingle{} from an entity. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\std\+::vector$<$ Entity\+ID $>$ \mbox{\hyperlink{classRegistry_aac4a8be3b956dec2db599c8248f0cb4d}{get\+\_\+entities\+\_\+with\+\_\+component}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves all entities that have a specific component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages all ECS entities and components. 
+
+This class serves as the centralized storage for entities and their associated components.
+
+The system is generic and type-\/safe (Allows any component type to be registered dynamically) 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRegistry_a36df114d671959a9a7bbdfc8274258ec}\index{Registry@{Registry}!add\_component@{add\_component}}
+\index{add\_component@{add\_component}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{add\_component()}{add\_component()}}
+{\footnotesize\ttfamily \label{classRegistry_a36df114d671959a9a7bbdfc8274258ec} 
+template$<$typename T$>$ \\
+void Registry\+::add\+\_\+component (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity}{, }\item[{const T \&}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a component of type \textquotesingle{}T\textquotesingle{} to an entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity ID. \\
+\hline
+{\em component} & The component instance to store. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_a36df114d671959a9a7bbdfc8274258ec_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRegistry_af6ba584e5c062583b166eb1b17ce37eb}\index{Registry@{Registry}!create\_entity@{create\_entity}}
+\index{create\_entity@{create\_entity}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{create\_entity()}{create\_entity()}}
+{\footnotesize\ttfamily \label{classRegistry_af6ba584e5c062583b166eb1b17ce37eb} 
+Entity\+ID Registry\+::create\+\_\+entity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creates a new entity and assigns it a unique ID. 
+
+\begin{DoxyReturn}{Returns}
+New entity ID. 
+\end{DoxyReturn}
+\Hypertarget{classRegistry_a62f09112d2be2c85efa983e62c98f3b1}\index{Registry@{Registry}!destroy\_entity@{destroy\_entity}}
+\index{destroy\_entity@{destroy\_entity}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{destroy\_entity()}{destroy\_entity()}}
+{\footnotesize\ttfamily \label{classRegistry_a62f09112d2be2c85efa983e62c98f3b1} 
+void Registry\+::destroy\+\_\+entity (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destroys an entity and removes all its components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity ID to destroy. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRegistry_a494920a3e7c4132823a88bd2758e4893}\index{Registry@{Registry}!get\_component@{get\_component}}
+\index{get\_component@{get\_component}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{get\_component()}{get\_component()}}
+{\footnotesize\ttfamily \label{classRegistry_a494920a3e7c4132823a88bd2758e4893} 
+template$<$typename T$>$ \\
+T \& Registry\+::get\+\_\+component (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a reference to a component of type \textquotesingle{}T\textquotesingle{} for an entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the component. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the component does not exist. \\
+\hline
+\end{DoxyExceptions}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_a494920a3e7c4132823a88bd2758e4893_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classRegistry_aac4a8be3b956dec2db599c8248f0cb4d}\index{Registry@{Registry}!get\_entities\_with\_component@{get\_entities\_with\_component}}
+\index{get\_entities\_with\_component@{get\_entities\_with\_component}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{get\_entities\_with\_component()}{get\_entities\_with\_component()}}
+{\footnotesize\ttfamily \label{classRegistry_aac4a8be3b956dec2db599c8248f0cb4d} 
+template$<$typename T$>$ \\
+std\+::vector$<$ Entity\+ID $>$ Registry\+::get\+\_\+entities\+\_\+with\+\_\+component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves all entities that have a specific component. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A vector of entity IDs that have the component.
+\end{DoxyReturn}
+The key optimization here is that I can filter entities in O(1) using Component\+Mask, saves a lot of time on cycles, but amount of entities must be specified before simulation starts (before compilation? not sure) \Hypertarget{classRegistry_ab41930dd59af2dfb0c98781f1d04d68b}\index{Registry@{Registry}!has\_component@{has\_component}}
+\index{has\_component@{has\_component}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{has\_component()}{has\_component()}}
+{\footnotesize\ttfamily \label{classRegistry_ab41930dd59af2dfb0c98781f1d04d68b} 
+template$<$typename T$>$ \\
+bool Registry\+::has\+\_\+component (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if an entity has a component of type \textquotesingle{}T\textquotesingle{}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the entity has the component. 
+\end{DoxyReturn}
+\Hypertarget{classRegistry_aa379449b7b4063ad48871b86d1d52322}\index{Registry@{Registry}!remove\_component@{remove\_component}}
+\index{remove\_component@{remove\_component}!Registry@{Registry}}
+\doxysubsubsection{\texorpdfstring{remove\_component()}{remove\_component()}}
+{\footnotesize\ttfamily \label{classRegistry_aa379449b7b4063ad48871b86d1d52322} 
+template$<$typename T$>$ \\
+void Registry\+::remove\+\_\+component (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes a component of type \textquotesingle{}T\textquotesingle{} from an entity. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity ID. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classRegistry_aa379449b7b4063ad48871b86d1d52322_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Registry_8hpp}{Registry.\+hpp}}\end{DoxyCompactItemize}

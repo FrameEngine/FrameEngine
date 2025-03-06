@@ -1,0 +1,290 @@
+\doxysection{Object Class Reference}
+\hypertarget{classObject}{}\label{classObject}\index{Object@{Object}}
+
+
+A high-\/level ECS entity wrapper with default components.  
+
+
+
+
+{\ttfamily \#include $<$Object.\+hpp$>$}
+
+
+
+Inheritance diagram for Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classObject__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classObject__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classObject_a52ee70eca2c53e91a6db00a8908a3e93}{Object}} (\mbox{\hyperlink{classRegistry}{Registry}} \&registry, \mbox{\hyperlink{classMesh}{Mesh}} \texorpdfstring{$\ast$}{*}mesh)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classObject}{Object} with the specified mesh. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a2ac65a7bb2b2ed5335f7d2226dba2b11}{rotate}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&axis=\mbox{\hyperlink{classVector3}{Vector3}}(0, 1, 0), float angle=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Rotates the object around the specified axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a8144ef3248d1d23ca6bce579dc97dc16}{move}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&translation)
+\begin{DoxyCompactList}\small\item\em Translates the object in world space. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a951d73df2f0963a0e0e752eea23d60d7}{render}} (\mbox{\hyperlink{classRenderer}{Renderer}} \&renderer)
+\begin{DoxyCompactList}\small\item\em Renders the object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classObject_a6285e8da69fd36c129fa5da33d3842c0}{get\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the object\textquotesingle{}s render color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_ad69f0db617fe35e8baefb7f13aae1f5c}{set\+Color}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&c)
+\begin{DoxyCompactList}\small\item\em Sets the object\textquotesingle{}s render color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a374795fe5a51e8d6bb8bf3a8c95ae536}{look\+At}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&target)
+\begin{DoxyCompactList}\small\item\em Orients the object so that it "{}looks at"{} a target position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObject_a4d14f2c5af2122e7653a2623fc389672}{set\+Wireframe}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enables or disables wireframe rendering for this object. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classObject_ad67679e31c891db3152016f52c540dee}{is\+Wireframe}} () const
+\begin{DoxyCompactList}\small\item\em Checks if wireframe rendering is enabled for this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classEntity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEntity_a1b3b92780c8075835ac81b237a9f95a0}{Entity}} (\mbox{\hyperlink{classRegistry}{Registry}} \&registry)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classEntity}{Entity} and registers it in the ECS. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename... Args$>$ }\\void \mbox{\hyperlink{classEntity_ac42c7a74bd38f40de2664a7a5fcb9110}{add\+\_\+component}} (Args \&\&...args)
+\begin{DoxyCompactList}\small\item\em Adds a component of type \textquotesingle{}T\textquotesingle{} to the object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{classEntity_a0ecaca9e3770a3872ee3f24706111def}{remove\+\_\+component}} ()
+\begin{DoxyCompactList}\small\item\em Removes a component of type \textquotesingle{}T\textquotesingle{} from the object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEntity_a37109ed9ba43260d07fa251beec2f4d2}{get\+\_\+component}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a pointer to the specified component type \textquotesingle{}T\textquotesingle{}. \end{DoxyCompactList}\item 
+Entity\+ID {\bfseries id} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classObject_a2032871d81e645baa882603aeabf693d}\label{classObject_a2032871d81e645baa882603aeabf693d} 
+\mbox{\hyperlink{structTransformComponent}{Transform\+Component}} \texorpdfstring{$\ast$}{*} {\bfseries transform}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classEntity}{Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+Entity\+ID {\bfseries id\+\_\+}
+\item 
+\mbox{\hyperlink{classRegistry}{Registry}} \& {\bfseries registry\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A high-\/level ECS entity wrapper with default components. 
+
+The \doxylink{classObject}{Object} class extends \doxylink{classEntity}{Entity} to provide a ready-\/to-\/use object with predefined components. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classObject_a52ee70eca2c53e91a6db00a8908a3e93}\index{Object@{Object}!Object@{Object}}
+\index{Object@{Object}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Object()}{Object()}}
+{\footnotesize\ttfamily \label{classObject_a52ee70eca2c53e91a6db00a8908a3e93} 
+Object\+::\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{registry}{, }\item[{\mbox{\hyperlink{classMesh}{Mesh}} \texorpdfstring{$\ast$}{*}}]{mesh}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an \doxylink{classObject}{Object} with the specified mesh. 
+
+This constructor automatically adds a \doxylink{structTransformComponent}{Transform\+Component} to the object and retrieves a pointer to it for convenience.
+
+
+\begin{DoxyParams}{Parameters}
+{\em registry} & The ECS registry where the object is registered. \\
+\hline
+{\em mesh} & Pointer to the \doxylink{classMesh}{Mesh} that defines the object\textquotesingle{}s geometry. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{classObject_a52ee70eca2c53e91a6db00a8908a3e93_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{classObject_a52ee70eca2c53e91a6db00a8908a3e93_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classObject_a6285e8da69fd36c129fa5da33d3842c0}\index{Object@{Object}!getColor@{getColor}}
+\index{getColor@{getColor}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily \label{classObject_a6285e8da69fd36c129fa5da33d3842c0} 
+\mbox{\hyperlink{classVector3}{Vector3}} Object\+::get\+Color (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the object\textquotesingle{}s render color. 
+
+\begin{DoxyReturn}{Returns}
+The color vector used for rendering. 
+\end{DoxyReturn}
+\Hypertarget{classObject_ad67679e31c891db3152016f52c540dee}\index{Object@{Object}!isWireframe@{isWireframe}}
+\index{isWireframe@{isWireframe}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{isWireframe()}{isWireframe()}}
+{\footnotesize\ttfamily \label{classObject_ad67679e31c891db3152016f52c540dee} 
+bool Object\+::is\+Wireframe (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if wireframe rendering is enabled for this object. 
+
+\begin{DoxyReturn}{Returns}
+True if wireframe mode is enabled; false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classObject_a374795fe5a51e8d6bb8bf3a8c95ae536}\index{Object@{Object}!lookAt@{lookAt}}
+\index{lookAt@{lookAt}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{lookAt()}{lookAt()}}
+{\footnotesize\ttfamily \label{classObject_a374795fe5a51e8d6bb8bf3a8c95ae536} 
+void Object\+::look\+At (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{target}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Orients the object so that it "{}looks at"{} a target position. 
+
+This method updates the object\textquotesingle{}s rotation so that its forward direction points toward the target. It uses a look-\/at algorithm to compute a rotation matrix from the current position to the target, which is then converted into a quaternion and applied to the transform.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target position to look at. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classObject_a374795fe5a51e8d6bb8bf3a8c95ae536_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classObject_a8144ef3248d1d23ca6bce579dc97dc16}\index{Object@{Object}!move@{move}}
+\index{move@{move}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily \label{classObject_a8144ef3248d1d23ca6bce579dc97dc16} 
+void Object\+::move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{translation}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Translates the object in world space. 
+
+The object\textquotesingle{}s position is updated by adding the translation vector.
+
+
+\begin{DoxyParams}{Parameters}
+{\em translation} & The vector by which to translate the object. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classObject_a951d73df2f0963a0e0e752eea23d60d7}\index{Object@{Object}!render@{render}}
+\index{render@{render}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{classObject_a951d73df2f0963a0e0e752eea23d60d7} 
+void Object\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRenderer}{Renderer}} \&}]{renderer}{}\end{DoxyParamCaption})}
+
+
+
+Renders the object. 
+
+Renders the object using the current shader from the renderer.
+
+This method updates the model matrix and draws the object\textquotesingle{}s mesh.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & The \doxylink{classRenderer}{Renderer} used to draw the object.\\
+\hline
+\end{DoxyParams}
+This method retrieves the active shader from the provided \doxylink{classRenderer}{Renderer} instance, computes the model transformation matrix, and updates the shader uniforms (object color and model matrix). If the object is flagged for wireframe rendering, the Open\+GL polygon mode is temporarily set to GL\+\_\+\+LINE before drawing the mesh, then restored to GL\+\_\+\+FILL afterward.
+
+
+\begin{DoxyParams}{Parameters}
+{\em renderer} & The \doxylink{classRenderer}{Renderer} instance responsible for drawing. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classObject_a951d73df2f0963a0e0e752eea23d60d7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classObject_a2ac65a7bb2b2ed5335f7d2226dba2b11}\index{Object@{Object}!rotate@{rotate}}
+\index{rotate@{rotate}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily \label{classObject_a2ac65a7bb2b2ed5335f7d2226dba2b11} 
+void Object\+::rotate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{axis}{ = {\ttfamily \mbox{\hyperlink{classVector3}{Vector3}}(0,~1,~0)}, }\item[{float}]{angle}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Rotates the object around the specified axis. 
+
+The object\textquotesingle{}s current rotation is updated by multiplying it with a rotation derived from the given axis-\/angle representation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis to rotate around (default is (0, 1, 0)). \\
+\hline
+{\em angle} & The rotation angle in degrees (default is 1.\+0). \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classObject_a2ac65a7bb2b2ed5335f7d2226dba2b11_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classObject_ad69f0db617fe35e8baefb7f13aae1f5c}\index{Object@{Object}!setColor@{setColor}}
+\index{setColor@{setColor}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily \label{classObject_ad69f0db617fe35e8baefb7f13aae1f5c} 
+void Object\+::set\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{c}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the object\textquotesingle{}s render color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The color vector to set. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classObject_a4d14f2c5af2122e7653a2623fc389672}\index{Object@{Object}!setWireframe@{setWireframe}}
+\index{setWireframe@{setWireframe}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{setWireframe()}{setWireframe()}}
+{\footnotesize\ttfamily \label{classObject_a4d14f2c5af2122e7653a2623fc389672} 
+void Object\+::set\+Wireframe (\begin{DoxyParamCaption}\item[{bool}]{enable}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Enables or disables wireframe rendering for this object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & True to enable wireframe mode; false to disable. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/objects/\mbox{\hyperlink{Object_8hpp}{Object.\+hpp}}\item 
+src/core/Object.\+cpp\end{DoxyCompactItemize}

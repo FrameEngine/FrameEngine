@@ -1,0 +1,5 @@
+<map id="Mesh::updateBuffer" name="Mesh::updateBuffer">
+<area shape="rect" id="Node000001" title="Re&#45;uploads the vertex data to the GPU." alt="" coords="258,5,407,33"/>
+<area shape="rect" id="Node000002" href="$classMesh.html#a9c940b13dc324abfbd8e45b52a0b92ff" title="Updates the position of a vertex in the mesh." alt="" coords="5,5,210,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,22,210,22,210,16,242,16"/>
+</map>

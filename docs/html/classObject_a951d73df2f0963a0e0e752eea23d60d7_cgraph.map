@@ -1,0 +1,5 @@
+<map id="Object::render" name="Object::render">
+<area shape="rect" id="Node000001" title="Renders the object." alt="" coords="5,5,119,33"/>
+<area shape="rect" id="Node000002" href="$classRenderer.html#ae25c0d14adb9f13b26588ca25fa22ee7" title="Returns the currently active shader." alt="" coords="167,5,321,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,16,151,16,151,22,119,22"/>
+</map>

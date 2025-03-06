@@ -1,0 +1,84 @@
+\doxysection{Shader Class Reference}
+\hypertarget{classShader}{}\label{classShader}\index{Shader@{Shader}}
+
+
+Collaboration diagram for Shader\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{classShader__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classShader_ad80a9756b7d9a62adea45fcd82a06f4c}{Shader}} (const std\+::string \&vertex\+Path, const std\+::string \&fragment\+Path)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classShader}{Shader} by loading, compiling, and linking vertex and fragment shaders. \end{DoxyCompactList}\item 
+\Hypertarget{classShader_aff01df87e8a102f270b5b135a295e59d}\label{classShader_aff01df87e8a102f270b5b135a295e59d} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Shader} ()
+\begin{DoxyCompactList}\small\item\em Destructor that deletes the shader program. \end{DoxyCompactList}\item 
+\Hypertarget{classShader_aadbc0ca0d899238d547f87f19461dfeb}\label{classShader_aadbc0ca0d899238d547f87f19461dfeb} 
+void {\bfseries bind} () const
+\begin{DoxyCompactList}\small\item\em Activates the shader program. \end{DoxyCompactList}\item 
+\Hypertarget{classShader_a5b9da0e356ab46582b29f55a5d669c74}\label{classShader_a5b9da0e356ab46582b29f55a5d669c74} 
+void {\bfseries unbind} () const
+\begin{DoxyCompactList}\small\item\em Deactivates the shader program. \end{DoxyCompactList}\item 
+\Hypertarget{classShader_a7c5ca9afdc03911753066cb543c4468a}\label{classShader_a7c5ca9afdc03911753066cb543c4468a} 
+void {\bfseries set\+Uniform\+Int} (const std\+::string \&name, int value) const
+\begin{DoxyCompactList}\small\item\em ===== Uniforms ===== \end{DoxyCompactList}\item 
+\Hypertarget{classShader_a7a0b200b16f9bbde0bcf7ce483463b49}\label{classShader_a7a0b200b16f9bbde0bcf7ce483463b49} 
+void {\bfseries set\+Uniform\+Float} (const std\+::string \&name, float value) const
+\item 
+\Hypertarget{classShader_a5bdf2632ed9adf8e6a2fcb84c24a5aa1}\label{classShader_a5bdf2632ed9adf8e6a2fcb84c24a5aa1} 
+void {\bfseries set\+Uniform\+Vec3} (const std\+::string \&name, const \mbox{\hyperlink{classVector3}{Vector3}} \&value) const
+\item 
+\Hypertarget{classShader_acd2ba8d4452b34736462e28c2b6eb29e}\label{classShader_acd2ba8d4452b34736462e28c2b6eb29e} 
+void {\bfseries set\+Uniform\+Mat4} (const std\+::string \&name, const \mbox{\hyperlink{structMatrix4}{Matrix4}} \&mat) const
+\item 
+GLuint \mbox{\hyperlink{classShader_afe245d5bc28d91397df4b018f78df552}{get\+Program\+ID}} () const
+\begin{DoxyCompactList}\small\item\em ==================== \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classShader_ad80a9756b7d9a62adea45fcd82a06f4c}\index{Shader@{Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{Shader()}{Shader()}}
+{\footnotesize\ttfamily \label{classShader_ad80a9756b7d9a62adea45fcd82a06f4c} 
+Shader\+::\+Shader (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{vertex\+Path}{, }\item[{const std\+::string \&}]{fragment\+Path}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classShader}{Shader} by loading, compiling, and linking vertex and fragment shaders. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\+Path} & Path to the vertex shader file. \\
+\hline
+{\em fragment\+Path} & Path to the fragment shader file. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classShader_afe245d5bc28d91397df4b018f78df552}\index{Shader@{Shader}!getProgramID@{getProgramID}}
+\index{getProgramID@{getProgramID}!Shader@{Shader}}
+\doxysubsubsection{\texorpdfstring{getProgramID()}{getProgramID()}}
+{\footnotesize\ttfamily \label{classShader_afe245d5bc28d91397df4b018f78df552} 
+GLuint Shader\+::get\+Program\+ID (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+==================== 
+
+Returns the shader program ID.
+
+\begin{DoxyReturn}{Returns}
+The Open\+GL program ID. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/rendering/\mbox{\hyperlink{Shader_8hpp}{Shader.\+hpp}}\item 
+src/rendering/Shader.\+cpp\end{DoxyCompactItemize}

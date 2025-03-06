@@ -1,0 +1,70 @@
+\doxysection{Physics\+Component Struct Reference}
+\hypertarget{structPhysicsComponent}{}\label{structPhysicsComponent}\index{PhysicsComponent@{PhysicsComponent}}
+
+
+Represents the physical properties of an entity in the ECS.  
+
+
+
+
+{\ttfamily \#include $<$Physics\+Component.\+hpp$>$}
+
+
+
+Collaboration diagram for Physics\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{structPhysicsComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structPhysicsComponent_ab1c5517d24572bc090aa5551383fc763}{Physics\+Component}} (\mbox{\hyperlink{classVector3}{Vector3}} vel=\mbox{\hyperlink{classVector3}{Vector3}}(), \mbox{\hyperlink{classVector3}{Vector3}} acc=\mbox{\hyperlink{classVector3}{Vector3}}(), float m=1.\+0f)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{structPhysicsComponent}{Physics\+Component} with optional initial values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structPhysicsComponent_a6d9e6b601659155614d680acffe84d92}\label{structPhysicsComponent_a6d9e6b601659155614d680acffe84d92} 
+\mbox{\hyperlink{classVector3}{Vector3}} {\bfseries velocity}
+\item 
+\Hypertarget{structPhysicsComponent_af6c2af4be595872e516245490e324fcc}\label{structPhysicsComponent_af6c2af4be595872e516245490e324fcc} 
+\mbox{\hyperlink{classVector3}{Vector3}} {\bfseries acceleration}
+\item 
+\Hypertarget{structPhysicsComponent_a384d9511ed2c715a0932362be888905d}\label{structPhysicsComponent_a384d9511ed2c715a0932362be888905d} 
+float {\bfseries mass}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the physical properties of an entity in the ECS. 
+
+This component is used in physics simulations to track an entity’s velocity, acceleration, and mass, allowing it to respond to forces and gravity. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structPhysicsComponent_ab1c5517d24572bc090aa5551383fc763}\index{PhysicsComponent@{PhysicsComponent}!PhysicsComponent@{PhysicsComponent}}
+\index{PhysicsComponent@{PhysicsComponent}!PhysicsComponent@{PhysicsComponent}}
+\doxysubsubsection{\texorpdfstring{PhysicsComponent()}{PhysicsComponent()}}
+{\footnotesize\ttfamily \label{structPhysicsComponent_ab1c5517d24572bc090aa5551383fc763} 
+Physics\+Component\+::\+Physics\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{vel}{ = {\ttfamily \mbox{\hyperlink{classVector3}{Vector3}}()}, }\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{acc}{ = {\ttfamily \mbox{\hyperlink{classVector3}{Vector3}}()}, }\item[{float}]{m}{ = {\ttfamily 1.0f}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{structPhysicsComponent}{Physics\+Component} with optional initial values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vel} & Initial velocity of the entity (default\+: zero vector). \\
+\hline
+{\em acc} & Initial acceleration of the entity (default\+: zero vector). \\
+\hline
+{\em m} & Mass of the entity (default\+: 1.\+0). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/components/\mbox{\hyperlink{PhysicsComponent_8hpp}{Physics\+Component.\+hpp}}\end{DoxyCompactItemize}

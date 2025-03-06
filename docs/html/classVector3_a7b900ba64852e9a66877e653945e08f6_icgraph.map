@@ -1,0 +1,22 @@
+<map id="Vector3::magnitude" name="Vector3::magnitude">
+<area shape="rect" id="Node000001" title="Computes the magnitude of this vector." alt="" coords="742,57,892,85"/>
+<area shape="rect" id="Node000002" href="$classCamera.html#a40991e036da9832173d0c317c2fd02a0" title="Gets the direction the camera is facing." alt="" coords="518,7,694,34"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="741,56,666,38,667,32,743,51"/>
+<area shape="rect" id="Node000005" href="$classObject.html#a374795fe5a51e8d6bb8bf3a8c95ae536" title="Orients the object so that it &quot;looks at&quot; a target position." alt="" coords="314,57,427,85"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="727,74,427,74,427,68,727,68"/>
+<area shape="rect" id="Node000006" href="$classVector3.html#a65546070166d4f3dc7aae6dbc1c6d6cb" title="Returns a normalized (unit length) version of this vector." alt="" coords="530,108,682,136"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="743,92,667,110,666,105,741,87"/>
+<area shape="rect" id="Node000003" href="$classCamera.html#a8fe5c71a390571a861ad8afd99dfdea3" title="Updates the view matrix." alt="" coords="271,5,470,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="502,23,471,22,471,17,502,17"/>
+<area shape="rect" id="Node000004" href="$classCamera.html#a995b69e239b35db64c17444ab4ee2d8f" title="Returns the current view matrix." alt="" coords="26,5,202,33"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="255,22,202,22,202,16,255,16"/>
+<area shape="poly" id="edge9_Node000006_Node000005" title=" " alt="" coords="523,107,427,86,428,81,524,102"/>
+<area shape="rect" id="Node000007" href="$structQuaternion.html#afd23f6fe56d5d96f897e20c901ec7d19" title="Creates a quaternion from an axis&#45;angle representation." alt="" coords="272,109,469,137"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="515,125,470,125,470,120,515,120"/>
+<area shape="rect" id="Node000010" href="$structQuaternion.html#a3d1c40425b42651935cc3bc0dec2a830" title="Creates a &quot;look rotation&quot; quaternion." alt="" coords="278,161,462,189"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="528,142,435,163,434,158,526,137"/>
+<area shape="rect" id="Node000008" href="$structMatrix4.html#ac75974947937ab36d3305fe69d8298db" title="Creates a rotation matrix from an axis and angle." alt="" coords="5,84,223,112"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="256,115,223,111,223,106,257,109"/>
+<area shape="rect" id="Node000009" href="$classObject.html#a2ac65a7bb2b2ed5335f7d2226dba2b11" title="Rotates the object around the specified axis." alt="" coords="59,136,169,164"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="256,138,170,147,169,141,256,132"/>
+</map>

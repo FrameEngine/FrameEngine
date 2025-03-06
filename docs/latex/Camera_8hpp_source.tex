@@ -1,0 +1,46 @@
+\doxysection{Camera.\+hpp}
+\hypertarget{Camera_8hpp_source}{}\label{Camera_8hpp_source}\index{include/rendering/Camera.hpp@{include/rendering/Camera.hpp}}
+\mbox{\hyperlink{Camera_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ CAMERA\_HPP}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ CAMERA\_HPP}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Matrix4_8hpp}{math/Matrix4.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Vector3_8hpp}{math/Vector3.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Object_8hpp}{objects/Object.hpp}}"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCamera_a54fb1cf5f32c49aa955809f32b5cdb92}{Camera}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classObject_a52ee70eca2c53e91a6db00a8908a3e93}{Object}}\ \{}
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{float}\ fov;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{float}\ aspectRatio;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{float}\ nearPlane;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{float}\ farPlane;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{structMatrix4}{Matrix4}}\ projectionMatrix;\ }
+\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{structMatrix4}{Matrix4}}\ viewMatrix;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \mbox{\hyperlink{classCamera_a54fb1cf5f32c49aa955809f32b5cdb92}{Camera}}(\mbox{\hyperlink{classRegistry}{Registry}}\ \&registry,\ \textcolor{keywordtype}{float}\ aspectRatio\ =\ 16.f\ /\ 9.f)}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classObject_a52ee70eca2c53e91a6db00a8908a3e93}{Object}}(registry,\ nullptr),\ fov(45.0f),\ aspectRatio(aspectRatio),}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ nearPlane(0.1f),\ farPlane(100.0f)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ transform-\/>position\ =\ \mbox{\hyperlink{classVector3}{Vector3}}(0.0f,\ 0.0f,\ 0.0f);}
+\DoxyCodeLine{00044\ \ \ \ \ transform-\/>rotation\ =\ \mbox{\hyperlink{structQuaternion}{Quaternion}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ viewMatrix\ =\ \mbox{\hyperlink{structMatrix4}{Matrix4}}();}
+\DoxyCodeLine{00047\ \ \ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{structMatrix4}{Matrix4}}\ \mbox{\hyperlink{classCamera_a995b69e239b35db64c17444ab4ee2d8f}{getViewMatrix}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCamera_a8fe5c71a390571a861ad8afd99dfdea3}{updateViewMatrix}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ \mbox{\hyperlink{structMatrix4}{Matrix4}}\ \mbox{\hyperlink{classCamera_a501474f84c06e9c895d29ecf182d0819}{getProjectionMatrix}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCamera_ac620ae039ccaddc664a2785ed81d05be}{setProjection}}(\textcolor{keywordtype}{float}\ fov,\ \textcolor{keywordtype}{float}\ aspectRatio,\ \textcolor{keywordtype}{float}\ nearPlane,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ farPlane);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00095\ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ \mbox{\hyperlink{classCamera_a40991e036da9832173d0c317c2fd02a0}{getFrontVector}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CAMERA\_HPP}}
+
+\end{DoxyCode}

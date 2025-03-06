@@ -1,0 +1,414 @@
+\doxysection{Vector3 Class Reference}
+\hypertarget{classVector3}{}\label{classVector3}\index{Vector3@{Vector3}}
+
+
+Collaboration diagram for Vector3\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classVector3__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}} (double x=0, double y=0, double z=0)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classVector3}{Vector3} with specified components. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classVector3_a79356953b808ee103afc0d445030e778}{operator+}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&v) const
+\begin{DoxyCompactList}\small\item\em Adds this vector to another vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classVector3_abf9f28941176a900c57dad4596ae52b7}{operator-\/}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&v) const
+\begin{DoxyCompactList}\small\item\em Subtracts another vector from this vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classVector3_ac563eef8f92d127f768f330bb5ea39fc}{operator\texorpdfstring{$\ast$}{*}}} (double scalar) const
+\begin{DoxyCompactList}\small\item\em Multiplies this vector by a scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \& \mbox{\hyperlink{classVector3_aa223c2a45df3d3f0d2ca8a3728eeee27}{operator\texorpdfstring{$\ast$}{*}=}} (double scalar)
+\begin{DoxyCompactList}\small\item\em Multiplies this vector by a scalar in-\/place. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classVector3_afb11e612d6f201cfd908b94b87ec115e}{operator/}} (double scalar) const
+\begin{DoxyCompactList}\small\item\em Divides this vector by a scalar. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVector3_a3037bb6d6c81c7873652e37515412541}{operator==}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&v) const
+\begin{DoxyCompactList}\small\item\em Compares two vectors for equality. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \& \mbox{\hyperlink{classVector3_a105b045dd7469eac3c90e8df11a81999}{operator+=}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&v)
+\begin{DoxyCompactList}\small\item\em Adds another vector to this vector in-\/place. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classVector3_a7b900ba64852e9a66877e653945e08f6}{magnitude}} () const
+\begin{DoxyCompactList}\small\item\em Computes the magnitude of this vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classVector3_a65546070166d4f3dc7aae6dbc1c6d6cb}{normalized}} () const
+\begin{DoxyCompactList}\small\item\em Returns a normalized (unit length) version of this vector. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classVector3_aaa038c8e2f161591e564a57a17e3cfde}{dot}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&other) const
+\begin{DoxyCompactList}\small\item\em Computes the dot product between this vector and another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classVector3_afa69357b4a1449c640820dc643b6265b}{cross}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&other) const
+\begin{DoxyCompactList}\small\item\em Computes the cross product between this vector and another. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classVector3_a5e0249f3c56eda2dde0e6e414c354074}{to\+String}} () const
+\begin{DoxyCompactList}\small\item\em Returns a string representation of the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classVector3_a60aa84ebc037dec9faba617f8ddb231d}\label{classVector3_a60aa84ebc037dec9faba617f8ddb231d} 
+double {\bfseries x}
+\item 
+\Hypertarget{classVector3_ae4965693beffdb6069e0618222cae459}\label{classVector3_ae4965693beffdb6069e0618222cae459} 
+double {\bfseries y}
+\item 
+\Hypertarget{classVector3_aa5f4108b2839a110eeaec8606780eaff}\label{classVector3_aa5f4108b2839a110eeaec8606780eaff} 
+double {\bfseries z}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classVector3_a6151fc844ddb2aaa316317b922cb8d22}\index{Vector3@{Vector3}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{Vector3()}{Vector3()}}
+{\footnotesize\ttfamily \label{classVector3_a6151fc844ddb2aaa316317b922cb8d22} 
+Vector3\+::\+Vector3 (\begin{DoxyParamCaption}\item[{double}]{x}{ = {\ttfamily 0}, }\item[{double}]{y}{ = {\ttfamily 0}, }\item[{double}]{z}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classVector3}{Vector3} with specified components. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x component (default is 0). \\
+\hline
+{\em y} & The y component (default is 0). \\
+\hline
+{\em z} & The z component (default is 0). \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVector3_a6151fc844ddb2aaa316317b922cb8d22_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classVector3_afa69357b4a1449c640820dc643b6265b}\index{Vector3@{Vector3}!cross@{cross}}
+\index{cross@{cross}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{cross()}{cross()}}
+{\footnotesize\ttfamily \label{classVector3_afa69357b4a1449c640820dc643b6265b} 
+\mbox{\hyperlink{classVector3}{Vector3}} Vector3\+::cross (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the cross product between this vector and another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new vector that is the cross product. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classVector3_afa69357b4a1449c640820dc643b6265b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVector3_afa69357b4a1449c640820dc643b6265b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3_aaa038c8e2f161591e564a57a17e3cfde}\index{Vector3@{Vector3}!dot@{dot}}
+\index{dot@{dot}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily \label{classVector3_aaa038c8e2f161591e564a57a17e3cfde} 
+float Vector3\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the dot product between this vector and another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{classVector3_aaa038c8e2f161591e564a57a17e3cfde_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVector3_aaa038c8e2f161591e564a57a17e3cfde_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3_a7b900ba64852e9a66877e653945e08f6}\index{Vector3@{Vector3}!magnitude@{magnitude}}
+\index{magnitude@{magnitude}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{magnitude()}{magnitude()}}
+{\footnotesize\ttfamily \label{classVector3_a7b900ba64852e9a66877e653945e08f6} 
+double Vector3\+::magnitude (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the magnitude of this vector. 
+
+\begin{DoxyReturn}{Returns}
+The Euclidean norm of the vector. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVector3_a7b900ba64852e9a66877e653945e08f6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3_a65546070166d4f3dc7aae6dbc1c6d6cb}\index{Vector3@{Vector3}!normalized@{normalized}}
+\index{normalized@{normalized}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{normalized()}{normalized()}}
+{\footnotesize\ttfamily \label{classVector3_a65546070166d4f3dc7aae6dbc1c6d6cb} 
+\mbox{\hyperlink{classVector3}{Vector3}} Vector3\+::normalized (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a normalized (unit length) version of this vector. 
+
+If the vector is zero, a zero vector is returned.
+
+\begin{DoxyReturn}{Returns}
+A normalized vector. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classVector3_a65546070166d4f3dc7aae6dbc1c6d6cb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classVector3_a65546070166d4f3dc7aae6dbc1c6d6cb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3_ac563eef8f92d127f768f330bb5ea39fc}\index{Vector3@{Vector3}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{classVector3_ac563eef8f92d127f768f330bb5ea39fc} 
+\mbox{\hyperlink{classVector3}{Vector3}} Vector3\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{double}]{scalar}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplies this vector by a scalar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar multiplier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new vector with each component scaled by scalar. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{classVector3_ac563eef8f92d127f768f330bb5ea39fc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3_aa223c2a45df3d3f0d2ca8a3728eeee27}\index{Vector3@{Vector3}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}}
+{\footnotesize\ttfamily \label{classVector3_aa223c2a45df3d3f0d2ca8a3728eeee27} 
+\mbox{\hyperlink{classVector3}{Vector3}} \& Vector3\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{double}]{scalar}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiplies this vector by a scalar in-\/place. 
+
+e.\+g {\ttfamily Vector3\texorpdfstring{$\ast$}{*}=4.\+f;}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar multiplier. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this vector after scaling. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{classVector3_aa223c2a45df3d3f0d2ca8a3728eeee27_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3_a79356953b808ee103afc0d445030e778}\index{Vector3@{Vector3}!operator+@{operator+}}
+\index{operator+@{operator+}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{classVector3_a79356953b808ee103afc0d445030e778} 
+\mbox{\hyperlink{classVector3}{Vector3}} Vector3\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{v}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds this vector to another vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new vector that is the sum of this vector and v. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classVector3_a79356953b808ee103afc0d445030e778_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3_a105b045dd7469eac3c90e8df11a81999}\index{Vector3@{Vector3}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \label{classVector3_a105b045dd7469eac3c90e8df11a81999} 
+\mbox{\hyperlink{classVector3}{Vector3}} \& Vector3\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds another vector to this vector in-\/place. 
+
+e.\+g {\ttfamily Vector3+=another\+Vector3}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to this vector after addition. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classVector3_a105b045dd7469eac3c90e8df11a81999_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3_abf9f28941176a900c57dad4596ae52b7}\index{Vector3@{Vector3}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{classVector3_abf9f28941176a900c57dad4596ae52b7} 
+\mbox{\hyperlink{classVector3}{Vector3}} Vector3\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{v}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtracts another vector from this vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new vector that is the difference between this vector and v. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classVector3_abf9f28941176a900c57dad4596ae52b7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3_afb11e612d6f201cfd908b94b87ec115e}\index{Vector3@{Vector3}!operator/@{operator/}}
+\index{operator/@{operator/}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \label{classVector3_afb11e612d6f201cfd908b94b87ec115e} 
+\mbox{\hyperlink{classVector3}{Vector3}} Vector3\+::operator/ (\begin{DoxyParamCaption}\item[{double}]{scalar}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Divides this vector by a scalar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The scalar divisor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new vector with each component divided by scalar. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classVector3_afb11e612d6f201cfd908b94b87ec115e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3_a3037bb6d6c81c7873652e37515412541}\index{Vector3@{Vector3}!operator==@{operator==}}
+\index{operator==@{operator==}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{classVector3_a3037bb6d6c81c7873652e37515412541} 
+bool Vector3\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{v}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Compares two vectors for equality. 
+
+Two vectors are considered equal if their corresponding components are exactly equal.
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vector to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the vectors are equal; false otherwise. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classVector3_a3037bb6d6c81c7873652e37515412541_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classVector3_a5e0249f3c56eda2dde0e6e414c354074}\index{Vector3@{Vector3}!toString@{toString}}
+\index{toString@{toString}!Vector3@{Vector3}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily \label{classVector3_a5e0249f3c56eda2dde0e6e414c354074} 
+std\+::string Vector3\+::to\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a string representation of the vector. 
+
+The format is\+: "{}(x, y, z)"{}.
+
+\begin{DoxyReturn}{Returns}
+A string representing the vector. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/math/\mbox{\hyperlink{Vector3_8hpp}{Vector3.\+hpp}}\end{DoxyCompactItemize}

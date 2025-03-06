@@ -1,0 +1,81 @@
+\doxysection{Vector3.\+hpp}
+\hypertarget{Vector3_8hpp_source}{}\label{Vector3_8hpp_source}\index{include/math/Vector3.hpp@{include/math/Vector3.hpp}}
+\mbox{\hyperlink{Vector3_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ VECTOR3\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ VECTOR3\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \textcolor{keywordtype}{double}\ x,\ y,\ z;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}(\textcolor{keywordtype}{double}\ x\ =\ 0,\ \textcolor{keywordtype}{double}\ y\ =\ 0,\ \textcolor{keywordtype}{double}\ z\ =\ 0)\ :\ x(x),\ y(y),\ z(z)\ \{\}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \mbox{\hyperlink{classVector3_a79356953b808ee103afc0d445030e778}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \&v)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}(x\ +\ v.x,\ y\ +\ v.y,\ z\ +\ v.z);}
+\DoxyCodeLine{00034\ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \mbox{\hyperlink{classVector3_abf9f28941176a900c57dad4596ae52b7}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \&v)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}(x\ -\/\ v.x,\ y\ -\/\ v.y,\ z\ -\/\ v.z);}
+\DoxyCodeLine{00044\ \ \ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \mbox{\hyperlink{classVector3_ac563eef8f92d127f768f330bb5ea39fc}{operator*}}(\textcolor{keywordtype}{double}\ scalar)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}(x\ *\ scalar,\ y\ *\ scalar,\ z\ *\ scalar);}
+\DoxyCodeLine{00054\ \ \ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \&\mbox{\hyperlink{classVector3_aa223c2a45df3d3f0d2ca8a3728eeee27}{operator*=}}(\textcolor{keywordtype}{double}\ scalar)\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ x\ *=\ scalar;}
+\DoxyCodeLine{00066\ \ \ \ \ y\ *=\ scalar;}
+\DoxyCodeLine{00067\ \ \ \ \ z\ *=\ scalar;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00069\ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \mbox{\hyperlink{classVector3_afb11e612d6f201cfd908b94b87ec115e}{operator/}}(\textcolor{keywordtype}{double}\ scalar)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}(x\ /\ scalar,\ y\ /\ scalar,\ z\ /\ scalar);}
+\DoxyCodeLine{00079\ \ \ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00090\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classVector3_a3037bb6d6c81c7873652e37515412541}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \&v)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{return}\ (x\ ==\ v.x)\ \&\&\ (y\ ==\ v.y)\ \&\&\ (z\ ==\ v.z);}
+\DoxyCodeLine{00092\ \ \ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00102\ \ \ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \&\mbox{\hyperlink{classVector3_a105b045dd7469eac3c90e8df11a81999}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \&v)\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ x\ +=\ v.x;}
+\DoxyCodeLine{00104\ \ \ \ \ y\ +=\ v.y;}
+\DoxyCodeLine{00105\ \ \ \ \ z\ +=\ v.z;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00107\ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00114\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classVector3_a7b900ba64852e9a66877e653945e08f6}{magnitude}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ std::sqrt(x\ *\ x\ +\ y\ *\ y\ +\ z\ *\ z);\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00123\ \ \ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \mbox{\hyperlink{classVector3_a65546070166d4f3dc7aae6dbc1c6d6cb}{normalized}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{double}\ length\ =\ \mbox{\hyperlink{classVector3_a7b900ba64852e9a66877e653945e08f6}{magnitude}}();}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{return}\ (length\ ==\ 0)\ ?\ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}(0,\ 0,\ 0)\ :\ *\textcolor{keyword}{this}\ /\ \mbox{\hyperlink{classVector3_a7b900ba64852e9a66877e653945e08f6}{magnitude}}();}
+\DoxyCodeLine{00126\ \ \ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00134\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classVector3_aaa038c8e2f161591e564a57a17e3cfde}{dot}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \&other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordflow}{return}\ x\ *\ other.x\ +\ y\ *\ other.y\ +\ z\ *\ other.z;}
+\DoxyCodeLine{00136\ \ \ \}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00144\ \ \ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \mbox{\hyperlink{classVector3_afa69357b4a1449c640820dc643b6265b}{cross}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}\ \&other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classVector3_a6151fc844ddb2aaa316317b922cb8d22}{Vector3}}(y\ *\ other.z\ -\/\ z\ *\ other.y,\ z\ *\ other.x\ -\/\ x\ *\ other.z,}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ x\ *\ other.y\ -\/\ y\ *\ other.x);}
+\DoxyCodeLine{00147\ \ \ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00156\ \ \ std::string\ \mbox{\hyperlink{classVector3_a5e0249f3c56eda2dde0e6e414c354074}{toString}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00157\ \ \ \ \ std::ostringstream\ ss;}
+\DoxyCodeLine{00158\ \ \ \ \ ss\ <<\ \textcolor{stringliteral}{"{}("{}}\ <<\ x\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ y\ <<\ \textcolor{stringliteral}{"{},\ "{}}\ <<\ z\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordflow}{return}\ ss.str();}
+\DoxyCodeLine{00160\ \ \ \}}
+\DoxyCodeLine{00161\ \};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00170\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \mbox{\hyperlink{Vector3_8hpp_a274a3bcf23ca41faef9b80c83ce36613}{operator*}}(\textcolor{keywordtype}{double}\ scalar,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&v)\ \{\ \textcolor{keywordflow}{return}\ v\ *\ scalar;\ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !VECTOR3\_H}}
+
+\end{DoxyCode}

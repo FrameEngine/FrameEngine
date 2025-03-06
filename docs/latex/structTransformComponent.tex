@@ -1,0 +1,113 @@
+\doxysection{Transform\+Component Struct Reference}
+\hypertarget{structTransformComponent}{}\label{structTransformComponent}\index{TransformComponent@{TransformComponent}}
+
+
+Represents the transformation properties of an entity.  
+
+
+
+
+{\ttfamily \#include $<$Transform\+Component.\+hpp$>$}
+
+
+
+Collaboration diagram for Transform\+Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{structTransformComponent__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structTransformComponent_ace1cf2d7d2a7468e9cb3eb0ce382f446}{Transform\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor that initializes an identity transform. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structTransformComponent_af0d8daa97ffd9f10a9fd498fedce1919}{Transform\+Component}} (const \mbox{\hyperlink{classVector3}{Vector3}} \&pos, const \mbox{\hyperlink{structQuaternion}{Quaternion}} \&rot=\mbox{\hyperlink{structQuaternion}{Quaternion}}(), const \mbox{\hyperlink{classVector3}{Vector3}} \&scl=\mbox{\hyperlink{classVector3}{Vector3}}(1.\+0f, 1.\+0f, 1.\+0f))
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{structTransformComponent}{Transform\+Component} with custom position, rotation, and scale. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} \mbox{\hyperlink{structTransformComponent_abef71fcfe7a8cf21c10698669f1c9d6a}{get\+\_\+transformation\+\_\+matrix}} () const
+\begin{DoxyCompactList}\small\item\em Computes the transformation matrix for the entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structTransformComponent_a30a9fd1d694fdbc3932943b9ee43ee97}\label{structTransformComponent_a30a9fd1d694fdbc3932943b9ee43ee97} 
+\mbox{\hyperlink{classVector3}{Vector3}} {\bfseries position}
+\begin{DoxyCompactList}\small\item\em The world position. \end{DoxyCompactList}\item 
+\Hypertarget{structTransformComponent_a905302eff1ae7a516c33d005618200ba}\label{structTransformComponent_a905302eff1ae7a516c33d005618200ba} 
+\mbox{\hyperlink{structQuaternion}{Quaternion}} {\bfseries rotation}
+\item 
+\Hypertarget{structTransformComponent_ad7515c7e036bea30a1908be564243d34}\label{structTransformComponent_ad7515c7e036bea30a1908be564243d34} 
+\mbox{\hyperlink{classVector3}{Vector3}} {\bfseries scale}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents the transformation properties of an entity. 
+
+The {\ttfamily \doxylink{structTransformComponent}{Transform\+Component}} stores an entity’s position, rotation, and scale. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structTransformComponent_ace1cf2d7d2a7468e9cb3eb0ce382f446}\index{TransformComponent@{TransformComponent}!TransformComponent@{TransformComponent}}
+\index{TransformComponent@{TransformComponent}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{TransformComponent()}{TransformComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{structTransformComponent_ace1cf2d7d2a7468e9cb3eb0ce382f446} 
+Transform\+Component\+::\+Transform\+Component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor that initializes an identity transform. 
+
+
+\begin{DoxyItemize}
+\item Position is zero-\/vector. \doxylink{classEntity}{Entity} starts at the origin.
+\item Rotation is initialized to an identity quaternion (1,0,0,0). No rotation.
+\item Scale is (1, 1, 1). 
+\end{DoxyItemize}\Hypertarget{structTransformComponent_af0d8daa97ffd9f10a9fd498fedce1919}\index{TransformComponent@{TransformComponent}!TransformComponent@{TransformComponent}}
+\index{TransformComponent@{TransformComponent}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{TransformComponent()}{TransformComponent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{structTransformComponent_af0d8daa97ffd9f10a9fd498fedce1919} 
+Transform\+Component\+::\+Transform\+Component (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{pos}{, }\item[{const \mbox{\hyperlink{structQuaternion}{Quaternion}} \&}]{rot}{ = {\ttfamily \mbox{\hyperlink{structQuaternion}{Quaternion}}()}, }\item[{const \mbox{\hyperlink{classVector3}{Vector3}} \&}]{scl}{ = {\ttfamily \mbox{\hyperlink{classVector3}{Vector3}}(1.0f,~1.0f,~1.0f)}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{structTransformComponent}{Transform\+Component} with custom position, rotation, and scale. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The initial position of the entity. \\
+\hline
+{\em rot} & The initial rotation (default\+: identity quaternion). \\
+\hline
+{\em scl} & The initial scale (default\+: (1,1,1)).\\
+\hline
+\end{DoxyParams}
+Allows initialization with specific transformation values. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{structTransformComponent_abef71fcfe7a8cf21c10698669f1c9d6a}\index{TransformComponent@{TransformComponent}!get\_transformation\_matrix@{get\_transformation\_matrix}}
+\index{get\_transformation\_matrix@{get\_transformation\_matrix}!TransformComponent@{TransformComponent}}
+\doxysubsubsection{\texorpdfstring{get\_transformation\_matrix()}{get\_transformation\_matrix()}}
+{\footnotesize\ttfamily \label{structTransformComponent_abef71fcfe7a8cf21c10698669f1c9d6a} 
+\mbox{\hyperlink{structMatrix4}{Matrix4}} Transform\+Component\+::get\+\_\+transformation\+\_\+matrix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Computes the transformation matrix for the entity. 
+
+\begin{DoxyReturn}{Returns}
+A {\ttfamily \doxylink{structMatrix4}{Matrix4}} representing the entity’s world transformation. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structTransformComponent_abef71fcfe7a8cf21c10698669f1c9d6a_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/components/\mbox{\hyperlink{TransformComponent_8hpp}{Transform\+Component.\+hpp}}\end{DoxyCompactItemize}

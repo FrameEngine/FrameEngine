@@ -1,0 +1,5 @@
+<map id="Registry::get_component" name="Registry::get_component">
+<area shape="rect" id="Node000001" title="Retrieves a reference to a component of type &#39;T&#39; for an entity." alt="" coords="5,5,189,33"/>
+<area shape="rect" id="Node000002" href="$classComponentStorage.html#ae6a55d86d70779e03c81b265023503bf" title="Retrieves a reference to an entity&#39;s component." alt="" coords="237,5,412,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,16,221,16,221,22,189,22"/>
+</map>

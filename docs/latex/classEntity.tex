@@ -1,0 +1,179 @@
+\doxysection{Entity Class Reference}
+\hypertarget{classEntity}{}\label{classEntity}\index{Entity@{Entity}}
+
+
+A high-\/level ECS entity wrapper.  
+
+
+
+
+{\ttfamily \#include $<$Entity.\+hpp$>$}
+
+
+
+Inheritance diagram for Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classEntity__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classEntity__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classEntity_a1b3b92780c8075835ac81b237a9f95a0}{Entity}} (\mbox{\hyperlink{classRegistry}{Registry}} \&registry)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classEntity}{Entity} and registers it in the ECS. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T, typename... Args$>$ }\\void \mbox{\hyperlink{classEntity_ac42c7a74bd38f40de2664a7a5fcb9110}{add\+\_\+component}} (Args \&\&...args)
+\begin{DoxyCompactList}\small\item\em Adds a component of type \textquotesingle{}T\textquotesingle{} to the object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{classEntity_a0ecaca9e3770a3872ee3f24706111def}{remove\+\_\+component}} ()
+\begin{DoxyCompactList}\small\item\em Removes a component of type \textquotesingle{}T\textquotesingle{} from the object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T$>$ }\\T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classEntity_a37109ed9ba43260d07fa251beec2f4d2}{get\+\_\+component}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a pointer to the specified component type \textquotesingle{}T\textquotesingle{}. \end{DoxyCompactList}\item 
+\Hypertarget{classEntity_a9d7841569e2c7c0d6eba5698059bbf7a}\label{classEntity_a9d7841569e2c7c0d6eba5698059bbf7a} 
+Entity\+ID {\bfseries id} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEntity_a282f3f2727097db25f3000325a3ad552}\label{classEntity_a282f3f2727097db25f3000325a3ad552} 
+Entity\+ID {\bfseries id\+\_\+}
+\item 
+\Hypertarget{classEntity_a4dd1400aef19085ba4f767f0ef506cea}\label{classEntity_a4dd1400aef19085ba4f767f0ef506cea} 
+\mbox{\hyperlink{classRegistry}{Registry}} \& {\bfseries registry\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A high-\/level ECS entity wrapper. 
+
+This class simplifies entity management by automatically handling unique IDs and component operations. It also enforces type safety while working with components.
+
+Entities in this system are {\bfseries{lightweight}}; they primarily serve as IDs that reference component data stored in the \doxylink{classRegistry}{Registry}.
+
+\begin{DoxyNote}{Note}
+This design ensures that entities are just identifiers (not heavy objects), keeping performance optimal in large-\/scale simulations. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classEntity_a1b3b92780c8075835ac81b237a9f95a0}\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}}
+{\footnotesize\ttfamily \label{classEntity_a1b3b92780c8075835ac81b237a9f95a0} 
+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classRegistry}{Registry}} \&}]{registry}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an \doxylink{classEntity}{Entity} and registers it in the ECS. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em registry} & Reference to the \doxylink{classRegistry}{Registry}.\\
+\hline
+\end{DoxyParams}
+When an \doxylink{classEntity}{Entity} is created, it is automatically registered with the ECS and assigned a unique ID. No need to assign id\+\_\+ yourself
+
+\begin{DoxyNote}{Note}
+Entities should NOT store data themselves; all states are stored in components. 
+\end{DoxyNote}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEntity_a1b3b92780c8075835ac81b237a9f95a0_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEntity_ac42c7a74bd38f40de2664a7a5fcb9110}\index{Entity@{Entity}!add\_component@{add\_component}}
+\index{add\_component@{add\_component}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{add\_component()}{add\_component()}}
+{\footnotesize\ttfamily \label{classEntity_ac42c7a74bd38f40de2664a7a5fcb9110} 
+template$<$typename T, typename... Args$>$ \\
+void Entity\+::add\+\_\+component (\begin{DoxyParamCaption}\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a component of type \textquotesingle{}T\textquotesingle{} to the object. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type. \\
+\hline
+{\em Args} & Variadic template arguments for the component constructor. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em args} & Arguments forwarded to the component constructor.\\
+\hline
+\end{DoxyParams}
+If the entity already has this component, the function logs a warning. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEntity_ac42c7a74bd38f40de2664a7a5fcb9110_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEntity_a37109ed9ba43260d07fa251beec2f4d2}\index{Entity@{Entity}!get\_component@{get\_component}}
+\index{get\_component@{get\_component}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{get\_component()}{get\_component()}}
+{\footnotesize\ttfamily \label{classEntity_a37109ed9ba43260d07fa251beec2f4d2} 
+template$<$typename T$>$ \\
+T \texorpdfstring{$\ast$}{*} Entity\+::get\+\_\+component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a pointer to the specified component type \textquotesingle{}T\textquotesingle{}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type to retrieve. \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the component, or {\ttfamily nullptr} if not found.
+\end{DoxyReturn}
+This function provides kinda safe component access by returning nullptr if the entity does not have the requested component. Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEntity_a37109ed9ba43260d07fa251beec2f4d2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEntity_a0ecaca9e3770a3872ee3f24706111def}\index{Entity@{Entity}!remove\_component@{remove\_component}}
+\index{remove\_component@{remove\_component}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{remove\_component()}{remove\_component()}}
+{\footnotesize\ttfamily \label{classEntity_a0ecaca9e3770a3872ee3f24706111def} 
+template$<$typename T$>$ \\
+void Entity\+::remove\+\_\+component (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes a component of type \textquotesingle{}T\textquotesingle{} from the object. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component type to remove.\\
+\hline
+\end{DoxyTemplParams}
+If the component does not exist, a warning is logged. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Entity_8hpp}{Entity.\+hpp}}\end{DoxyCompactItemize}

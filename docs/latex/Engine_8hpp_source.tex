@@ -1,0 +1,45 @@
+\doxysection{Engine.\+hpp}
+\hypertarget{Engine_8hpp_source}{}\label{Engine_8hpp_source}\index{include/Engine.hpp@{include/Engine.hpp}}
+\mbox{\hyperlink{Engine_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ ENGINE\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ ENGINE\_HPP}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Registry_8hpp}{Registry.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Window_8hpp}{Window.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Renderer_8hpp}{rendering/Renderer.hpp}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }Engine\ \{}
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \textcolor{comment}{//\ TODO\ Make\ it\ variable}}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ fixedTimeStep\ =\ 1.0f\ /\ 60.0f;}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{float}\ accumulator\ =\ 0.0f;}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{bool}\ isRunning\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{classRegistry}{Registry}}\ \mbox{\hyperlink{classEngine_a917b763e00db458316264f7a7f376db4}{registry}};}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{classWindow}{Window}}\ window;}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{classRenderer}{Renderer}}\ renderer;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ Engine();}
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{virtual}\ \string~Engine();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEngine_ab44d76e2ff6057e73d6210cf9af0d89e}{init}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEngine_a1a210cf30d6bd330b3649439ecd6d6cc}{run}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEngine_ac88ada17b33bc5ddaf6bb73e0cdc67f3}{stop}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \textcolor{comment}{//\ =====\ User\ Defined\ Funcitons\ =====}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEngine_a4b592adb20f2e589acf010e1a9ca4f14}{fixed\_update}}(\textcolor{keywordtype}{float}\ dt);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00075\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classEngine_a911e9bb862aba19f61ddf2e6ce7c55b0}{on\_start}}();}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ENGINE\_HPP}}
+
+\end{DoxyCode}

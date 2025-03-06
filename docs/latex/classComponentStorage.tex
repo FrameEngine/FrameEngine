@@ -1,0 +1,163 @@
+\doxysection{Component\+Storage\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classComponentStorage}{}\label{classComponentStorage}\index{ComponentStorage$<$ T $>$@{ComponentStorage$<$ T $>$}}
+
+
+Stores a specific type of component for entities.  
+
+
+
+
+{\ttfamily \#include $<$Registry.\+hpp$>$}
+
+
+
+Inheritance diagram for Component\+Storage\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classComponentStorage__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Component\+Storage\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classComponentStorage__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classComponentStorage_a36ee9f49932f225de0fcde3e1f316566}{add}} (Entity\+ID entity, const T \&component)
+\begin{DoxyCompactList}\small\item\em Adds a component to an entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classComponentStorage_a280078da275681f4fb7d4260f49d5ea6}{remove}} (Entity\+ID entity)
+\begin{DoxyCompactList}\small\item\em Removes a component from an entity. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classComponentStorage_ace11fc3995d08161be0471de4a8c9758}{has}} (Entity\+ID entity) const
+\begin{DoxyCompactList}\small\item\em Checks if an entity has this component. \end{DoxyCompactList}\item 
+T \& \mbox{\hyperlink{classComponentStorage_ae6a55d86d70779e03c81b265023503bf}{get}} (Entity\+ID entity)
+\begin{DoxyCompactList}\small\item\em Retrieves a reference to an entity\textquotesingle{}s component. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Component\+Storage$<$ T $>$}
+Stores a specific type of component for entities. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Component type. \\
+\hline
+\end{DoxyTemplParams}
+Provides O(1) access time for retrieving a component (If I can count. Honestly I have no idea what I\textquotesingle{}m doing \+:D) 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classComponentStorage_a36ee9f49932f225de0fcde3e1f316566}\index{ComponentStorage$<$ T $>$@{ComponentStorage$<$ T $>$}!add@{add}}
+\index{add@{add}!ComponentStorage$<$ T $>$@{ComponentStorage$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily \label{classComponentStorage_a36ee9f49932f225de0fcde3e1f316566} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{classComponentStorage}{Component\+Storage}}$<$ T $>$\+::add (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity}{, }\item[{const T \&}]{component}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a component to an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity ID. \\
+\hline
+{\em component} & The component instance to store. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classComponentStorage_a36ee9f49932f225de0fcde3e1f316566_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classComponentStorage_ae6a55d86d70779e03c81b265023503bf}\index{ComponentStorage$<$ T $>$@{ComponentStorage$<$ T $>$}!get@{get}}
+\index{get@{get}!ComponentStorage$<$ T $>$@{ComponentStorage$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily \label{classComponentStorage_ae6a55d86d70779e03c81b265023503bf} 
+template$<$typename T$>$ \\
+T \& \mbox{\hyperlink{classComponentStorage}{Component\+Storage}}$<$ T $>$\+::get (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a reference to an entity\textquotesingle{}s component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the component. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & if the component does not exist. \\
+\hline
+\end{DoxyExceptions}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classComponentStorage_ae6a55d86d70779e03c81b265023503bf_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classComponentStorage_ace11fc3995d08161be0471de4a8c9758}\index{ComponentStorage$<$ T $>$@{ComponentStorage$<$ T $>$}!has@{has}}
+\index{has@{has}!ComponentStorage$<$ T $>$@{ComponentStorage$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{has()}{has()}}
+{\footnotesize\ttfamily \label{classComponentStorage_ace11fc3995d08161be0471de4a8c9758} 
+template$<$typename T$>$ \\
+bool \mbox{\hyperlink{classComponentStorage}{Component\+Storage}}$<$ T $>$\+::has (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if an entity has this component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the entity has the component. 
+\end{DoxyReturn}
+\Hypertarget{classComponentStorage_a280078da275681f4fb7d4260f49d5ea6}\index{ComponentStorage$<$ T $>$@{ComponentStorage$<$ T $>$}!remove@{remove}}
+\index{remove@{remove}!ComponentStorage$<$ T $>$@{ComponentStorage$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily \label{classComponentStorage_a280078da275681f4fb7d4260f49d5ea6} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{classComponentStorage}{Component\+Storage}}$<$ T $>$\+::remove (\begin{DoxyParamCaption}\item[{Entity\+ID}]{entity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes a component from an entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & The entity ID. \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classComponentStorage_a280078da275681f4fb7d4260f49d5ea6_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Registry_8hpp}{Registry.\+hpp}}\end{DoxyCompactItemize}

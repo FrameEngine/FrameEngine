@@ -1,0 +1,5 @@
+<map id="Mesh::loadFromOBJ" name="Mesh::loadFromOBJ">
+<area shape="rect" id="Node000001" title="Loads a mesh from an OBJ file." alt="" coords="206,5,354,33"/>
+<area shape="rect" id="Node000002" href="$classSimulation.html#a08515c0b35864327fa45d08d640ddd26" title="Called once at the start of execution." alt="" coords="5,5,158,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="190,22,158,22,158,16,190,16"/>
+</map>

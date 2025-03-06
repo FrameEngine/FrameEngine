@@ -1,0 +1,92 @@
+\doxysection{Logger Class Reference}
+\hypertarget{classLogger}{}\label{classLogger}\index{Logger@{Logger}}
+
+
+Collaboration diagram for Logger\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{classLogger__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLogger_a15bfbc50a348a24b8ff7c5d49feef1df}{set\+Log\+File}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Sets the log file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\void \mbox{\hyperlink{classLogger_a47a3278a83727681a5a492ae7e1882a9}{log}} (\mbox{\hyperlink{Logger_8hpp_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} level, const char \texorpdfstring{$\ast$}{*}format, Args \&\&...args)
+\begin{DoxyCompactList}\small\item\em Logs a message with the specified log level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classLogger}{Logger}} \& \mbox{\hyperlink{classLogger_a56defd0fd628ce6263d25d02296e48ce}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Returns the singleton instance of \doxylink{classLogger}{Logger}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLogger_a56defd0fd628ce6263d25d02296e48ce}\index{Logger@{Logger}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \label{classLogger_a56defd0fd628ce6263d25d02296e48ce} 
+static \mbox{\hyperlink{classLogger}{Logger}} \& Logger\+::get\+Instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns the singleton instance of \doxylink{classLogger}{Logger}. 
+
+This method guarantees that only one \doxylink{classLogger}{Logger} exists.
+
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classLogger}{Logger} instance. 
+\end{DoxyReturn}
+\Hypertarget{classLogger_a47a3278a83727681a5a492ae7e1882a9}\index{Logger@{Logger}!log@{log}}
+\index{log@{log}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily \label{classLogger_a47a3278a83727681a5a492ae7e1882a9} 
+template$<$typename... Args$>$ \\
+void Logger\+::log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Logger_8hpp_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}}}]{level}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{format}{, }\item[{Args \&\&...}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Logs a message with the specified log level. 
+
+This templated function formats the message using the given format string and arguments, prefixes it with the current timestamp and log level, and writes the log to both the console and the log file.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Args} & The types of the additional arguments. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em level} & The log level for the message. \\
+\hline
+{\em format} & The format string. \\
+\hline
+{\em args} & The values to be formatted into the message. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLogger_a15bfbc50a348a24b8ff7c5d49feef1df}\index{Logger@{Logger}!setLogFile@{setLogFile}}
+\index{setLogFile@{setLogFile}!Logger@{Logger}}
+\doxysubsubsection{\texorpdfstring{setLogFile()}{setLogFile()}}
+{\footnotesize\ttfamily \label{classLogger_a15bfbc50a348a24b8ff7c5d49feef1df} 
+void Logger\+::set\+Log\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the log file. 
+
+Closes the current log file (if open) and opens a new file for appending logs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the log file to use. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Logger_8hpp}{Logger.\+hpp}}\item 
+src/core/Logger.\+cpp\end{DoxyCompactItemize}

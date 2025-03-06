@@ -1,0 +1,7 @@
+<map id="TransformComponent" name="TransformComponent">
+<area shape="rect" id="Node000001" title="Represents the transformation properties of an entity." alt="" coords="47,517,225,651"/>
+<area shape="rect" id="Node000002" href="$classVector3.html" title=" " alt="" coords="5,28,119,413"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,412,117,492,118,500,113,501,111,494,95,413"/>
+<area shape="rect" id="Node000003" href="$structQuaternion.html" title=" " alt="" coords="144,5,277,435"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,436,184,494,181,502,176,500,178,492,192,434"/>
+</map>

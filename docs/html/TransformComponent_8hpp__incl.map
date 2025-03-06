@@ -1,0 +1,22 @@
+<map id="include/components/TransformComponent.hpp" name="include/components/TransformComponent.hpp">
+<area shape="rect" id="Node000001" title="Defines the TransformComponent for ECS&#45;based spatial transformations." alt="" coords="68,5,262,50"/>
+<area shape="rect" id="Node000002" href="$Matrix4_8hpp.html" title="Defines the Matrix4 class for 3D transformation operations." alt="" coords="203,98,340,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,48,244,86,241,90,191,53"/>
+<area shape="rect" id="Node000003" href="$Quaternion_8hpp.html" title="Defines the Quaternion class for representing 3D rotations." alt="" coords="5,174,127,201"/>
+<area shape="poly" id="edge11_Node000001_Node000003" title=" " alt="" coords="154,52,85,162,80,159,149,49"/>
+<area shape="rect" id="Node000004" href="$Vector3_8hpp.html" title="Defines the Vector3 class." alt="" coords="115,249,214,277"/>
+<area shape="poly" id="edge12_Node000001_Node000004" title=" " alt="" coords="167,50,167,234,162,234,162,50"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="236,129,118,171,116,165,234,124"/>
+<area shape="poly" id="edge8_Node000002_Node000004" title=" " alt="" coords="264,127,185,238,181,235,260,124"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="273,325,347,353"/>
+<area shape="poly" id="edge10_Node000002_Node000006" title=" " alt="" coords="296,124,321,144,342,173,350,209,348,247,338,283,326,312,321,310,333,281,342,247,345,210,337,175,317,148,293,128"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="253,174,327,201"/>
+<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="277,126,285,158,280,159,272,127"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="85,200,137,238,134,242,82,204"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="48,325,110,353"/>
+<area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="70,201,79,309,74,310,64,202"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="151,280,108,317,104,313,148,276"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="192,275,272,315,269,320,189,280"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="136,325,194,353"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="167,278,167,309,162,309,162,278"/>
+</map>

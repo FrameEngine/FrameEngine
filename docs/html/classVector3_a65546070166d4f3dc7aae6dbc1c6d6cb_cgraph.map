@@ -1,0 +1,7 @@
+<map id="Vector3::normalized" name="Vector3::normalized">
+<area shape="rect" id="Node000001" title="Returns a normalized (unit length) version of this vector." alt="" coords="5,32,158,60"/>
+<area shape="rect" id="Node000002" href="$classVector3.html#a7b900ba64852e9a66877e653945e08f6" title="Computes the magnitude of this vector." alt="" coords="206,5,355,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,33,190,29,191,34,158,38"/>
+<area shape="rect" id="Node000003" href="$classVector3.html#a6151fc844ddb2aaa316317b922cb8d22" title="Constructs a Vector3 with specified components." alt="" coords="216,57,345,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,53,201,58,200,64,158,58"/>
+</map>

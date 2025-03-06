@@ -1,0 +1,33 @@
+\doxysection{include/physics/\+Physics\+System.hpp File Reference}
+\hypertarget{PhysicsSystem_8hpp}{}\label{PhysicsSystem_8hpp}\index{include/physics/PhysicsSystem.hpp@{include/physics/PhysicsSystem.hpp}}
+
+
+Defines the \doxylink{classPhysicsSystem}{Physics\+System}.  
+
+
+{\ttfamily \#include "{}Registry.\+hpp"{}}\newline
+{\ttfamily \#include "{}components/\+Physics\+Component.\+hpp"{}}\newline
+{\ttfamily \#include "{}components/\+Transform\+Component.\+hpp"{}}\newline
+Include dependency graph for Physics\+System.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{PhysicsSystem_8hpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classPhysicsSystem}{Physics\+System}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the \doxylink{classPhysicsSystem}{Physics\+System}. 
+
+The \doxylink{classPhysicsSystem}{Physics\+System} processes all entities with \textquotesingle{}\doxylink{structPhysicsComponent}{Physics\+Component}\textquotesingle{} (stores velocity, acceleration, and mass).
+
+It applies acceleration to velocity, then integrates velocity into position. This system should be called every frame with a fixed timestamp to maintain stable physics updates.
+
+In the future will extend it with collision checks and other physics stuff 

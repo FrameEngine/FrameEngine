@@ -1,0 +1,33 @@
+\doxysection{Point\+Light.\+hpp}
+\hypertarget{PointLight_8hpp_source}{}\label{PointLight_8hpp_source}\index{include/objects/PointLight.hpp@{include/objects/PointLight.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ POINT\_LIGHT\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ POINT\_LIGHT\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Object_8hpp}{Object.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Vector3_8hpp}{math/Vector3.hpp}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPointLight_ac8ab3e4f409d1c9fa08a28f1d510c41d}{PointLight}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classObject_a52ee70eca2c53e91a6db00a8908a3e93}{Object}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ color;}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{float}\ intensity;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{classPointLight_ac8ab3e4f409d1c9fa08a28f1d510c41d}{PointLight}}(\mbox{\hyperlink{classRegistry}{Registry}}\ \&registry,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&pos,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&col\ =\ \mbox{\hyperlink{classVector3}{Vector3}}(1,\ 1,\ 1),\ \textcolor{keywordtype}{float}\ inten\ =\ 1.0f)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ :\ \mbox{\hyperlink{classObject_a52ee70eca2c53e91a6db00a8908a3e93}{Object}}(registry,\ nullptr),\ color(col),\ intensity(inten)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ transform-\/>position\ =\ pos;}
+\DoxyCodeLine{00037\ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ \mbox{\hyperlink{classPointLight_a1f6ba4b0ec22df334510b9ba3431edb2}{getColor}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ color;\ \}}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPointLight_aa0c453b4478e303c971c1c77cba5b27f}{setColor}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&col)\ \{\ color\ =\ col;\ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classPointLight_a959f092b2decd8e8e4a8d0310f408acf}{getIntensity}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ intensity;\ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPointLight_aca521f9c937d9e7844287c9dd6bf6e05}{setIntensity}}(\textcolor{keywordtype}{float}\ inten)\ \{\ intensity\ =\ inten;\ \}}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ POINT\_LIGHT\_HPP}}
+
+\end{DoxyCode}

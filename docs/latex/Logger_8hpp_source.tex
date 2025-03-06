@@ -1,0 +1,93 @@
+\doxysection{Logger.\+hpp}
+\hypertarget{Logger_8hpp_source}{}\label{Logger_8hpp_source}\index{include/Logger.hpp@{include/Logger.hpp}}
+\mbox{\hyperlink{Logger_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ LOGGER\_HPP}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ LOGGER\_HPP}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <chrono>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <fmt/printf.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{Logger_8hpp_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ \{\ DEBUG,\ INFO,\ WARNING,\ ERROR,\ CRITICAL\ \};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }Logger\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00031\ \ \ std::ofstream\ logFile;\ \ \ \ \ \ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{static}\ Logger\ *instance;\ \ \ \ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{static}\ std::mutex\ logMutex;\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00040\ \ \ Logger()\ \{\ \mbox{\hyperlink{classLogger_a15bfbc50a348a24b8ff7c5d49feef1df}{setLogFile}}(\textcolor{stringliteral}{"{}main.log"{}});\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{static}\ std::string\ levelToString(\mbox{\hyperlink{Logger_8hpp_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ level)\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{switch}\ (level)\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{case}\ LogLevel::DEBUG:}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}DEBUG"{}};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{case}\ LogLevel::INFO:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}INFO"{}};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{case}\ LogLevel::WARNING:}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}WARNING"{}};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{case}\ LogLevel::ERROR:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}ERROR"{}};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{case}\ LogLevel::CRITICAL:}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}CRITICAL"{}};}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}UNKNOWN"{}};}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00073\ \ \ \textcolor{keyword}{static}\ Logger\ \&\mbox{\hyperlink{classLogger_a56defd0fd628ce6263d25d02296e48ce}{getInstance}}()\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{static}\ Logger\ instance;\ \textcolor{comment}{//\ Thread-\/safe\ singleton}}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{return}\ instance;}
+\DoxyCodeLine{00076\ \ \ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_a15bfbc50a348a24b8ff7c5d49feef1df}{setLogFile}}(\textcolor{keyword}{const}\ std::string\ \&filename)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ std::lock\_guard<std::mutex>\ lock(logMutex);}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{if}\ (logFile.is\_open())\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ logFile.close();}
+\DoxyCodeLine{00090\ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ logFile.open(filename,\ std::ios::app);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{if}\ (!logFile)\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ opening\ log\ file:\ "{}}\ <<\ filename\ <<\ std::endl;}
+\DoxyCodeLine{00095\ \ \ \ \ \}}
+\DoxyCodeLine{00096\ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00110\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classLogger_a47a3278a83727681a5a492ae7e1882a9}{log}}(\mbox{\hyperlink{Logger_8hpp_aca1fd1d8935433e6ba2e3918214e07f9}{LogLevel}}\ level,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *format,\ Args\ \&\&...args)\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ std::lock\_guard<std::mutex>\ lock(logMutex);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ std::string\ formattedMessage\ =}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ fmt::sprintf(format,\ std::forward<Args>(args)...);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{auto}\ now\ =\ std::chrono::system\_clock::now();}
+\DoxyCodeLine{00118\ \ \ \ \ std::time\_t\ now\_c\ =\ std::chrono::system\_clock::to\_time\_t(now);}
+\DoxyCodeLine{00119\ \ \ \ \ std::tm\ timeinfo\ =\ *std::localtime(\&now\_c);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ std::ostringstream\ logEntry;}
+\DoxyCodeLine{00122\ \ \ \ \ logEntry\ <<\ \textcolor{stringliteral}{"{}["{}}\ <<\ std::put\_time(\&timeinfo,\ \textcolor{stringliteral}{"{}\%Y-\/\%m-\/\%d\ \%H:\%M:\%S"{}})\ <<\ \textcolor{stringliteral}{"{}]\ "{}}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ levelToString(level)\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ formattedMessage\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ std::cout\ <<\ logEntry.str();}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{if}\ (logFile.is\_open())\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ logFile\ <<\ logEntry.str();}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ logFile.flush();}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \}}
+\DoxyCodeLine{00132\ \};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ LOG(level,\ fmt,\ ...)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\ \ Logger::getInstance().log(LogLevel::level,\ fmt,\ \#\#\_\_VA\_ARGS\_\_)}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LOGGER\_HPP}}
+
+\end{DoxyCode}

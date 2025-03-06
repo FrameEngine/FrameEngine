@@ -1,0 +1,134 @@
+\doxysection{Registry.\+hpp}
+\hypertarget{Registry_8hpp_source}{}\label{Registry_8hpp_source}\index{include/Registry.hpp@{include/Registry.hpp}}
+\mbox{\hyperlink{Registry_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ REGISTRY\_HPP}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ REGISTRY\_HPP}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <bitset>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{Registry_8hpp_accef8305f13c3e9de5f7a7bb9466da69}{MAX\_COMPONENTS}}\ =\ 32;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ Each\ entity\ must\ have\ unique\ ID;\ Why\ not\ store\ whole\ objects?\ Well,\ it\ looks}}
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ like\ storing\ only\ int\ IDs\ is\ way\ more\ efficient}}
+\DoxyCodeLine{00031\ \textcolor{keyword}{using\ }EntityID\ =\ int;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIComponentStorage}{IComponentStorage}}\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classIComponentStorage}{\string~IComponentStorage}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classComponentStorage}{ComponentStorage}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classIComponentStorage}{IComponentStorage}}\ \{}
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ std::unordered\_map<EntityID,\ T>\ components;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classComponentStorage_a36ee9f49932f225de0fcde3e1f316566}{add}}(EntityID\ entity,\ \textcolor{keyword}{const}\ T\ \&component)\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ components[entity]\ =\ component;}
+\DoxyCodeLine{00063\ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classComponentStorage_a280078da275681f4fb7d4260f49d5ea6}{remove}}(EntityID\ entity)\ \{\ components.erase(entity);\ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00076\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classComponentStorage_ace11fc3995d08161be0471de4a8c9758}{has}}(EntityID\ entity)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{return}\ components.find(entity)\ !=\ components.end();}
+\DoxyCodeLine{00078\ \ \ \}}
+\DoxyCodeLine{00085\ \ \ T\ \&\mbox{\hyperlink{classComponentStorage_ae6a55d86d70779e03c81b265023503bf}{get}}(EntityID\ entity)\ \{\ \textcolor{keywordflow}{return}\ components.at(entity);\ \}}
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{class\ }Registry\ \{}
+\DoxyCodeLine{00099\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00101\ \ \ std::vector<EntityID>\ entities;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ \ \ std::unordered\_map<size\_t,\ std::unique\_ptr<IComponentStorage>>\ componentPools;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ \ \ std::unordered\_map<EntityID,\ std::bitset<MAX\_COMPONENTS>>}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ entityComponentMasks;}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \textcolor{comment}{//\ As\ entities\ are\ stored\ as\ integers,\ this\ is\ fast\ way\ to\ make\ them\ "{}unique"{}}}
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordtype}{int}\ nextEntityID\ =\ 0;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00114\ \ \ Registry(\textcolor{keyword}{const}\ Registry\ \&)\ =\ \textcolor{keyword}{delete};\ \textcolor{comment}{//\ Prevent\ accidental\ copying}}
+\DoxyCodeLine{00115\ \ \ Registry\ \&operator=(\textcolor{keyword}{const}\ Registry\ \&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ Registry()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00123\ \ \ EntityID\ \mbox{\hyperlink{classRegistry_af6ba584e5c062583b166eb1b17ce37eb}{create\_entity}}()\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ EntityID\ entity\ =\ nextEntityID++;}
+\DoxyCodeLine{00125\ \ \ \ \ entities.push\_back(entity);}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{return}\ entity;}
+\DoxyCodeLine{00127\ \ \ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRegistry_a62f09112d2be2c85efa983e62c98f3b1}{destroy\_entity}}(EntityID\ entity)\ \{}
+\DoxyCodeLine{00134\ \ \ \ \ entities.erase(std::remove(entities.begin(),\ entities.end(),\ entity),}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ entities.end());}
+\DoxyCodeLine{00136\ \ \ \ \ entityComponentMasks.erase(entity);}
+\DoxyCodeLine{00137\ \ \ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00145\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00146\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRegistry_a36df114d671959a9a7bbdfc8274258ec}{add\_component}}(EntityID\ entity,\ \textcolor{keyword}{const}\ T\ \&component)\ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{comment}{//\ Why\ hash?\ Just\ faster\ than\ type\_index.\ Like\ O(log\ n)\ vs\ O(1),\ but\ there}}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{comment}{//\ are\ might\ be\ hash\ collisions,\ not\ critical\ though,\ just\ restart\ sim.}}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ typeID\ =\ \textcolor{keyword}{typeid}(T).hash\_code();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{comment}{//\ If\ this\ is\ the\ first\ time\ this\ component\ type\ is\ used,\ create\ a\ storage}}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{comment}{//\ bucket}}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{if}\ (componentPools.find(typeID)\ ==\ componentPools.end())\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ componentPools[typeID]\ =\ std::make\_unique<ComponentStorage<T>>();}
+\DoxyCodeLine{00155\ \ \ \ \ \}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{comment}{//\ Store\ component\ in\ the\ bucket}}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classComponentStorage}{ComponentStorage<T>}}\ *\textcolor{keyword}{>}(componentPools[typeID].get())}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ -\/>\mbox{\hyperlink{classComponentStorage_a36ee9f49932f225de0fcde3e1f316566}{add}}(entity,\ component);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{comment}{//\ Update\ entity's\ bitmask}}
+\DoxyCodeLine{00162\ \ \ \ \ entityComponentMasks[entity].set(typeID\ \%\ \mbox{\hyperlink{Registry_8hpp_accef8305f13c3e9de5f7a7bb9466da69}{MAX\_COMPONENTS}});}
+\DoxyCodeLine{00163\ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00171\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classRegistry_ab41930dd59af2dfb0c98781f1d04d68b}{has\_component}}(EntityID\ entity)\ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ typeID\ =\ \textcolor{keyword}{typeid}(T).hash\_code();}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordflow}{return}\ entityComponentMasks[entity].test(typeID\ \%\ \mbox{\hyperlink{Registry_8hpp_accef8305f13c3e9de5f7a7bb9466da69}{MAX\_COMPONENTS}});}
+\DoxyCodeLine{00174\ \ \ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00183\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ T\ \&\mbox{\hyperlink{classRegistry_a494920a3e7c4132823a88bd2758e4893}{get\_component}}(EntityID\ entity)\ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ typeID\ =\ \textcolor{keyword}{typeid}(T).hash\_code();}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{if}\ (componentPools.find(typeID)\ ==\ componentPools.end())\ \{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Component\ not\ found\ in\ registry!"{}});}
+\DoxyCodeLine{00187\ \ \ \ \ \}}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classComponentStorage}{ComponentStorage<T>}}\ *\textcolor{keyword}{>}(componentPools[typeID].get())}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ -\/>\mbox{\hyperlink{classComponentStorage_ae6a55d86d70779e03c81b265023503bf}{get}}(entity);}
+\DoxyCodeLine{00190\ \ \ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00197\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRegistry_aa379449b7b4063ad48871b86d1d52322}{remove\_component}}(EntityID\ entity)\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ typeID\ =\ \textcolor{keyword}{typeid}(T).hash\_code();}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordflow}{if}\ (componentPools.find(typeID)\ !=\ componentPools.end())\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{classComponentStorage}{ComponentStorage<T>}}\ *\textcolor{keyword}{>}(componentPools[typeID].get())}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ -\/>\mbox{\hyperlink{classComponentStorage_a280078da275681f4fb7d4260f49d5ea6}{remove}}(entity);}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ entityComponentMasks[entity].reset(typeID\ \%\ \mbox{\hyperlink{Registry_8hpp_accef8305f13c3e9de5f7a7bb9466da69}{MAX\_COMPONENTS}});}
+\DoxyCodeLine{00204\ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00216\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ std::vector<EntityID>\ \mbox{\hyperlink{classRegistry_aac4a8be3b956dec2db599c8248f0cb4d}{get\_entities\_with\_component}}()\ \{}
+\DoxyCodeLine{00217\ \ \ \ \ std::vector<EntityID>\ result;}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ typeID\ =\ \textcolor{keyword}{typeid}(T).hash\_code();}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&[entity,\ mask]\ :\ entityComponentMasks)\ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (mask.test(typeID\ \%\ \mbox{\hyperlink{Registry_8hpp_accef8305f13c3e9de5f7a7bb9466da69}{MAX\_COMPONENTS}}))\ \{}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ result.push\_back(entity);}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00223\ \ \ \ \ \}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00226\ \ \ \}}
+\DoxyCodeLine{00227\ \};}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !REGISTRY\_HPP}}
+
+\end{DoxyCode}

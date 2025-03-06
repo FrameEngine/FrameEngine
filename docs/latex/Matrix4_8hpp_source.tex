@@ -1,0 +1,203 @@
+\doxysection{Matrix4.\+hpp}
+\hypertarget{Matrix4_8hpp_source}{}\label{Matrix4_8hpp_source}\index{include/math/Matrix4.hpp@{include/math/Matrix4.hpp}}
+\mbox{\hyperlink{Matrix4_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ MATRIX4\_HPP}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ MATRIX4\_HPP}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Quaternion_8hpp}{Quaternion.hpp}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Vector3_8hpp}{Vector3.hpp}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <iomanip>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \{}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{float}\ m[4][4];}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}()\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ 4;\ j++)}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ m[i][j]\ =\ (i\ ==\ j)\ ?\ 1.0f\ :\ 0.0f;}
+\DoxyCodeLine{00036\ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{structMatrix4_ae580a375986d03d211952dc4bae5706e}{Matrix4}}(std::initializer\_list<double>\ values)\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ !=\ 16)\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Matrix4\ must\ be\ initialized\ with\ exactly\ 16\ values"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ values.begin();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ 4;\ row++)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ 4;\ col++)\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ m[row][col]\ =\ *it++;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \&\mbox{\hyperlink{structMatrix4_ac95c34d9649930c45264013b4a500ac4}{operator=}}(std::initializer\_list<float>\ values)\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (values.size()\ !=\ 16)\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}Matrix4\ must\ be\ assigned\ exactly\ 16\ values"{}});}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ values.begin();}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ 4;\ row++)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ 4;\ col++)\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ m[row][col]\ =\ *it++;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00078\ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{keywordtype}{float}\ *\mbox{\hyperlink{structMatrix4_a74a94cca3f418667e79c40170dc7d635}{operator[]}}(\textcolor{keywordtype}{int}\ row)\ \{\ \textcolor{keywordflow}{return}\ m[row];\ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00098\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \mbox{\hyperlink{structMatrix4_ac75974947937ab36d3305fe69d8298db}{createRotationMatrix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&axis,\ \textcolor{keywordtype}{float}\ angle)\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{structQuaternion}{Quaternion}}\ q\ =\ \mbox{\hyperlink{structQuaternion_afd23f6fe56d5d96f897e20c901ec7d19}{Quaternion::fromAxisAngle}}(axis,\ angle);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordflow}{return}\ q.\mbox{\hyperlink{structQuaternion_ae1a6eef5ea4bb26c6df33504a16bcfa7}{toMatrix}}();}
+\DoxyCodeLine{00101\ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00112\ \ \ \mbox{\hyperlink{classVector3}{Vector3}}\ \mbox{\hyperlink{structMatrix4_a943cdcd144c58c21e23b241fa2a554aa}{transformVector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&v)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{return}\ \{v.x\ *\ m[0][0]\ +\ v.y\ *\ m[1][0]\ +\ v.z\ *\ m[2][0],}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ v.x\ *\ m[0][1]\ +\ v.y\ *\ m[1][1]\ +\ v.z\ *\ m[2][1],}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ v.x\ *\ m[0][2]\ +\ v.y\ *\ m[1][2]\ +\ v.z\ *\ m[2][2]\};}
+\DoxyCodeLine{00116\ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00126\ \ \ std::string\ \mbox{\hyperlink{structMatrix4_a6db37a8b0f398e92f49ffb73848e3b2f}{toString}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ TODO\ Add\ formating\ options,\ like\ floating\ point\ precision,\ output\ format}}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//\ etc.}}
+\DoxyCodeLine{00129\ \ \ \ \ std::ostringstream\ oss;}
+\DoxyCodeLine{00130\ \ \ \ \ oss\ <<\ std::fixed\ <<\ std::setprecision(4);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ 4;\ row++)\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ oss\ <<\ \textcolor{stringliteral}{"{}[\ "{}};}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ 4;\ col++)\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ oss\ <<\ std::setw(8)\ <<\ m[row][col]\ <<\ \textcolor{stringliteral}{"{}\ "{}};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ oss\ <<\ \textcolor{stringliteral}{"{}]\(\backslash\)n"{}};}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordflow}{return}\ oss.str();}
+\DoxyCodeLine{00141\ \ \ \}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00149\ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \mbox{\hyperlink{structMatrix4_a07a0a50c8e4d085e289a9d383040202d}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \&other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ result;}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ 4;\ row++)\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ 4;\ col++)\ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ result.m[row][col]\ =\ 0.0f;}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ i++)\ \{}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ result.m[row][col]\ +=\ m[row][i]\ *\ other.m[i][col];}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00162\ \ \ \}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00170\ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \mbox{\hyperlink{structMatrix4_a0868a975fc746f6812ae58b2e519350d}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \&other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ result;}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ 4;\ row++)\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ 4;\ col++)\ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ result.m[row][col]\ =\ m[row][col]\ +\ other.m[row][col];}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00176\ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00178\ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00186\ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \mbox{\hyperlink{structMatrix4_a13a17942d7e307ca4f65f14d3183079e}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \&other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00187\ \ \ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ result;}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ 4;\ row++)\ \{}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ 4;\ col++)\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ result.m[row][col]\ =\ m[row][col]\ -\/\ other.m[row][col];}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \ \ \}}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00194\ \ \ \}}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00202\ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \mbox{\hyperlink{structMatrix4_af1003593d38216e31f3147c5111cda78}{operator*}}(\textcolor{keywordtype}{float}\ scalar)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00203\ \ \ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ result;}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ 4;\ row++)\ \{}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ 4;\ col++)\ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ result.m[row][col]\ =\ m[row][col]\ *\ scalar;}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00208\ \ \ \ \ \}}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00210\ \ \ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00220\ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \mbox{\hyperlink{structMatrix4_a7fc0d09be601cd9e0a3ca832f6aa554a}{operator/}}(\textcolor{keywordtype}{float}\ scalar)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{comment}{//\ TODO\ Throw\ an\ error\ if\ division\ by\ zero}}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{if}\ (scalar\ ==\ 0.0f)}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00224\ \ \ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ result;}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ 4;\ row++)\ \{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ 4;\ col++)\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ result.m[row][col]\ =\ m[row][col]\ /\ scalar;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00229\ \ \ \ \ \}}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00231\ \ \ \}}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00242\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMatrix4_a5724c3b529f84d92e50f687810fd6db8}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \&other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{comment}{//\ TODO\ Probably\ should\ make\ epsilon\ customizable}}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keywordtype}{float}\ EPSILON\ =\ 1e-\/4f;}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ 4;\ row++)\ \{}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ 4;\ col++)\ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ diff\ =\ std::fabs(m[row][col]\ -\/\ other.m[row][col]);}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (diff\ >\ EPSILON)\ \{}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00253\ \ \ \ \ \}}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00255\ \ \ \}}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00265\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structMatrix4_a93750133d8c9bb494621240383e1a107}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \&other)\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}\ ==\ other);\ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00275\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \mbox{\hyperlink{structMatrix4_a69367ead23554d96061ddee73e0bfd15}{createTranslationMatrix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&pos)\ \{}
+\DoxyCodeLine{00276\ \ \ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ mat;}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ mat.m[3][0]\ =\ pos.x;}
+\DoxyCodeLine{00279\ \ \ \ \ mat.m[3][1]\ =\ pos.y;}
+\DoxyCodeLine{00280\ \ \ \ \ mat.m[3][2]\ =\ pos.z;}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordflow}{return}\ mat;}
+\DoxyCodeLine{00283\ \ \ \}}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00294\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \mbox{\hyperlink{structMatrix4_a9dc7abcfd6a2a5e02765c8708276140f}{createScalingMatrix}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&s)\ \{}
+\DoxyCodeLine{00295\ \ \ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ mat;}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \ \ \ \ mat.m[0][0]\ =\ s.x;}
+\DoxyCodeLine{00298\ \ \ \ \ mat.m[1][1]\ =\ s.y;}
+\DoxyCodeLine{00299\ \ \ \ \ mat.m[2][2]\ =\ s.z;}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{keywordflow}{return}\ mat;}
+\DoxyCodeLine{00302\ \ \ \}}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00309\ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \mbox{\hyperlink{structMatrix4_aff21eee8a48482c36f84345b57aac6c8}{getTranspose}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00310\ \ \ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ result;}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ row\ =\ 0;\ row\ <\ 4;\ row++)\ \{}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ col\ =\ 0;\ col\ <\ 4;\ col++)\ \{}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ result.m[row][col]\ =\ m[col][row];}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00315\ \ \ \ \ \}}
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00317\ \ \ \}}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00328\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ \mbox{\hyperlink{structMatrix4_a9f88b7eb74bd14087671fdf045a9f2d3}{createPerspectiveMatrix}}(\textcolor{keywordtype}{float}\ fov,\ \textcolor{keywordtype}{float}\ aspect,\ \textcolor{keywordtype}{float}\ near,}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ far)\ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordtype}{float}\ tanHalfFOV\ =\ tan(fov\ *\ 0.5f\ *\ M\_PI\ /\ 180.0f);}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ \mbox{\hyperlink{structMatrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4}}\ mat;}
+\DoxyCodeLine{00333\ \ \ \ \ mat.m[0][0]\ =\ 1.0f\ /\ (aspect\ *\ tanHalfFOV);}
+\DoxyCodeLine{00334\ \ \ \ \ mat.m[1][1]\ =\ 1.0f\ /\ tanHalfFOV;}
+\DoxyCodeLine{00335\ \ \ \ \ mat.m[2][2]\ =\ -\/(far\ +\ near)\ /\ (far\ -\/\ near);}
+\DoxyCodeLine{00336\ \ \ \ \ mat.m[2][3]\ =\ -\/1.0f;}
+\DoxyCodeLine{00337\ \ \ \ \ mat.m[3][2]\ =\ -\/(2.0f\ *\ far\ *\ near)\ /\ (far\ -\/\ near);}
+\DoxyCodeLine{00338\ \ \ \ \ mat.m[3][3]\ =\ 0.0f;}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordflow}{return}\ mat;}
+\DoxyCodeLine{00340\ \ \ \}}
+\DoxyCodeLine{00341\ \};}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MATRIX4\_HPP}}
+
+\end{DoxyCode}

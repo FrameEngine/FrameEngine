@@ -1,0 +1,5 @@
+<map id="Quaternion::operator*" name="Quaternion::operator*">
+<area shape="rect" id="Node000001" title="Multiplies the quaternion by a scalar." alt="" coords="5,5,169,33"/>
+<area shape="rect" id="Node000002" href="$structQuaternion.html#abcc01358aada56ea5f0db4da18aaf77d" title="Default constructor initializes the quaternion as the identity rotation." alt="" coords="217,5,390,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,16,201,16,201,22,169,22"/>
+</map>

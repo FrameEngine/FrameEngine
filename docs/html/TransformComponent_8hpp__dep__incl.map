@@ -1,0 +1,17 @@
+<map id="include/components/TransformComponent.hpp" name="include/components/TransformComponent.hpp">
+<area shape="rect" id="Node000001" title="Defines the TransformComponent for ECS&#45;based spatial transformations." alt="" coords="284,5,479,50"/>
+<area shape="rect" id="Node000002" href="$Object_8hpp.html" title="Defines the Object class, a special ECS entity wrapper." alt="" coords="162,98,356,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="338,61,280,100,277,95,335,57"/>
+<area shape="rect" id="Node000007" href="$PhysicsSystem_8hpp.html" title="Defines the PhysicsSystem." alt="" coords="380,98,631,126"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="428,57,487,95,484,100,425,61"/>
+<area shape="rect" id="Node000003" href="$PointLight_8hpp_source.html" title=" " alt="" coords="5,174,222,201"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="220,135,140,176,138,171,218,131"/>
+<area shape="rect" id="Node000004" href="$Renderer_8hpp.html" title="Manages the rendering pipeline and object submission." alt="" coords="146,249,372,277"/>
+<area shape="poly" id="edge7_Node000002_Node000004" title=" " alt="" coords="262,141,262,249,256,249,256,141"/>
+<area shape="rect" id="Node000006" href="$Camera_8hpp.html" title="Defines the Camera class for view and projection." alt="" coords="297,174,514,201"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="300,131,381,171,378,176,297,135"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="154,206,234,247,232,251,152,211"/>
+<area shape="rect" id="Node000005" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="187,325,331,353"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="262,293,262,325,256,325,256,293"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="367,211,286,251,284,247,365,206"/>
+</map>

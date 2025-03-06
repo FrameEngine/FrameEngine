@@ -1,0 +1,16 @@
+<map id="Camera::getViewMatrix" name="Camera::getViewMatrix">
+<area shape="rect" id="Node000001" title="Returns the current view matrix." alt="" coords="5,57,181,85"/>
+<area shape="rect" id="Node000002" href="$classCamera.html#a8fe5c71a390571a861ad8afd99dfdea3" title="Updates the view matrix." alt="" coords="229,57,428,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,68,213,68,213,74,181,74"/>
+<area shape="rect" id="Node000003" href="$classVector3.html#afa69357b4a1449c640820dc643b6265b" title="Computes the cross product between this vector and another." alt="" coords="508,5,621,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="394,54,492,32,493,38,395,59"/>
+<area shape="rect" id="Node000005" href="$classVector3.html#aaa038c8e2f161591e564a57a17e3cfde" title="Computes the dot product between this vector and another." alt="" coords="514,57,614,85"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="429,68,498,68,498,74,429,74"/>
+<area shape="rect" id="Node000006" href="$classCamera.html#a40991e036da9832173d0c317c2fd02a0" title="Gets the direction the camera is facing." alt="" coords="476,109,652,137"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="395,83,484,103,483,108,394,88"/>
+<area shape="rect" id="Node000004" href="$classVector3.html#a6151fc844ddb2aaa316317b922cb8d22" title="Constructs a Vector3 with specified components." alt="" coords="710,32,840,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="622,24,695,33,695,38,621,29"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="615,63,694,53,695,58,615,68"/>
+<area shape="rect" id="Node000007" href="$classVector3.html#a7b900ba64852e9a66877e653945e08f6" title="Computes the magnitude of this vector." alt="" coords="700,109,850,137"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="653,120,685,120,685,126,653,126"/>
+</map>

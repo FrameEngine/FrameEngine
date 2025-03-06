@@ -1,0 +1,90 @@
+\doxysection{include/\+Logger.hpp File Reference}
+\hypertarget{Logger_8hpp}{}\label{Logger_8hpp}\index{include/Logger.hpp@{include/Logger.hpp}}
+
+
+Provides logging functionality.  
+
+
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$fmt/printf.\+h$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$mutex$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Logger.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Logger_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Logger_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classLogger}{Logger}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Logger_8hpp_a94e6401c9e46b35182d9dbbce6b99be5}{LOG}}(level,  fmt, ...)
+\begin{DoxyCompactList}\small\item\em Macro for simplified logging. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{Logger_8hpp_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} \{ \newline
+{\bfseries DEBUG}
+, {\bfseries INFO}
+, {\bfseries WARNING}
+, {\bfseries ERROR}
+, \newline
+{\bfseries CRITICAL}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines the logging levels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides logging functionality. 
+
+The logger is implemented as a thread-\/safe singleton, writing logs to both the console and a log file. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{Logger_8hpp_a94e6401c9e46b35182d9dbbce6b99be5}\index{Logger.hpp@{Logger.hpp}!LOG@{LOG}}
+\index{LOG@{LOG}!Logger.hpp@{Logger.hpp}}
+\doxysubsubsection{\texorpdfstring{LOG}{LOG}}
+{\footnotesize\ttfamily \label{Logger_8hpp_a94e6401c9e46b35182d9dbbce6b99be5} 
+\#define LOG(\begin{DoxyParamCaption}\item[{}]{level}{, }\item[{}]{fmt}{, }\item[{}]{}...{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{classLogger_a56defd0fd628ce6263d25d02296e48ce}{Logger::getInstance}}().\mbox{\hyperlink{classLogger_a47a3278a83727681a5a492ae7e1882a9}{log}}(LogLevel::level,\ fmt,\ \#\#\_\_VA\_ARGS\_\_)}
+
+\end{DoxyCode}
+
+
+Macro for simplified logging. 
+
+This macro allows to log messages without explicitly calling get\+Instance(). Usage\+: LOG(DEBUG, "{}\+Value\+: \%d"{}, value); 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{Logger_8hpp_aca1fd1d8935433e6ba2e3918214e07f9}\index{Logger.hpp@{Logger.hpp}!LogLevel@{LogLevel}}
+\index{LogLevel@{LogLevel}!Logger.hpp@{Logger.hpp}}
+\doxysubsubsection{\texorpdfstring{LogLevel}{LogLevel}}
+{\footnotesize\ttfamily \label{Logger_8hpp_aca1fd1d8935433e6ba2e3918214e07f9} 
+enum class \mbox{\hyperlink{Logger_8hpp_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Defines the logging levels. 
+
+This enum lists the possible severity levels for log messages. 

@@ -1,0 +1,159 @@
+\doxysection{Engine Class Reference}
+\hypertarget{classEngine}{}\label{classEngine}\index{Engine@{Engine}}
+
+
+Core engine class that manages the main loop, physics, and rendering.  
+
+
+
+
+{\ttfamily \#include $<$Engine.\+hpp$>$}
+
+
+
+Inheritance diagram for Engine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classEngine__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Engine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classEngine__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEngine_ab44d76e2ff6057e73d6210cf9af0d89e}\label{classEngine_ab44d76e2ff6057e73d6210cf9af0d89e} 
+void {\bfseries init} ()
+\begin{DoxyCompactList}\small\item\em Bootstrap This function should be called before \textquotesingle{}\doxylink{classEngine_a1a210cf30d6bd330b3649439ecd6d6cc}{run()}\textquotesingle{} to ensure all components are properly set up (e.\+g., renderer, ECS initialization, etc). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_a1a210cf30d6bd330b3649439ecd6d6cc}{run}} ()
+\begin{DoxyCompactList}\small\item\em Starts the main game loop. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classEngine_ac88ada17b33bc5ddaf6bb73e0cdc67f3}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stops the engine gracefully. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEngine_a4b592adb20f2e589acf010e1a9ca4f14}{fixed\+\_\+update}} (float dt)
+\begin{DoxyCompactList}\small\item\em User-\/defined logic that updates every fixed timestep. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classEngine_a911e9bb862aba19f61ddf2e6ce7c55b0}{on\+\_\+start}} ()
+\begin{DoxyCompactList}\small\item\em Called once at the start of execution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classEngine_a917b763e00db458316264f7a7f376db4}\label{classEngine_a917b763e00db458316264f7a7f376db4} 
+\mbox{\hyperlink{classRegistry}{Registry}} {\bfseries registry}
+\begin{DoxyCompactList}\small\item\em ECS registry that stores and manages all entities and components. \end{DoxyCompactList}\item 
+\Hypertarget{classEngine_a8982feeff3f38047cd2ffa0e0e60c0be}\label{classEngine_a8982feeff3f38047cd2ffa0e0e60c0be} 
+\mbox{\hyperlink{classWindow}{Window}} {\bfseries window}
+\item 
+\Hypertarget{classEngine_ae17095c2ad2d9c245e328a17c80602a0}\label{classEngine_ae17095c2ad2d9c245e328a17c80602a0} 
+\mbox{\hyperlink{classRenderer}{Renderer}} {\bfseries renderer}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Core engine class that manages the main loop, physics, and rendering. 
+
+The \doxylink{classEngine}{Engine} serves as the entry point for simulations and games. It uses a fixed timestep update system
+
+Users should extend this class and override\+:
+\begin{DoxyItemize}
+\item \doxylink{classEngine_a911e9bb862aba19f61ddf2e6ce7c55b0}{on\+\_\+start()}\+: For initialization logic.
+\item \doxylink{classEngine_a4b592adb20f2e589acf010e1a9ca4f14}{fixed\+\_\+update(float dt)}\+: For physics and game logic updates. 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classEngine_a4b592adb20f2e589acf010e1a9ca4f14}\index{Engine@{Engine}!fixed\_update@{fixed\_update}}
+\index{fixed\_update@{fixed\_update}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{fixed\_update()}{fixed\_update()}}
+{\footnotesize\ttfamily \label{classEngine_a4b592adb20f2e589acf010e1a9ca4f14} 
+void Engine\+::fixed\+\_\+update (\begin{DoxyParamCaption}\item[{float}]{dt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+User-\/defined logic that updates every fixed timestep. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & The fixed time step duration.\\
+\hline
+\end{DoxyParams}
+Users should override this function to define physics updates 
+
+Reimplemented in \mbox{\hyperlink{classSimulation_ae1bf99098b024c0aaf0ebf8d04e8710c}{Simulation}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classEngine_a4b592adb20f2e589acf010e1a9ca4f14_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEngine_a911e9bb862aba19f61ddf2e6ce7c55b0}\index{Engine@{Engine}!on\_start@{on\_start}}
+\index{on\_start@{on\_start}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{on\_start()}{on\_start()}}
+{\footnotesize\ttfamily \label{classEngine_a911e9bb862aba19f61ddf2e6ce7c55b0} 
+void Engine\+::on\+\_\+start (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Called once at the start of execution. 
+
+Users should override this function to handle initialization, entity creation etc 
+
+Reimplemented in \mbox{\hyperlink{classSimulation_a08515c0b35864327fa45d08d640ddd26}{Simulation}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classEngine_a911e9bb862aba19f61ddf2e6ce7c55b0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEngine_a1a210cf30d6bd330b3649439ecd6d6cc}\index{Engine@{Engine}!run@{run}}
+\index{run@{run}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily \label{classEngine_a1a210cf30d6bd330b3649439ecd6d6cc} 
+void Engine\+::run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Starts the main game loop. 
+
+
+\begin{DoxyItemize}
+\item Calls \doxylink{classEngine_a911e9bb862aba19f61ddf2e6ce7c55b0}{on\+\_\+start()} The loop\+:
+\item Calls \textquotesingle{}\doxylink{classEngine_a4b592adb20f2e589acf010e1a9ca4f14}{fixed\+\_\+update(float dt)}\textquotesingle{}
+\item Calls \textquotesingle{}Render\+System\+::render()\textquotesingle{} 
+\end{DoxyItemize}Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classEngine_a1a210cf30d6bd330b3649439ecd6d6cc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classEngine_ac88ada17b33bc5ddaf6bb73e0cdc67f3}\index{Engine@{Engine}!stop@{stop}}
+\index{stop@{stop}!Engine@{Engine}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \label{classEngine_ac88ada17b33bc5ddaf6bb73e0cdc67f3} 
+void Engine\+::stop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Stops the engine gracefully. 
+
+Not really so far, but will fix it later 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Engine_8hpp}{Engine.\+hpp}}\item 
+src/core/Engine.\+cpp\end{DoxyCompactItemize}

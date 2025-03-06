@@ -1,0 +1,7 @@
+<map id="Camera::setProjection" name="Camera::setProjection">
+<area shape="rect" id="Node000001" title="Sets the camera&#39;s projection parameters." alt="" coords="5,14,171,42"/>
+<area shape="rect" id="Node000002" href="$structMatrix4.html#a9f88b7eb74bd14087671fdf045a9f2d3" title="Constructs a perspective projection matrix." alt="" coords="219,5,415,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,25,203,25,203,30,171,30"/>
+<area shape="rect" id="Node000003" href="$structMatrix4.html#a21e70a74447b9b05cf9a06400bc9c661" title="Default constructor that initializes the matrix as an identity matrix." alt="" coords="463,14,592,42"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="416,25,448,25,448,30,416,30"/>
+</map>

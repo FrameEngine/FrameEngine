@@ -1,0 +1,11 @@
+<map id="Camera::Camera" name="Camera::Camera">
+<area shape="rect" id="Node000001" title="Creates a Camera with default settings." alt="" coords="5,57,137,85"/>
+<area shape="rect" id="Node000002" href="$classObject.html#a52ee70eca2c53e91a6db00a8908a3e93" title="Constructs an Object with the specified mesh." alt="" coords="185,57,298,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,68,169,68,169,74,137,74"/>
+<area shape="rect" id="Node000003" href="$classEntity.html#ac42c7a74bd38f40de2664a7a5fcb9110" title="Adds a component of type &#39;T&#39; to the object." alt="" coords="346,5,516,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="294,54,363,35,364,40,296,59"/>
+<area shape="rect" id="Node000004" href="$classEntity.html#a1b3b92780c8075835ac81b237a9f95a0" title="Constructs an Entity and registers it in the ECS." alt="" coords="379,57,483,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="298,68,363,68,363,74,298,74"/>
+<area shape="rect" id="Node000005" href="$classEntity.html#a37109ed9ba43260d07fa251beec2f4d2" title="Retrieves a pointer to the specified component type &#39;T&#39;." alt="" coords="348,109,515,137"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="296,83,364,102,363,107,294,88"/>
+</map>

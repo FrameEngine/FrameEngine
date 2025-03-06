@@ -1,0 +1,5 @@
+<map id="Matrix4::getTranspose" name="Matrix4::getTranspose">
+<area shape="rect" id="Node000001" title="Computes and returns the transpose of the matrix." alt="" coords="5,5,172,33"/>
+<area shape="rect" id="Node000002" href="$structMatrix4.html#a21e70a74447b9b05cf9a06400bc9c661" title="Default constructor that initializes the matrix as an identity matrix." alt="" coords="220,5,349,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,16,204,16,204,22,172,22"/>
+</map>

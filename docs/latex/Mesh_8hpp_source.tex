@@ -1,0 +1,47 @@
+\doxysection{Mesh.\+hpp}
+\hypertarget{Mesh_8hpp_source}{}\label{Mesh_8hpp_source}\index{include/rendering/Mesh.hpp@{include/rendering/Mesh.hpp}}
+\mbox{\hyperlink{Mesh_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ MESH\_HPP}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ MESH\_HPP}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Vector3_8hpp}{math/Vector3.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <glad/glad.h>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMesh_a082b53937d761eeeff58d714153729c1}{Mesh}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ GLuint\ VAO;\ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ GLuint\ VBO;\ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ GLuint\ EBO;\ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{int}\ indexCount;\ }
+\DoxyCodeLine{00022\ \ \ std::vector<float>}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ vertexData;\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{classMesh_a082b53937d761eeeff58d714153729c1}{Mesh}}(\textcolor{keyword}{const}\ std::vector<float>\ \&vertices,\ \textcolor{keyword}{const}\ std::vector<float>\ \&normals,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<unsigned\ int>\ \&indices);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{classMesh_a5efe4da1a4c0971cfb037bd70304c303}{\string~Mesh}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMesh_a79b998580025a501675a517e9fc1283f}{draw}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00058\ \ \ std::vector<float>\ \&\mbox{\hyperlink{classMesh_a77a4ae289a9ef77a3daddbcaa43e3535}{getVertexData}}()\ \{\ \textcolor{keywordflow}{return}\ vertexData;\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ GLuint\ \mbox{\hyperlink{classMesh_acd951990276681968cb86beec268fcae}{getVAO}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ VAO;\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00072\ \ \ GLuint\ \mbox{\hyperlink{classMesh_abdba78a715687b4b119d7fbddfd5cb10}{getVBO}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ VBO;\ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00083\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMesh_a9c940b13dc324abfbd8e45b52a0b92ff}{updateVertexPosition}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ vertexIndex,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classVector3}{Vector3}}\ \&newPosition);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMesh_a4c5fd807a8491a9125a2ce2791a0a591}{updateBuffer}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00101\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classMesh}{Mesh}}\ *\mbox{\hyperlink{classMesh_aaa89ff8d55ad8ddb3f6279d4e7364f69}{loadFromOBJ}}(\textcolor{keyword}{const}\ std::string\ \&filePath);}
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MESH\_HPP}}
+
+\end{DoxyCode}
