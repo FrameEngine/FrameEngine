@@ -163,6 +163,8 @@ public:
 /**
  * @brief Multiplies a scalar with a Vector3 (scalar on the left).
  *
+ * e.g 4*Vector3.
+ *
  * @param scalar The scalar multiplier.
  * @param v The vector.
  * @return The scaled vector.
