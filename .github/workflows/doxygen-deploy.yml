@@ -5,7 +5,9 @@ on:
     workflows: ["FrameEngine CI"]
     types:
       - completed
-
+  push:
+      branches:
+        - main
 jobs:
   deploy-docs:
     runs-on: ubuntu-latest
