@@ -34,6 +34,7 @@ var NAVTREE =
         [ "How to suggest a Feature", "md_CONTRIBUTING.html#autotoc_md22", null ]
       ] ]
     ] ],
+    [ "PULL_REQUEST_TEMPLATE", "md__8github_2PULL__REQUEST__TEMPLATE.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
