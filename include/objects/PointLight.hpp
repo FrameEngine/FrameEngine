@@ -30,9 +30,9 @@ public:
    * @param col The color of the light (default is white: (1, 1, 1)).
    * @param inten The intensity of the light (default is 1.0).
    */
-  PointLight(Registry &registry, const Vector3 &pos,
-             const Vector3 &col = Vector3(1, 1, 1), float inten = 1.0f)
-      : Object(registry, nullptr), color(col), intensity(inten) {
+  PointLight(const Vector3 &pos, const Vector3 &col = Vector3(1, 1, 1),
+             float inten = 1.0f)
+      : Object(nullptr), color(col), intensity(inten) {
     transform->position = pos;
   }
 

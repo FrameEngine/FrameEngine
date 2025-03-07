@@ -34,7 +34,7 @@ public:
    *
    * @param registry The ECS registry used to initialize the camera.
    */
-  Renderer(Registry &registry);
+  Renderer();
 
   /**
    * @brief Initializes the rendering system.

@@ -6,7 +6,6 @@
 #ifndef ENGINE_HPP
 #define ENGINE_HPP
 
-#include "Registry.hpp"
 #include "Window.hpp"
 #include "rendering/Renderer.hpp"
 
@@ -30,8 +29,6 @@ private:
   bool isRunning = true;
 
 protected:
-  /// ECS registry that stores and manages all entities and components
-  Registry registry;
   Window window;
   Renderer renderer;
 

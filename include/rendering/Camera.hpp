@@ -33,13 +33,11 @@ public:
    * far plane of 100. The aspect ratio is provided as a parameter, by default
    * is 16:9.
    *
-   * @param registry The registry where the camera is registered. TODO, make it
-   * singletone and refer directly
    * @param aspectRatio The aspect ratio (width/height) of the viewport.
    */
-  Camera(Registry &registry, float aspectRatio = 16.f / 9.f)
-      : Object(registry, nullptr), fov(45.0f), aspectRatio(aspectRatio),
-        nearPlane(0.1f), farPlane(100.0f) {
+  Camera(float aspectRatio = 16.f / 9.f)
+      : Object(nullptr), fov(45.0f), aspectRatio(aspectRatio), nearPlane(0.1f),
+        farPlane(100.0f) {
     transform->position = Vector3(0.0f, 0.0f, 0.0f);
     transform->rotation = Quaternion();
 

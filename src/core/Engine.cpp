@@ -8,7 +8,7 @@
 #include <thread>
 
 Engine::Engine()
-    : window(1920, 1080, "FrameEngine"), isRunning(true), renderer(registry) {}
+    : window(1920, 1080, "FrameEngine"), isRunning(true), renderer() {}
 
 Engine::~Engine() { stop(); }
 

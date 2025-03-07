@@ -45,11 +45,9 @@ public:
    * This constructor automatically adds a TransformComponent to the object and
    * retrieves a pointer to it for convenience.
    *
-   * @param registry The ECS registry where the object is registered.
    * @param mesh Pointer to the Mesh that defines the object's geometry.
    */
-  Object(Registry &registry, Mesh *mesh)
-      : Entity(registry), mesh(mesh), color(Vector3(1.0f, .5f, 1.0f)) {
+  Object(Mesh *mesh) : Entity(), mesh(mesh), color(Vector3(1.0f, .5f, 1.0f)) {
     add_component<TransformComponent>();
     transform = get_component<TransformComponent>();
   }

@@ -17,8 +17,7 @@ std::vector<PointLight *>
  * @param registry The ECS registry used for initializing the camera.
  */
 // TODO SO far it's hardcoded, replace with actual width and height
-Renderer::Renderer(Registry &registry)
-    : camera(Camera(registry, 1920.0f / 1080.0f)) {
+Renderer::Renderer() : camera(Camera(1920.0f / 1080.0f)) {
   glEnable(GL_DEPTH_TEST);
   glDisable(GL_CULL_FACE);
   // The default shader.

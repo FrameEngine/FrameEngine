@@ -12,7 +12,6 @@
 
 #include "Logger.hpp"
 #include "Registry.hpp"
-#include <iostream>
 
 /**
  * @class Entity
@@ -32,7 +31,6 @@ class Entity {
 public:
   /**
    * @brief Constructs an Entity and registers it in the ECS.
-   * @param registry Reference to the Registry.
    *
    * When an Entity is created, it is automatically registered with the ECS and
    * assigned a unique ID. No need to assign id_ yourself
@@ -40,7 +38,7 @@ public:
    * @note Entities should NOT store data themselves; all states are stored in
    * components.
    */
-  Entity(Registry &registry) : registry_(registry) {
+  Entity() : registry_(Registry::getInstance()) {
     id_ = registry_.create_entity();
   }
 

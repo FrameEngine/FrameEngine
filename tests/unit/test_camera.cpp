@@ -27,7 +27,7 @@ protected:
 
 public:
   CameraFixture() {
-    camera = new Camera(registry, 16.0f / 9.0f); // Setup
+    camera = new Camera(16.0f / 9.0f); // Setup
     camera->transform->position = Vector3(0, 0, 0);
   }
 

@@ -97,24 +97,30 @@ public:
  */
 class Registry {
 private:
-  /// Active entities
-  std::vector<EntityID> entities;
-
-  /// Storage pools for each component type (mapped by type hash).
-  std::unordered_map<size_t, std::unique_ptr<IComponentStorage>> componentPools;
-
-  /// Bitmask representation of which components each entity has.
+  std::vector<EntityID> entities; ///< Active entities.
+  std::unordered_map<size_t, std::unique_ptr<IComponentStorage>>
+      componentPools; ///< Storage pools for each component type (mapped by type
+                      ///< hash).
   std::unordered_map<EntityID, std::bitset<MAX_COMPONENTS>>
-      entityComponentMasks;
-
-  // As entities are stored as integers, this is fast way to make them "unique"
-  int nextEntityID = 0;
+      entityComponentMasks; ///< Bitmask representing which components each
+                            ///< entity has.
+  int nextEntityID = 0;     ///< Fast way to generate unique entity IDs.
 
 public:
   Registry(const Registry &) = delete; // Prevent accidental copying
   Registry &operator=(const Registry &) = delete;
 
   Registry() = default;
+
+  /**
+   * @brief Returns the singleton instance of the Registry.
+   *
+   * @return A reference to the Registry instance.
+   */
+  static Registry &getInstance() {
+    static Registry instance;
+    return instance;
+  }
 
   /**
    * @brief Creates a new entity and assigns it a unique ID.
