@@ -1,6 +1,8 @@
 #include "math/Quaternion.hpp"
 #include "math/Matrix4.hpp"
 
+namespace FrameEngine {
+
 /**
  * @brief Converts this quaternion into a 4x4 rotation matrix.
  *
@@ -136,3 +138,5 @@ Quaternion Quaternion::lookRotation(const Vector3 &direction,
 
   return Quaternion::fromMatrix(rotationMatrix);
 }
+
+} // namespace FrameEngine

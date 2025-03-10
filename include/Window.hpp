@@ -12,6 +12,8 @@
 #include <GLFW/glfw3.h>
 #include <string>
 
+namespace FrameEngine {
+
 class Window {
 private:
   GLFWwindow *handle; ///< Pointer to the GLFW window.
@@ -79,5 +81,7 @@ public:
   static void framebufferSizeCallback(GLFWwindow *window, int width,
                                       int height);
 };
+
+} // namespace FrameEngine
 
 #endif // WINDOW_HPP

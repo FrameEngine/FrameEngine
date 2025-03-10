@@ -5,6 +5,8 @@
 #include <sstream>
 #include <string>
 
+namespace FrameEngine {
+
 Mesh *Mesh::loadFromOBJ(const std::string &filePath) {
   std::vector<Vector3> tempVertices;
   std::vector<Vector3> tempNormals;
@@ -56,3 +58,5 @@ Mesh *Mesh::loadFromOBJ(const std::string &filePath) {
 
   return new Mesh(vertices, normals, indices);
 }
+
+} // namespace FrameEngine

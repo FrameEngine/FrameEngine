@@ -6,13 +6,14 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 
-#include "Registry.hpp"
 #include "Window.hpp"
 #include "objects/Object.hpp"
 #include "objects/PointLight.hpp"
 #include "rendering/Camera.hpp"
 #include "rendering/Shader.hpp"
 #include <vector>
+
+namespace FrameEngine {
 
 /**
  * @class Renderer
@@ -112,5 +113,7 @@ public:
    */
   Camera &getCamera();
 };
+
+} // namespace FrameEngine
 
 #endif // RENDERER_HPP

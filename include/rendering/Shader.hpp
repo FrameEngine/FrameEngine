@@ -15,6 +15,8 @@
 #include <glad/glad.h>
 #include <string>
 
+namespace FrameEngine {
+
 class Shader {
 private:
   GLuint programID; ///< The ID of the linked shader program.
@@ -75,5 +77,7 @@ public:
    */
   GLuint getProgramID() const { return programID; }
 };
+
+} // namespace FrameEngine
 
 #endif // SHADER_HPP

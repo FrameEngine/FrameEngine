@@ -19,6 +19,8 @@
 #include "components/PhysicsComponent.hpp"
 #include "components/TransformComponent.hpp"
 
+namespace FrameEngine {
+
 class PhysicsSystem {
 public:
   static void update(Registry &registry, float dt) {
@@ -36,5 +38,7 @@ public:
     }
   }
 };
+
+} // namespace FrameEngine
 
 #endif // PHYSICS_SYSTEM_HPP

@@ -12,6 +12,8 @@
 #include "math/Vector3.hpp"
 #include "objects/Object.hpp"
 
+namespace FrameEngine {
+
 /**
  * @class Camera
  * @brief A camera.
@@ -92,5 +94,7 @@ public:
    */
   Vector3 getFrontVector() const;
 };
+
+} // namespace FrameEngine
 
 #endif // CAMERA_HPP

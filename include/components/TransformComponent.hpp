@@ -13,6 +13,8 @@
 #include "math/Quaternion.hpp"
 #include "math/Vector3.hpp"
 
+namespace FrameEngine {
+
 /**
  * @struct TransformComponent
  * @brief Represents the transformation properties of an entity.
@@ -60,5 +62,7 @@ struct TransformComponent {
            Matrix4::createTranslationMatrix(position);
   }
 };
+
+} // namespace FrameEngine
 
 #endif // TRANSFORM_COMPONENT_HPP

@@ -18,6 +18,8 @@
 #include <sstream>
 #include <string>
 
+namespace FrameEngine {
+
 /**
  * @enum LogLevel
  * @brief Defines the logging levels.
@@ -139,5 +141,7 @@ public:
  */
 #define LOG(level, fmt, ...)                                                   \
   Logger::getInstance().log(LogLevel::level, fmt, ##__VA_ARGS__)
+
+} // namespace FrameEngine
 
 #endif // LOGGER_HPP

@@ -10,6 +10,8 @@
 #include <string>
 #include <vector>
 
+namespace FrameEngine {
+
 class Mesh {
 private:
   /// TODO Replace with internal buffers
@@ -100,5 +102,7 @@ public:
    */
   static Mesh *loadFromOBJ(const std::string &filePath);
 };
+
+} // namespace FrameEngine
 
 #endif // MESH_HPP

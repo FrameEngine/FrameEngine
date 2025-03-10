@@ -4,6 +4,8 @@
 #include "Object.hpp"
 #include "math/Vector3.hpp"
 
+namespace FrameEngine {
+
 /**
  * @class PointLight
  * @brief An ECS entity representing a point light source.
@@ -63,5 +65,7 @@ public:
    */
   void setIntensity(float inten) { intensity = inten; }
 };
+
+} // namespace FrameEngine
 
 #endif // POINT_LIGHT_HPP

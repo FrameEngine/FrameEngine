@@ -2,6 +2,8 @@
 #include "Logger.hpp"
 #include "rendering/Renderer.hpp"
 
+namespace FrameEngine {
+
 /**
  * @brief Renders the object using the current shader from the renderer.
  *
@@ -33,3 +35,5 @@ void Object::render(Renderer &renderer) {
     mesh->draw();
   }
 }
+
+} // namespace FrameEngine

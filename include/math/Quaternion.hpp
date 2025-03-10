@@ -10,6 +10,8 @@
 #include "Vector3.hpp"
 #include <cmath>
 
+namespace FrameEngine {
+
 // Forward declaration
 class Matrix4;
 
@@ -165,4 +167,6 @@ struct Quaternion {
   static Quaternion lookRotation(const Vector3 &direction,
                                  const Vector3 &up = Vector3(0.0f, 1.0f, 0.0f));
 };
+} // namespace FrameEngine
+
 #endif // QUATERNION_HPP

@@ -7,6 +7,8 @@
 #include "Window.hpp"
 #include "Logger.hpp"
 
+namespace FrameEngine {
+
 /**
  * @brief Creates a window with the specified width, height, and title.
  *
@@ -97,3 +99,5 @@ void Window::framebufferSizeCallback(GLFWwindow *window, int width,
     win->height = height;
   }
 }
+
+} // namespace FrameEngine

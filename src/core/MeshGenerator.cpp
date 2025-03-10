@@ -1,6 +1,8 @@
 #include "MeshGenerator.hpp"
 #include <cmath>
 
+namespace FrameEngine {
+
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
 #endif
@@ -162,3 +164,5 @@ Mesh *MeshGenerator::createPlane(float width, float height,
 
   return new Mesh(positions, normals, indices);
 }
+
+} // namespace FrameEngine

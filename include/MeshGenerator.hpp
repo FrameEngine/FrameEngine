@@ -4,6 +4,8 @@
 #include "rendering/Mesh.hpp"
 #include <vector>
 
+namespace FrameEngine {
+
 class MeshGenerator {
 public:
   static Mesh *createCube();
@@ -14,5 +16,7 @@ public:
   static Mesh *createPlane(float width = 1.0f, float height = 1.0f,
                            unsigned int segments = 1);
 };
+
+} // namespace FrameEngine
 
 #endif // MESH_GENERATOR_HPP
