@@ -8,7 +8,7 @@ var searchData=
   ['getcolor_5',['getcolor',['../classObject.html#a6285e8da69fd36c129fa5da33d3842c0',1,'Object::getColor()'],['../classPointLight.html#a1f6ba4b0ec22df334510b9ba3431edb2',1,'PointLight::getColor()']]],
   ['getfrontvector_6',['getFrontVector',['../classCamera.html#a40991e036da9832173d0c317c2fd02a0',1,'Camera']]],
   ['getheight_7',['getHeight',['../classWindow.html#a60757b2b0dbcec9889e3a09f5655adbe',1,'Window']]],
-  ['getinstance_8',['getInstance',['../classLogger.html#a56defd0fd628ce6263d25d02296e48ce',1,'Logger']]],
+  ['getinstance_8',['getinstance',['../classLogger.html#a56defd0fd628ce6263d25d02296e48ce',1,'Logger::getInstance()'],['../classRegistry.html#abd27df5823d598f4f8436a0ff6a29188',1,'Registry::getInstance()']]],
   ['getintensity_9',['getIntensity',['../classPointLight.html#a959f092b2decd8e8e4a8d0310f408acf',1,'PointLight']]],
   ['getprogramid_10',['getProgramID',['../classShader.html#afe245d5bc28d91397df4b018f78df552',1,'Shader']]],
   ['getprojectionmatrix_11',['getProjectionMatrix',['../classCamera.html#a501474f84c06e9c895d29ecf182d0819',1,'Camera']]],

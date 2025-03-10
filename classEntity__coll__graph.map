@@ -1,5 +1,5 @@
 <map id="Entity" name="Entity">
-<area shape="rect" id="Node000001" title="A high&#45;level ECS entity wrapper." alt="" coords="36,344,203,505"/>
-<area shape="rect" id="Node000002" href="$classRegistry.html" title="Manages all ECS entities and components." alt="" coords="5,5,234,279"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,278,122,327,117,327,117,278"/>
+<area shape="rect" id="Node000001" title="A high&#45;level ECS entity wrapper." alt="" coords="36,333,205,479"/>
+<area shape="rect" id="Node000002" href="$classRegistry.html" title="Manages all ECS entities and components." alt="" coords="5,5,236,271"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,271,123,317,118,317,118,271"/>
 </map>

@@ -91,6 +91,7 @@ $(document).ready(function(){initNavTree('classRegistry.html',''); initResizable
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classRegistry-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Registry Class Reference</div></div>
 </div><!--header-->
@@ -103,7 +104,7 @@ $(document).ready(function(){initNavTree('classRegistry.html',''); initResizable
 <div class="dynheader">
 Collaboration diagram for Registry:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classRegistry__coll__graph.svg" width="240" height="284"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classRegistry__coll__graph.svg" width="242" height="276"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -140,6 +141,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aac4a8be3b956dec2db599c8248f0cb4d"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; EntityID &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classRegistry.html#aac4a8be3b956dec2db599c8248f0cb4d">get_entities_with_component</a> ()</td></tr>
 <tr class="memdesc:aac4a8be3b956dec2db599c8248f0cb4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all entities that have a specific component.  <br /></td></tr>
 <tr class="separator:aac4a8be3b956dec2db599c8248f0cb4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:abd27df5823d598f4f8436a0ff6a29188" id="r_abd27df5823d598f4f8436a0ff6a29188"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classRegistry.html#a36df114d671959a9a7bbdfc8274258ec">static</a> <a class="el" href="classRegistry.html">Registry</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegistry.html#abd27df5823d598f4f8436a0ff6a29188">getInstance</a> ()</td></tr>
+<tr class="memdesc:abd27df5823d598f4f8436a0ff6a29188"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the singleton instance of the <a class="el" href="classRegistry.html" title="Manages all ECS entities and components.">Registry</a>.  <br /></td></tr>
+<tr class="separator:abd27df5823d598f4f8436a0ff6a29188"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Manages all ECS entities and components. </p>
@@ -344,6 +351,34 @@ template&lt;<a class="el" href="classRegistry.html#a36df114d671959a9a7bbdfc82742
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A vector of entity IDs that have the component.</dd></dl>
 <p>The key optimization here is that I can filter entities in O(1) using ComponentMask, saves a lot of time on cycles, but amount of entities must be specified before simulation starts (before compilation? not sure) </p>
+
+</div>
+</div>
+<a id="abd27df5823d598f4f8436a0ff6a29188" name="abd27df5823d598f4f8436a0ff6a29188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd27df5823d598f4f8436a0ff6a29188">&#9670;&#160;</a></span>getInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classRegistry.html#a36df114d671959a9a7bbdfc8274258ec">static</a> <a class="el" href="classRegistry.html">Registry</a> &amp; Registry::getInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the singleton instance of the <a class="el" href="classRegistry.html" title="Manages all ECS entities and components.">Registry</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A reference to the <a class="el" href="classRegistry.html" title="Manages all ECS entities and components.">Registry</a> instance. </dd></dl>
 
 </div>
 </div>

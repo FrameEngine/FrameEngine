@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['camera_0',['Camera',['../classCamera.html#a54fb1cf5f32c49aa955809f32b5cdb92',1,'Camera']]],
+  ['camera_0',['Camera',['../classCamera.html#a331a3b6b6e2401a0cdf628c057b9d67d',1,'Camera']]],
   ['clear_1',['clear',['../classRenderer.html#ac46720b3fc0dbb2fc37674766490a8c4',1,'Renderer']]],
   ['clearobjects_2',['clearObjects',['../classRenderer.html#a2e250e90a300f236fb2ee1e2f78b7d2f',1,'Renderer']]],
   ['create_5fentity_3',['create_entity',['../classRegistry.html#af6ba584e5c062583b166eb1b17ce37eb',1,'Registry']]],

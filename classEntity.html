@@ -109,14 +109,14 @@ Inheritance diagram for Entity:</div>
 <div class="dynheader">
 Collaboration diagram for Entity:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classEntity__coll__graph.svg" width="240" height="511"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classEntity__coll__graph.svg" width="242" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1b3b92780c8075835ac81b237a9f95a0" id="r_a1b3b92780c8075835ac81b237a9f95a0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a1b3b92780c8075835ac81b237a9f95a0">Entity</a> (<a class="el" href="classRegistry.html">Registry</a> &amp;registry)</td></tr>
-<tr class="memdesc:a1b3b92780c8075835ac81b237a9f95a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="classEntity.html" title="A high-level ECS entity wrapper.">Entity</a> and registers it in the ECS.  <br /></td></tr>
-<tr class="separator:a1b3b92780c8075835ac81b237a9f95a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a980f368aa07ce358583982821533a54a" id="r_a980f368aa07ce358583982821533a54a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEntity.html#a980f368aa07ce358583982821533a54a">Entity</a> ()</td></tr>
+<tr class="memdesc:a980f368aa07ce358583982821533a54a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an <a class="el" href="classEntity.html" title="A high-level ECS entity wrapper.">Entity</a> and registers it in the ECS.  <br /></td></tr>
+<tr class="separator:a980f368aa07ce358583982821533a54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac42c7a74bd38f40de2664a7a5fcb9110" id="r_ac42c7a74bd38f40de2664a7a5fcb9110"><td class="memTemplParams" colspan="2">template&lt;typename T , typename... Args&gt; </td></tr>
 <tr class="memitem:ac42c7a74bd38f40de2664a7a5fcb9110"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classEntity.html#ac42c7a74bd38f40de2664a7a5fcb9110">add_component</a> (Args &amp;&amp;...args)</td></tr>
 <tr class="memdesc:ac42c7a74bd38f40de2664a7a5fcb9110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a component of type 'T' to the object.  <br /></td></tr>
@@ -148,8 +148,8 @@ EntityID&#160;</td><td class="memItemRight" valign="bottom"><b>id_</b></td></tr>
 <p>Entities in this system are <b>lightweight</b>; they primarily serve as IDs that reference component data stored in the <a class="el" href="classRegistry.html" title="Manages all ECS entities and components.">Registry</a>.</p>
 <dl class="section note"><dt>Note</dt><dd>This design ensures that entities are just identifiers (not heavy objects), keeping performance optimal in large-scale simulations. </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a1b3b92780c8075835ac81b237a9f95a0" name="a1b3b92780c8075835ac81b237a9f95a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b3b92780c8075835ac81b237a9f95a0">&#9670;&#160;</a></span>Entity()</h2>
+<a id="a980f368aa07ce358583982821533a54a" name="a980f368aa07ce358583982821533a54a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a980f368aa07ce358583982821533a54a">&#9670;&#160;</a></span>Entity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -160,8 +160,7 @@ EntityID&#160;</td><td class="memItemRight" valign="bottom"><b>id_</b></td></tr>
         <tr>
           <td class="memname">Entity::Entity </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classRegistry.html">Registry</a> &amp;&#160;</td>
-          <td class="paramname"><em>registry</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -173,12 +172,6 @@ EntityID&#160;</td><td class="memItemRight" valign="bottom"><b>id_</b></td></tr>
 </div><div class="memdoc">
 
 <p>Constructs an <a class="el" href="classEntity.html" title="A high-level ECS entity wrapper.">Entity</a> and registers it in the ECS. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">registry</td><td>Reference to the <a class="el" href="classRegistry.html" title="Manages all ECS entities and components.">Registry</a>.</td></tr>
-  </table>
-  </dd>
-</dl>
 <p>When an <a class="el" href="classEntity.html" title="A high-level ECS entity wrapper.">Entity</a> is created, it is automatically registered with the ECS and assigned a unique ID. No need to assign id_ yourself</p>
 <dl class="section note"><dt>Note</dt><dd>Entities should NOT store data themselves; all states are stored in components. </dd></dl>
 

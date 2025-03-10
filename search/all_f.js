@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['registry_0',['registry',['../classRegistry.html',1,'Registry'],['../classEngine.html#a917b763e00db458316264f7a7f376db4',1,'Engine::registry']]],
+  ['registry_0',['Registry',['../classRegistry.html',1,'']]],
   ['registry_2ehpp_1',['Registry.hpp',['../Registry_8hpp.html',1,'']]],
   ['remove_2',['remove',['../classComponentStorage.html#a280078da275681f4fb7d4260f49d5ea6',1,'ComponentStorage']]],
   ['remove_5fcomponent_3',['remove_component',['../classEntity.html#a0ecaca9e3770a3872ee3f24706111def',1,'Entity::remove_component()'],['../classRegistry.html#aa379449b7b4063ad48871b86d1d52322',1,'Registry::remove_component()']]],
   ['render_4',['render',['../classObject.html#a951d73df2f0963a0e0e752eea23d60d7',1,'Object::render()'],['../classRenderer.html#af7e5f8f68742f198e315fb4683a605a4',1,'Renderer::render()']]],
-  ['renderer_5',['renderer',['../classRenderer.html',1,'Renderer'],['../classRenderer.html#a5c19260ca73eec962fc4177261545aec',1,'Renderer::Renderer()']]],
+  ['renderer_5',['renderer',['../classRenderer.html',1,'Renderer'],['../classRenderer.html#ab754154ec14584667ea0319d69c438f9',1,'Renderer::Renderer()']]],
   ['renderer_2ehpp_6',['Renderer.hpp',['../Renderer_8hpp.html',1,'']]],
   ['reporting_20issues_7',['Reporting Issues',['../md_CONTRIBUTING.html#autotoc_md20',1,'']]],
   ['rotate_8',['rotate',['../classObject.html#a2ac65a7bb2b2ed5335f7d2226dba2b11',1,'Object']]],
