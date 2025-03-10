@@ -15,7 +15,7 @@ std::vector<PointLight *>
 /**
  * @brief Constructs a Renderer.
  *
- * @param registry The ECS registry used for initializing the camera.
+ * @param window A reference to the Window instance.
  */
 Renderer::Renderer(Window &window)
     : window(window), camera(Camera(window.getWidth() / window.getHeight())) {
