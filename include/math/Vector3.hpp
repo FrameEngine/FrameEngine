@@ -10,6 +10,8 @@
 #include <sstream>
 #include <string>
 
+namespace FrameEngine {
+
 class Vector3 {
 public:
   double x, y, z;
@@ -170,5 +172,7 @@ public:
  * @return The scaled vector.
  */
 inline Vector3 operator*(double scalar, const Vector3 &v) { return v * scalar; }
+
+} // namespace FrameEngine
 
 #endif // !VECTOR3_H

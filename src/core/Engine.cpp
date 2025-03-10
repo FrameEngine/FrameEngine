@@ -7,6 +7,8 @@
 #include <chrono>
 #include <thread>
 
+namespace FrameEngine {
+
 Engine::Engine()
     : window(1920, 1080, "FrameEngine"), isRunning(true), renderer(window) {}
 
@@ -81,3 +83,5 @@ void Engine::run() {
     }
   }
 }
+
+} // namespace FrameEngine

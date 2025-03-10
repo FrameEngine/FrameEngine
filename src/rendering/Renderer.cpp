@@ -3,6 +3,8 @@
 #include "objects/Object.hpp"
 #include <glad/glad.h>
 
+namespace FrameEngine {
+
 /**
  * @brief Static member definitions.
  */
@@ -122,3 +124,5 @@ void Renderer::shutdown() {
   renderQueue.clear();
   lights.clear();
 }
+
+} // namespace FrameEngine

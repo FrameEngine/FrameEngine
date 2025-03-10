@@ -9,6 +9,8 @@
 #include "Window.hpp"
 #include "rendering/Renderer.hpp"
 
+namespace FrameEngine {
+
 /**
  * @class Engine
  * @brief Core engine class that manages the main loop, physics, and rendering.
@@ -71,5 +73,7 @@ public:
    */
   virtual void on_start();
 };
+
+} // namespace FrameEngine
 
 #endif // ENGINE_HPP

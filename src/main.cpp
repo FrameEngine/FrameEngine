@@ -1,18 +1,13 @@
-#include "Engine.hpp"
-#include "Logger.hpp"
-#include "MeshGenerator.hpp"
-#include "objects/Object.hpp"
-#include "objects/PointLight.hpp"
-#include "rendering/Camera.hpp"
-#include "rendering/Mesh.hpp"
+#include "FrameEngine.hpp"
 #include <cmath>
-#include <vector>
 
 constexpr float G = 0.05f;
 
 constexpr float massMonkey = 100.0f;
 constexpr float massSphere = 1.0f;
 constexpr float massSphere2 = 10.0f;
+
+using namespace FrameEngine;
 
 class Simulation : public Engine {
 private:

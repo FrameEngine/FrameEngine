@@ -4,6 +4,8 @@
 #include <iostream>
 #include <sstream>
 
+namespace FrameEngine {
+
 /**
  * @brief Loads shader source code from a file.
  *
@@ -126,3 +128,5 @@ void Shader::setUniformMat4(const std::string &name, const Matrix4 &mat) const {
   }
   glUniformMatrix4fv(location, 1, GL_FALSE, &mat.m[0][0]);
 }
+
+} // namespace FrameEngine

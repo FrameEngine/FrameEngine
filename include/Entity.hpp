@@ -13,6 +13,8 @@
 #include "Logger.hpp"
 #include "Registry.hpp"
 
+namespace FrameEngine {
+
 /**
  * @class Entity
  * @brief A high-level ECS entity wrapper.
@@ -94,5 +96,7 @@ protected:
   EntityID id_;
   Registry &registry_;
 };
+
+} // namespace FrameEngine
 
 #endif // !ENTITY_HPP

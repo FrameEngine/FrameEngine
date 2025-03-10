@@ -8,6 +8,8 @@
 
 #include "math/Vector3.hpp"
 
+namespace FrameEngine {
+
 /**
  * @struct PhysicsComponent
  * @brief Represents the physical properties of an entity in the ECS.
@@ -32,5 +34,7 @@ struct PhysicsComponent {
                    float m = 1.0f)
       : velocity(vel), acceleration(acc), mass(m) {}
 };
+
+} // namespace FrameEngine
 
 #endif // PHYSICS_COMPONENT_HPP

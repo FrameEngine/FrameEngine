@@ -20,6 +20,8 @@
 #include "components/TransformComponent.hpp"
 #include "rendering/Mesh.hpp"
 
+namespace FrameEngine {
+
 // Forward declare Renderer to avoid circular dependency
 class Renderer;
 
@@ -155,5 +157,7 @@ public:
    */
   bool isWireframe() const { return wireframe; }
 };
+
+} // namespace FrameEngine
 
 #endif // OBJECT_HPP

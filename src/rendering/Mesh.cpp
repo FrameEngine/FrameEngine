@@ -1,6 +1,8 @@
 #include "rendering/Mesh.hpp"
 #include <vector>
 
+namespace FrameEngine {
+
 /**
  * @brief Constructs a Mesh with given vertices, normals, and indices.
  *
@@ -106,3 +108,5 @@ void Mesh::updateBuffer() {
                   vertexData.data());
   glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
+
+} // namespace FrameEngine

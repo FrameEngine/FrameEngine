@@ -1,5 +1,7 @@
 #include "rendering/Camera.hpp"
 
+namespace FrameEngine {
+
 /**
  * @brief Returns the current view matrix.
  *
@@ -92,3 +94,5 @@ Vector3 Camera::getFrontVector() const {
 
   return front;
 }
+
+} // namespace FrameEngine

@@ -3,6 +3,8 @@
 
 #include "math/Vector3.hpp"
 
+namespace FrameEngine {
+
 enum class LightType { DIRECTIONAL, POINT, SPOTLIGHT };
 
 struct LightComponent {
@@ -11,9 +13,10 @@ struct LightComponent {
   float intensity;
 
   LightComponent(LightType t = LightType::DIRECTIONAL,
-                 Vector3 col = Vector3(1.0f, 1.0f, 1.0f),
-                 float intens = 1.0f)
+                 Vector3 col = Vector3(1.0f, 1.0f, 1.0f), float intens = 1.0f)
       : type(t), color(col), intensity(intens) {}
 };
+
+} // namespace FrameEngine
 
 #endif // LIGHT_COMPONENT_HPP

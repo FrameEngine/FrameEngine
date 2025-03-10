@@ -11,6 +11,8 @@
 #include <iomanip>
 #include <sstream>
 
+namespace FrameEngine {
+
 /**
  * @class Matrix4.
  * @brief A 4x4 matrix class.
@@ -339,5 +341,7 @@ struct Matrix4 {
     return mat;
   }
 };
+
+} // namespace FrameEngine
 
 #endif // MATRIX4_HPP
