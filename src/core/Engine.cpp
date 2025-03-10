@@ -8,7 +8,7 @@
 #include <thread>
 
 Engine::Engine()
-    : window(1920, 1080, "FrameEngine"), isRunning(true), renderer() {}
+    : window(1920, 1080, "FrameEngine"), isRunning(true), renderer(window) {}
 
 Engine::~Engine() { stop(); }
 
@@ -17,7 +17,7 @@ Engine::~Engine() { stop(); }
  * This function should be called before 'run()' to ensure all components
  * are properly set up (e.g., renderer, ECS initialization, etc).
  */
-void Engine::init() { on_start(); }
+void Engine::init() {}
 
 /**
  * @brief Stops the engine gracefully.
@@ -43,6 +43,8 @@ void Engine::run() {
   using clock = std::chrono::high_resolution_clock;
   auto previousTime = clock::now();
   float accumulator = 0.0f;
+
+  on_start();
 
   while (isRunning && window.isOpen()) {
     auto currentTime = clock::now();

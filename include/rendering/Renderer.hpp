@@ -7,6 +7,7 @@
 #define RENDERER_HPP
 
 #include "Registry.hpp"
+#include "Window.hpp"
 #include "objects/Object.hpp"
 #include "objects/PointLight.hpp"
 #include "rendering/Camera.hpp"
@@ -27,6 +28,7 @@ private:
   static std::vector<PointLight *>
       lights; ///< List of point lights in the scene.
   Camera camera;
+  Window &window;
 
 public:
   /**
@@ -34,7 +36,7 @@ public:
    *
    * @param registry The ECS registry used to initialize the camera.
    */
-  Renderer();
+  Renderer(Window &window);
 
   /**
    * @brief Initializes the rendering system.

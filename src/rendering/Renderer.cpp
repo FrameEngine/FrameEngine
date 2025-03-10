@@ -1,4 +1,5 @@
 #include "rendering/Renderer.hpp"
+#include "Window.hpp"
 #include "objects/Object.hpp"
 #include <glad/glad.h>
 
@@ -16,8 +17,8 @@ std::vector<PointLight *>
  *
  * @param registry The ECS registry used for initializing the camera.
  */
-// TODO SO far it's hardcoded, replace with actual width and height
-Renderer::Renderer() : camera(Camera(1920.0f / 1080.0f)) {
+Renderer::Renderer(Window &window)
+    : window(window), camera(Camera(window.getWidth() / window.getHeight())) {
   glEnable(GL_DEPTH_TEST);
   glDisable(GL_CULL_FACE);
   // The default shader.
