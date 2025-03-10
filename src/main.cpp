@@ -49,21 +49,21 @@ public:
 
     // Create a large, high-resolution plane (20x20 units, 100 segments)
     gravityPlane = MeshGenerator::createPlane(20.f, 20.f, 100);
-    plane = new Object(registry, gravityPlane);
+    plane = new Object(gravityPlane);
     plane->setWireframe(true);
     plane->transform->position = Vector3(0.f, 0.f, 0.f);
 
-    sphere = new Object(registry, MeshGenerator::createSphere());
+    sphere = new Object(MeshGenerator::createSphere());
     sphere->setColor(Vector3(1, 1, 1));
     sphere->transform->position = Vector3(6.5f, 0.f, 0.f);
     sphere->transform->scale = sphere->transform->scale * 0.1f * massSphere;
 
-    sphere2 = new Object(registry, MeshGenerator::createSphere());
+    sphere2 = new Object(MeshGenerator::createSphere());
     sphere2->setColor(Vector3(0, 0, 1));
     sphere2->transform->position = Vector3(5.5f, 0.f, 0.f);
     sphere2->transform->scale = sphere2->transform->scale * 0.05f * massSphere2;
 
-    monkey = new Object(registry, monkeyMesh);
+    monkey = new Object(monkeyMesh);
     monkey->setColor(Vector3(1, .8f, 0));
     monkey->transform->position = Vector3(0.f, 0.f, 0.f);
     monkey->transform->scale = monkey->transform->scale * 0.02f * massMonkey;
@@ -74,10 +74,10 @@ public:
     renderer.submit(sphere2);
     renderer.submit(monkey);
 
-    pointLight1 = new PointLight(registry, Vector3(5.0f, 5.0f, 0.0f),
-                                 Vector3(1, 1, 0), 1.f);
-    PointLight *pointLight2 = new PointLight(
-        registry, Vector3(0.0f, 3.0f, 0.0f), Vector3(1, 1, 1), 3.f);
+    pointLight1 =
+        new PointLight(Vector3(5.0f, 5.0f, 0.0f), Vector3(1, 1, 0), 1.f);
+    PointLight *pointLight2 =
+        new PointLight(Vector3(0.0f, 3.0f, 0.0f), Vector3(1, 1, 1), 3.f);
     renderer.submitLight(pointLight1);
     renderer.submitLight(pointLight2);
 

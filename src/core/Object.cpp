@@ -1,7 +1,6 @@
 #include "objects/Object.hpp"
 #include "Logger.hpp"
 #include "rendering/Renderer.hpp"
-#include <iostream>
 
 /**
  * @brief Renders the object using the current shader from the renderer.
