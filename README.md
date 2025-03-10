@@ -13,7 +13,7 @@ I love doing physics simulations and math-related projects! However, rewriting w
 The core of **FrameEngine** is built around [ECS](https://en.wikipedia.org/wiki/Entity_component_system)(Entity-component-system) and includes:
 - **Registry**: A simple ECS `Registry` that allows creating entities and attaching components.
 - **Components**: Data containers that define behaviors or properties such as transforms, physics, or rendering details.
-- **Systems**: Logic units that iterate through all entities with specific components. For instance, the `PhysicsSystem` handles velocity and position updates, while the `RenderSystem` renderes meshes
+- **Systems**: Logic units that iterate through all entities with specific components. For instance, the `PhysicsSystem` handles velocity and position updates
 - **Engine**: A base `Engine` class that provides a main loop with a **fixed timestep** for physics and a simple rendering pass.
 
 FrameEngine currently supports **OpenGL rendering** using **X11** as the windowing backend.  
