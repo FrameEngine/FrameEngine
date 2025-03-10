@@ -1,13 +1,11 @@
 #include "FrameEngine.hpp"
-#include <cmath>
+using namespace FrameEngine;
 
 constexpr float G = 0.05f;
 
 constexpr float massMonkey = 100.0f;
 constexpr float massSphere = 1.0f;
 constexpr float massSphere2 = 10.0f;
-
-using namespace FrameEngine;
 
 class Simulation : public Engine {
 private:
@@ -147,10 +145,10 @@ public:
 
     if (gravityPlane) {
       std::vector<float> &vertices = gravityPlane->getVertexData();
-      size_t vertexCount = vertices.size() / 6;
+      size_t vertexCount = vertices.size() / 8;
       for (size_t i = 0; i < vertexCount; i++) {
-        float x = vertices[i * 6 + 0];
-        float z = vertices[i * 6 + 2];
+        float x = vertices[i * 8 + 0];
+        float z = vertices[i * 8 + 2];
         float deformation = 0.0f;
 
         deformation +=
@@ -160,7 +158,7 @@ public:
         deformation +=
             computeDeformation(sphere2->transform->position, massSphere2, x, z);
 
-        vertices[i * 6 + 1] = deformation;
+        vertices[i * 8 + 1] = deformation;
       }
       gravityPlane->updateBuffer();
     }
