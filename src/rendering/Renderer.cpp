@@ -99,13 +99,12 @@ void Renderer::render() {
     shader->setUniformFloat(lightIndex + ".intensity",
                             lights[i]->getIntensity());
   }
+  shader->unbind();
 
   // Render each object in the render queue.
   for (auto *obj : renderQueue) {
     obj->render(*this);
   }
-
-  shader->unbind();
 }
 
 /**

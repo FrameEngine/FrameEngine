@@ -17,7 +17,10 @@
 #define OBJECT_HPP
 
 #include "Entity.hpp"
+#include "components/MaterialComponent.hpp"
+#include "components/MeshComponent.hpp"
 #include "components/TransformComponent.hpp"
+#include "rendering/Material.hpp"
 #include "rendering/Mesh.hpp"
 
 namespace FrameEngine {
@@ -33,13 +36,6 @@ class Renderer;
  * with predefined components.
  */
 class Object : public Entity {
-private:
-  // TODO move it to Renderer component
-  Mesh *mesh;             ///< Pointer to the mesh.
-  bool wireframe = false; ///< Flag indicating wether the object should be
-                          ///< rendered in wireframe mode.
-  Vector3 color;          ///< The color used when rendering the object.
-
 public:
   /**
    * @brief Constructs an Object with the specified mesh.
@@ -49,12 +45,22 @@ public:
    *
    * @param mesh Pointer to the Mesh that defines the object's geometry.
    */
-  Object(Mesh *mesh) : Entity(), mesh(mesh), color(Vector3(1.0f, .5f, 1.0f)) {
+  Object(Mesh *mesh) : Entity() {
     add_component<TransformComponent>();
+    add_component<MeshComponent>(mesh);
+    add_component<MaterialComponent>();
+
     transform = get_component<TransformComponent>();
+    meshComponent = get_component<MeshComponent>();
+    materialComponent = get_component<MaterialComponent>();
   }
 
   TransformComponent *transform;
+  MeshComponent *meshComponent;
+  MaterialComponent *materialComponent;
+
+  void setMesh(Mesh *mesh, bool wireframe = false);
+  void setMaterial(Material *material);
 
   /**
    * @brief Rotates the object around the specified axis.
@@ -89,21 +95,6 @@ public:
    * @param renderer The Renderer used to draw the object.
    */
   void render(Renderer &renderer);
-
-  /**
-   * @brief Retrieves the object's render color.
-   *
-   * @return The color vector used for rendering.
-   */
-  Vector3 getColor() const { return color; }
-
-  /**
-   * @brief Sets the object's render color.
-   *
-   * @param c The color vector to set.
-   */
-  // TODO instead of Vector3 use custom Color datatype, that works with 0-255
-  void setColor(const Vector3 &c) { color = c; }
 
   /**
    * @brief Orients the object so that it "looks at" a target position.
@@ -142,20 +133,6 @@ public:
 
     transform->rotation = Quaternion::fromMatrix(rotationMatrix);
   }
-
-  /**
-   * @brief Enables or disables wireframe rendering for this object.
-   *
-   * @param enable True to enable wireframe mode; false to disable.
-   */
-  void setWireframe(bool enable) { wireframe = enable; }
-
-  /**
-   * @brief Checks if wireframe rendering is enabled for this object.
-   *
-   * @return True if wireframe mode is enabled; false otherwise.
-   */
-  bool isWireframe() const { return wireframe; }
 };
 
 } // namespace FrameEngine
