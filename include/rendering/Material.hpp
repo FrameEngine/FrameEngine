@@ -25,6 +25,7 @@ private:
   Vector3 diffuseColor;
   Vector3 specularColor;
   float specularPower;
+  Texture2D *defaultTexture;
   Texture2D *texture;
 
 public:
@@ -32,7 +33,10 @@ public:
                 const Vector3 &specular = Vector3(1, 1, 1), float power = 32.0f,
                 Texture2D *texture = nullptr)
       : Material(shader), diffuseColor(diffuse), specularColor(specular),
-        specularPower(power), texture(texture) {}
+        specularPower(power), texture(texture) {
+    defaultTexture = new Texture2D();
+    defaultTexture->createDefaultWhiteTexture();
+  }
 
   void setDiffuseColor(const Vector3 &color) { diffuseColor = color; }
   void setSpecularColor(const Vector3 &color) { specularColor = color; }
@@ -47,6 +51,8 @@ public:
     if (texture) {
       texture->bind(GL_TEXTURE0);
       shader->setUniformInt("texSampler", 0);
+    } else {
+      defaultTexture->bind(GL_TEXTURE0);
     }
   }
 };

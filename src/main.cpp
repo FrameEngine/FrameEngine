@@ -44,14 +44,14 @@ public:
     sphereObject->setMesh(sphereMesh);
 
     BasicMaterial *blueMat = new FrameEngine::BasicMaterial(
-        lightingShader, Vector3(0, 0, 1), Vector3(1, 1, 1), 32.0f);
+        lightingShader, Vector3(1, 1, 1), Vector3(1, 1, 1), 32.0f);
     blueMat->setTexture(texture);
 
     sphereObject->setMaterial(blueMat);
     sphereObject->transform->position = Vector3(2.0f, 0.0f, 0.0f);
 
     pointLight1 = new PointLight(Vector3(-5.0f, 5.0f, 5.0f),
-                                 Vector3(1.0f, 1.0f, 1.0f), 5.f);
+                                 Vector3(1.0f, 1.0f, 1.0f), 3.f);
     // pointLight2 = new PointLight(Vector3(5.0f, 5.0f, 5.0f),
     //                              Vector3(1.0f, 1.0f, 0.0f), 1.5f);
 

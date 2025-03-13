@@ -21,6 +21,8 @@ public:
   // Generate a procedural texture (for example, a simple noise texture)
   bool generateProcedural(int w, int h);
 
+  bool createDefaultWhiteTexture();
+
   // Bind and unbind texture
   void bind(GLenum textureUnit = GL_TEXTURE0) const;
   void unbind() const;

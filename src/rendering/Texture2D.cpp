@@ -47,6 +47,19 @@ bool Texture2D::loadFromFile(const std::string &filePath, bool flipVertically) {
   return true;
 }
 
+bool Texture2D::createDefaultWhiteTexture() {
+  unsigned char whitePixel[4] = {255, 255, 255, 255};
+  glBindTexture(GL_TEXTURE_2D, textureID);
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, 1, 1, 0, GL_RGBA, GL_UNSIGNED_BYTE,
+               whitePixel);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  glBindTexture(GL_TEXTURE_2D, 0);
+  return true;
+}
+
 void Texture2D::bind(GLenum textureUnit) const {
   glActiveTexture(textureUnit);
   glBindTexture(GL_TEXTURE_2D, textureID);
