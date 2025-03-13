@@ -1,46 +1,70 @@
 #version 450 core
+#define MAX_LIGHTS 10
 
-in vec3 FragPos;
-in vec3 Normal;
-out vec4 FragColor;
+struct LightData {
+    vec4 position;   // xyz: world-space position 
+    vec4 color;      // rgb: light color, w: intensity
+};
+
+layout(std140, binding = 0) uniform LightBlock {
+    int numLights;
+    LightData lights[MAX_LIGHTS];
+};
+
+uniform vec3 ambientColor;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
+uniform vec3 viewPos;
 
 struct Material {
     vec3 diffuseColor;
     vec3 specularColor;
     float specularPower;
 };
-
 uniform Material material;
 
-#define MAX_LIGHTS 10
-struct PointLight {
-    vec3 position;
-    vec3 color;
-    float intensity;
-};
+in vec3 FragPos;
+in vec3 Normal;
+in vec2 TexCoords;
 
-uniform PointLight lights[MAX_LIGHTS];
-uniform int numLights;
+out vec4 FragColor;
 
 void main() {
     vec3 norm = normalize(Normal);
-    vec3 viewDir = normalize(-FragPos);
-    vec3 result = vec3(0.0);
-
+    vec3 viewDir = normalize(viewPos - FragPos);
+    
+    vec3 ambient = ambientColor * material.diffuseColor;
+    
+    vec3 diffuseTotal = vec3(0.0);
+    vec3 specularTotal = vec3(0.0);
+    
     for (int i = 0; i < numLights; i++) {
-        vec3 lightDir = normalize(lights[i].position - FragPos);
+        vec3 lightPos = lights[i].position.xyz;
+        vec3 lightColor = lights[i].color.rgb;
+        float intensity = lights[i].color.w;
+        
+        vec3 lightDir = normalize(lightPos - FragPos);
+        
         float diff = max(dot(norm, lightDir), 0.0);
-        vec3 diffuse = diff * lights[i].color * material.diffuseColor;
+        vec3 diffuse = diff * lightColor * material.diffuseColor;
         
         vec3 reflectDir = reflect(-lightDir, norm);
-        float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.specularPower);
-        vec3 specular = lights[i].color * material.specularColor * spec * 0.5;
+        float spec = 0.0;
+        if (diff > 0.0) {
+            spec = pow(max(dot(viewDir, reflectDir), 0.0), material.specularPower);
+        }
+        vec3 specular = spec * lightColor * material.specularColor;
         
-        float distance = length(lights[i].position - FragPos);
+        float distance = length(lightPos - FragPos);
         float attenuation = 1.0 / (1.0 + 0.09 * distance + 0.032 * (distance * distance));
         
-        result += (diffuse + specular) * lights[i].intensity * attenuation;
+        diffuseTotal += diffuse * intensity * attenuation;
+        specularTotal += specular * intensity * attenuation;
     }
     
-    FragColor = vec4(result, 1.0);
+    vec3 finalColor = ambient + diffuseTotal + specularTotal;
+    FragColor = vec4(finalColor, 1.0);
 }

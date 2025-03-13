@@ -88,15 +88,6 @@ public:
   }
 
   /**
-   * @brief Renders the object.
-   *
-   * This method updates the model matrix and draws the object's mesh.
-   *
-   * @param renderer The Renderer used to draw the object.
-   */
-  void render(Renderer &renderer);
-
-  /**
    * @brief Orients the object so that it "looks at" a target position.
    *
    * This method updates the object's rotation so that its forward direction

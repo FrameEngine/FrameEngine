@@ -10,6 +10,7 @@
 #include "objects/Object.hpp"
 #include "objects/PointLight.hpp"
 #include "rendering/Camera.hpp"
+#include "rendering/LightingSystem.hpp"
 #include "rendering/Shader.hpp"
 #include <vector>
 
@@ -23,11 +24,6 @@ namespace FrameEngine {
  */
 class Renderer {
 private:
-  static Shader *shader; ///< The active shader used for drawing.
-  static std::vector<Object *>
-      renderQueue; ///< List of objects waiting to be rendered.
-  static std::vector<PointLight *>
-      lights; ///< List of point lights in the scene.
   Camera camera;
   Window &window;
 
@@ -55,30 +51,26 @@ public:
   static void clear();
 
   /**
-   * @brief Submits an object to the rendering queue.
+   * @brief Renders all submitted entities using batched material groups.
    *
-   * @param mesh The mesh to render.
-   * @param shader The shader to use.
-   */
-  static void submit(Object *obj);
-
-  /**
-   * @brief Removes all objects from the render queue.
-   */
-  void clearObjects();
-
-  /**
-   * @brief Adds a point light to the list of lights.
+   * This method queries the global Registry for all entities that contain the
+   * required rendering components (TransformComponent, MeshComponent, and
+   * MaterialComponent). It groups these entities by their associated material,
+   * then updates the global lighting data from the ECS using the
+   * LightingSystem.
    *
-   * @param light The point light to submit.
-   */
-  static void submitLight(PointLight *light);
-
-  /**
-   * @brief Renders all submitted objects and lights.
+   * (The lighting UBO is bound to a fixed binding point so that all
+   * shaders can access the updated lighting data).
    *
-   * This function should be called at the end of the frame to present
-   * the rendered image on the screen.
+   * For each material batch, the method binds the material's shader once and
+   * sets the common uniforms (view matrix, projection matrix, and camera
+   * position) from the provided Camera. The material-specific uniforms are then
+   * applied via the material's applyUniforms() method. Finally, for every
+   * entity in the batch, only the per-object uniform (the model matrix) is
+   * updated before issuing the draw call.
+   *
+   * @note This method should be called once per frame, typically after
+   * simulation updates and before swapping the window buffers.
    */
   void render();
 
@@ -89,22 +81,6 @@ public:
    * to properly clean up the rendering context.
    */
   static void shutdown();
-
-  /**
-   * @brief Sets the active shader.
-   *
-   * This changes the shader used when drawing objects.
-   *
-   * @param shader The new shader to use.
-   */
-  void setShader(Shader *shader);
-
-  /**
-   * @brief Returns the currently active shader.
-   *
-   * @return A pointer to the active shader.
-   */
-  static Shader *getShader() { return shader; }
 
   /**
    * @brief Returns a reference to the camera.

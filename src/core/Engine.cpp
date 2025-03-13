@@ -19,7 +19,7 @@ Engine::~Engine() { stop(); }
  * This function should be called before 'run()' to ensure all components
  * are properly set up (e.g., renderer, ECS initialization, etc).
  */
-void Engine::init() {}
+void Engine::init() { LightingSystem::initialize(); }
 
 /**
  * @brief Stops the engine gracefully.

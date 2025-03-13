@@ -71,7 +71,12 @@ Shader::Shader(const std::string &vertexPath, const std::string &fragmentPath) {
     LOG(ERROR, "Shader Linking Error: %s", log);
   }
 
-  // Shaders are no longer needed once linked
+  GLuint blockIndex = glGetUniformBlockIndex(programID, "LightBlock");
+  if (blockIndex == GL_INVALID_INDEX) {
+    LOG(ERROR, "LightBlock failed");
+  }
+  glUniformBlockBinding(programID, blockIndex, 0);
+
   glDeleteShader(vertexShader);
   glDeleteShader(fragmentShader);
 }

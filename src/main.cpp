@@ -1,4 +1,6 @@
 #include "FrameEngine.hpp"
+#include "math/Vector3.hpp"
+#include "rendering/Material.hpp"
 using namespace FrameEngine;
 
 class Simulation : public Engine {
@@ -16,36 +18,34 @@ private:
 
 public:
   void on_start() override {
+    Shader *lightingShader = new FrameEngine::Shader(
+        "shaders/basic_vertex.glsl", "shaders/basic_fragment.glsl");
+
     cubeMesh = MeshGenerator::createCube();
     sphereMesh = MeshGenerator::createSphere();
 
     cubeObject = new Object(cubeMesh);
     cubeObject->setMesh(cubeMesh);
-    Material *redMat = new Material();
-    redMat->setDiffuseColor(Vector3(1.0f, 0.0f, 0.0f));
-    redMat->setSpecularColor(Vector3(1.0f, 1.0f, 1.0f));
-    redMat->setSpecularPower(32.0f);
+
+    FrameEngine::BasicMaterial *redMat = new FrameEngine::BasicMaterial(
+        lightingShader, Vector3(1, 0, 0), Vector3(1, 1, 1), 64.0f);
+
     cubeObject->setMaterial(redMat);
     cubeObject->transform->position = Vector3(-2.0f, 0.0f, 0.0f);
 
     sphereObject = new Object(sphereMesh);
     sphereObject->setMesh(sphereMesh);
-    Material *blueMat = new Material();
-    blueMat->setDiffuseColor(Vector3(0.0f, 0.0f, 1.0f));
-    blueMat->setSpecularColor(Vector3(1.0f, 1.0f, 1.0f));
-    blueMat->setSpecularPower(64.0f);
+
+    FrameEngine::BasicMaterial *blueMat = new FrameEngine::BasicMaterial(
+        lightingShader, Vector3(0, 0, 1), Vector3(1, 1, 1), 32.0f);
+
     sphereObject->setMaterial(blueMat);
     sphereObject->transform->position = Vector3(2.0f, 0.0f, 0.0f);
 
-    renderer.submit(cubeObject);
-    renderer.submit(sphereObject);
-
     pointLight1 = new PointLight(Vector3(-5.0f, 5.0f, 5.0f),
-                                 Vector3(1.0f, 1.0f, 1.0f), 3.f);
-    pointLight2 = new PointLight(Vector3(5.0f, 5.0f, 5.0f),
-                                 Vector3(1.0f, 1.0f, 0.0f), 1.5f);
-    renderer.submitLight(pointLight1);
-    renderer.submitLight(pointLight2);
+                                 Vector3(1.0f, 1.0f, 1.0f), 5.f);
+    // pointLight2 = new PointLight(Vector3(5.0f, 5.0f, 5.0f),
+    //                              Vector3(1.0f, 1.0f, 0.0f), 1.5f);
 
     Camera &camera = renderer.getCamera();
     camera.transform->position = Vector3(0.0f, 3.0f, -10.0f);
@@ -57,11 +57,14 @@ public:
   void fixed_update(float dt) override {
     timeElapsed += dt;
 
-    float redIntensity = (sin(timeElapsed) + 1.0f) / 2.0f;
-    cubeObject->materialComponent->material->setSpecularPower(redIntensity);
+    pointLight1->transform->position =
+        Vector3(5.0f * sin(timeElapsed), 3, 5 * cos(timeElapsed));
 
-    float blueIntensity = (cos(timeElapsed) + 1.0f) / 2.0f;
-    sphereObject->materialComponent->material->setSpecularPower(blueIntensity);
+    // float redIntensity = (sin(timeElapsed) + 1.0f) / 2.0f;
+    // cubeObject->materialComponent->material->setSpecularPower(redIntensity);
+    //
+    // float blueIntensity = (cos(timeElapsed) + 1.0f) / 2.0f;
+    // sphereObject->materialComponent->material->setSpecularPower(blueIntensity);
 
     cubeObject->rotate(Vector3(0, 1, 0), 0.5f);
     sphereObject->rotate(Vector3(0, 1, 0), -0.5f);
