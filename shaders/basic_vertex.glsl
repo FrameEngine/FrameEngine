@@ -1,12 +1,12 @@
 #version 450 core
 layout(location = 0) in vec3 aPos;
 layout(location = 1) in vec3 aNormal;
-layout(location = 2) in vec2 aTexCoords; // If using UVs
+layout(location = 2) in vec2 aTexCoords; 
 
 // Declare outputs to be passed to the fragment shader.
 out vec3 FragPos;
 out vec3 Normal;
-out vec2 TexCoords;  // Optional
+out vec2 TexCoords; 
 
 uniform mat4 model;
 uniform mat4 view;

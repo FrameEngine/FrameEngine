@@ -14,6 +14,8 @@ private:
   PointLight *pointLight1;
   PointLight *pointLight2;
 
+  Texture2D *texture;
+
   float timeElapsed = 0.0f;
 
 public:
@@ -21,13 +23,18 @@ public:
     Shader *lightingShader = new FrameEngine::Shader(
         "shaders/basic_vertex.glsl", "shaders/basic_fragment.glsl");
 
+    texture = new Texture2D();
+    if (!texture->loadFromFile("assets/wood_texture.jpg")) {
+      LOG(ERROR, "Failed to load texture!");
+    }
+
     cubeMesh = MeshGenerator::createCube();
     sphereMesh = MeshGenerator::createSphere();
 
     cubeObject = new Object(cubeMesh);
     cubeObject->setMesh(cubeMesh);
 
-    FrameEngine::BasicMaterial *redMat = new FrameEngine::BasicMaterial(
+    BasicMaterial *redMat = new FrameEngine::BasicMaterial(
         lightingShader, Vector3(1, 0, 0), Vector3(1, 1, 1), 64.0f);
 
     cubeObject->setMaterial(redMat);
@@ -36,8 +43,9 @@ public:
     sphereObject = new Object(sphereMesh);
     sphereObject->setMesh(sphereMesh);
 
-    FrameEngine::BasicMaterial *blueMat = new FrameEngine::BasicMaterial(
+    BasicMaterial *blueMat = new FrameEngine::BasicMaterial(
         lightingShader, Vector3(0, 0, 1), Vector3(1, 1, 1), 32.0f);
+    blueMat->setTexture(texture);
 
     sphereObject->setMaterial(blueMat);
     sphereObject->transform->position = Vector3(2.0f, 0.0f, 0.0f);

@@ -12,11 +12,9 @@ layout(std140, binding = 0) uniform LightBlock {
 };
 
 uniform vec3 ambientColor;
-
 uniform mat4 model;
 uniform mat4 view;
 uniform mat4 projection;
-
 uniform vec3 viewPos;
 
 struct Material {
@@ -25,6 +23,8 @@ struct Material {
     float specularPower;
 };
 uniform Material material;
+
+uniform sampler2D texSampler;
 
 in vec3 FragPos;
 in vec3 Normal;
@@ -65,6 +65,7 @@ void main() {
         specularTotal += specular * intensity * attenuation;
     }
     
-    vec3 finalColor = ambient + diffuseTotal + specularTotal;
+    vec3 texColor = texture(texSampler, TexCoords).rgb;
+    vec3 finalColor = (ambient + diffuseTotal + specularTotal) * texColor;
     FragColor = vec4(finalColor, 1.0);
 }

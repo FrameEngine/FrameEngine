@@ -7,6 +7,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 cmake_policy(SET CMP0072 NEW)
 
+#STB_image
+include_directories(external/include)
 
 # GLFW
 set(GLFW_BUILD_WAYLAND OFF CACHE BOOL "" FORCE)
