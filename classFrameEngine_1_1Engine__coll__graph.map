@@ -1,0 +1,7 @@
+<map id="FrameEngine::Engine" name="FrameEngine::Engine">
+<area shape="rect" id="Node000001" title="Core engine class that manages the main loop, physics, and rendering." alt="" coords="132,333,283,519"/>
+<area shape="rect" id="Node000002" href="$classFrameEngine_1_1Window.html" title=" " alt="" coords="5,35,204,241"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,240,171,317,166,319,139,242"/>
+<area shape="rect" id="Node000003" href="$classFrameEngine_1_1Renderer.html" title="Handles the drawing of scene objects and lights." alt="" coords="228,5,395,271"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="266,272,249,319,244,317,261,270"/>
+</map>

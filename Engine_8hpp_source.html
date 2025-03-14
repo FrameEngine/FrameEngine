@@ -104,47 +104,51 @@ $(document).ready(function(){initNavTree('Engine_8hpp_source.html',''); initResi
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="Window_8hpp.html">Window.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="Renderer_8hpp.html">rendering/Renderer.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classEngine.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="classEngine.html">Engine</a> {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="comment">// TODO Make it variable</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keyword">const</span> <span class="keywordtype">float</span> fixedTimeStep = 1.0f / 60.0f;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordtype">float</span> accumulator = 0.0f;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordtype">bool</span> isRunning = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <a class="code hl_class" href="classWindow.html">Window</a> window;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_class" href="classRenderer.html">Renderer</a> renderer;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_class" href="classEngine.html">Engine</a>();</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="classEngine.html">~Engine</a>();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classEngine.html#ab44d76e2ff6057e73d6210cf9af0d89e">init</a>();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classEngine.html#a1a210cf30d6bd330b3649439ecd6d6cc">run</a>();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classEngine.html#ac88ada17b33bc5ddaf6bb73e0cdc67f3">stop</a>();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="comment">// ===== User Defined Funcitons =====</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span>FrameEngine {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classFrameEngine_1_1Engine.html">   25</a></span><span class="keyword">class </span><a class="code hl_class" href="classFrameEngine_1_1Engine.html">Engine</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="comment">// TODO Make it variable</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keyword">const</span> <span class="keywordtype">float</span> fixedTimeStep = 1.0f / 60.0f;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordtype">float</span> accumulator = 0.0f;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keywordtype">bool</span> isRunning = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_class" href="classFrameEngine_1_1Window.html">Window</a> window;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code hl_class" href="classFrameEngine_1_1Renderer.html">Renderer</a> renderer;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_class" href="classFrameEngine_1_1Engine.html">Engine</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">virtual</span> <a class="code hl_class" href="classFrameEngine_1_1Engine.html">~Engine</a>();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFrameEngine_1_1Engine.html#a492592c103bf35455d3e4eb731803e00">init</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFrameEngine_1_1Engine.html#a5de0f1645b9019f07aae0b1bbabd339d">run</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFrameEngine_1_1Engine.html#a59720a31a124d35554857ceb09d5806e">stop</a>();</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classEngine.html#a4b592adb20f2e589acf010e1a9ca4f14">fixed_update</a>(<span class="keywordtype">float</span> dt);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classEngine.html#a911e9bb862aba19f61ddf2e6ce7c55b0">on_start</a>();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="comment">// ===== User Defined Funcitons =====</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFrameEngine_1_1Engine.html#a35516b3821b2bd90c070be28da9f7280">fixed_update</a>(<span class="keywordtype">float</span> dt);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classFrameEngine_1_1Engine.html#a7636234c3a9343b455bc7d071a46ff11">on_start</a>();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
 </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif </span><span class="comment">// ENGINE_HPP</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>} <span class="comment">// namespace FrameEngine</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif </span><span class="comment">// ENGINE_HPP</span></div>
 <div class="ttc" id="aRenderer_8hpp_html"><div class="ttname"><a href="Renderer_8hpp.html">Renderer.hpp</a></div><div class="ttdoc">Manages the rendering pipeline and object submission.</div></div>
 <div class="ttc" id="aWindow_8hpp_html"><div class="ttname"><a href="Window_8hpp.html">Window.hpp</a></div><div class="ttdoc">Provides a window for OpenGL rendering using GLFW.</div></div>
-<div class="ttc" id="aclassEngine_html"><div class="ttname"><a href="classEngine.html">Engine</a></div><div class="ttdoc">Core engine class that manages the main loop, physics, and rendering.</div><div class="ttdef"><b>Definition</b> Engine.hpp:23</div></div>
-<div class="ttc" id="aclassEngine_html_a1a210cf30d6bd330b3649439ecd6d6cc"><div class="ttname"><a href="classEngine.html#a1a210cf30d6bd330b3649439ecd6d6cc">Engine::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Starts the main game loop.</div><div class="ttdef"><b>Definition</b> Engine.cpp:42</div></div>
-<div class="ttc" id="aclassEngine_html_a4b592adb20f2e589acf010e1a9ca4f14"><div class="ttname"><a href="classEngine.html#a4b592adb20f2e589acf010e1a9ca4f14">Engine::fixed_update</a></div><div class="ttdeci">virtual void fixed_update(float dt)</div><div class="ttdoc">User-defined logic that updates every fixed timestep.</div><div class="ttdef"><b>Definition</b> Engine.cpp:32</div></div>
-<div class="ttc" id="aclassEngine_html_a911e9bb862aba19f61ddf2e6ce7c55b0"><div class="ttname"><a href="classEngine.html#a911e9bb862aba19f61ddf2e6ce7c55b0">Engine::on_start</a></div><div class="ttdeci">virtual void on_start()</div><div class="ttdoc">Called once at the start of execution.</div><div class="ttdef"><b>Definition</b> Engine.cpp:30</div></div>
-<div class="ttc" id="aclassEngine_html_ab44d76e2ff6057e73d6210cf9af0d89e"><div class="ttname"><a href="classEngine.html#ab44d76e2ff6057e73d6210cf9af0d89e">Engine::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Bootstrap This function should be called before 'run()' to ensure all components are properly set up ...</div><div class="ttdef"><b>Definition</b> Engine.cpp:20</div></div>
-<div class="ttc" id="aclassEngine_html_ac88ada17b33bc5ddaf6bb73e0cdc67f3"><div class="ttname"><a href="classEngine.html#ac88ada17b33bc5ddaf6bb73e0cdc67f3">Engine::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stops the engine gracefully.</div><div class="ttdef"><b>Definition</b> Engine.cpp:27</div></div>
-<div class="ttc" id="aclassRenderer_html"><div class="ttname"><a href="classRenderer.html">Renderer</a></div><div class="ttdoc">Handles the drawing of scene objects and lights.</div><div class="ttdef"><b>Definition</b> Renderer.hpp:23</div></div>
-<div class="ttc" id="aclassWindow_html"><div class="ttname"><a href="classWindow.html">Window</a></div><div class="ttdef"><b>Definition</b> Window.hpp:15</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Engine_html"><div class="ttname"><a href="classFrameEngine_1_1Engine.html">FrameEngine::Engine</a></div><div class="ttdoc">Core engine class that manages the main loop, physics, and rendering.</div><div class="ttdef"><b>Definition</b> Engine.hpp:25</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Engine_html_a35516b3821b2bd90c070be28da9f7280"><div class="ttname"><a href="classFrameEngine_1_1Engine.html#a35516b3821b2bd90c070be28da9f7280">FrameEngine::Engine::fixed_update</a></div><div class="ttdeci">virtual void fixed_update(float dt)</div><div class="ttdoc">User-defined logic that updates every fixed timestep.</div><div class="ttdef"><b>Definition</b> Engine.cpp:34</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Engine_html_a492592c103bf35455d3e4eb731803e00"><div class="ttname"><a href="classFrameEngine_1_1Engine.html#a492592c103bf35455d3e4eb731803e00">FrameEngine::Engine::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Bootstrap This function should be called before 'run()' to ensure all components are properly set up ...</div><div class="ttdef"><b>Definition</b> Engine.cpp:22</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Engine_html_a59720a31a124d35554857ceb09d5806e"><div class="ttname"><a href="classFrameEngine_1_1Engine.html#a59720a31a124d35554857ceb09d5806e">FrameEngine::Engine::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stops the engine gracefully.</div><div class="ttdef"><b>Definition</b> Engine.cpp:29</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Engine_html_a5de0f1645b9019f07aae0b1bbabd339d"><div class="ttname"><a href="classFrameEngine_1_1Engine.html#a5de0f1645b9019f07aae0b1bbabd339d">FrameEngine::Engine::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Starts the main game loop.</div><div class="ttdef"><b>Definition</b> Engine.cpp:44</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Engine_html_a7636234c3a9343b455bc7d071a46ff11"><div class="ttname"><a href="classFrameEngine_1_1Engine.html#a7636234c3a9343b455bc7d071a46ff11">FrameEngine::Engine::on_start</a></div><div class="ttdeci">virtual void on_start()</div><div class="ttdoc">Called once at the start of execution.</div><div class="ttdef"><b>Definition</b> Engine.cpp:32</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Renderer_html"><div class="ttname"><a href="classFrameEngine_1_1Renderer.html">FrameEngine::Renderer</a></div><div class="ttdoc">Handles the drawing of scene objects and lights.</div><div class="ttdef"><b>Definition</b> Renderer.hpp:24</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Window_html"><div class="ttname"><a href="classFrameEngine_1_1Window.html">FrameEngine::Window</a></div><div class="ttdef"><b>Definition</b> Window.hpp:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

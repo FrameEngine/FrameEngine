@@ -1,15 +1,15 @@
 <map id="PointLight" name="PointLight">
-<area shape="rect" id="Node000001" title="An ECS entity representing a point light source." alt="" coords="161,951,278,1096"/>
-<area shape="rect" id="Node000002" href="$classObject.html" title="A high&#45;level ECS entity wrapper with default components." alt="" coords="155,676,283,901"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="222,915,222,950,217,950,217,915"/>
-<area shape="rect" id="Node000003" href="$classEntity.html" title="A high&#45;level ECS entity wrapper." alt="" coords="36,468,205,613"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="157,625,177,675,172,677,152,627"/>
-<area shape="rect" id="Node000004" href="$classRegistry.html" title="Manages all ECS entities and components." alt="" coords="5,65,236,331"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="123,331,123,451,118,451,118,331"/>
-<area shape="rect" id="Node000005" href="$structTransformComponent.html" title="Represents the transformation properties of an entity." alt="" coords="230,481,409,601"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="298,602,273,662,269,660,293,600"/>
-<area shape="rect" id="Node000006" href="$classVector3.html" title=" " alt="" coords="260,25,376,371"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="321,371,322,464,316,464,316,371"/>
-<area shape="rect" id="Node000007" href="$structQuaternion.html" title=" " alt="" coords="400,5,535,391"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="419,392,395,445,381,468,377,466,390,443,414,390"/>
+<area shape="rect" id="Node000001" title="An ECS entity representing a point light source." alt="" coords="160,1044,275,1206"/>
+<area shape="rect" id="Node000002" href="$classObject.html" title="A high&#45;level ECS entity wrapper with default components." alt="" coords="154,744,280,995"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,1009,220,1044,214,1044,214,1009"/>
+<area shape="rect" id="Node000003" href="$classEntity.html" title="A high&#45;level ECS entity wrapper." alt="" coords="36,517,203,679"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="156,692,175,743,170,745,151,694"/>
+<area shape="rect" id="Node000004" href="$classRegistry.html" title="Manages all ECS entities and components." alt="" coords="5,84,234,357"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="122,356,122,500,117,500,117,356"/>
+<area shape="rect" id="Node000005" href="$structTransformComponent.html" title="Represents the transformation properties of an entity." alt="" coords="227,531,405,665"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="294,665,271,729,266,727,289,664"/>
+<area shape="rect" id="Node000006" href="$classVector3.html" title=" " alt="" coords="259,28,373,413"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="318,412,318,514,313,514,313,412"/>
+<area shape="rect" id="Node000007" href="$structQuaternion.html" title=" " alt="" coords="397,5,530,435"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="414,436,390,494,378,518,373,515,385,492,409,434"/>
 </map>

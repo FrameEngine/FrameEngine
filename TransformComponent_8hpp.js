@@ -1,4 +1,4 @@
 var TransformComponent_8hpp =
 [
-    [ "TransformComponent", "structTransformComponent.html", "structTransformComponent" ]
+    [ "FrameEngine::TransformComponent", "structFrameEngine_1_1TransformComponent.html", "structFrameEngine_1_1TransformComponent" ]
 ];

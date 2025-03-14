@@ -106,252 +106,256 @@ $(document).ready(function(){initNavTree('Matrix4_8hpp_source.html',''); initRes
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;iomanip&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;sstream&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="};">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structMatrix4.html">   25</a></span><span class="keyword">struct </span><a class="code hl_class" href="structMatrix4.html">Matrix4</a> {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">float</span> m[4][4];</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structMatrix4.html#a21e70a74447b9b05cf9a06400bc9c661">   32</a></span>  <a class="code hl_function" href="structMatrix4.html#a21e70a74447b9b05cf9a06400bc9c661">Matrix4</a>() {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; i++)</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; 4; j++)</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        m[i][j] = (i == j) ? 1.0f : 0.0f;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  }</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>FrameEngine {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html">   27</a></span><span class="keyword">struct </span><a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordtype">float</span> m[4][4];</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#ab25f63fe517e62617bd6a64c7189acd1">   34</a></span>  <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#ab25f63fe517e62617bd6a64c7189acd1">Matrix4</a>() {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; i++)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; 4; j++)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        m[i][j] = (i == j) ? 1.0f : 0.0f;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  }</div>
 </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structMatrix4.html#ae580a375986d03d211952dc4bae5706e">   45</a></span>  <a class="code hl_function" href="structMatrix4.html#ae580a375986d03d211952dc4bae5706e">Matrix4</a>(std::initializer_list&lt;double&gt; values) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">if</span> (values.size() != 16) {</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      <span class="keywordflow">throw</span> std::invalid_argument(</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>          <span class="stringliteral">&quot;Matrix4 must be initialized with exactly 16 values&quot;</span>);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">auto</span> it = values.begin();</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        m[row][col] = *it++;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      }</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#a29ba573f4d7a662c55f81f10fbd62d3c">   47</a></span>  <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#a29ba573f4d7a662c55f81f10fbd62d3c">Matrix4</a>(std::initializer_list&lt;double&gt; values) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordflow">if</span> (values.size() != 16) {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      <span class="keywordflow">throw</span> std::invalid_argument(</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>          <span class="stringliteral">&quot;Matrix4 must be initialized with exactly 16 values&quot;</span>);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">auto</span> it = values.begin();</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        m[row][col] = *it++;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      }</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    }</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  }</div>
 </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structMatrix4.html#ac95c34d9649930c45264013b4a500ac4">   67</a></span>  <a class="code hl_class" href="structMatrix4.html">Matrix4</a> &amp;<a class="code hl_function" href="structMatrix4.html#ac95c34d9649930c45264013b4a500ac4">operator=</a>(std::initializer_list&lt;float&gt; values) {</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">if</span> (values.size() != 16) {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Matrix4 must be assigned exactly 16 values&quot;</span>);</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">auto</span> it = values.begin();</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        m[row][col] = *it++;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      }</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#a54aa5cb8cbca3ef04ec0d42a43469393">   69</a></span>  <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> &amp;<a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#a54aa5cb8cbca3ef04ec0d42a43469393">operator=</a>(std::initializer_list&lt;float&gt; values) {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">if</span> (values.size() != 16) {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;Matrix4 must be assigned exactly 16 values&quot;</span>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">auto</span> it = values.begin();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        m[row][col] = *it++;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  }</div>
 </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structMatrix4.html#a74a94cca3f418667e79c40170dc7d635">   86</a></span>  <span class="keywordtype">float</span> *<a class="code hl_function" href="structMatrix4.html#a74a94cca3f418667e79c40170dc7d635">operator[]</a>(<span class="keywordtype">int</span> row) { <span class="keywordflow">return</span> m[row]; }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="structMatrix4.html#ac75974947937ab36d3305fe69d8298db">   98</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="structMatrix4.html">Matrix4</a> <a class="code hl_function" href="structMatrix4.html#ac75974947937ab36d3305fe69d8298db">createRotationMatrix</a>(<span class="keyword">const</span> <a class="code hl_class" href="classVector3.html">Vector3</a> &amp;axis, <span class="keywordtype">float</span> angle) {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_struct" href="structQuaternion.html">Quaternion</a> q = <a class="code hl_function" href="structQuaternion.html#afd23f6fe56d5d96f897e20c901ec7d19">Quaternion::fromAxisAngle</a>(axis, angle);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">return</span> q.<a class="code hl_function" href="structQuaternion.html#ae1a6eef5ea4bb26c6df33504a16bcfa7">toMatrix</a>();</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#adc7d45065522e5fc192aa0f3eceb70a6">   88</a></span>  <span class="keywordtype">float</span> *<a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#adc7d45065522e5fc192aa0f3eceb70a6">operator[]</a>(<span class="keywordtype">int</span> row) { <span class="keywordflow">return</span> m[row]; }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="}">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#ad39de152e61565228a364e9a5ebbb6c1">  100</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#ad39de152e61565228a364e9a5ebbb6c1">createRotationMatrix</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFrameEngine_1_1Vector3.html">Vector3</a> &amp;axis, <span class="keywordtype">float</span> angle) {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code hl_struct" href="structFrameEngine_1_1Quaternion.html">Quaternion</a> q = <a class="code hl_function" href="structFrameEngine_1_1Quaternion.html#ae5004315bc10abfcb618847d128599f6">Quaternion::fromAxisAngle</a>(axis, angle);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">return</span> q.<a class="code hl_function" href="structFrameEngine_1_1Quaternion.html#a6780c3411d65b8d070476721c26cda66">toMatrix</a>();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  }</div>
 </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="structMatrix4.html#a943cdcd144c58c21e23b241fa2a554aa">  112</a></span>  <a class="code hl_class" href="classVector3.html">Vector3</a> <a class="code hl_function" href="structMatrix4.html#a943cdcd144c58c21e23b241fa2a554aa">transformVector</a>(<span class="keyword">const</span> <a class="code hl_class" href="classVector3.html">Vector3</a> &amp;v)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">return</span> {v.x * m[0][0] + v.y * m[1][0] + v.z * m[2][0],</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            v.x * m[0][1] + v.y * m[1][1] + v.z * m[2][1],</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            v.x * m[0][2] + v.y * m[1][2] + v.z * m[2][2]};</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#a9afb7342e9bfb91d8364f60f591433eb">  114</a></span>  <a class="code hl_class" href="classFrameEngine_1_1Vector3.html">Vector3</a> <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#a9afb7342e9bfb91d8364f60f591433eb">transformVector</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFrameEngine_1_1Vector3.html">Vector3</a> &amp;v)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">return</span> {v.x * m[0][0] + v.y * m[1][0] + v.z * m[2][0],</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            v.x * m[0][1] + v.y * m[1][1] + v.z * m[2][1],</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            v.x * m[0][2] + v.y * m[1][2] + v.z * m[2][2]};</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
 </div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="foldopen" id="foldopen00126" data-start="{" data-end="}">
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="structMatrix4.html#a6db37a8b0f398e92f49ffb73848e3b2f">  126</a></span>  std::string <a class="code hl_function" href="structMatrix4.html#a6db37a8b0f398e92f49ffb73848e3b2f">toString</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="comment">// TODO Add formating options, like floating point precision, output format</span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="comment">// etc.</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    std::ostringstream oss;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    oss &lt;&lt; std::fixed &lt;&lt; std::setprecision(4);</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      oss &lt;&lt; <span class="stringliteral">&quot;[ &quot;</span>;</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        oss &lt;&lt; std::setw(8) &lt;&lt; m[row][col] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      }</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      oss &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keywordflow">return</span> oss.str();</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#a612c3ded564be98cec801c93a6757ae9">  128</a></span>  std::string <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#a612c3ded564be98cec801c93a6757ae9">toString</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="comment">// TODO Add formating options, like floating point precision, output format</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="comment">// etc.</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    std::ostringstream oss;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    oss &lt;&lt; std::fixed &lt;&lt; std::setprecision(4);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      oss &lt;&lt; <span class="stringliteral">&quot;[ &quot;</span>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        oss &lt;&lt; std::setw(8) &lt;&lt; m[row][col] &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>      }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>      oss &lt;&lt; <span class="stringliteral">&quot;]\n&quot;</span>;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    }</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">return</span> oss.str();</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  }</div>
 </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
-<div class="foldopen" id="foldopen00149" data-start="{" data-end="}">
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="structMatrix4.html#a07a0a50c8e4d085e289a9d383040202d">  149</a></span>  <a class="code hl_class" href="structMatrix4.html">Matrix4</a> <a class="code hl_function" href="structMatrix4.html#a07a0a50c8e4d085e289a9d383040202d">operator*</a>(<span class="keyword">const</span> <a class="code hl_class" href="structMatrix4.html">Matrix4</a> &amp;other)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <a class="code hl_class" href="structMatrix4.html">Matrix4</a> result;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        result.m[row][col] = 0.0f;</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; i++) {</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>          result.m[row][col] += m[row][i] * other.m[i][col];</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>      }</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    }</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="foldopen" id="foldopen00151" data-start="{" data-end="}">
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#ab8b1f7b14f6a3cd91ec16ed650e80385">  151</a></span>  <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#ab8b1f7b14f6a3cd91ec16ed650e80385">operator*</a>(<span class="keyword">const</span> <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> &amp;other)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> result;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        result.m[row][col] = 0.0f;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; i++) {</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>          result.m[row][col] += m[row][i] * other.m[i][col];</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        }</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      }</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  }</div>
 </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
-<div class="foldopen" id="foldopen00170" data-start="{" data-end="}">
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="structMatrix4.html#a0868a975fc746f6812ae58b2e519350d">  170</a></span>  <a class="code hl_class" href="structMatrix4.html">Matrix4</a> <a class="code hl_function" href="structMatrix4.html#a0868a975fc746f6812ae58b2e519350d">operator+</a>(<span class="keyword">const</span> <a class="code hl_class" href="structMatrix4.html">Matrix4</a> &amp;other)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <a class="code hl_class" href="structMatrix4.html">Matrix4</a> result;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        result.m[row][col] = m[row][col] + other.m[row][col];</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>      }</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    }</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  }</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
+<div class="foldopen" id="foldopen00172" data-start="{" data-end="}">
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#a2881aca8117898d3cf629ad963a8e690">  172</a></span>  <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#a2881aca8117898d3cf629ad963a8e690">operator+</a>(<span class="keyword">const</span> <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> &amp;other)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> result;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        result.m[row][col] = m[row][col] + other.m[row][col];</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>      }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    }</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  }</div>
 </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
-<div class="foldopen" id="foldopen00186" data-start="{" data-end="}">
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="structMatrix4.html#a13a17942d7e307ca4f65f14d3183079e">  186</a></span>  <a class="code hl_class" href="structMatrix4.html">Matrix4</a> <a class="code hl_function" href="structMatrix4.html#a13a17942d7e307ca4f65f14d3183079e">operator-</a>(<span class="keyword">const</span> <a class="code hl_class" href="structMatrix4.html">Matrix4</a> &amp;other)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <a class="code hl_class" href="structMatrix4.html">Matrix4</a> result;</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        result.m[row][col] = m[row][col] - other.m[row][col];</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>      }</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    }</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  }</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="foldopen" id="foldopen00188" data-start="{" data-end="}">
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#a0951e67fc2f27878d7391f1daf6ca258">  188</a></span>  <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#a0951e67fc2f27878d7391f1daf6ca258">operator-</a>(<span class="keyword">const</span> <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> &amp;other)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> result;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        result.m[row][col] = m[row][col] - other.m[row][col];</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>      }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    }</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  }</div>
 </div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
-<div class="foldopen" id="foldopen00202" data-start="{" data-end="}">
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno"><a class="line" href="structMatrix4.html#af1003593d38216e31f3147c5111cda78">  202</a></span>  <a class="code hl_class" href="structMatrix4.html">Matrix4</a> <a class="code hl_function" href="structMatrix4.html#af1003593d38216e31f3147c5111cda78">operator*</a>(<span class="keywordtype">float</span> scalar)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <a class="code hl_class" href="structMatrix4.html">Matrix4</a> result;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        result.m[row][col] = m[row][col] * scalar;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>      }</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    }</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="foldopen" id="foldopen00204" data-start="{" data-end="}">
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#aa9431ef7a77b6b500229e051760700d7">  204</a></span>  <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#aa9431ef7a77b6b500229e051760700d7">operator*</a>(<span class="keywordtype">float</span> scalar)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> result;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        result.m[row][col] = m[row][col] * scalar;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>      }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  }</div>
 </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
-<div class="foldopen" id="foldopen00220" data-start="{" data-end="}">
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="structMatrix4.html#a7fc0d09be601cd9e0a3ca832f6aa554a">  220</a></span>  <a class="code hl_class" href="structMatrix4.html">Matrix4</a> <a class="code hl_function" href="structMatrix4.html#a7fc0d09be601cd9e0a3ca832f6aa554a">operator/</a>(<span class="keywordtype">float</span> scalar)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="comment">// TODO Throw an error if division by zero</span></div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keywordflow">if</span> (scalar == 0.0f)</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <a class="code hl_class" href="structMatrix4.html">Matrix4</a> result;</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        result.m[row][col] = m[row][col] / scalar;</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>      }</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    }</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  }</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="foldopen" id="foldopen00222" data-start="{" data-end="}">
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#af5fb2c161754bdea0ed04a501edb6f06">  222</a></span>  <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#af5fb2c161754bdea0ed04a501edb6f06">operator/</a>(<span class="keywordtype">float</span> scalar)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="comment">// TODO Throw an error if division by zero</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keywordflow">if</span> (scalar == 0.0f)</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> result;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        result.m[row][col] = m[row][col] / scalar;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>      }</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  }</div>
 </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
-<div class="foldopen" id="foldopen00242" data-start="{" data-end="}">
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno"><a class="line" href="structMatrix4.html#a5724c3b529f84d92e50f687810fd6db8">  242</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="structMatrix4.html#a5724c3b529f84d92e50f687810fd6db8">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="structMatrix4.html">Matrix4</a> &amp;other)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <span class="comment">// TODO Probably should make epsilon customizable</span></div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    <span class="keyword">constexpr</span> <span class="keywordtype">float</span> EPSILON = 1e-4f;</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        <span class="keywordtype">float</span> diff = std::fabs(m[row][col] - other.m[row][col]);</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keywordflow">if</span> (diff &gt; EPSILON) {</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>          <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        }</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>      }</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    }</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  }</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="foldopen" id="foldopen00244" data-start="{" data-end="}">
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#accf5465456961c77463d92e8ba4f4e79">  244</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#accf5465456961c77463d92e8ba4f4e79">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> &amp;other)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="comment">// TODO Probably should make epsilon customizable</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keyword">constexpr</span> <span class="keywordtype">float</span> EPSILON = 1e-4f;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keywordtype">float</span> diff = std::fabs(m[row][col] - other.m[row][col]);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>        <span class="keywordflow">if</span> (diff &gt; EPSILON) {</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>          <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>      }</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    }</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  }</div>
 </div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno"><a class="line" href="structMatrix4.html#a93750133d8c9bb494621240383e1a107">  265</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="structMatrix4.html#a93750133d8c9bb494621240383e1a107">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="structMatrix4.html">Matrix4</a> &amp;other)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == other); }</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
-<div class="foldopen" id="foldopen00275" data-start="{" data-end="}">
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno"><a class="line" href="structMatrix4.html#a69367ead23554d96061ddee73e0bfd15">  275</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="structMatrix4.html">Matrix4</a> <a class="code hl_function" href="structMatrix4.html#a69367ead23554d96061ddee73e0bfd15">createTranslationMatrix</a>(<span class="keyword">const</span> <a class="code hl_class" href="classVector3.html">Vector3</a> &amp;pos) {</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <a class="code hl_class" href="structMatrix4.html">Matrix4</a> mat;</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    mat.m[3][0] = pos.x;</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    mat.m[3][1] = pos.y;</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    mat.m[3][2] = pos.z;</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span> </div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keywordflow">return</span> mat;</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  }</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#a5591bba88c91f338fc894b80be3b8b92">  267</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#a5591bba88c91f338fc894b80be3b8b92">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> &amp;other)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> !(*<span class="keyword">this</span> == other); }</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="foldopen" id="foldopen00277" data-start="{" data-end="}">
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#a56a517373e74d00f8a833ae261718487">  277</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#a56a517373e74d00f8a833ae261718487">createTranslationMatrix</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFrameEngine_1_1Vector3.html">Vector3</a> &amp;pos) {</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> mat;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    mat.m[3][0] = pos.x;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    mat.m[3][1] = pos.y;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    mat.m[3][2] = pos.z;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <span class="keywordflow">return</span> mat;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  }</div>
 </div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
-<div class="foldopen" id="foldopen00294" data-start="{" data-end="}">
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno"><a class="line" href="structMatrix4.html#a9dc7abcfd6a2a5e02765c8708276140f">  294</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="structMatrix4.html">Matrix4</a> <a class="code hl_function" href="structMatrix4.html#a9dc7abcfd6a2a5e02765c8708276140f">createScalingMatrix</a>(<span class="keyword">const</span> <a class="code hl_class" href="classVector3.html">Vector3</a> &amp;s) {</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <a class="code hl_class" href="structMatrix4.html">Matrix4</a> mat;</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span> </div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    mat.m[0][0] = s.x;</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    mat.m[1][1] = s.y;</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    mat.m[2][2] = s.z;</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    <span class="keywordflow">return</span> mat;</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  }</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="foldopen" id="foldopen00296" data-start="{" data-end="}">
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#a3e5f0addd671260dc935b9311db58078">  296</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#a3e5f0addd671260dc935b9311db58078">createScalingMatrix</a>(<span class="keyword">const</span> <a class="code hl_class" href="classFrameEngine_1_1Vector3.html">Vector3</a> &amp;s) {</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> mat;</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    mat.m[0][0] = s.x;</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    mat.m[1][1] = s.y;</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    mat.m[2][2] = s.z;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="keywordflow">return</span> mat;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>  }</div>
 </div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
-<div class="foldopen" id="foldopen00309" data-start="{" data-end="}">
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno"><a class="line" href="structMatrix4.html#aff21eee8a48482c36f84345b57aac6c8">  309</a></span>  <a class="code hl_class" href="structMatrix4.html">Matrix4</a> <a class="code hl_function" href="structMatrix4.html#aff21eee8a48482c36f84345b57aac6c8">getTranspose</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <a class="code hl_class" href="structMatrix4.html">Matrix4</a> result;</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        result.m[row][col] = m[col][row];</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>      }</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    }</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>  }</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span> </div>
+<div class="foldopen" id="foldopen00311" data-start="{" data-end="}">
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#a9b35ffac2c4d50631278adf544b1f1de">  311</a></span>  <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#a9b35ffac2c4d50631278adf544b1f1de">getTranspose</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> result;</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> row = 0; row &lt; 4; row++) {</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> col = 0; col &lt; 4; col++) {</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        result.m[row][col] = m[col][row];</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>      }</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    }</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>  }</div>
 </div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
-<div class="foldopen" id="foldopen00328" data-start="{" data-end="}">
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno"><a class="line" href="structMatrix4.html#a9f88b7eb74bd14087671fdf045a9f2d3">  328</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="structMatrix4.html">Matrix4</a> <a class="code hl_function" href="structMatrix4.html#a9f88b7eb74bd14087671fdf045a9f2d3">createPerspectiveMatrix</a>(<span class="keywordtype">float</span> fov, <span class="keywordtype">float</span> aspect, <span class="keywordtype">float</span> near,</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>                                         <span class="keywordtype">float</span> far) {</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    <span class="keywordtype">float</span> tanHalfFOV = tan(fov * 0.5f * M_PI / 180.0f);</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span> </div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    <a class="code hl_class" href="structMatrix4.html">Matrix4</a> mat;</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    mat.m[0][0] = 1.0f / (aspect * tanHalfFOV);</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    mat.m[1][1] = 1.0f / tanHalfFOV;</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    mat.m[2][2] = -(far + near) / (far - near);</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    mat.m[2][3] = -1.0f;</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    mat.m[3][2] = -(2.0f * far * near) / (far - near);</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    mat.m[3][3] = 0.0f;</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    <span class="keywordflow">return</span> mat;</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>  }</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
+<div class="foldopen" id="foldopen00330" data-start="{" data-end="}">
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno"><a class="line" href="structFrameEngine_1_1Matrix4.html#a72ad71288a05efc326e94a7045ba0a6a">  330</a></span>  <span class="keyword">static</span> <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> <a class="code hl_function" href="structFrameEngine_1_1Matrix4.html#a72ad71288a05efc326e94a7045ba0a6a">createPerspectiveMatrix</a>(<span class="keywordtype">float</span> fov, <span class="keywordtype">float</span> aspect, <span class="keywordtype">float</span> near,</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>                                         <span class="keywordtype">float</span> far) {</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    <span class="keywordtype">float</span> tanHalfFOV = tan(fov * 0.5f * M_PI / 180.0f);</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    <a class="code hl_class" href="structFrameEngine_1_1Matrix4.html">Matrix4</a> mat;</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    mat.m[0][0] = 1.0f / (aspect * tanHalfFOV);</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    mat.m[1][1] = 1.0f / tanHalfFOV;</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    mat.m[2][2] = -(far + near) / (far - near);</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    mat.m[2][3] = -1.0f;</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    mat.m[3][2] = -(2.0f * far * near) / (far - near);</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    mat.m[3][3] = 0.0f;</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    <span class="keywordflow">return</span> mat;</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  }</div>
 </div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>};</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>};</div>
 </div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="preprocessor">#endif </span><span class="comment">// MATRIX4_HPP</span></div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>} <span class="comment">// namespace FrameEngine</span></div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span> </div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="preprocessor">#endif </span><span class="comment">// MATRIX4_HPP</span></div>
 <div class="ttc" id="aQuaternion_8hpp_html"><div class="ttname"><a href="Quaternion_8hpp.html">Quaternion.hpp</a></div><div class="ttdoc">Defines the Quaternion class for representing 3D rotations.</div></div>
 <div class="ttc" id="aVector3_8hpp_html"><div class="ttname"><a href="Vector3_8hpp.html">Vector3.hpp</a></div><div class="ttdoc">Defines the Vector3 class.</div></div>
-<div class="ttc" id="aclassVector3_html"><div class="ttname"><a href="classVector3.html">Vector3</a></div><div class="ttdef"><b>Definition</b> Vector3.hpp:13</div></div>
-<div class="ttc" id="astructMatrix4_html"><div class="ttname"><a href="structMatrix4.html">Matrix4</a></div><div class="ttdoc">A 4x4 matrix class.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:25</div></div>
-<div class="ttc" id="astructMatrix4_html_a07a0a50c8e4d085e289a9d383040202d"><div class="ttname"><a href="structMatrix4.html#a07a0a50c8e4d085e289a9d383040202d">Matrix4::operator*</a></div><div class="ttdeci">Matrix4 operator*(const Matrix4 &amp;other) const</div><div class="ttdoc">Multiplies this matrix with another matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:149</div></div>
-<div class="ttc" id="astructMatrix4_html_a0868a975fc746f6812ae58b2e519350d"><div class="ttname"><a href="structMatrix4.html#a0868a975fc746f6812ae58b2e519350d">Matrix4::operator+</a></div><div class="ttdeci">Matrix4 operator+(const Matrix4 &amp;other) const</div><div class="ttdoc">Adds another matrix to this matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:170</div></div>
-<div class="ttc" id="astructMatrix4_html_a13a17942d7e307ca4f65f14d3183079e"><div class="ttname"><a href="structMatrix4.html#a13a17942d7e307ca4f65f14d3183079e">Matrix4::operator-</a></div><div class="ttdeci">Matrix4 operator-(const Matrix4 &amp;other) const</div><div class="ttdoc">Subtracts another matrix from this matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:186</div></div>
-<div class="ttc" id="astructMatrix4_html_a21e70a74447b9b05cf9a06400bc9c661"><div class="ttname"><a href="structMatrix4.html#a21e70a74447b9b05cf9a06400bc9c661">Matrix4::Matrix4</a></div><div class="ttdeci">Matrix4()</div><div class="ttdoc">Default constructor that initializes the matrix as an identity matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:32</div></div>
-<div class="ttc" id="astructMatrix4_html_a5724c3b529f84d92e50f687810fd6db8"><div class="ttname"><a href="structMatrix4.html#a5724c3b529f84d92e50f687810fd6db8">Matrix4::operator==</a></div><div class="ttdeci">bool operator==(const Matrix4 &amp;other) const</div><div class="ttdoc">Compares this matrix with another.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:242</div></div>
-<div class="ttc" id="astructMatrix4_html_a69367ead23554d96061ddee73e0bfd15"><div class="ttname"><a href="structMatrix4.html#a69367ead23554d96061ddee73e0bfd15">Matrix4::createTranslationMatrix</a></div><div class="ttdeci">static Matrix4 createTranslationMatrix(const Vector3 &amp;pos)</div><div class="ttdoc">Generates a translation matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:275</div></div>
-<div class="ttc" id="astructMatrix4_html_a6db37a8b0f398e92f49ffb73848e3b2f"><div class="ttname"><a href="structMatrix4.html#a6db37a8b0f398e92f49ffb73848e3b2f">Matrix4::toString</a></div><div class="ttdeci">std::string toString() const</div><div class="ttdoc">Returns a string representation of the matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:126</div></div>
-<div class="ttc" id="astructMatrix4_html_a74a94cca3f418667e79c40170dc7d635"><div class="ttname"><a href="structMatrix4.html#a74a94cca3f418667e79c40170dc7d635">Matrix4::operator[]</a></div><div class="ttdeci">float * operator[](int row)</div><div class="ttdoc">Provides non-const access to a row of the matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:86</div></div>
-<div class="ttc" id="astructMatrix4_html_a7fc0d09be601cd9e0a3ca832f6aa554a"><div class="ttname"><a href="structMatrix4.html#a7fc0d09be601cd9e0a3ca832f6aa554a">Matrix4::operator/</a></div><div class="ttdeci">Matrix4 operator/(float scalar) const</div><div class="ttdoc">Divides the matrix by a scalar.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:220</div></div>
-<div class="ttc" id="astructMatrix4_html_a93750133d8c9bb494621240383e1a107"><div class="ttname"><a href="structMatrix4.html#a93750133d8c9bb494621240383e1a107">Matrix4::operator!=</a></div><div class="ttdeci">bool operator!=(const Matrix4 &amp;other) const</div><div class="ttdoc">Checks whether this matrix is not equal to another matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:265</div></div>
-<div class="ttc" id="astructMatrix4_html_a943cdcd144c58c21e23b241fa2a554aa"><div class="ttname"><a href="structMatrix4.html#a943cdcd144c58c21e23b241fa2a554aa">Matrix4::transformVector</a></div><div class="ttdeci">Vector3 transformVector(const Vector3 &amp;v) const</div><div class="ttdoc">Transforms a vector using the upper 3x3 submatrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:112</div></div>
-<div class="ttc" id="astructMatrix4_html_a9dc7abcfd6a2a5e02765c8708276140f"><div class="ttname"><a href="structMatrix4.html#a9dc7abcfd6a2a5e02765c8708276140f">Matrix4::createScalingMatrix</a></div><div class="ttdeci">static Matrix4 createScalingMatrix(const Vector3 &amp;s)</div><div class="ttdoc">Generates a scaling matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:294</div></div>
-<div class="ttc" id="astructMatrix4_html_a9f88b7eb74bd14087671fdf045a9f2d3"><div class="ttname"><a href="structMatrix4.html#a9f88b7eb74bd14087671fdf045a9f2d3">Matrix4::createPerspectiveMatrix</a></div><div class="ttdeci">static Matrix4 createPerspectiveMatrix(float fov, float aspect, float near, float far)</div><div class="ttdoc">Constructs a perspective projection matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:328</div></div>
-<div class="ttc" id="astructMatrix4_html_ac75974947937ab36d3305fe69d8298db"><div class="ttname"><a href="structMatrix4.html#ac75974947937ab36d3305fe69d8298db">Matrix4::createRotationMatrix</a></div><div class="ttdeci">static Matrix4 createRotationMatrix(const Vector3 &amp;axis, float angle)</div><div class="ttdoc">Creates a rotation matrix from an axis and angle.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:98</div></div>
-<div class="ttc" id="astructMatrix4_html_ac95c34d9649930c45264013b4a500ac4"><div class="ttname"><a href="structMatrix4.html#ac95c34d9649930c45264013b4a500ac4">Matrix4::operator=</a></div><div class="ttdeci">Matrix4 &amp; operator=(std::initializer_list&lt; float &gt; values)</div><div class="ttdoc">Assigns the matrix using an initializer list of 16 floats.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:67</div></div>
-<div class="ttc" id="astructMatrix4_html_ae580a375986d03d211952dc4bae5706e"><div class="ttname"><a href="structMatrix4.html#ae580a375986d03d211952dc4bae5706e">Matrix4::Matrix4</a></div><div class="ttdeci">Matrix4(std::initializer_list&lt; double &gt; values)</div><div class="ttdoc">Constructs a Matrix4 from an initializer list of 16 values.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:45</div></div>
-<div class="ttc" id="astructMatrix4_html_af1003593d38216e31f3147c5111cda78"><div class="ttname"><a href="structMatrix4.html#af1003593d38216e31f3147c5111cda78">Matrix4::operator*</a></div><div class="ttdeci">Matrix4 operator*(float scalar) const</div><div class="ttdoc">Multiplies the matrix by a scalar.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:202</div></div>
-<div class="ttc" id="astructMatrix4_html_aff21eee8a48482c36f84345b57aac6c8"><div class="ttname"><a href="structMatrix4.html#aff21eee8a48482c36f84345b57aac6c8">Matrix4::getTranspose</a></div><div class="ttdeci">Matrix4 getTranspose() const</div><div class="ttdoc">Computes and returns the transpose of the matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:309</div></div>
-<div class="ttc" id="astructQuaternion_html"><div class="ttname"><a href="structQuaternion.html">Quaternion</a></div><div class="ttdef"><b>Definition</b> Quaternion.hpp:16</div></div>
-<div class="ttc" id="astructQuaternion_html_ae1a6eef5ea4bb26c6df33504a16bcfa7"><div class="ttname"><a href="structQuaternion.html#ae1a6eef5ea4bb26c6df33504a16bcfa7">Quaternion::toMatrix</a></div><div class="ttdeci">Matrix4 toMatrix() const</div><div class="ttdoc">Converts this quaternion to a rotation matrix.</div><div class="ttdef"><b>Definition</b> Quaternion.cpp:12</div></div>
-<div class="ttc" id="astructQuaternion_html_afd23f6fe56d5d96f897e20c901ec7d19"><div class="ttname"><a href="structQuaternion.html#afd23f6fe56d5d96f897e20c901ec7d19">Quaternion::fromAxisAngle</a></div><div class="ttdeci">static Quaternion fromAxisAngle(const Vector3 &amp;axis, float angle)</div><div class="ttdoc">Creates a quaternion from an axis-angle representation.</div><div class="ttdef"><b>Definition</b> Quaternion.hpp:90</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Vector3_html"><div class="ttname"><a href="classFrameEngine_1_1Vector3.html">FrameEngine::Vector3</a></div><div class="ttdef"><b>Definition</b> Vector3.hpp:15</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html">FrameEngine::Matrix4</a></div><div class="ttdoc">A 4x4 matrix class.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:27</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_a0951e67fc2f27878d7391f1daf6ca258"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#a0951e67fc2f27878d7391f1daf6ca258">FrameEngine::Matrix4::operator-</a></div><div class="ttdeci">Matrix4 operator-(const Matrix4 &amp;other) const</div><div class="ttdoc">Subtracts another matrix from this matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:188</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_a2881aca8117898d3cf629ad963a8e690"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#a2881aca8117898d3cf629ad963a8e690">FrameEngine::Matrix4::operator+</a></div><div class="ttdeci">Matrix4 operator+(const Matrix4 &amp;other) const</div><div class="ttdoc">Adds another matrix to this matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:172</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_a29ba573f4d7a662c55f81f10fbd62d3c"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#a29ba573f4d7a662c55f81f10fbd62d3c">FrameEngine::Matrix4::Matrix4</a></div><div class="ttdeci">Matrix4(std::initializer_list&lt; double &gt; values)</div><div class="ttdoc">Constructs a Matrix4 from an initializer list of 16 values.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:47</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_a3e5f0addd671260dc935b9311db58078"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#a3e5f0addd671260dc935b9311db58078">FrameEngine::Matrix4::createScalingMatrix</a></div><div class="ttdeci">static Matrix4 createScalingMatrix(const Vector3 &amp;s)</div><div class="ttdoc">Generates a scaling matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:296</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_a54aa5cb8cbca3ef04ec0d42a43469393"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#a54aa5cb8cbca3ef04ec0d42a43469393">FrameEngine::Matrix4::operator=</a></div><div class="ttdeci">Matrix4 &amp; operator=(std::initializer_list&lt; float &gt; values)</div><div class="ttdoc">Assigns the matrix using an initializer list of 16 floats.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:69</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_a5591bba88c91f338fc894b80be3b8b92"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#a5591bba88c91f338fc894b80be3b8b92">FrameEngine::Matrix4::operator!=</a></div><div class="ttdeci">bool operator!=(const Matrix4 &amp;other) const</div><div class="ttdoc">Checks whether this matrix is not equal to another matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:267</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_a56a517373e74d00f8a833ae261718487"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#a56a517373e74d00f8a833ae261718487">FrameEngine::Matrix4::createTranslationMatrix</a></div><div class="ttdeci">static Matrix4 createTranslationMatrix(const Vector3 &amp;pos)</div><div class="ttdoc">Generates a translation matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:277</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_a612c3ded564be98cec801c93a6757ae9"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#a612c3ded564be98cec801c93a6757ae9">FrameEngine::Matrix4::toString</a></div><div class="ttdeci">std::string toString() const</div><div class="ttdoc">Returns a string representation of the matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:128</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_a72ad71288a05efc326e94a7045ba0a6a"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#a72ad71288a05efc326e94a7045ba0a6a">FrameEngine::Matrix4::createPerspectiveMatrix</a></div><div class="ttdeci">static Matrix4 createPerspectiveMatrix(float fov, float aspect, float near, float far)</div><div class="ttdoc">Constructs a perspective projection matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:330</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_a9afb7342e9bfb91d8364f60f591433eb"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#a9afb7342e9bfb91d8364f60f591433eb">FrameEngine::Matrix4::transformVector</a></div><div class="ttdeci">Vector3 transformVector(const Vector3 &amp;v) const</div><div class="ttdoc">Transforms a vector using the upper 3x3 submatrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:114</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_a9b35ffac2c4d50631278adf544b1f1de"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#a9b35ffac2c4d50631278adf544b1f1de">FrameEngine::Matrix4::getTranspose</a></div><div class="ttdeci">Matrix4 getTranspose() const</div><div class="ttdoc">Computes and returns the transpose of the matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:311</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_aa9431ef7a77b6b500229e051760700d7"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#aa9431ef7a77b6b500229e051760700d7">FrameEngine::Matrix4::operator*</a></div><div class="ttdeci">Matrix4 operator*(float scalar) const</div><div class="ttdoc">Multiplies the matrix by a scalar.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:204</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_ab25f63fe517e62617bd6a64c7189acd1"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#ab25f63fe517e62617bd6a64c7189acd1">FrameEngine::Matrix4::Matrix4</a></div><div class="ttdeci">Matrix4()</div><div class="ttdoc">Default constructor that initializes the matrix as an identity matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:34</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_ab8b1f7b14f6a3cd91ec16ed650e80385"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#ab8b1f7b14f6a3cd91ec16ed650e80385">FrameEngine::Matrix4::operator*</a></div><div class="ttdeci">Matrix4 operator*(const Matrix4 &amp;other) const</div><div class="ttdoc">Multiplies this matrix with another matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:151</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_accf5465456961c77463d92e8ba4f4e79"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#accf5465456961c77463d92e8ba4f4e79">FrameEngine::Matrix4::operator==</a></div><div class="ttdeci">bool operator==(const Matrix4 &amp;other) const</div><div class="ttdoc">Compares this matrix with another.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:244</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_ad39de152e61565228a364e9a5ebbb6c1"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#ad39de152e61565228a364e9a5ebbb6c1">FrameEngine::Matrix4::createRotationMatrix</a></div><div class="ttdeci">static Matrix4 createRotationMatrix(const Vector3 &amp;axis, float angle)</div><div class="ttdoc">Creates a rotation matrix from an axis and angle.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:100</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_adc7d45065522e5fc192aa0f3eceb70a6"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#adc7d45065522e5fc192aa0f3eceb70a6">FrameEngine::Matrix4::operator[]</a></div><div class="ttdeci">float * operator[](int row)</div><div class="ttdoc">Provides non-const access to a row of the matrix.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:88</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Matrix4_html_af5fb2c161754bdea0ed04a501edb6f06"><div class="ttname"><a href="structFrameEngine_1_1Matrix4.html#af5fb2c161754bdea0ed04a501edb6f06">FrameEngine::Matrix4::operator/</a></div><div class="ttdeci">Matrix4 operator/(float scalar) const</div><div class="ttdoc">Divides the matrix by a scalar.</div><div class="ttdef"><b>Definition</b> Matrix4.hpp:222</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Quaternion_html"><div class="ttname"><a href="structFrameEngine_1_1Quaternion.html">FrameEngine::Quaternion</a></div><div class="ttdef"><b>Definition</b> Quaternion.hpp:18</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Quaternion_html_a6780c3411d65b8d070476721c26cda66"><div class="ttname"><a href="structFrameEngine_1_1Quaternion.html#a6780c3411d65b8d070476721c26cda66">FrameEngine::Quaternion::toMatrix</a></div><div class="ttdeci">Matrix4 toMatrix() const</div><div class="ttdoc">Converts this quaternion to a rotation matrix.</div><div class="ttdef"><b>Definition</b> Quaternion.cpp:14</div></div>
+<div class="ttc" id="astructFrameEngine_1_1Quaternion_html_ae5004315bc10abfcb618847d128599f6"><div class="ttname"><a href="structFrameEngine_1_1Quaternion.html#ae5004315bc10abfcb618847d128599f6">FrameEngine::Quaternion::fromAxisAngle</a></div><div class="ttdeci">static Quaternion fromAxisAngle(const Vector3 &amp;axis, float angle)</div><div class="ttdoc">Creates a quaternion from an axis-angle representation.</div><div class="ttdef"><b>Definition</b> Quaternion.hpp:92</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

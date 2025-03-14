@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vector3_0',['Vector3',['../classVector3.html#a6151fc844ddb2aaa316317b922cb8d22',1,'Vector3']]]
+  ['vector3_0',['Vector3',['../classFrameEngine_1_1Vector3.html#ad86f22e7659168589aec8babce4fec12',1,'FrameEngine::Vector3']]]
 ];

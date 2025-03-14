@@ -1,0 +1,15 @@
+<map id="FrameEngine::PointLight" name="FrameEngine::PointLight">
+<area shape="rect" id="Node000001" title="An ECS entity representing a point light source." alt="" coords="149,951,321,1096"/>
+<area shape="rect" id="Node000002" href="$classFrameEngine_1_1Object.html" title="A high&#45;level ECS entity wrapper with default components." alt="" coords="161,676,310,901"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,915,238,950,233,950,233,915"/>
+<area shape="rect" id="Node000003" href="$classFrameEngine_1_1Entity.html" title="A high&#45;level ECS entity wrapper." alt="" coords="36,468,205,613"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="162,625,186,675,181,677,157,627"/>
+<area shape="rect" id="Node000004" href="$classRegistry.html" title="Manages all ECS entities and components." alt="" coords="5,65,236,331"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="123,331,123,451,118,451,118,331"/>
+<area shape="rect" id="Node000005" href="$structFrameEngine_1_1TransformComponent.html" title="Represents the transformation properties of an entity." alt="" coords="229,481,476,601"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="327,602,298,662,293,660,322,600"/>
+<area shape="rect" id="Node000006" href="$classFrameEngine_1_1Vector3.html" title=" " alt="" coords="267,25,423,371"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="351,371,354,464,348,464,346,371"/>
+<area shape="rect" id="Node000007" href="$structFrameEngine_1_1Quaternion.html" title=" " alt="" coords="447,5,626,391"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="456,392,427,445,412,468,408,465,422,443,451,390"/>
+</map>

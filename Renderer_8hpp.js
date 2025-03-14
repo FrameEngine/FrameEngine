@@ -1,4 +1,4 @@
 var Renderer_8hpp =
 [
-    [ "Renderer", "classRenderer.html", "classRenderer" ]
+    [ "FrameEngine::Renderer", "classFrameEngine_1_1Renderer.html", "classFrameEngine_1_1Renderer" ]
 ];

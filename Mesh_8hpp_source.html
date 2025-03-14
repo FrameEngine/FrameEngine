@@ -106,51 +106,55 @@ $(document).ready(function(){initNavTree('Mesh_8hpp_source.html',''); initResiza
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classMesh.html">   13</a></span><span class="keyword">class </span><a class="code hl_class" href="classMesh.html">Mesh</a> {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  GLuint VAO;     </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  GLuint VBO;     </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  GLuint EBO;     </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">int</span> indexCount; </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  std::vector&lt;float&gt;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>      vertexData; </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <a class="code hl_class" href="classMesh.html">Mesh</a>(<span class="keyword">const</span> std::vector&lt;float&gt; &amp;vertices, <span class="keyword">const</span> std::vector&lt;float&gt; &amp;normals,</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>       <span class="keyword">const</span> std::vector&lt;unsigned int&gt; &amp;indices);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <a class="code hl_function" href="classMesh.html#a5efe4da1a4c0971cfb037bd70304c303">~Mesh</a>();</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classMesh.html#a79b998580025a501675a517e9fc1283f">draw</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classMesh.html#a77a4ae289a9ef77a3daddbcaa43e3535">   58</a></span>  std::vector&lt;float&gt; &amp;<a class="code hl_function" href="classMesh.html#a77a4ae289a9ef77a3daddbcaa43e3535">getVertexData</a>() { <span class="keywordflow">return</span> vertexData; }</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classMesh.html#acd951990276681968cb86beec268fcae">   65</a></span>  GLuint <a class="code hl_function" href="classMesh.html#acd951990276681968cb86beec268fcae">getVAO</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> VAO; }</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classMesh.html#abdba78a715687b4b119d7fbddfd5cb10">   72</a></span>  GLuint <a class="code hl_function" href="classMesh.html#abdba78a715687b4b119d7fbddfd5cb10">getVBO</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> VBO; }</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classMesh.html#a9c940b13dc324abfbd8e45b52a0b92ff">updateVertexPosition</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> vertexIndex,</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                            <span class="keyword">const</span> <a class="code hl_class" href="classVector3.html">Vector3</a> &amp;newPosition);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classMesh.html#a4c5fd807a8491a9125a2ce2791a0a591">updateBuffer</a>();</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keyword">static</span> <a class="code hl_class" href="classMesh.html">Mesh</a> *<a class="code hl_function" href="classMesh.html#aaa89ff8d55ad8ddb3f6279d4e7364f69">loadFromOBJ</a>(<span class="keyword">const</span> std::string &amp;filePath);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>};</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>FrameEngine {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classFrameEngine_1_1Mesh.html">   15</a></span><span class="keyword">class </span><a class="code hl_class" href="classFrameEngine_1_1Mesh.html">Mesh</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  GLuint VAO;     </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  GLuint VBO;     </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  GLuint EBO;     </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keywordtype">int</span> indexCount; </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  std::vector&lt;float&gt;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      vertexData; </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_class" href="classFrameEngine_1_1Mesh.html">Mesh</a>(<span class="keyword">const</span> std::vector&lt;float&gt; &amp;vertices, <span class="keyword">const</span> std::vector&lt;float&gt; &amp;normals,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>       <span class="keyword">const</span> std::vector&lt;unsigned int&gt; &amp;indices);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <a class="code hl_function" href="classFrameEngine_1_1Mesh.html#a0968f1d9fb6786347851f60d06fc76df">~Mesh</a>();</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFrameEngine_1_1Mesh.html#a725f2c1768bef28f24c895c52844bcaf">draw</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classFrameEngine_1_1Mesh.html#a59832d920ea9295f4bb53bbf123f2de1">   60</a></span>  std::vector&lt;float&gt; &amp;<a class="code hl_function" href="classFrameEngine_1_1Mesh.html#a59832d920ea9295f4bb53bbf123f2de1">getVertexData</a>() { <span class="keywordflow">return</span> vertexData; }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classFrameEngine_1_1Mesh.html#a81ab435322a222e975373d8dc9f8add0">   67</a></span>  GLuint <a class="code hl_function" href="classFrameEngine_1_1Mesh.html#a81ab435322a222e975373d8dc9f8add0">getVAO</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> VAO; }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classFrameEngine_1_1Mesh.html#a7003c7fca37334b36797135e1a64a297">   74</a></span>  GLuint <a class="code hl_function" href="classFrameEngine_1_1Mesh.html#a7003c7fca37334b36797135e1a64a297">getVBO</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> VBO; }</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFrameEngine_1_1Mesh.html#aa2251e9ec02934b0c0c7da9d9382e710">updateVertexPosition</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> vertexIndex,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                            <span class="keyword">const</span> <a class="code hl_class" href="classFrameEngine_1_1Vector3.html">Vector3</a> &amp;newPosition);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classFrameEngine_1_1Mesh.html#a7e1e882e7a7b7c600dc795ee9581baaa">updateBuffer</a>();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keyword">static</span> <a class="code hl_class" href="classFrameEngine_1_1Mesh.html">Mesh</a> *<a class="code hl_function" href="classFrameEngine_1_1Mesh.html#a2a3a478f733fda1e729c27ce172d3208">loadFromOBJ</a>(<span class="keyword">const</span> std::string &amp;filePath);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>};</div>
 </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#endif </span><span class="comment">// MESH_HPP</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>} <span class="comment">// namespace FrameEngine</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="preprocessor">#endif </span><span class="comment">// MESH_HPP</span></div>
 <div class="ttc" id="aVector3_8hpp_html"><div class="ttname"><a href="Vector3_8hpp.html">Vector3.hpp</a></div><div class="ttdoc">Defines the Vector3 class.</div></div>
-<div class="ttc" id="aclassMesh_html"><div class="ttname"><a href="classMesh.html">Mesh</a></div><div class="ttdef"><b>Definition</b> Mesh.hpp:13</div></div>
-<div class="ttc" id="aclassMesh_html_a4c5fd807a8491a9125a2ce2791a0a591"><div class="ttname"><a href="classMesh.html#a4c5fd807a8491a9125a2ce2791a0a591">Mesh::updateBuffer</a></div><div class="ttdeci">void updateBuffer()</div><div class="ttdoc">Re-uploads the vertex data to the GPU.</div><div class="ttdef"><b>Definition</b> Mesh.cpp:103</div></div>
-<div class="ttc" id="aclassMesh_html_a5efe4da1a4c0971cfb037bd70304c303"><div class="ttname"><a href="classMesh.html#a5efe4da1a4c0971cfb037bd70304c303">Mesh::~Mesh</a></div><div class="ttdeci">~Mesh()</div><div class="ttdoc">Destructor that releases the OpenGL resources.</div><div class="ttdef"><b>Definition</b> Mesh.cpp:59</div></div>
-<div class="ttc" id="aclassMesh_html_a77a4ae289a9ef77a3daddbcaa43e3535"><div class="ttname"><a href="classMesh.html#a77a4ae289a9ef77a3daddbcaa43e3535">Mesh::getVertexData</a></div><div class="ttdeci">std::vector&lt; float &gt; &amp; getVertexData()</div><div class="ttdoc">Returns a reference to the vertex data.</div><div class="ttdef"><b>Definition</b> Mesh.hpp:58</div></div>
-<div class="ttc" id="aclassMesh_html_a79b998580025a501675a517e9fc1283f"><div class="ttname"><a href="classMesh.html#a79b998580025a501675a517e9fc1283f">Mesh::draw</a></div><div class="ttdeci">void draw() const</div><div class="ttdoc">Draws the mesh.</div><div class="ttdef"><b>Definition</b> Mesh.cpp:70</div></div>
-<div class="ttc" id="aclassMesh_html_a9c940b13dc324abfbd8e45b52a0b92ff"><div class="ttname"><a href="classMesh.html#a9c940b13dc324abfbd8e45b52a0b92ff">Mesh::updateVertexPosition</a></div><div class="ttdeci">void updateVertexPosition(unsigned int vertexIndex, const Vector3 &amp;newPosition)</div><div class="ttdoc">Updates the position of a vertex in the mesh.</div><div class="ttdef"><b>Definition</b> Mesh.cpp:85</div></div>
-<div class="ttc" id="aclassMesh_html_aaa89ff8d55ad8ddb3f6279d4e7364f69"><div class="ttname"><a href="classMesh.html#aaa89ff8d55ad8ddb3f6279d4e7364f69">Mesh::loadFromOBJ</a></div><div class="ttdeci">static Mesh * loadFromOBJ(const std::string &amp;filePath)</div><div class="ttdoc">Loads a mesh from an OBJ file.</div><div class="ttdef"><b>Definition</b> OBJLoader.cpp:8</div></div>
-<div class="ttc" id="aclassMesh_html_abdba78a715687b4b119d7fbddfd5cb10"><div class="ttname"><a href="classMesh.html#abdba78a715687b4b119d7fbddfd5cb10">Mesh::getVBO</a></div><div class="ttdeci">GLuint getVBO() const</div><div class="ttdoc">Returns the VBO identifier.</div><div class="ttdef"><b>Definition</b> Mesh.hpp:72</div></div>
-<div class="ttc" id="aclassMesh_html_acd951990276681968cb86beec268fcae"><div class="ttname"><a href="classMesh.html#acd951990276681968cb86beec268fcae">Mesh::getVAO</a></div><div class="ttdeci">GLuint getVAO() const</div><div class="ttdoc">Returns the VAO identifier.</div><div class="ttdef"><b>Definition</b> Mesh.hpp:65</div></div>
-<div class="ttc" id="aclassVector3_html"><div class="ttname"><a href="classVector3.html">Vector3</a></div><div class="ttdef"><b>Definition</b> Vector3.hpp:13</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Mesh_html"><div class="ttname"><a href="classFrameEngine_1_1Mesh.html">FrameEngine::Mesh</a></div><div class="ttdef"><b>Definition</b> Mesh.hpp:15</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Mesh_html_a0968f1d9fb6786347851f60d06fc76df"><div class="ttname"><a href="classFrameEngine_1_1Mesh.html#a0968f1d9fb6786347851f60d06fc76df">FrameEngine::Mesh::~Mesh</a></div><div class="ttdeci">~Mesh()</div><div class="ttdoc">Destructor that releases the OpenGL resources.</div><div class="ttdef"><b>Definition</b> Mesh.cpp:61</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Mesh_html_a2a3a478f733fda1e729c27ce172d3208"><div class="ttname"><a href="classFrameEngine_1_1Mesh.html#a2a3a478f733fda1e729c27ce172d3208">FrameEngine::Mesh::loadFromOBJ</a></div><div class="ttdeci">static Mesh * loadFromOBJ(const std::string &amp;filePath)</div><div class="ttdoc">Loads a mesh from an OBJ file.</div><div class="ttdef"><b>Definition</b> OBJLoader.cpp:10</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Mesh_html_a59832d920ea9295f4bb53bbf123f2de1"><div class="ttname"><a href="classFrameEngine_1_1Mesh.html#a59832d920ea9295f4bb53bbf123f2de1">FrameEngine::Mesh::getVertexData</a></div><div class="ttdeci">std::vector&lt; float &gt; &amp; getVertexData()</div><div class="ttdoc">Returns a reference to the vertex data.</div><div class="ttdef"><b>Definition</b> Mesh.hpp:60</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Mesh_html_a7003c7fca37334b36797135e1a64a297"><div class="ttname"><a href="classFrameEngine_1_1Mesh.html#a7003c7fca37334b36797135e1a64a297">FrameEngine::Mesh::getVBO</a></div><div class="ttdeci">GLuint getVBO() const</div><div class="ttdoc">Returns the VBO identifier.</div><div class="ttdef"><b>Definition</b> Mesh.hpp:74</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Mesh_html_a725f2c1768bef28f24c895c52844bcaf"><div class="ttname"><a href="classFrameEngine_1_1Mesh.html#a725f2c1768bef28f24c895c52844bcaf">FrameEngine::Mesh::draw</a></div><div class="ttdeci">void draw() const</div><div class="ttdoc">Draws the mesh.</div><div class="ttdef"><b>Definition</b> Mesh.cpp:72</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Mesh_html_a7e1e882e7a7b7c600dc795ee9581baaa"><div class="ttname"><a href="classFrameEngine_1_1Mesh.html#a7e1e882e7a7b7c600dc795ee9581baaa">FrameEngine::Mesh::updateBuffer</a></div><div class="ttdeci">void updateBuffer()</div><div class="ttdoc">Re-uploads the vertex data to the GPU.</div><div class="ttdef"><b>Definition</b> Mesh.cpp:105</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Mesh_html_a81ab435322a222e975373d8dc9f8add0"><div class="ttname"><a href="classFrameEngine_1_1Mesh.html#a81ab435322a222e975373d8dc9f8add0">FrameEngine::Mesh::getVAO</a></div><div class="ttdeci">GLuint getVAO() const</div><div class="ttdoc">Returns the VAO identifier.</div><div class="ttdef"><b>Definition</b> Mesh.hpp:67</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Mesh_html_aa2251e9ec02934b0c0c7da9d9382e710"><div class="ttname"><a href="classFrameEngine_1_1Mesh.html#aa2251e9ec02934b0c0c7da9d9382e710">FrameEngine::Mesh::updateVertexPosition</a></div><div class="ttdeci">void updateVertexPosition(unsigned int vertexIndex, const Vector3 &amp;newPosition)</div><div class="ttdoc">Updates the position of a vertex in the mesh.</div><div class="ttdef"><b>Definition</b> Mesh.cpp:87</div></div>
+<div class="ttc" id="aclassFrameEngine_1_1Vector3_html"><div class="ttname"><a href="classFrameEngine_1_1Vector3.html">FrameEngine::Vector3</a></div><div class="ttdef"><b>Definition</b> Vector3.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

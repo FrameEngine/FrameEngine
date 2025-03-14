@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['unbind_0',['unbind',['../classShader.html#a5b9da0e356ab46582b29f55a5d669c74',1,'Shader']]],
-  ['updatebuffer_1',['updateBuffer',['../classMesh.html#a4c5fd807a8491a9125a2ce2791a0a591',1,'Mesh']]],
-  ['updatevertexposition_2',['updateVertexPosition',['../classMesh.html#a9c940b13dc324abfbd8e45b52a0b92ff',1,'Mesh']]],
-  ['updateviewmatrix_3',['updateViewMatrix',['../classCamera.html#a8fe5c71a390571a861ad8afd99dfdea3',1,'Camera']]]
+  ['unbind_0',['unbind',['../classFrameEngine_1_1Shader.html#a6da5b7c8cba668c2f6cc57155b0a69bd',1,'FrameEngine::Shader']]],
+  ['updatebuffer_1',['updateBuffer',['../classFrameEngine_1_1Mesh.html#a7e1e882e7a7b7c600dc795ee9581baaa',1,'FrameEngine::Mesh']]],
+  ['updatevertexposition_2',['updateVertexPosition',['../classFrameEngine_1_1Mesh.html#aa2251e9ec02934b0c0c7da9d9382e710',1,'FrameEngine::Mesh']]],
+  ['updateviewmatrix_3',['updateViewMatrix',['../classFrameEngine_1_1Camera.html#adf6fa1117bbc0b0309cbc082c2425154',1,'FrameEngine::Camera']]]
 ];

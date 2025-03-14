@@ -1,4 +1,4 @@
 var Camera_8hpp =
 [
-    [ "Camera", "classCamera.html", "classCamera" ]
+    [ "FrameEngine::Camera", "classFrameEngine_1_1Camera.html", "classFrameEngine_1_1Camera" ]
 ];

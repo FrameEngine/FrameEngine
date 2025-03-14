@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quaternion_0',['quaternion',['../structQuaternion.html#abcc01358aada56ea5f0db4da18aaf77d',1,'Quaternion::Quaternion()'],['../structQuaternion.html#ab13d6ced50c96438115b30cb91fc7d6c',1,'Quaternion::Quaternion(float w, float x, float y, float z)']]]
+  ['quaternion_0',['quaternion',['../structFrameEngine_1_1Quaternion.html#aedec53941dcf08775285f3754cb1f958',1,'FrameEngine::Quaternion::Quaternion()'],['../structFrameEngine_1_1Quaternion.html#a7ef3bcb9535afcc93b97ad6bbc5c33b0',1,'FrameEngine::Quaternion::Quaternion(float w, float x, float y, float z)']]]
 ];

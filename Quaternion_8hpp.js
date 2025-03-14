@@ -1,4 +1,4 @@
 var Quaternion_8hpp =
 [
-    [ "Quaternion", "structQuaternion.html", "structQuaternion" ]
+    [ "FrameEngine::Quaternion", "structFrameEngine_1_1Quaternion.html", "structFrameEngine_1_1Quaternion" ]
 ];

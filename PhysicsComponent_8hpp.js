@@ -1,4 +1,4 @@
 var PhysicsComponent_8hpp =
 [
-    [ "PhysicsComponent", "structPhysicsComponent.html", "structPhysicsComponent" ]
+    [ "FrameEngine::PhysicsComponent", "structFrameEngine_1_1PhysicsComponent.html", "structFrameEngine_1_1PhysicsComponent" ]
 ];

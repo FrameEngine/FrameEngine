@@ -1,4 +1,4 @@
 var Matrix4_8hpp =
 [
-    [ "Matrix4", "structMatrix4.html", "structMatrix4" ]
+    [ "FrameEngine::Matrix4", "structFrameEngine_1_1Matrix4.html", "structFrameEngine_1_1Matrix4" ]
 ];

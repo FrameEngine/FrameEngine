@@ -1,4 +1,4 @@
 var Mesh_8hpp =
 [
-    [ "Mesh", "classMesh.html", "classMesh" ]
+    [ "FrameEngine::Mesh", "classFrameEngine_1_1Mesh.html", "classFrameEngine_1_1Mesh" ]
 ];

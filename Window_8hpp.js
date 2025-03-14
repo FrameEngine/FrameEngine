@@ -1,4 +1,4 @@
 var Window_8hpp =
 [
-    [ "Window", "classWindow.html", "classWindow" ]
+    [ "FrameEngine::Window", "classFrameEngine_1_1Window.html", "classFrameEngine_1_1Window" ]
 ];

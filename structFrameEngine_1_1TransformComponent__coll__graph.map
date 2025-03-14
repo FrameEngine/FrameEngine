@@ -1,0 +1,7 @@
+<map id="FrameEngine::TransformComponent" name="FrameEngine::TransformComponent">
+<area shape="rect" id="Node000001" title="Represents the transformation properties of an entity." alt="" coords="56,468,303,588"/>
+<area shape="rect" id="Node000002" href="$classFrameEngine_1_1Vector3.html" title=" " alt="" coords="5,25,161,371"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,370,160,451,155,453,131,371"/>
+<area shape="rect" id="Node000003" href="$structFrameEngine_1_1Quaternion.html" title=" " alt="" coords="186,5,365,391"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="247,392,230,445,226,454,221,452,225,443,242,390"/>
+</map>

@@ -1,5 +1,5 @@
 <map id="Engine" name="Engine">
-<area shape="rect" id="Node000001" title="Core engine class that manages the main loop, physics, and rendering." alt="" coords="5,5,127,211"/>
-<area shape="rect" id="Node000002" href="$classSimulation.html" title=" " alt="" coords="5,259,127,344"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,224,69,259,63,259,63,224"/>
+<area shape="rect" id="Node000001" title="Core engine class that manages the main loop, physics, and rendering." alt="" coords="5,5,127,256"/>
+<area shape="rect" id="Node000002" href="$classSimulation.html" title=" " alt="" coords="5,304,127,399"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="69,271,69,305,64,305,64,271"/>
 </map>

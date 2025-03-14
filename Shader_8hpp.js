@@ -1,4 +1,4 @@
 var Shader_8hpp =
 [
-    [ "Shader", "classShader.html", "classShader" ]
+    [ "FrameEngine::Shader", "classFrameEngine_1_1Shader.html", "classFrameEngine_1_1Shader" ]
 ];

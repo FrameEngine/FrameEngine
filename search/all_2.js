@@ -1,18 +1,18 @@
 var searchData=
 [
-  ['camera_0',['camera',['../classCamera.html',1,'Camera'],['../classCamera.html#a331a3b6b6e2401a0cdf628c057b9d67d',1,'Camera::Camera()']]],
+  ['camera_0',['camera',['../classFrameEngine_1_1Camera.html',1,'FrameEngine::Camera'],['../classFrameEngine_1_1Camera.html#a0d4feae1b4eeee3692c8a8901a4afa3b',1,'FrameEngine::Camera::Camera()']]],
   ['camera_2ehpp_1',['Camera.hpp',['../Camera_8hpp.html',1,'']]],
-  ['clear_2',['clear',['../classRenderer.html#ac46720b3fc0dbb2fc37674766490a8c4',1,'Renderer']]],
-  ['clearobjects_3',['clearObjects',['../classRenderer.html#a2e250e90a300f236fb2ee1e2f78b7d2f',1,'Renderer']]],
+  ['clear_2',['clear',['../classFrameEngine_1_1Renderer.html#a8e5ba0189ea039abe7eb6363328f003c',1,'FrameEngine::Renderer']]],
+  ['clearobjects_3',['clearObjects',['../classFrameEngine_1_1Renderer.html#a39cfae155f90e30b2684d32308527d29',1,'FrameEngine::Renderer']]],
   ['code_20style_20guidelines_4',['Code Style Guidelines',['../md_CONTRIBUTING.html#autotoc_md19',1,'']]],
   ['componentstorage_5',['ComponentStorage',['../classComponentStorage.html',1,'']]],
   ['contribute_6',['How to Contribute',['../md_CONTRIBUTING.html#autotoc_md18',1,'']]],
   ['contributing_7',['Contributing',['../index.html#autotoc_md12',1,'']]],
   ['contributing_20to_20frameengine_8',['Contributing to FrameEngine',['../md_CONTRIBUTING.html',1,'']]],
   ['create_5fentity_9',['create_entity',['../classRegistry.html#af6ba584e5c062583b166eb1b17ce37eb',1,'Registry']]],
-  ['createperspectivematrix_10',['createPerspectiveMatrix',['../structMatrix4.html#a9f88b7eb74bd14087671fdf045a9f2d3',1,'Matrix4']]],
-  ['createrotationmatrix_11',['createRotationMatrix',['../structMatrix4.html#ac75974947937ab36d3305fe69d8298db',1,'Matrix4']]],
-  ['createscalingmatrix_12',['createScalingMatrix',['../structMatrix4.html#a9dc7abcfd6a2a5e02765c8708276140f',1,'Matrix4']]],
-  ['createtranslationmatrix_13',['createTranslationMatrix',['../structMatrix4.html#a69367ead23554d96061ddee73e0bfd15',1,'Matrix4']]],
-  ['cross_14',['cross',['../classVector3.html#afa69357b4a1449c640820dc643b6265b',1,'Vector3']]]
+  ['createperspectivematrix_10',['createPerspectiveMatrix',['../structFrameEngine_1_1Matrix4.html#a72ad71288a05efc326e94a7045ba0a6a',1,'FrameEngine::Matrix4']]],
+  ['createrotationmatrix_11',['createRotationMatrix',['../structFrameEngine_1_1Matrix4.html#ad39de152e61565228a364e9a5ebbb6c1',1,'FrameEngine::Matrix4']]],
+  ['createscalingmatrix_12',['createScalingMatrix',['../structFrameEngine_1_1Matrix4.html#a3e5f0addd671260dc935b9311db58078',1,'FrameEngine::Matrix4']]],
+  ['createtranslationmatrix_13',['createTranslationMatrix',['../structFrameEngine_1_1Matrix4.html#a56a517373e74d00f8a833ae261718487',1,'FrameEngine::Matrix4']]],
+  ['cross_14',['cross',['../classFrameEngine_1_1Vector3.html#a6f05f4622eac79af8e162715a061c23e',1,'FrameEngine::Vector3']]]
 ];

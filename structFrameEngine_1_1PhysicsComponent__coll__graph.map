@@ -1,0 +1,5 @@
+<map id="FrameEngine::PhysicsComponent" name="FrameEngine::PhysicsComponent">
+<area shape="rect" id="Node000001" title="Represents the physical properties of an entity in the ECS." alt="" coords="5,428,236,493"/>
+<area shape="rect" id="Node000002" href="$classFrameEngine_1_1Vector3.html" title=" " alt="" coords="43,5,199,351"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,351,123,411,118,411,118,351"/>
+</map>

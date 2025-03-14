@@ -7,6 +7,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "rendering", "dir_27636f4d4b2113f82b513d65146ca471.html", "dir_27636f4d4b2113f82b513d65146ca471" ],
     [ "Engine.hpp", "Engine_8hpp.html", "Engine_8hpp" ],
     [ "Entity.hpp", "Entity_8hpp.html", "Entity_8hpp" ],
+    [ "FrameEngine.hpp", "FrameEngine_8hpp_source.html", null ],
     [ "Logger.hpp", "Logger_8hpp.html", "Logger_8hpp" ],
     [ "MeshGenerator.hpp", "MeshGenerator_8hpp_source.html", null ],
     [ "Registry.hpp", "Registry_8hpp.html", "Registry_8hpp" ],

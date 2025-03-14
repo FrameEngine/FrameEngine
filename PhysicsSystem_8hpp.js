@@ -1,4 +1,4 @@
 var PhysicsSystem_8hpp =
 [
-    [ "PhysicsSystem", "classPhysicsSystem.html", null ]
+    [ "FrameEngine::PhysicsSystem", "classFrameEngine_1_1PhysicsSystem.html", null ]
 ];

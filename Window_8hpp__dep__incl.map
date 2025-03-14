@@ -1,8 +1,12 @@
 <map id="include/Window.hpp" name="include/Window.hpp">
 <area shape="rect" id="Node000001" title="Provides a window for OpenGL rendering using GLFW." alt="" coords="5,5,157,31"/>
-<area shape="rect" id="Node000002" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="9,152,154,177"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="60,42,45,59,35,79,33,99,41,119,69,150,65,154,37,121,28,100,29,78,41,56,56,38"/>
-<area shape="rect" id="Node000003" href="$Renderer_8hpp.html" title="Manages the rendering pipeline and object submission." alt="" coords="43,79,269,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,38,146,77,142,80,101,42"/>
-<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="136,115,95,154,92,150,132,111"/>
+<area shape="rect" id="Node000002" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="58,152,203,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,43,109,103,128,151,123,153,104,105,86,45"/>
+<area shape="rect" id="Node000003" href="$FrameEngine_8hpp_source.html" title=" " alt="" coords="37,225,224,251"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="69,43,55,72,43,106,39,142,41,159,48,176,58,191,72,204,103,223,100,227,69,208,54,195,43,179,36,161,34,142,38,105,50,70,64,41"/>
+<area shape="rect" id="Node000004" href="$Renderer_8hpp.html" title="Manages the rendering pipeline and object submission." alt="" coords="118,79,343,104"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="119,34,207,76,205,81,116,39"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="133,191,133,225,128,225,128,191"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="205,114,149,154,145,150,202,110"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="234,118,230,148,218,179,190,208,158,228,156,223,187,204,214,176,225,147,229,118"/>
 </map>

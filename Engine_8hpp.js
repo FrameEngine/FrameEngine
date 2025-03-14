@@ -1,4 +1,4 @@
 var Engine_8hpp =
 [
-    [ "Engine", "classEngine.html", "classEngine" ]
+    [ "FrameEngine::Engine", "classFrameEngine_1_1Engine.html", "classFrameEngine_1_1Engine" ]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loglevel_0',['LogLevel',['../Logger_8hpp.html#aca1fd1d8935433e6ba2e3918214e07f9',1,'Logger.hpp']]]
+  ['loglevel_0',['LogLevel',['../Logger_8hpp.html#af12ba04190f836a6ae9f3d5391e02864',1,'FrameEngine']]]
 ];

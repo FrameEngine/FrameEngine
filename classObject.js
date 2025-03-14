@@ -1,6 +1,6 @@
 var classObject =
 [
-    [ "Object", "classObject.html#abb14853db4207c5afa968ad419b1f83b", null ],
+    [ "Object", "classObject.html#a52ee70eca2c53e91a6db00a8908a3e93", null ],
     [ "getColor", "classObject.html#a6285e8da69fd36c129fa5da33d3842c0", null ],
     [ "isWireframe", "classObject.html#ad67679e31c891db3152016f52c540dee", null ],
     [ "lookAt", "classObject.html#a374795fe5a51e8d6bb8bf3a8c95ae536", null ],
