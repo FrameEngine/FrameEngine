@@ -12,6 +12,9 @@
 
 namespace FrameEngine {
 
+/**
+ * @brief The Mesh class encapsulates geometry data and uploads it to the GPU.
+ */
 class Mesh {
 private:
   /// TODO Replace with internal buffers
@@ -22,21 +25,48 @@ private:
   GLuint EBO;     ///< OpenGL Element Buffer Object identifier.
   int indexCount; ///< Number of indices used for drawing.
   std::vector<float>
-      vertexData; ///< The vertex data: [pos, pos, pos, norm, norm, norm]
+      vertexData; ///< The vertex data:
+                  ///< [pos.x, pos.y, pos.z, norm.x, norm.y, norm.z, u, v]
 
 public:
   /**
-   * @brief Constructs a Mesh with given vertices, normals, and indices.
+   * @brief Constructs a Mesh with given vertices, normals, uv, and
+  indices.
    *
-   * The constructor merges the vertex positions and normals into one array
-   * and uploads the data to the GPU.
+   * This constructor merges the vertex positions, normals, and texture
+  coordinates (UVs) into one array and uploads the data to the GPU.
    *
-   * @param vertices A vector of vertex positions.
-   * @param normals A vector of vertex normals.
+   * Each vertex is represented by 8 floats in the following order:
+   * - 3 floats for position,
+   * - 3 floats for normal,
+   * - 2 floats for texture coordinates (UVs).
+   *
+   * @param positions A vector of vertex positions (3 floats per vertex).
+   * @param normals A vector of vertex normals (3 floats per vertex).
+   * @param texCoords A vector of texture coordinates (2 floats per vertex).
    * @param indices A vector of indices for drawing the mesh.
    */
-  Mesh(const std::vector<float> &vertices, const std::vector<float> &normals,
-       const std::vector<unsigned int> &indices);
+  Mesh(const std::vector<float> &positions,     //
+       const std::vector<float> &normals,       //
+       const std::vector<float> &texCoords,     //
+       const std::vector<unsigned int> &indices //
+  );
+
+  /**
+   * @brief Constructs a Mesh with given vertices, normals, and indices and
+   * default UV-map.
+   *
+   * This constructor is used when no UV data is provided.
+   * It automatically generates a default UV zero-array for each vertex.
+   *
+   * @param vertices A vector of vertex positions (3 floats per vertex).
+   * @param normals A vector of vertex normals (3 floats per vertex).
+   * @param indices A vector of indices for drawing the mesh.
+   */
+  Mesh(const std::vector<float> &vertices,      //
+       const std::vector<float> &normals,       //
+       const std::vector<unsigned int> &indices //
+  );
 
   /**
    * @brief Destructor that releases the OpenGL resources.

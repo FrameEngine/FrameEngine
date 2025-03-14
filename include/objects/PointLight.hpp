@@ -2,6 +2,7 @@
 #define POINT_LIGHT_HPP
 
 #include "Object.hpp"
+#include "components/LightComponent.hpp"
 #include "math/Vector3.hpp"
 
 namespace FrameEngine {
@@ -15,10 +16,6 @@ namespace FrameEngine {
  * with it.
  */
 class PointLight : public Object {
-private:
-  Vector3 color;
-  float intensity;
-
 public:
   /**
    * @brief Constructs a PointLight at a specified position.
@@ -34,8 +31,9 @@ public:
    */
   PointLight(const Vector3 &pos, const Vector3 &col = Vector3(1, 1, 1),
              float inten = 1.0f)
-      : Object(nullptr), color(col), intensity(inten) {
+      : Object(nullptr) {
     transform->position = pos;
+    add_component<LightComponent>(LightComponent(LightType::POINT, col, inten));
   }
 
   /**
@@ -43,27 +41,41 @@ public:
    *
    * @return The current color of the light.
    */
-  Vector3 getColor() const { return color; }
+  Vector3 getColor() {
+    auto comp = get_component<LightComponent>();
+    return comp ? comp->color : Vector3(1, 1, 1);
+  }
   /**
    * @brief Sets the color of the point light.
    *
    * @param col The new color for the light.
    */
-  void setColor(const Vector3 &col) { color = col; }
+  void setColor(const Vector3 &col) {
+    auto comp = get_component<LightComponent>();
+    if (comp)
+      comp->color = col;
+  }
 
   /**
    * @brief Retrieves the intensity of the point light.
    *
    * @return The current intensity of the light.
    */
-  float getIntensity() const { return intensity; }
+  float getIntensity() {
+    auto comp = get_component<LightComponent>();
+    return comp ? comp->intensity : 1.0f;
+  }
 
   /**
    * @brief Sets the intensity of the point light.
    *
    * @param inten The new intensity value for the light.
    */
-  void setIntensity(float inten) { intensity = inten; }
+  void setIntensity(float inten) {
+    auto comp = get_component<LightComponent>();
+    if (comp)
+      comp->intensity = inten;
+  }
 };
 
 } // namespace FrameEngine

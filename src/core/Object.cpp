@@ -1,38 +1,25 @@
 #include "objects/Object.hpp"
 #include "Logger.hpp"
+#include "components/MaterialComponent.hpp"
+#include "math/Vector3.hpp"
 #include "rendering/Renderer.hpp"
 
 namespace FrameEngine {
 
-/**
- * @brief Renders the object using the current shader from the renderer.
- *
- * This method retrieves the active shader from the provided Renderer instance,
- * computes the model transformation matrix, and updates the shader uniforms
- * (object color and model matrix). If the object is flagged for wireframe
- * rendering, the OpenGL polygon mode is temporarily set to GL_LINE before
- * drawing the mesh, then restored to GL_FILL afterward.
- *
- * @param renderer The Renderer instance responsible for drawing.
- */
-void Object::render(Renderer &renderer) {
-  Shader *shader = renderer.getShader();
-  if (!shader || !mesh) {
-    return;
-  }
-
-  Matrix4 modelMatrix = transform->get_transformation_matrix();
-
-  shader->setUniformVec3("objectColor", color);
-  shader->setUniformMat4("model", modelMatrix);
-
-  if (wireframe) {
-    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-    mesh->draw();
-
-    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+void Object::setMesh(Mesh *mesh, bool wireframe) {
+  if (!get_component<MeshComponent>()) {
+    add_component<MeshComponent>(MeshComponent(mesh));
   } else {
-    mesh->draw();
+    get_component<MeshComponent>()->mesh = mesh;
+  }
+  get_component<MeshComponent>()->wireframe = wireframe;
+}
+
+void Object::setMaterial(Material *material) {
+  if (!get_component<MaterialComponent>()) {
+    add_component<MaterialComponent>(MaterialComponent(material));
+  } else {
+    get_component<MaterialComponent>()->material = material;
   }
 }
 
