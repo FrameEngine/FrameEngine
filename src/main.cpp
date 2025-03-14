@@ -49,6 +49,7 @@ public:
 
     sphereObject->setMaterial(blueMat);
     sphereObject->transform->position = Vector3(2.0f, 0.0f, 0.0f);
+    sphereObject->transform->scale *= 3.f;
 
     pointLight1 = new PointLight(Vector3(-5.0f, 5.0f, 5.0f),
                                  Vector3(1.0f, 1.0f, 1.0f), 3.f);
