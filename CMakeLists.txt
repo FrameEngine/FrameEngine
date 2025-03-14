@@ -43,19 +43,14 @@ endif()
 # Include
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-# -----------------------------------------------------------------------------
-# Create a library target with all source files except main.cpp
-# -----------------------------------------------------------------------------
 file(GLOB_RECURSE ENGINE_SOURCES "src/*.cpp")
 list(FILTER ENGINE_SOURCES EXCLUDE REGEX ".*/main\\.cpp$")
 
 add_library(FrameEngineLib ${ENGINE_SOURCES})
 
+target_include_directories(FrameEngineLib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_link_libraries(FrameEngineLib PUBLIC OpenGL::GL glfw glad fmt::fmt)
 
-# -----------------------------------------------------------------------------
-# Create the executable that uses main.cpp (the entry point)
-# -----------------------------------------------------------------------------
 add_executable(frame_engine src/main.cpp)
 target_link_libraries(frame_engine PRIVATE FrameEngineLib)
 
