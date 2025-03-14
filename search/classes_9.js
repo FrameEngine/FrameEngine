@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['shader_0',['Shader',['../classFrameEngine_1_1Shader.html',1,'FrameEngine']]],
-  ['simulation_1',['Simulation',['../classSimulation.html',1,'']]]
+  ['registry_0',['Registry',['../classRegistry.html',1,'']]],
+  ['renderer_1',['Renderer',['../classFrameEngine_1_1Renderer.html',1,'FrameEngine']]]
 ];

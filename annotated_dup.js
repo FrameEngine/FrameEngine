@@ -1,13 +1,20 @@
 var annotated_dup =
 [
     [ "FrameEngine", null, [
+      [ "BasicMaterial", "classFrameEngine_1_1BasicMaterial.html", null ],
       [ "Camera", "classFrameEngine_1_1Camera.html", "classFrameEngine_1_1Camera" ],
       [ "Engine", "classFrameEngine_1_1Engine.html", "classFrameEngine_1_1Engine" ],
       [ "Entity", "classFrameEngine_1_1Entity.html", "classFrameEngine_1_1Entity" ],
       [ "LightComponent", "structFrameEngine_1_1LightComponent.html", null ],
+      [ "LightData", "structFrameEngine_1_1LightData.html", null ],
+      [ "LightingSystem", "classFrameEngine_1_1LightingSystem.html", null ],
+      [ "LightingUBOData", "structFrameEngine_1_1LightingUBOData.html", null ],
       [ "Logger", "classFrameEngine_1_1Logger.html", "classFrameEngine_1_1Logger" ],
+      [ "Material", "classFrameEngine_1_1Material.html", null ],
+      [ "MaterialComponent", "structFrameEngine_1_1MaterialComponent.html", null ],
       [ "Matrix4", "structFrameEngine_1_1Matrix4.html", "structFrameEngine_1_1Matrix4" ],
       [ "Mesh", "classFrameEngine_1_1Mesh.html", "classFrameEngine_1_1Mesh" ],
+      [ "MeshComponent", "structFrameEngine_1_1MeshComponent.html", "structFrameEngine_1_1MeshComponent" ],
       [ "MeshGenerator", "classFrameEngine_1_1MeshGenerator.html", null ],
       [ "Object", "classFrameEngine_1_1Object.html", "classFrameEngine_1_1Object" ],
       [ "PhysicsComponent", "structFrameEngine_1_1PhysicsComponent.html", "structFrameEngine_1_1PhysicsComponent" ],
@@ -16,7 +23,9 @@ var annotated_dup =
       [ "Quaternion", "structFrameEngine_1_1Quaternion.html", "structFrameEngine_1_1Quaternion" ],
       [ "Renderer", "classFrameEngine_1_1Renderer.html", "classFrameEngine_1_1Renderer" ],
       [ "Shader", "classFrameEngine_1_1Shader.html", "classFrameEngine_1_1Shader" ],
+      [ "Texture2D", "classFrameEngine_1_1Texture2D.html", null ],
       [ "TransformComponent", "structFrameEngine_1_1TransformComponent.html", "structFrameEngine_1_1TransformComponent" ],
+      [ "UV", "structFrameEngine_1_1UV.html", null ],
       [ "Vector3", "classFrameEngine_1_1Vector3.html", "classFrameEngine_1_1Vector3" ],
       [ "Window", "classFrameEngine_1_1Window.html", "classFrameEngine_1_1Window" ]
     ] ],
