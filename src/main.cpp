@@ -1,6 +1,4 @@
 #include "FrameEngine.hpp"
-#include "math/Vector3.hpp"
-#include "rendering/Material.hpp"
 using namespace FrameEngine;
 
 class Simulation : public Engine {
