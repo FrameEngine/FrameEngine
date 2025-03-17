@@ -220,4 +220,29 @@ void Renderer::resize(int width, int height) {
     postProcessingPipeline->resize(width, height);
 }
 
+void Renderer::addPostProcessingEffect(PostProcessingEffect *effect) {
+  if (postProcessingPipeline) {
+    postProcessingPipeline->addEffect(effect);
+  }
+}
+
+void Renderer::setPostProcessingPipeline(PostProcessingPipeline *pipeline) {
+  if (postProcessingPipeline) {
+    delete postProcessingPipeline;
+  }
+  postProcessingPipeline = pipeline;
+}
+
+void Renderer::clearPostProcessingEffects() {
+  if (postProcessingPipeline) {
+    delete postProcessingPipeline;
+  }
+  postProcessingPipeline =
+      new PostProcessingPipeline(window.getWidth(), window.getHeight());
+}
+
+PostProcessingPipeline *Renderer::getPostProcessingPipeline() const {
+  return postProcessingPipeline;
+}
+
 } // namespace FrameEngine

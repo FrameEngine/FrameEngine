@@ -97,10 +97,31 @@ public:
   Camera &getCamera();
 
   /**
-  /* @brief Called on window resize to update framebuffer sizes and pipeline
-  /* dimensions.
-  */
+   * @brief Called on window resize to update framebuffer sizes and pipeline
+   * dimensions.
+   */
   void resize(int width, int height);
+
+  /**
+   * @brief Adds a effect to the current pipeline.
+   */
+  void addPostProcessingEffect(PostProcessingEffect *effect);
+
+  /**
+   * @brief Replaces the entire post–processing pipeline.
+   */
+  void setPostProcessingPipeline(PostProcessingPipeline *pipeline);
+
+  /**
+   * @brief Clears all effects from the current pipeline and creates a new empty
+   * pipeline.
+   */
+  void clearPostProcessingEffects();
+
+  /**
+   *  @brief Returns a pointer to the current post–processing pipeline.
+   */
+  PostProcessingPipeline *getPostProcessingPipeline() const;
 };
 
 } // namespace FrameEngine

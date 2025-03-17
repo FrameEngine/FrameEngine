@@ -1,5 +1,4 @@
 #include "FrameEngine.hpp"
-#include "materials/BasicMaterial.hpp"
 
 using namespace FrameEngine;
 
