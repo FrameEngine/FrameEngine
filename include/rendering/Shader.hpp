@@ -2,9 +2,9 @@
  * @file Shader.hpp
  * @brief Manages OpenGL shaders.
  *
- * The Shader class loads, compiles, and links shaders from
- * files. It provides helper methods for binding the shader program and setting
- * uniform variables.
+ * The Shader class loads, compiles, and links shaders. It provides helper
+ * methods for binding the shader program and setting uniform variables.
+ * It supports loading shader code from external files or directly from strings.
  */
 
 #ifndef SHADER_HPP
@@ -38,15 +38,35 @@ private:
    */
   GLuint compileShader(const std::string &source, GLenum type);
 
+  /**
+   * @brief Links vertex and fragment shaders into a program.
+   *
+   * @param vertexShader The compiled vertex shader ID.
+   * @param fragmentShader The compiled fragment shader ID.
+   * @return The linked program ID.
+   */
+  GLuint linkProgram(GLuint vertexShader, GLuint fragmentShader);
+
 public:
   /**
-   * @brief Constructs a Shader by loading, compiling, and linking vertex and
-   * fragment shaders.
+   * @brief Constructs a Shader by loading, compiling, and linking shaders from
+   * files.
    *
    * @param vertexPath Path to the vertex shader file.
    * @param fragmentPath Path to the fragment shader file.
    */
   Shader(const std::string &vertexPath, const std::string &fragmentPath);
+
+  /**
+   * @brief Constructs a Shader using provided shader source strings.
+   *
+   * @param vertexSource The vertex shader source code.
+   * @param fragmentSource The fragment shader source code.
+   * @param fromSource Must be true to indicate that the provided strings are
+   * shader code.
+   */
+  Shader(const std::string &vertexSource, const std::string &fragmentSource,
+         bool fromSource);
 
   /**
    * @brief Destructor that deletes the shader program.

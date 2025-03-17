@@ -2,6 +2,7 @@
 #include "Window.hpp"
 #include "objects/Object.hpp"
 #include "rendering/PostProcessingPipeline.hpp"
+#include "rendering/shaders/DefaultPostProcessingShaders.hpp"
 #include <glad/glad.h>
 
 namespace FrameEngine {
@@ -89,34 +90,31 @@ Camera &Renderer::getCamera() { return camera; }
  * updates and before swapping the window buffers.
  */
 void Renderer::render() {
-  // Render system to ofscreen buffer firstly
+  // Render scene into the offscreen framebuffer.
   glBindFramebuffer(GL_FRAMEBUFFER, sceneFBO);
   clear();
 
   Registry &registry = Registry::getInstance();
-
   LightingSystem::update();
 
   Matrix4 viewMatrix = camera.getViewMatrix();
   Matrix4 projectionMatrix = camera.getProjectionMatrix();
   Vector3 cameraPos = camera.transform->position;
 
-  // Build batches by materail-type. Each batch uses the same shader, so all
-  // of the objects with the same material can be rendered in one call to GPU
+  // Batch render objects by material.
   std::unordered_map<Material *, std::vector<EntityID>> batches;
   auto entities = registry.get_entities_with_component<MeshComponent>();
   for (EntityID entity : entities) {
     if (!registry.has_component<TransformComponent>(entity) ||
         !registry.has_component<MaterialComponent>(entity))
       continue;
-
     auto &matComp = registry.get_component<MaterialComponent>(entity);
     Material *mat = matComp.material;
     if (!mat)
       continue;
     batches[mat].push_back(entity);
   }
-  // Process each batch.
+
   for (auto &pair : batches) {
     Material *material = pair.first;
     Shader *shader = material->getShader();
@@ -124,17 +122,12 @@ void Renderer::render() {
       continue;
 
     shader->bind();
-
     shader->setUniformVec3("ambientColor", Vector3(0.2f, 0.2f, 0.2f));
-
-    // Probably should move to UBO as well
     shader->setUniformMat4("view", viewMatrix);
     shader->setUniformMat4("projection", projectionMatrix);
     shader->setUniformVec3("viewPos", cameraPos);
-
     material->applyUniforms();
 
-    // Render each entity in the batch.
     for (EntityID entity : pair.second) {
       auto &transform = registry.get_component<TransformComponent>(entity);
       Matrix4 modelMatrix = transform.get_transformation_matrix();
@@ -149,19 +142,23 @@ void Renderer::render() {
         meshComp.mesh->draw();
       }
     }
-
     shader->unbind();
   }
-
   glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
   // === Apply Post–Processing Pipeline ===
   GLuint finalTexture = postProcessingPipeline->process(sceneTexture);
 
-  // Use a simple screen shader that draws a fullscreen quad.
+  // Use a default built-in shader for the final pass.
   static Shader *screenShader = nullptr;
   if (!screenShader) {
-    screenShader = new Shader("shaders/quad.vs", "shaders/screen.fs");
+    // Create the shader using our built-in source strings.
+    screenShader =
+        new Shader(DefaultPostProcessingShaders::quadVertexShaderSource,
+                   DefaultPostProcessingShaders::screenFragmentShaderSource,
+                   true // This flag indicates that the given strings are direct
+                        // shader source.
+        );
   }
   screenShader->bind();
   glActiveTexture(GL_TEXTURE0);
@@ -171,12 +168,16 @@ void Renderer::render() {
   // Render a fullscreen quad.
   static GLuint quadVAO = 0, quadVBO = 0;
   if (quadVAO == 0) {
-    float quadVertices[] = {// positions   // texCoords
-                            -1.0f, 1.0f, 0.0f, 1.0f,  -1.0f, -1.0f,
-                            0.0f,  0.0f, 1.0f, -1.0f, 1.0f,  0.0f,
+    float quadVertices[] = {
+        // positions   // texCoords
+        -1.0f, 1.0f,  0.0f, 1.0f, // Top-left
+        -1.0f, -1.0f, 0.0f, 0.0f, // Bottom-left
+        1.0f,  -1.0f, 1.0f, 0.0f, // Bottom-right
 
-                            -1.0f, 1.0f, 0.0f, 1.0f,  1.0f,  -1.0f,
-                            1.0f,  0.0f, 1.0f, 1.0f,  1.0f,  1.0f};
+        -1.0f, 1.0f,  0.0f, 1.0f, // Top-left
+        1.0f,  -1.0f, 1.0f, 0.0f, // Bottom-right
+        1.0f,  1.0f,  1.0f, 1.0f  // Top-right
+    };
     glGenVertexArrays(1, &quadVAO);
     glGenBuffers(1, &quadVBO);
     glBindVertexArray(quadVAO);
