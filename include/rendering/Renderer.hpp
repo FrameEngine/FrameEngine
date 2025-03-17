@@ -11,6 +11,7 @@
 #include "objects/PointLight.hpp"
 #include "rendering/Camera.hpp"
 #include "rendering/LightingSystem.hpp"
+#include "rendering/PostProcessingPipeline.hpp"
 #include "rendering/Shader.hpp"
 #include <vector>
 
@@ -27,6 +28,11 @@ private:
   Camera camera;
   Window &window;
 
+  GLuint sceneFBO;
+  GLuint sceneTexture;
+
+  PostProcessingPipeline *postProcessingPipeline;
+
 public:
   /**
    * @brief Constructs a Renderer and sets up the camera.
@@ -34,13 +40,14 @@ public:
    * @param window A reference to the Window instance.
    */
   Renderer(Window &window);
+  ~Renderer();
 
   /**
    * @brief Initializes the rendering system.
    *
    * This method must be called before any other rendering function.
    */
-  static void initialize();
+  void initialize();
 
   /**
    * @brief Clears the screen before rendering a new frame.
@@ -88,6 +95,12 @@ public:
    * @return A reference to the camera.
    */
   Camera &getCamera();
+
+  /**
+  /* @brief Called on window resize to update framebuffer sizes and pipeline
+  /* dimensions.
+  */
+  void resize(int width, int height);
 };
 
 } // namespace FrameEngine

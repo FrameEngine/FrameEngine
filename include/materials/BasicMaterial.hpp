@@ -1,5 +1,6 @@
 #include "rendering/Material.hpp"
 
+namespace FrameEngine {
 class BasicMaterial : public Material {
 private:
   Vector3 diffuseColor;
@@ -54,3 +55,5 @@ public:
     }
   }
 };
+
+} // namespace FrameEngine

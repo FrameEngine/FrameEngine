@@ -21,6 +21,9 @@ struct Material {
     vec3 diffuseColor;
     vec3 specularColor;
     float specularPower;
+    
+    int emissiveEnabled;
+    vec3 emissiveColor;
 };
 uniform Material material;
 
@@ -47,7 +50,6 @@ void main() {
         float intensity = lights[i].color.w;
         
         vec3 lightDir = normalize(lightPos - FragPos);
-        
         float diff = max(dot(norm, lightDir), 0.0);
         vec3 diffuse = diff * lightColor * material.diffuseColor;
         
@@ -67,5 +69,10 @@ void main() {
     
     vec3 texColor = texture(texSampler, TexCoords).rgb;
     vec3 finalColor = (ambient + diffuseTotal + specularTotal) * texColor;
+    
+    if (material.emissiveEnabled == 1) {
+        finalColor += material.emissiveColor;
+    }
+    
     FragColor = vec4(finalColor, 1.0);
 }
