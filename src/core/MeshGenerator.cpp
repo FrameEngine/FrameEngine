@@ -124,13 +124,12 @@ Mesh *MeshGenerator::createCube() {
  * @return A pointer to a new Mesh object.
  */
 Mesh *MeshGenerator::createSphere(unsigned int longitudeSegments,
-                                  unsigned int latitudeSegments) {
+                                  unsigned int latitudeSegments, float radius) {
   std::vector<float> positions;
   std::vector<float> normals;
   std::vector<float> uvs;
   std::vector<unsigned int> indices;
 
-  float radius = 0.5f;
   for (unsigned int y = 0; y <= latitudeSegments; ++y) {
     float v = static_cast<float>(y) / latitudeSegments;
     float theta = v * M_PI;
