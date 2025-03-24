@@ -1,15 +1,13 @@
 <map id="include/Registry.hpp" name="include/Registry.hpp">
-<area shape="rect" id="Node000001" title="Defines the Registry class for managing ECS entities and components." alt="" coords="115,5,269,31"/>
-<area shape="rect" id="Node000002" href="$Entity_8hpp.html" title="Defines the Entity class, which serves as a wrapper for ECS entities." alt="" coords="177,79,314,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,40,239,77,235,80,207,43"/>
+<area shape="rect" id="Node000001" title="Defines the Registry class for managing ECS entities and components." alt="" coords="62,5,215,31"/>
+<area shape="rect" id="Node000002" href="$Entity_8hpp.html" title="Defines the Entity class, which serves as a wrapper for ECS entities." alt="" coords="231,79,369,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,34,275,76,273,81,176,39"/>
 <area shape="rect" id="Node000004" href="$FrameEngine_8hpp_source.html" title=" " alt="" coords="252,460,439,485"/>
-<area shape="poly" id="edge14_Node000001_Node000004" title=" " alt="" coords="143,38,99,58,55,87,36,104,21,124,11,146,8,171,8,327,14,363,32,392,58,416,92,434,130,448,171,457,252,467,252,473,171,463,129,453,90,439,55,420,28,396,9,365,3,328,3,170,6,145,17,121,32,101,51,83,96,53,141,33"/>
-<area shape="rect" id="Node000009" href="$PhysicsSystem_8hpp.html" title="Defines the PhysicsSystem." alt="" coords="338,79,590,104"/>
-<area shape="poly" id="edge15_Node000001_Node000009" title=" " alt="" coords="249,32,421,76,419,81,248,37"/>
-<area shape="rect" id="Node000010" href="$LightingSystem_8hpp_source.html" title=" " alt="" coords="43,152,234,192"/>
-<area shape="poly" id="edge16_Node000001_Node000010" title=" " alt="" coords="183,44,168,80,146,153,141,151,163,78,178,42"/>
+<area shape="poly" id="edge14_Node000001_Node000004" title=" " alt="" coords="107,40,75,62,43,92,18,129,11,149,8,171,8,327,14,363,32,392,58,416,92,434,130,448,171,457,252,467,252,473,171,463,129,453,90,439,55,420,28,396,9,365,3,328,3,171,5,148,13,127,39,89,72,58,104,35"/>
+<area shape="rect" id="Node000009" href="$LightingSystem_8hpp_source.html" title=" " alt="" coords="43,152,234,192"/>
+<area shape="poly" id="edge15_Node000001_Node000009" title=" " alt="" coords="141,44,141,152,136,152,136,44"/>
 <area shape="rect" id="Node000003" href="$Object_8hpp.html" title="Defines the Object class, a special ECS entity wrapper." alt="" coords="259,159,453,185"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="275,110,341,157,338,161,272,114"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="318,114,350,158,346,161,314,117"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="467,182,573,203,616,219,643,238,656,258,661,278,660,297,653,316,625,350,583,380,533,407,480,430,387,462,385,457,478,425,531,402,580,376,621,346,648,313,654,296,656,279,651,260,639,242,613,224,572,208,466,188"/>
 <area shape="rect" id="Node000005" href="$PointLight_8hpp_source.html" title=" " alt="" coords="169,240,386,265"/>
 <area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="336,196,291,242,287,238,333,193"/>
@@ -25,5 +23,5 @@
 <area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="244,416,324,457,322,462,242,421"/>
 <area shape="poly" id="edge11_Node000008_Node000004" title=" " alt="" coords="504,278,357,461,353,458,500,275"/>
 <area shape="poly" id="edge12_Node000008_Node000006" title=" " alt="" coords="459,271,266,316,265,311,457,266"/>
-<area shape="poly" id="edge17_Node000010_Node000006" title=" " alt="" coords="121,205,110,235,110,250,114,264,127,280,142,293,178,311,175,316,139,297,123,284,110,267,104,251,105,234,116,203"/>
+<area shape="poly" id="edge16_Node000009_Node000006" title=" " alt="" coords="121,205,110,235,110,250,114,264,127,280,142,293,178,311,175,316,139,297,123,284,110,267,104,251,105,234,116,203"/>
 </map>

@@ -12,8 +12,8 @@
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Defines the Registry class for managing ECS entities and components.">
-<polygon fill="#999999" stroke="#666666" points="197.5,-360 82.5,-360 82.5,-341 197.5,-341 197.5,-360"/>
-<text text-anchor="middle" x="140" y="-348" font-family="Helvetica,sans-Serif" font-size="10.00">include/Registry.hpp</text>
+<polygon fill="#999999" stroke="#666666" points="157.5,-360 42.5,-360 42.5,-341 157.5,-341 157.5,-360"/>
+<text text-anchor="middle" x="100" y="-348" font-family="Helvetica,sans-Serif" font-size="10.00">include/Registry.hpp</text>
 </a>
 </g>
 </g>
@@ -21,8 +21,8 @@
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:href="Entity_8hpp.html" target="_top" xlink:title="Defines the Entity class, which serves as a wrapper for ECS entities.">
-<polygon fill="white" stroke="#666666" points="231.5,-305 128.5,-305 128.5,-286 231.5,-286 231.5,-305"/>
-<text text-anchor="middle" x="180" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00">include/Entity.hpp</text>
+<polygon fill="white" stroke="#666666" points="272.5,-305 169.5,-305 169.5,-286 272.5,-286 272.5,-305"/>
+<text text-anchor="middle" x="221" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00">include/Entity.hpp</text>
 </a>
 </g>
 </g>
@@ -30,8 +30,8 @@
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M152.7,-332.67C159.63,-323.5 167.91,-312.52 173.52,-305.09"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="149.84,-330.66 146.61,-340.75 155.42,-334.87 149.84,-330.66"/>
+<path fill="none" stroke="#63b8ff" d="M128.77,-336.9C151.12,-327.11 181.52,-313.79 201.21,-305.17"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="127.2,-333.77 119.44,-340.98 130,-340.18 127.2,-333.77"/>
 </a>
 </g>
 </g>
@@ -48,17 +48,18 @@
 <g id="edge14_Node000001_Node000004" class="edge">
 <title>Node1&#45;&gt;Node4</title>
 <g id="a_edge14_Node000001_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M102.45,-337.39C60.98,-321.39 0,-288.87 0,-236 0,-236 0,-236 0,-118.5 0,-37.85 109.49,-16.52 184.98,-11.4"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="101.41,-340.74 112.01,-340.93 103.84,-334.18 101.41,-340.74"/>
+<path fill="none" stroke="#63b8ff" d="M75.33,-335.8C45.72,-317.33 0,-281.46 0,-236 0,-236 0,-236 0,-118.5 0,-37.85 109.49,-16.52 184.98,-11.4"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="73.56,-338.82 83.93,-340.97 77.16,-332.82 73.56,-338.82"/>
 </a>
 </g>
 </g>
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="PhysicsSystem_8hpp.html" target="_top" xlink:title="Defines the PhysicsSystem.">
-<polygon fill="white" stroke="#666666" points="438.5,-305 249.5,-305 249.5,-286 438.5,-286 438.5,-305"/>
-<text text-anchor="middle" x="344" y="-293" font-family="Helvetica,sans-Serif" font-size="10.00">include/physics/PhysicsSystem.hpp</text>
+<g id="a_Node000009"><a xlink:href="LightingSystem_8hpp_source.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="171.5,-250 28.5,-250 28.5,-220 171.5,-220 171.5,-250"/>
+<text text-anchor="start" x="36.5" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">include/rendering/Lighting</text>
+<text text-anchor="middle" x="100" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">System.hpp</text>
 </a>
 </g>
 </g>
@@ -66,27 +67,8 @@
 <g id="edge15_Node000001_Node000009" class="edge">
 <title>Node1&#45;&gt;Node9</title>
 <g id="a_edge15_Node000001_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M182.58,-338.44C220.77,-328.52 276.02,-314.16 310.97,-305.08"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="181.57,-335.08 172.78,-340.98 183.33,-341.86 181.57,-335.08"/>
-</a>
-</g>
-</g>
-<!-- Node10 -->
-<g id="Node000010" class="node">
-<title>Node10</title>
-<g id="a_Node000010"><a xlink:href="LightingSystem_8hpp_source.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="171.5,-250 28.5,-250 28.5,-220 171.5,-220 171.5,-250"/>
-<text text-anchor="start" x="36.5" y="-238" font-family="Helvetica,sans-Serif" font-size="10.00">include/rendering/Lighting</text>
-<text text-anchor="middle" x="100" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">System.hpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node10 -->
-<g id="edge16_Node000001_Node000010" class="edge">
-<title>Node1&#45;&gt;Node10</title>
-<g id="a_edge16_Node000001_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M131.29,-331.66C127.55,-323.62 123.29,-313.94 120,-305 113.16,-286.39 107.1,-264.28 103.49,-250.19"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="128.18,-333.27 135.64,-340.79 134.5,-330.25 128.18,-333.27"/>
+<path fill="none" stroke="#63b8ff" d="M100,-330.96C100,-308.34 100,-270.61 100,-250.18"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="96.5,-330.97 100,-340.97 103.5,-330.97 96.5,-330.97"/>
 </a>
 </g>
 </g>
@@ -103,8 +85,8 @@
 <g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
 <g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M200.79,-279.85C216.51,-268.77 237.56,-253.93 250.7,-244.67"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="198.4,-277.25 192.25,-285.87 202.44,-282.97 198.4,-277.25"/>
+<path fill="none" stroke="#63b8ff" d="M233.11,-277.63C240.85,-266.85 250.56,-253.32 256.78,-244.67"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="230.19,-275.7 227.2,-285.87 235.87,-279.79 230.19,-275.7"/>
 </a>
 </g>
 </g>
@@ -243,10 +225,10 @@
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node6 -->
-<g id="edge17_Node000010_Node000006" class="edge">
-<title>Node10&#45;&gt;Node6</title>
-<g id="a_edge17_Node000010_Node000006"><a xlink:title=" ">
+<!-- Node9&#45;&gt;Node6 -->
+<g id="edge16_Node000009_Node000006" class="edge">
+<title>Node9&#45;&gt;Node6</title>
+<g id="a_edge16_Node000009_Node000006"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M84.59,-211.02C77.28,-197.03 71.76,-179.2 80,-165 90.41,-147.07 111.06,-135.76 128.5,-129.03"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="81.74,-213.09 89.79,-219.99 87.8,-209.58 81.74,-213.09"/>
 </a>

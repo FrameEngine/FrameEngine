@@ -1,26 +1,24 @@
 <map id="include/components/TransformComponent.hpp" name="include/components/TransformComponent.hpp">
-<area shape="rect" id="Node000001" title="Defines the TransformComponent for ECS&#45;based spatial transformations." alt="" coords="379,5,574,45"/>
-<area shape="rect" id="Node000002" href="$Object_8hpp.html" title="Defines the Object class, a special ECS entity wrapper." alt="" coords="379,93,574,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="479,59,479,93,474,93,474,59"/>
-<area shape="rect" id="Node000008" href="$PhysicsSystem_8hpp.html" title="Defines the PhysicsSystem." alt="" coords="599,93,851,119"/>
-<area shape="poly" id="edge13_Node000001_Node000008" title=" " alt="" coords="550,47,689,91,688,96,548,52"/>
-<area shape="rect" id="Node000009" href="$LightingSystem_8hpp_source.html" title=" " alt="" coords="5,167,196,207"/>
-<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="421,53,146,169,144,164,419,48"/>
-<area shape="rect" id="Node000003" href="$FrameEngine_8hpp_source.html" title=" " alt="" coords="482,401,669,427"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="564,118,678,140,723,153,746,165,757,182,763,199,764,217,761,235,745,271,719,304,687,336,653,364,596,403,593,399,650,359,683,332,715,301,740,268,756,234,759,217,758,200,753,184,743,169,721,158,677,146,563,124"/>
-<area shape="rect" id="Node000004" href="$PointLight_8hpp_source.html" title=" " alt="" coords="515,174,732,199"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="512,123,603,171,600,176,509,128"/>
-<area shape="rect" id="Node000005" href="$Renderer_8hpp.html" title="Manages the rendering pipeline and object submission." alt="" coords="364,255,589,280"/>
-<area shape="poly" id="edge12_Node000002_Node000005" title=" " alt="" coords="479,132,479,254,474,254,474,132"/>
-<area shape="rect" id="Node000007" href="$Camera_8hpp.html" title="Defines the Camera class for view and projection." alt="" coords="221,174,439,199"/>
-<area shape="poly" id="edge9_Node000002_Node000007" title=" " alt="" coords="444,128,353,176,350,171,442,123"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="621,214,580,402,575,400,615,212"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="591,208,500,257,497,252,588,204"/>
-<area shape="poly" id="edge8_Node000005_Node000003" title=" " alt="" coords="510,286,532,304,552,327,569,366,577,400,571,401,564,367,548,329,529,308,506,290"/>
-<area shape="rect" id="Node000006" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="392,328,537,353"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="475,294,469,328,464,327,470,293"/>
-<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="495,359,559,399,556,403,493,363"/>
-<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="333,213,336,245,344,282,359,320,383,351,405,368,429,382,483,399,481,404,427,387,402,373,379,355,354,322,339,284,331,246,328,213"/>
-<area shape="poly" id="edge11_Node000007_Node000005" title=" " alt="" coords="365,204,456,252,454,257,362,208"/>
-<area shape="poly" id="edge15_Node000009_Node000005" title=" " alt="" coords="205,207,422,252,421,257,204,212"/>
+<area shape="rect" id="Node000001" title="Defines the TransformComponent for ECS&#45;based spatial transformations." alt="" coords="111,5,306,45"/>
+<area shape="rect" id="Node000002" href="$Object_8hpp.html" title="Defines the Object class, a special ECS entity wrapper." alt="" coords="258,101,453,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="254,50,337,98,334,103,251,55"/>
+<area shape="rect" id="Node000008" href="$LightingSystem_8hpp_source.html" title=" " alt="" coords="5,93,196,133"/>
+<area shape="poly" id="edge13_Node000001_Node000008" title=" " alt="" coords="176,56,126,95,123,91,172,52"/>
+<area shape="rect" id="Node000003" href="$FrameEngine_8hpp_source.html" title=" " alt="" coords="361,401,547,427"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="465,125,562,146,600,161,625,180,635,196,640,213,638,246,622,280,597,311,565,340,532,366,476,403,473,399,529,362,562,336,593,308,617,277,633,245,635,213,630,198,621,183,598,166,560,152,464,131"/>
+<area shape="rect" id="Node000004" href="$PointLight_8hpp_source.html" title=" " alt="" coords="393,181,611,207"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="390,130,482,179,479,183,388,135"/>
+<area shape="rect" id="Node000005" href="$Renderer_8hpp.html" title="Manages the rendering pipeline and object submission." alt="" coords="243,255,468,280"/>
+<area shape="poly" id="edge12_Node000002_Node000005" title=" " alt="" coords="358,140,358,254,353,254,353,140"/>
+<area shape="rect" id="Node000007" href="$Camera_8hpp.html" title="Defines the Camera class for view and projection." alt="" coords="99,181,318,207"/>
+<area shape="poly" id="edge9_Node000002_Node000007" title=" " alt="" coords="323,135,232,183,229,179,320,130"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="499,221,459,401,454,400,494,220"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="468,215,380,257,378,252,465,210"/>
+<area shape="poly" id="edge8_Node000005_Node000003" title=" " alt="" coords="388,286,411,304,431,327,448,366,455,400,450,401,443,367,426,329,407,308,385,290"/>
+<area shape="rect" id="Node000006" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="271,328,416,353"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="354,294,348,328,343,327,348,293"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="374,359,437,399,434,403,371,363"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="212,220,216,250,224,286,238,321,261,351,283,368,308,382,361,399,360,404,306,387,280,373,257,355,234,324,219,288,210,251,207,221"/>
+<area shape="poly" id="edge11_Node000007_Node000005" title=" " alt="" coords="245,210,332,252,330,257,243,215"/>
+<area shape="poly" id="edge14_Node000008_Node000005" title=" " alt="" coords="88,146,81,177,83,192,89,205,112,221,149,234,243,253,242,258,148,239,110,226,85,208,78,194,76,177,83,145"/>
 </map>

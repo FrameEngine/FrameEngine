@@ -10,12 +10,13 @@ var searchData=
   ['getheight_7',['getHeight',['../classFrameEngine_1_1Window.html#a173376818597467a5af01603b0565efa',1,'FrameEngine::Window']]],
   ['getinstance_8',['getinstance',['../classRegistry.html#abd27df5823d598f4f8436a0ff6a29188',1,'Registry::getInstance()'],['../classFrameEngine_1_1Logger.html#ad327417a734f77a443a39da529b33796',1,'FrameEngine::Logger::getInstance()']]],
   ['getintensity_9',['getIntensity',['../classFrameEngine_1_1PointLight.html#aed8465600d09ba886030022ae63d8304',1,'FrameEngine::PointLight']]],
-  ['getprogramid_10',['getProgramID',['../classFrameEngine_1_1Shader.html#abe8c08e019c9c2b3952104ff0a9376fb',1,'FrameEngine::Shader']]],
-  ['getprojectionmatrix_11',['getProjectionMatrix',['../classFrameEngine_1_1Camera.html#a018a7c6ebc595597568eb49d5a8d43eb',1,'FrameEngine::Camera']]],
-  ['gettranspose_12',['getTranspose',['../structFrameEngine_1_1Matrix4.html#a9b35ffac2c4d50631278adf544b1f1de',1,'FrameEngine::Matrix4']]],
-  ['getvao_13',['getVAO',['../classFrameEngine_1_1Mesh.html#a81ab435322a222e975373d8dc9f8add0',1,'FrameEngine::Mesh']]],
-  ['getvbo_14',['getVBO',['../classFrameEngine_1_1Mesh.html#a7003c7fca37334b36797135e1a64a297',1,'FrameEngine::Mesh']]],
-  ['getvertexdata_15',['getVertexData',['../classFrameEngine_1_1Mesh.html#a59832d920ea9295f4bb53bbf123f2de1',1,'FrameEngine::Mesh']]],
-  ['getviewmatrix_16',['getViewMatrix',['../classFrameEngine_1_1Camera.html#a4f38b5c77d2922654acf949f58fe91e1',1,'FrameEngine::Camera']]],
-  ['getwidth_17',['getWidth',['../classFrameEngine_1_1Window.html#a5f0582c355da6859476e34704a85c865',1,'FrameEngine::Window']]]
+  ['getpostprocessingpipeline_10',['getPostProcessingPipeline',['../classFrameEngine_1_1Renderer.html#aa96f27db23c9c45e1316b97ed1af06ef',1,'FrameEngine::Renderer']]],
+  ['getprogramid_11',['getProgramID',['../classFrameEngine_1_1Shader.html#abe8c08e019c9c2b3952104ff0a9376fb',1,'FrameEngine::Shader']]],
+  ['getprojectionmatrix_12',['getProjectionMatrix',['../classFrameEngine_1_1Camera.html#a018a7c6ebc595597568eb49d5a8d43eb',1,'FrameEngine::Camera']]],
+  ['gettranspose_13',['getTranspose',['../structFrameEngine_1_1Matrix4.html#a9b35ffac2c4d50631278adf544b1f1de',1,'FrameEngine::Matrix4']]],
+  ['getvao_14',['getVAO',['../classFrameEngine_1_1Mesh.html#a81ab435322a222e975373d8dc9f8add0',1,'FrameEngine::Mesh']]],
+  ['getvbo_15',['getVBO',['../classFrameEngine_1_1Mesh.html#a7003c7fca37334b36797135e1a64a297',1,'FrameEngine::Mesh']]],
+  ['getvertexdata_16',['getVertexData',['../classFrameEngine_1_1Mesh.html#a59832d920ea9295f4bb53bbf123f2de1',1,'FrameEngine::Mesh']]],
+  ['getviewmatrix_17',['getViewMatrix',['../classFrameEngine_1_1Camera.html#a4f38b5c77d2922654acf949f58fe91e1',1,'FrameEngine::Camera']]],
+  ['getwidth_18',['getWidth',['../classFrameEngine_1_1Window.html#a5f0582c355da6859476e34704a85c865',1,'FrameEngine::Window']]]
 ];

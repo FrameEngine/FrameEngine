@@ -1,40 +1,41 @@
 <map id="include/math/Matrix4.hpp" name="include/math/Matrix4.hpp">
-<area shape="rect" id="Node000001" title="Defines the Matrix4 class for 3D transformation operations." alt="" coords="67,5,256,31"/>
-<area shape="rect" id="Node000002" href="$FrameEngine_8hpp_source.html" title=" " alt="" coords="541,621,728,647"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,39,84,59,47,87,19,122,11,142,8,164,8,488,12,507,23,524,41,539,66,553,129,577,208,595,295,609,384,618,541,628,541,633,383,624,294,614,207,600,128,582,63,558,38,544,19,527,7,509,3,489,3,163,6,140,14,119,43,83,81,54,118,34"/>
-<area shape="rect" id="Node000003" href="$TransformComponent_8hpp.html" title="Defines the TransformComponent for ECS&#45;based spatial transformations." alt="" coords="243,225,437,265"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,40,327,223,323,227,177,43"/>
-<area shape="rect" id="Node000008" href="$Camera_8hpp.html" title="Defines the Camera class for view and projection." alt="" coords="43,394,261,419"/>
-<area shape="poly" id="edge18_Node000001_Node000008" title=" " alt="" coords="157,44,145,99,139,163,139,247,144,331,153,393,147,394,139,331,133,247,133,163,140,98,152,43"/>
-<area shape="rect" id="Node000011" href="$Shader_8hpp.html" title="Manages OpenGL shaders." alt="" coords="483,79,693,104"/>
-<area shape="poly" id="edge19_Node000001_Node000011" title=" " alt="" coords="244,30,520,76,519,81,243,36"/>
-<area shape="rect" id="Node000004" href="$Object_8hpp.html" title="Defines the Object class, a special ECS entity wrapper." alt="" coords="552,313,747,339"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="428,266,605,311,603,316,427,271"/>
-<area shape="rect" id="Node000009" href="$PhysicsSystem_8hpp.html" title="Defines the PhysicsSystem." alt="" coords="174,313,426,339"/>
-<area shape="poly" id="edge15_Node000003_Node000009" title=" " alt="" coords="327,279,308,314,304,312,322,276"/>
-<area shape="rect" id="Node000010" href="$LightingSystem_8hpp_source.html" title=" " alt="" coords="286,387,477,427"/>
-<area shape="poly" id="edge16_Node000003_Node000010" title=" " alt="" coords="398,270,422,288,440,312,444,333,437,354,424,373,408,388,404,384,420,369,432,351,438,333,435,314,418,292,395,275"/>
-<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="761,337,802,355,820,368,836,385,841,396,842,406,836,428,819,462,797,494,747,550,695,594,655,623,652,619,692,590,743,546,793,491,814,459,831,426,837,406,836,397,831,388,817,372,799,360,759,342"/>
-<area shape="rect" id="Node000005" href="$PointLight_8hpp_source.html" title=" " alt="" coords="603,394,821,419"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="669,348,705,392,701,395,665,351"/>
-<area shape="rect" id="Node000006" href="$Renderer_8hpp.html" title="Manages the rendering pipeline and object submission." alt="" coords="411,475,637,500"/>
-<area shape="poly" id="edge14_Node000004_Node000006" title=" " alt="" coords="629,350,594,388,559,436,533,476,529,473,554,433,590,385,625,347"/>
-<area shape="poly" id="edge11_Node000004_Node000008" title=" " alt="" coords="564,343,225,397,224,391,563,338"/>
-<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="706,433,641,622,636,620,701,432"/>
-<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="673,427,552,477,550,472,671,422"/>
-<area shape="poly" id="edge10_Node000006_Node000002" title=" " alt="" coords="562,505,588,523,611,546,622,565,629,586,636,621,631,622,624,587,617,568,607,550,585,527,559,509"/>
-<area shape="rect" id="Node000007" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="451,548,597,573"/>
-<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="527,514,527,548,521,548,521,514"/>
-<area shape="poly" id="edge9_Node000007_Node000002" title=" " alt="" coords="555,579,618,619,615,623,552,583"/>
-<area shape="poly" id="edge12_Node000008_Node000002" title=" " alt="" coords="182,425,292,494,365,535,440,571,516,599,587,619,585,624,515,604,438,576,362,539,289,499,179,429"/>
-<area shape="poly" id="edge13_Node000008_Node000006" title=" " alt="" coords="220,420,470,472,469,477,219,425"/>
-<area shape="poly" id="edge17_Node000010_Node000006" title=" " alt="" coords="429,431,504,472,502,477,426,436"/>
-<area shape="poly" id="edge20_Node000011_Node000002" title=" " alt="" coords="708,99,778,114,812,126,844,141,871,160,893,183,907,211,912,244,912,489,907,519,894,544,875,566,850,584,791,610,729,625,727,620,789,605,847,579,871,562,890,541,902,517,907,488,907,244,902,213,888,186,868,164,841,145,810,131,776,119,706,104"/>
-<area shape="poly" id="edge25_Node000011_Node000006" title=" " alt="" coords="569,116,542,153,523,197,517,244,517,327,520,412,526,474,520,475,515,412,512,327,512,244,517,196,538,151,565,113"/>
-<area shape="rect" id="Node000012" href="$Material_8hpp_source.html" title=" " alt="" coords="552,152,773,177"/>
-<area shape="poly" id="edge21_Node000011_Node000012" title=" " alt="" coords="612,111,652,150,649,154,608,115"/>
-<area shape="poly" id="edge24_Node000012_Node000004" title=" " alt="" coords="651,191,637,226,635,250,637,273,647,312,642,314,632,274,630,250,632,225,646,189"/>
-<area shape="rect" id="Node000013" href="$MaterialComponent_8hpp_source.html" title=" " alt="" coords="646,225,829,265"/>
-<area shape="poly" id="edge22_Node000012_Node000013" title=" " alt="" coords="685,186,721,223,717,227,681,189"/>
-<area shape="poly" id="edge23_Node000013_Node000004" title=" " alt="" coords="707,277,664,315,661,311,704,273"/>
+<area shape="rect" id="Node000001" title="Defines the Matrix4 class for 3D transformation operations." alt="" coords="48,5,237,31"/>
+<area shape="rect" id="Node000002" href="$FrameEngine_8hpp_source.html" title=" " alt="" coords="423,621,609,647"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,39,75,60,43,89,18,123,11,143,8,164,8,488,11,503,19,517,51,542,99,563,159,581,295,608,423,623,422,628,295,613,158,587,97,568,48,547,15,520,6,505,3,489,3,163,5,141,13,121,39,85,72,56,105,35"/>
+<area shape="rect" id="Node000003" href="$TransformComponent_8hpp.html" title="Defines the TransformComponent for ECS&#45;based spatial transformations." alt="" coords="117,225,312,265"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,43,211,224,206,226,148,45"/>
+<area shape="rect" id="Node000008" href="$Camera_8hpp.html" title="Defines the Camera class for view and projection." alt="" coords="43,401,261,427"/>
+<area shape="poly" id="edge17_Node000001_Node000008" title=" " alt="" coords="128,43,98,97,87,129,83,164,83,247,88,301,109,352,125,378,143,399,139,403,121,381,104,355,83,302,77,247,77,163,82,128,94,94,124,41"/>
+<area shape="rect" id="Node000010" href="$Shader_8hpp.html" title="Manages OpenGL shaders." alt="" coords="264,79,475,104"/>
+<area shape="poly" id="edge18_Node000001_Node000010" title=" " alt="" coords="193,32,333,76,332,81,191,37"/>
+<area shape="rect" id="Node000004" href="$Object_8hpp.html" title="Defines the Object class, a special ECS entity wrapper." alt="" coords="387,321,581,346"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="287,267,449,318,447,323,286,272"/>
+<area shape="rect" id="Node000009" href="$LightingSystem_8hpp_source.html" title=" " alt="" coords="119,313,310,353"/>
+<area shape="poly" id="edge15_Node000003_Node000009" title=" " alt="" coords="217,279,217,313,212,313,212,279"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="590,347,634,367,653,382,669,400,675,412,674,423,662,441,640,457,619,476,562,558,525,622,520,620,558,555,615,473,637,453,658,437,669,421,669,413,664,403,649,386,631,372,588,352"/>
+<area shape="rect" id="Node000005" href="$PointLight_8hpp_source.html" title=" " alt="" coords="438,401,655,427"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="504,355,539,399,535,403,500,358"/>
+<area shape="rect" id="Node000006" href="$Renderer_8hpp.html" title="Manages the rendering pipeline and object submission." alt="" coords="267,475,493,500"/>
+<area shape="poly" id="edge14_Node000004_Node000006" title=" " alt="" coords="465,358,428,403,404,442,387,476,383,473,399,440,423,400,461,354"/>
+<area shape="poly" id="edge11_Node000004_Node000008" title=" " alt="" coords="423,352,201,404,200,399,422,346"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="546,441,520,621,515,621,541,440"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="508,434,408,477,406,472,506,430"/>
+<area shape="poly" id="edge10_Node000006_Node000002" title=" " alt="" coords="414,505,440,523,466,546,495,585,513,620,509,623,490,588,462,550,437,528,411,509"/>
+<area shape="rect" id="Node000007" href="$Engine_8hpp.html" title="Defines the core Engine class responsible for running simulation." alt="" coords="307,548,453,573"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="383,514,383,548,377,548,377,514"/>
+<area shape="poly" id="edge9_Node000007_Node000002" title=" " alt="" coords="415,577,495,619,493,623,412,582"/>
+<area shape="poly" id="edge12_Node000008_Node000002" title=" " alt="" coords="168,437,219,504,255,540,296,571,328,588,362,601,430,619,429,624,360,606,326,593,293,576,252,544,215,507,164,440"/>
+<area shape="poly" id="edge13_Node000008_Node000006" title=" " alt="" coords="203,428,344,472,342,477,201,433"/>
+<area shape="poly" id="edge16_Node000009_Node000006" title=" " alt="" coords="247,361,369,472,365,476,244,365"/>
+<area shape="poly" id="edge19_Node000010_Node000002" title=" " alt="" coords="488,99,625,115,698,127,767,142,829,161,879,184,913,211,922,227,925,244,925,489,923,502,915,515,889,538,851,558,803,576,696,605,594,624,593,619,695,600,802,571,849,553,886,534,911,512,918,500,920,488,920,244,917,229,909,215,876,188,827,166,766,147,697,132,624,120,488,104"/>
+<area shape="poly" id="edge26_Node000010_Node000006" title=" " alt="" coords="367,118,357,175,352,244,352,335,355,375,362,414,379,474,373,475,357,416,350,376,347,335,347,244,352,175,361,117"/>
+<area shape="rect" id="Node000011" href="$Material_8hpp_source.html" title=" " alt="" coords="424,152,645,177"/>
+<area shape="poly" id="edge20_Node000010_Node000011" title=" " alt="" coords="409,107,509,149,507,154,407,112"/>
+<area shape="poly" id="edge25_Node000011_Node000004" title=" " alt="" coords="505,187,485,205,470,226,465,251,467,277,481,319,476,321,462,278,460,251,466,224,481,201,501,183"/>
+<area shape="rect" id="Node000012" href="$MaterialComponent_8hpp_source.html" title=" " alt="" coords="481,225,663,265"/>
+<area shape="poly" id="edge21_Node000011_Node000012" title=" " alt="" coords="548,188,565,224,561,226,544,191"/>
+<area shape="rect" id="Node000013" href="$BasicMaterial_8hpp_source.html" title=" " alt="" coords="629,475,885,500"/>
+<area shape="poly" id="edge23_Node000011_Node000013" title=" " alt="" coords="603,179,642,197,677,223,700,255,719,290,744,363,756,429,760,474,754,475,750,430,738,364,714,292,696,258,673,227,639,201,601,184"/>
+<area shape="poly" id="edge22_Node000012_Node000004" title=" " alt="" coords="544,277,498,322,494,318,541,273"/>
+<area shape="poly" id="edge24_Node000013_Node000002" title=" " alt="" coords="728,510,536,624,534,619,725,505"/>
 </map>

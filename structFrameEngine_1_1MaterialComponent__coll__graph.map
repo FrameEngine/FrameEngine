@@ -1,7 +1,7 @@
 <map id="FrameEngine::MaterialComponent" name="FrameEngine::MaterialComponent">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,481,241,547"/>
-<area shape="rect" id="Node000002" href="$classFrameEngine_1_1Material.html" title=" " alt="" coords="43,293,204,419"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,419,126,465,121,465,121,419"/>
-<area shape="rect" id="Node000003" href="$classFrameEngine_1_1Shader.html" title=" " alt="" coords="47,5,199,231"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="126,231,126,277,121,277,121,231"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,501,241,567"/>
+<area shape="rect" id="Node000002" href="$classFrameEngine_1_1Material.html" title=" " alt="" coords="43,313,204,439"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,439,126,485,121,485,121,439"/>
+<area shape="rect" id="Node000003" href="$classFrameEngine_1_1Shader.html" title=" " alt="" coords="47,5,199,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="126,251,126,297,121,297,121,251"/>
 </map>

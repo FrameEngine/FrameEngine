@@ -1,25 +1,25 @@
 <map id="FrameEngine::Camera" name="FrameEngine::Camera">
-<area shape="rect" id="Node000001" title="A camera." alt="" coords="491,1179,657,1344"/>
-<area shape="rect" id="Node000002" href="$classFrameEngine_1_1Object.html" title="A high&#45;level ECS entity wrapper with default components." alt="" coords="499,964,649,1129"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="577,1143,577,1179,571,1179,571,1143"/>
-<area shape="rect" id="Node000003" href="$classFrameEngine_1_1Entity.html" title="A high&#45;level ECS entity wrapper." alt="" coords="84,756,253,901"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="267,879,500,1003,497,1008,265,884"/>
-<area shape="rect" id="Node000004" href="$classRegistry.html" title="Manages all ECS entities and components." alt="" coords="5,353,236,619"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="142,618,159,739,154,740,137,619"/>
-<area shape="rect" id="Node000005" href="$structFrameEngine_1_1TransformComponent.html" title="Represents the transformation properties of an entity." alt="" coords="324,769,571,889"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="484,887,520,948,515,951,480,890"/>
-<area shape="rect" id="Node000006" href="$classFrameEngine_1_1Vector3.html" title=" " alt="" coords="260,313,416,659"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="379,658,402,731,411,753,406,755,397,733,373,660"/>
-<area shape="rect" id="Node000007" href="$structFrameEngine_1_1Quaternion.html" title=" " alt="" coords="441,293,619,679"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="486,679,468,753,463,752,481,678"/>
-<area shape="rect" id="Node000008" href="$structFrameEngine_1_1MeshComponent.html" title=" " alt="" coords="595,776,812,881"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="675,883,633,952,629,949,670,880"/>
-<area shape="rect" id="Node000009" href="$classFrameEngine_1_1Mesh.html" title="The Mesh class encapsulates geometry data and uploads it to the GPU." alt="" coords="644,363,821,609"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="725,609,712,760,707,759,720,609"/>
-<area shape="rect" id="Node000010" href="$structFrameEngine_1_1MaterialComponent.html" title=" " alt="" coords="836,796,1072,861"/>
-<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="906,864,775,942,665,1002,662,998,773,938,903,859"/>
-<area shape="rect" id="Node000011" href="$classFrameEngine_1_1Material.html" title=" " alt="" coords="873,423,1035,549"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="957,549,957,780,951,780,951,549"/>
-<area shape="rect" id="Node000012" href="$classFrameEngine_1_1Shader.html" title=" " alt="" coords="878,5,1030,231"/>
-<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="957,231,957,407,951,407,951,231"/>
+<area shape="rect" id="Node000001" title="A camera." alt="" coords="491,1199,657,1364"/>
+<area shape="rect" id="Node000002" href="$classFrameEngine_1_1Object.html" title="A high&#45;level ECS entity wrapper with default components." alt="" coords="499,984,649,1149"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="577,1163,577,1199,571,1199,571,1163"/>
+<area shape="rect" id="Node000003" href="$classFrameEngine_1_1Entity.html" title="A high&#45;level ECS entity wrapper." alt="" coords="84,776,253,921"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="267,899,500,1023,497,1028,265,904"/>
+<area shape="rect" id="Node000004" href="$classRegistry.html" title="Manages all ECS entities and components." alt="" coords="5,373,236,639"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="142,638,159,759,154,760,137,639"/>
+<area shape="rect" id="Node000005" href="$structFrameEngine_1_1TransformComponent.html" title="Represents the transformation properties of an entity." alt="" coords="324,789,571,909"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="484,907,520,968,515,971,480,910"/>
+<area shape="rect" id="Node000006" href="$classFrameEngine_1_1Vector3.html" title=" " alt="" coords="260,333,416,679"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="379,678,402,751,411,773,406,775,397,753,373,680"/>
+<area shape="rect" id="Node000007" href="$structFrameEngine_1_1Quaternion.html" title=" " alt="" coords="441,313,619,699"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="486,699,468,773,463,772,481,698"/>
+<area shape="rect" id="Node000008" href="$structFrameEngine_1_1MeshComponent.html" title=" " alt="" coords="595,796,812,901"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="675,903,633,972,629,969,670,900"/>
+<area shape="rect" id="Node000009" href="$classFrameEngine_1_1Mesh.html" title="The Mesh class encapsulates geometry data and uploads it to the GPU." alt="" coords="644,383,821,629"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="725,629,712,780,707,779,720,629"/>
+<area shape="rect" id="Node000010" href="$structFrameEngine_1_1MaterialComponent.html" title=" " alt="" coords="836,816,1072,881"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="906,884,775,962,665,1022,662,1018,773,958,903,879"/>
+<area shape="rect" id="Node000011" href="$classFrameEngine_1_1Material.html" title=" " alt="" coords="873,443,1035,569"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="957,569,957,800,951,800,951,569"/>
+<area shape="rect" id="Node000012" href="$classFrameEngine_1_1Shader.html" title=" " alt="" coords="878,5,1030,251"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="957,251,957,427,951,427,951,251"/>
 </map>

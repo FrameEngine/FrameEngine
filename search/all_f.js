@@ -8,9 +8,10 @@ var searchData=
   ['renderer_5',['renderer',['../classFrameEngine_1_1Renderer.html',1,'FrameEngine::Renderer'],['../classFrameEngine_1_1Renderer.html#aee6610349660f9af2817d792151c1816',1,'FrameEngine::Renderer::Renderer()']]],
   ['renderer_2ehpp_6',['Renderer.hpp',['../Renderer_8hpp.html',1,'']]],
   ['reporting_20issues_7',['Reporting Issues',['../md_CONTRIBUTING.html#autotoc_md20',1,'']]],
-  ['rotate_8',['rotate',['../classFrameEngine_1_1Object.html#a47b1e4f3aff691bb02262a311e289c53',1,'FrameEngine::Object']]],
-  ['rotatevector_9',['rotateVector',['../structFrameEngine_1_1Quaternion.html#a9ac3e873c70f969d7da6a1fe99eda83e',1,'FrameEngine::Quaternion']]],
-  ['run_10',['run',['../classFrameEngine_1_1Engine.html#a5de0f1645b9019f07aae0b1bbabd339d',1,'FrameEngine::Engine']]],
-  ['running_20tests_11',['Running tests',['../index.html#autotoc_md7',1,'']]],
-  ['running_20the_20demo_12',['Running the demo',['../index.html#autotoc_md8',1,'']]]
+  ['resize_8',['resize',['../classFrameEngine_1_1Renderer.html#a194cb8aed71374a0c4a3d71ea6aeaa91',1,'FrameEngine::Renderer']]],
+  ['rotate_9',['rotate',['../classFrameEngine_1_1Object.html#a47b1e4f3aff691bb02262a311e289c53',1,'FrameEngine::Object']]],
+  ['rotatevector_10',['rotateVector',['../structFrameEngine_1_1Quaternion.html#a9ac3e873c70f969d7da6a1fe99eda83e',1,'FrameEngine::Quaternion']]],
+  ['run_11',['run',['../classFrameEngine_1_1Engine.html#a5de0f1645b9019f07aae0b1bbabd339d',1,'FrameEngine::Engine']]],
+  ['running_20tests_12',['Running tests',['../index.html#autotoc_md7',1,'']]],
+  ['running_20the_20demo_13',['Running the demo',['../index.html#autotoc_md8',1,'']]]
 ];

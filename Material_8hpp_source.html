@@ -121,56 +121,13 @@ $(document).ready(function(){initNavTree('Material_8hpp_source.html',''); initRe
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>};</div>
 </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classFrameEngine_1_1BasicMaterial.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="classFrameEngine_1_1BasicMaterial.html">BasicMaterial</a> : <span class="keyword">public</span> <a class="code hl_class" href="classFrameEngine_1_1Material.html">Material</a> {</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <a class="code hl_class" href="classFrameEngine_1_1Vector3.html">Vector3</a> diffuseColor;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <a class="code hl_class" href="classFrameEngine_1_1Vector3.html">Vector3</a> specularColor;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordtype">float</span> specularPower;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_class" href="classFrameEngine_1_1Texture2D.html">Texture2D</a> *defaultTexture;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <a class="code hl_class" href="classFrameEngine_1_1Texture2D.html">Texture2D</a> *texture;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <a class="code hl_class" href="classFrameEngine_1_1BasicMaterial.html">BasicMaterial</a>(<a class="code hl_class" href="classFrameEngine_1_1Shader.html">Shader</a> *shader, <span class="keyword">const</span> <a class="code hl_class" href="classFrameEngine_1_1Vector3.html">Vector3</a> &amp;diffuse = <a class="code hl_class" href="classFrameEngine_1_1Vector3.html">Vector3</a>(1, 1, 1),</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>                <span class="keyword">const</span> <a class="code hl_class" href="classFrameEngine_1_1Vector3.html">Vector3</a> &amp;specular = <a class="code hl_class" href="classFrameEngine_1_1Vector3.html">Vector3</a>(1, 1, 1), <span class="keywordtype">float</span> power = 32.0f,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                <a class="code hl_class" href="classFrameEngine_1_1Texture2D.html">Texture2D</a> *texture = <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      : <a class="code hl_class" href="classFrameEngine_1_1Material.html">Material</a>(shader), diffuseColor(diffuse), specularColor(specular),</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        specularPower(power), texture(texture) {</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    defaultTexture = <span class="keyword">new</span> <a class="code hl_class" href="classFrameEngine_1_1Texture2D.html">Texture2D</a>();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    defaultTexture-&gt;createDefaultWhiteTexture();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  }</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">void</span> setDiffuseColor(<span class="keyword">const</span> <a class="code hl_class" href="classFrameEngine_1_1Vector3.html">Vector3</a> &amp;color) { diffuseColor = color; }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordtype">void</span> setSpecularColor(<span class="keyword">const</span> <a class="code hl_class" href="classFrameEngine_1_1Vector3.html">Vector3</a> &amp;color) { specularColor = color; }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">void</span> setSpecularPower(<span class="keywordtype">float</span> power) { specularPower = power; }</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">void</span> setTexture(<a class="code hl_class" href="classFrameEngine_1_1Texture2D.html">Texture2D</a> *tex) { texture = tex; }</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">virtual</span> <span class="keywordtype">void</span> applyUniforms()<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    shader-&gt;setUniformVec3(<span class="stringliteral">&quot;material.diffuseColor&quot;</span>, diffuseColor);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    shader-&gt;setUniformVec3(<span class="stringliteral">&quot;material.specularColor&quot;</span>, specularColor);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    shader-&gt;setUniformFloat(<span class="stringliteral">&quot;material.specularPower&quot;</span>, specularPower);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">if</span> (texture) {</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      texture-&gt;bind(GL_TEXTURE0);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      shader-&gt;<a class="code hl_function" href="classFrameEngine_1_1Shader.html#a9dcb75b1375c31829cfaa327e7e9876e">setUniformInt</a>(<span class="stringliteral">&quot;texSampler&quot;</span>, 0);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      defaultTexture-&gt;bind(GL_TEXTURE0);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
-</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>} <span class="comment">// namespace FrameEngine</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#endif </span><span class="comment">// MATERIAL_HPP</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>} <span class="comment">// namespace FrameEngine</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#endif </span><span class="comment">// MATERIAL_HPP</span></div>
 <div class="ttc" id="aShader_8hpp_html"><div class="ttname"><a href="Shader_8hpp.html">Shader.hpp</a></div><div class="ttdoc">Manages OpenGL shaders.</div></div>
 <div class="ttc" id="aVector3_8hpp_html"><div class="ttname"><a href="Vector3_8hpp.html">Vector3.hpp</a></div><div class="ttdoc">Defines the Vector3 class.</div></div>
-<div class="ttc" id="aclassFrameEngine_1_1BasicMaterial_html"><div class="ttname"><a href="classFrameEngine_1_1BasicMaterial.html">FrameEngine::BasicMaterial</a></div><div class="ttdef"><b>Definition</b> Material.hpp:23</div></div>
 <div class="ttc" id="aclassFrameEngine_1_1Material_html"><div class="ttname"><a href="classFrameEngine_1_1Material.html">FrameEngine::Material</a></div><div class="ttdef"><b>Definition</b> Material.hpp:10</div></div>
 <div class="ttc" id="aclassFrameEngine_1_1Shader_html"><div class="ttname"><a href="classFrameEngine_1_1Shader.html">FrameEngine::Shader</a></div><div class="ttdef"><b>Definition</b> Shader.hpp:20</div></div>
-<div class="ttc" id="aclassFrameEngine_1_1Shader_html_a9dcb75b1375c31829cfaa327e7e9876e"><div class="ttname"><a href="classFrameEngine_1_1Shader.html#a9dcb75b1375c31829cfaa327e7e9876e">FrameEngine::Shader::setUniformInt</a></div><div class="ttdeci">void setUniformInt(const std::string &amp;name, int value) const</div><div class="ttdoc">===== Uniforms =====</div><div class="ttdef"><b>Definition</b> Shader.cpp:101</div></div>
-<div class="ttc" id="aclassFrameEngine_1_1Texture2D_html"><div class="ttname"><a href="classFrameEngine_1_1Texture2D.html">FrameEngine::Texture2D</a></div><div class="ttdef"><b>Definition</b> Texture2D.hpp:9</div></div>
-<div class="ttc" id="aclassFrameEngine_1_1Vector3_html"><div class="ttname"><a href="classFrameEngine_1_1Vector3.html">FrameEngine::Vector3</a></div><div class="ttdef"><b>Definition</b> Vector3.hpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

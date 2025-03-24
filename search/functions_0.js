@@ -1,5 +1,6 @@
 var searchData=
 [
   ['add_0',['add',['../classComponentStorage.html#a36ee9f49932f225de0fcde3e1f316566',1,'ComponentStorage']]],
-  ['add_5fcomponent_1',['add_component',['../classFrameEngine_1_1Entity.html#a3b7bc66188f26c81a80f850fced86541',1,'FrameEngine::Entity::add_component()'],['../classRegistry.html#a36df114d671959a9a7bbdfc8274258ec',1,'Registry::add_component()']]]
+  ['add_5fcomponent_1',['add_component',['../classFrameEngine_1_1Entity.html#a3b7bc66188f26c81a80f850fced86541',1,'FrameEngine::Entity::add_component()'],['../classRegistry.html#a36df114d671959a9a7bbdfc8274258ec',1,'Registry::add_component()']]],
+  ['addpostprocessingeffect_2',['addPostProcessingEffect',['../classFrameEngine_1_1Renderer.html#a6379b25a01d25ad4dffa00f75b0b4ebe',1,'FrameEngine::Renderer']]]
 ];

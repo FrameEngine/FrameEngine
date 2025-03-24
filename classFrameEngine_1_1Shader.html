@@ -98,14 +98,17 @@ $(document).ready(function(){initNavTree('classFrameEngine_1_1Shader.html',''); 
 <div class="dynheader">
 Collaboration diagram for FrameEngine::Shader:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classFrameEngine_1_1Shader__coll__graph.svg" width="163" height="236"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classFrameEngine_1_1Shader__coll__graph.svg" width="163" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a0bc9433cce8d56866d174a07d471c0fe" id="r_a0bc9433cce8d56866d174a07d471c0fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFrameEngine_1_1Shader.html#a0bc9433cce8d56866d174a07d471c0fe">Shader</a> (const std::string &amp;vertexPath, const std::string &amp;fragmentPath)</td></tr>
-<tr class="memdesc:a0bc9433cce8d56866d174a07d471c0fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classFrameEngine_1_1Shader.html">Shader</a> by loading, compiling, and linking vertex and fragment shaders.  <br /></td></tr>
+<tr class="memdesc:a0bc9433cce8d56866d174a07d471c0fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classFrameEngine_1_1Shader.html">Shader</a> by loading, compiling, and linking shaders from files.  <br /></td></tr>
 <tr class="separator:a0bc9433cce8d56866d174a07d471c0fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13427b01476e062c894aedb20495ff03" id="r_a13427b01476e062c894aedb20495ff03"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFrameEngine_1_1Shader.html#a13427b01476e062c894aedb20495ff03">Shader</a> (const std::string &amp;vertexSource, const std::string &amp;fragmentSource, bool fromSource)</td></tr>
+<tr class="memdesc:a13427b01476e062c894aedb20495ff03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classFrameEngine_1_1Shader.html">Shader</a> using provided shader source strings.  <br /></td></tr>
+<tr class="separator:a13427b01476e062c894aedb20495ff03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1232f1fdb15d5f814d085f3746dae896" id="r_a1232f1fdb15d5f814d085f3746dae896"><td class="memItemLeft" align="right" valign="top"><a id="a1232f1fdb15d5f814d085f3746dae896" name="a1232f1fdb15d5f814d085f3746dae896"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~Shader</b> ()</td></tr>
 <tr class="memdesc:a1232f1fdb15d5f814d085f3746dae896"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor that deletes the shader program. <br /></td></tr>
@@ -137,7 +140,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setUniformMat4</b> (c
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0bc9433cce8d56866d174a07d471c0fe" name="a0bc9433cce8d56866d174a07d471c0fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bc9433cce8d56866d174a07d471c0fe">&#9670;&#160;</a></span>Shader()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bc9433cce8d56866d174a07d471c0fe">&#9670;&#160;</a></span>Shader() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -162,11 +165,55 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setUniformMat4</b> (c
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="classFrameEngine_1_1Shader.html">Shader</a> by loading, compiling, and linking vertex and fragment shaders. </p>
+<p>Constructs a <a class="el" href="classFrameEngine_1_1Shader.html">Shader</a> by loading, compiling, and linking shaders from files. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">vertexPath</td><td>Path to the vertex shader file. </td></tr>
     <tr><td class="paramname">fragmentPath</td><td>Path to the fragment shader file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a13427b01476e062c894aedb20495ff03" name="a13427b01476e062c894aedb20495ff03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13427b01476e062c894aedb20495ff03">&#9670;&#160;</a></span>Shader() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">FrameEngine::Shader::Shader </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>vertexSource</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>fragmentSource</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fromSource</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructs a <a class="el" href="classFrameEngine_1_1Shader.html">Shader</a> using provided shader source strings. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vertexSource</td><td>The vertex shader source code. </td></tr>
+    <tr><td class="paramname">fragmentSource</td><td>The fragment shader source code. </td></tr>
+    <tr><td class="paramname">fromSource</td><td>Must be true to indicate that the provided strings are shader code. </td></tr>
   </table>
   </dd>
 </dl>

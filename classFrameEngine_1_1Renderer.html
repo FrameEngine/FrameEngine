@@ -104,7 +104,7 @@ $(document).ready(function(){initNavTree('classFrameEngine_1_1Renderer.html','')
 <div class="dynheader">
 Collaboration diagram for FrameEngine::Renderer:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classFrameEngine_1_1Renderer__coll__graph.svg" width="178" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classFrameEngine_1_1Renderer__coll__graph.svg" width="224" height="296"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -112,18 +112,38 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aee6610349660f9af2817d792151c1816" id="r_aee6610349660f9af2817d792151c1816"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFrameEngine_1_1Renderer.html#aee6610349660f9af2817d792151c1816">Renderer</a> (<a class="el" href="classFrameEngine_1_1Window.html">Window</a> &amp;window)</td></tr>
 <tr class="memdesc:aee6610349660f9af2817d792151c1816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classFrameEngine_1_1Renderer.html" title="Handles the drawing of scene objects and lights.">Renderer</a> and sets up the camera.  <br /></td></tr>
 <tr class="separator:aee6610349660f9af2817d792151c1816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9963ccda9f2143268fcd35ddb1533c7" id="r_af9963ccda9f2143268fcd35ddb1533c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFrameEngine_1_1Renderer.html#af9963ccda9f2143268fcd35ddb1533c7">initialize</a> ()</td></tr>
+<tr class="memdesc:af9963ccda9f2143268fcd35ddb1533c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the rendering system.  <br /></td></tr>
+<tr class="separator:af9963ccda9f2143268fcd35ddb1533c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a839a937a120b585d5dcf22d952047ae5" id="r_a839a937a120b585d5dcf22d952047ae5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFrameEngine_1_1Renderer.html#a839a937a120b585d5dcf22d952047ae5">render</a> ()</td></tr>
 <tr class="memdesc:a839a937a120b585d5dcf22d952047ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders all submitted entities using batched material groups.  <br /></td></tr>
 <tr class="separator:a839a937a120b585d5dcf22d952047ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fcb9306aa474847b99feb6cf9bfa46a" id="r_a7fcb9306aa474847b99feb6cf9bfa46a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classFrameEngine_1_1Camera.html">Camera</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFrameEngine_1_1Renderer.html#a7fcb9306aa474847b99feb6cf9bfa46a">getCamera</a> ()</td></tr>
 <tr class="memdesc:a7fcb9306aa474847b99feb6cf9bfa46a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the camera.  <br /></td></tr>
 <tr class="separator:a7fcb9306aa474847b99feb6cf9bfa46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a194cb8aed71374a0c4a3d71ea6aeaa91" id="r_a194cb8aed71374a0c4a3d71ea6aeaa91"><td class="memItemLeft" align="right" valign="top"><a id="a194cb8aed71374a0c4a3d71ea6aeaa91" name="a194cb8aed71374a0c4a3d71ea6aeaa91"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>resize</b> (int width, int height)</td></tr>
+<tr class="memdesc:a194cb8aed71374a0c4a3d71ea6aeaa91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called on window resize to update framebuffer sizes and pipeline dimensions. <br /></td></tr>
+<tr class="separator:a194cb8aed71374a0c4a3d71ea6aeaa91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6379b25a01d25ad4dffa00f75b0b4ebe" id="r_a6379b25a01d25ad4dffa00f75b0b4ebe"><td class="memItemLeft" align="right" valign="top"><a id="a6379b25a01d25ad4dffa00f75b0b4ebe" name="a6379b25a01d25ad4dffa00f75b0b4ebe"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addPostProcessingEffect</b> (<a class="el" href="classFrameEngine_1_1PostProcessingEffect.html">PostProcessingEffect</a> *effect)</td></tr>
+<tr class="memdesc:a6379b25a01d25ad4dffa00f75b0b4ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a effect to the current pipeline. <br /></td></tr>
+<tr class="separator:a6379b25a01d25ad4dffa00f75b0b4ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2210b5a33706e2c2a96609a3e88644af" id="r_a2210b5a33706e2c2a96609a3e88644af"><td class="memItemLeft" align="right" valign="top"><a id="a2210b5a33706e2c2a96609a3e88644af" name="a2210b5a33706e2c2a96609a3e88644af"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setPostProcessingPipeline</b> (<a class="el" href="classFrameEngine_1_1PostProcessingPipeline.html">PostProcessingPipeline</a> *pipeline)</td></tr>
+<tr class="memdesc:a2210b5a33706e2c2a96609a3e88644af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the entire post–processing pipeline. <br /></td></tr>
+<tr class="separator:a2210b5a33706e2c2a96609a3e88644af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4496f7b076cc0d85003a8659bca608b3" id="r_a4496f7b076cc0d85003a8659bca608b3"><td class="memItemLeft" align="right" valign="top"><a id="a4496f7b076cc0d85003a8659bca608b3" name="a4496f7b076cc0d85003a8659bca608b3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearPostProcessingEffects</b> ()</td></tr>
+<tr class="memdesc:a4496f7b076cc0d85003a8659bca608b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all effects from the current pipeline and creates a new empty pipeline. <br /></td></tr>
+<tr class="separator:a4496f7b076cc0d85003a8659bca608b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa96f27db23c9c45e1316b97ed1af06ef" id="r_aa96f27db23c9c45e1316b97ed1af06ef"><td class="memItemLeft" align="right" valign="top"><a id="aa96f27db23c9c45e1316b97ed1af06ef" name="aa96f27db23c9c45e1316b97ed1af06ef"></a>
+<a class="el" href="classFrameEngine_1_1PostProcessingPipeline.html">PostProcessingPipeline</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getPostProcessingPipeline</b> () const</td></tr>
+<tr class="memdesc:aa96f27db23c9c45e1316b97ed1af06ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the current post–processing pipeline. <br /></td></tr>
+<tr class="separator:aa96f27db23c9c45e1316b97ed1af06ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a290799dcc0be051eafcc72cb1caed958" id="r_a290799dcc0be051eafcc72cb1caed958"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFrameEngine_1_1Renderer.html#a290799dcc0be051eafcc72cb1caed958">initialize</a> ()</td></tr>
-<tr class="memdesc:a290799dcc0be051eafcc72cb1caed958"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the rendering system.  <br /></td></tr>
-<tr class="separator:a290799dcc0be051eafcc72cb1caed958"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8e5ba0189ea039abe7eb6363328f003c" id="r_a8e5ba0189ea039abe7eb6363328f003c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classFrameEngine_1_1Renderer.html#a8e5ba0189ea039abe7eb6363328f003c">clear</a> ()</td></tr>
 <tr class="memdesc:a8e5ba0189ea039abe7eb6363328f003c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the screen before rendering a new frame.  <br /></td></tr>
 <tr class="separator:a8e5ba0189ea039abe7eb6363328f003c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,27 +232,19 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a290799dcc0be051eafcc72cb1caed958" name="a290799dcc0be051eafcc72cb1caed958"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a290799dcc0be051eafcc72cb1caed958">&#9670;&#160;</a></span>initialize()</h2>
+<a id="af9963ccda9f2143268fcd35ddb1533c7" name="af9963ccda9f2143268fcd35ddb1533c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9963ccda9f2143268fcd35ddb1533c7">&#9670;&#160;</a></span>initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void FrameEngine::Renderer::initialize </td>
+          <td class="memname">void FrameEngine::Renderer::initialize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Initializes the rendering system. </p>
