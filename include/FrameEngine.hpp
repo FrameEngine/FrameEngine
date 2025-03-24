@@ -16,7 +16,10 @@
 
 #include "rendering/Camera.hpp"
 #include "rendering/Mesh.hpp"
+#include "rendering/PostProcessingEffect.hpp"
 #include "rendering/Renderer.hpp"
 #include "rendering/Shader.hpp"
+
+#include "materials/BasicMaterial.hpp"
 
 #endif // FRAMEENGINE_HPP

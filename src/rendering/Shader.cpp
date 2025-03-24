@@ -6,26 +6,16 @@
 
 namespace FrameEngine {
 
-/**
- * @brief Loads shader source code from a file.
- *
- * @param filePath Path to the shader file.
- * @return A string containing the shader source code.
- */
 std::string Shader::loadShaderSource(const std::string &filePath) {
   std::ifstream file(filePath);
+  if (!file.is_open()) {
+    LOG(ERROR, "Failed to open shader file: %s", filePath.c_str());
+    return "";
+  }
   std::stringstream buffer;
   buffer << file.rdbuf();
   return buffer.str();
 }
-
-/**
- * @brief Compiles a shader from source code.
- *
- * @param source The shader source code.
- * @param type The type of shader (GL_VERTEX_SHADER or GL_FRAGMENT_SHADER).
- * @return The compiled shader ID.
- */
 
 GLuint Shader::compileShader(const std::string &source, GLenum type) {
   GLuint shader = glCreateShader(type);
@@ -36,72 +26,67 @@ GLuint Shader::compileShader(const std::string &source, GLenum type) {
   int success;
   glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
   if (!success) {
-    char log[512];
-    glGetShaderInfoLog(shader, 512, nullptr, log);
-    LOG(ERROR, "Shader Compilation Error: %s", log);
+    char infoLog[512];
+    glGetShaderInfoLog(shader, 512, nullptr, infoLog);
+    LOG(ERROR, "Shader Compilation Error: %s", infoLog);
   }
-
   return shader;
 }
 
-/**
- * @brief Constructs a Shader by loading, compiling, and linking vertex and
- * fragment shaders.
- *
- * @param vertexPath Path to the vertex shader file.
- * @param fragmentPath Path to the fragment shader file.
- */
-Shader::Shader(const std::string &vertexPath, const std::string &fragmentPath) {
-  std::string vertexSrc = loadShaderSource(vertexPath);
-  std::string fragmentSrc = loadShaderSource(fragmentPath);
-
-  GLuint vertexShader = compileShader(vertexSrc, GL_VERTEX_SHADER);
-  GLuint fragmentShader = compileShader(fragmentSrc, GL_FRAGMENT_SHADER);
-
-  programID = glCreateProgram();
-  glAttachShader(programID, vertexShader);
-  glAttachShader(programID, fragmentShader);
-  glLinkProgram(programID);
+GLuint Shader::linkProgram(GLuint vertexShader, GLuint fragmentShader) {
+  GLuint program = glCreateProgram();
+  glAttachShader(program, vertexShader);
+  glAttachShader(program, fragmentShader);
+  glLinkProgram(program);
 
   int success;
-  glGetProgramiv(programID, GL_LINK_STATUS, &success);
+  glGetProgramiv(program, GL_LINK_STATUS, &success);
   if (!success) {
-    char log[512];
-    glGetProgramInfoLog(programID, 512, nullptr, log);
-    LOG(ERROR, "Shader Linking Error: %s", log);
+    char infoLog[512];
+    glGetProgramInfoLog(program, 512, nullptr, infoLog);
+    LOG(ERROR, "Shader Linking Error: %s", infoLog);
   }
-
-  GLuint blockIndex = glGetUniformBlockIndex(programID, "LightBlock");
-  if (blockIndex == GL_INVALID_INDEX) {
-    LOG(ERROR, "LightBlock failed");
-  }
-  glUniformBlockBinding(programID, blockIndex, 0);
-
+  // After linking, shaders can be deleted.
   glDeleteShader(vertexShader);
   glDeleteShader(fragmentShader);
+  return program;
 }
 
-/**
- * @brief Destructor that deletes the shader program.
- */
+Shader::Shader(const std::string &vertexPath, const std::string &fragmentPath) {
+  // Load shader source code from files.
+  std::string vertexCode = loadShaderSource(vertexPath);
+  std::string fragmentCode = loadShaderSource(fragmentPath);
+  if (vertexCode.empty() || fragmentCode.empty()) {
+    LOG(ERROR, "Shader source empty. Check file paths.");
+  }
+  GLuint vertexShader = compileShader(vertexCode, GL_VERTEX_SHADER);
+  GLuint fragmentShader = compileShader(fragmentCode, GL_FRAGMENT_SHADER);
+  programID = linkProgram(vertexShader, fragmentShader);
+}
+
+Shader::Shader(const std::string &vertexSource,
+               const std::string &fragmentSource, bool fromSource) {
+  // The parameter 'fromSource' is ignored if false.
+  if (!fromSource) {
+
+  } else {
+    // Use the provided strings as the shader source code.
+    GLuint vertexShader = compileShader(vertexSource, GL_VERTEX_SHADER);
+    GLuint fragmentShader = compileShader(fragmentSource, GL_FRAGMENT_SHADER);
+    programID = linkProgram(vertexShader, fragmentShader);
+  }
+}
+
 Shader::~Shader() { glDeleteProgram(programID); }
 
-/**
- * @brief Activates the shader program.
- */
 void Shader::bind() const { glUseProgram(programID); }
 
-/**
- * @brief Deactivates the shader program.
- */
 void Shader::unbind() const { glUseProgram(0); }
 
-/// ===== Uniforms =====
-// TODO Surely there is a better way to work with multiple types.
 void Shader::setUniformInt(const std::string &name, int value) const {
   GLint location = glGetUniformLocation(programID, name.c_str());
   if (location == -1) {
-    LOG(WARNING, "Uniform '%s' not found!", name);
+    LOG(WARNING, "Uniform '%s' not found!", name.c_str());
     return;
   }
   glUniform1i(location, value);
@@ -110,7 +95,7 @@ void Shader::setUniformInt(const std::string &name, int value) const {
 void Shader::setUniformFloat(const std::string &name, float value) const {
   GLint location = glGetUniformLocation(programID, name.c_str());
   if (location == -1) {
-    LOG(WARNING, "Uniform '%s' not found!", name);
+    LOG(WARNING, "Uniform '%s' not found!", name.c_str());
     return;
   }
   glUniform1f(location, value);
@@ -120,16 +105,17 @@ void Shader::setUniformVec3(const std::string &name,
                             const Vector3 &value) const {
   GLint location = glGetUniformLocation(programID, name.c_str());
   if (location == -1) {
-    LOG(WARNING, "Uniform '%s' not found!", name);
+    LOG(WARNING, "Uniform '%s' not found!", name.c_str());
     return;
   }
-  glUniform3f(location, value.x, value.y, value.z);
+  glUniform3f(location, static_cast<GLfloat>(value.x),
+              static_cast<GLfloat>(value.y), static_cast<GLfloat>(value.z));
 }
 
 void Shader::setUniformMat4(const std::string &name, const Matrix4 &mat) const {
   GLint location = glGetUniformLocation(programID, name.c_str());
   if (location == -1) {
-    LOG(WARNING, "Uniform '%s' not found!", name);
+    LOG(WARNING, "Uniform '%s' not found!", name.c_str());
   }
   glUniformMatrix4fv(location, 1, GL_FALSE, &mat.m[0][0]);
 }

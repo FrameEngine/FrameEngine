@@ -1,4 +1,5 @@
 #include "FrameEngine.hpp"
+
 using namespace FrameEngine;
 
 class Simulation : public Engine {
@@ -18,8 +19,8 @@ private:
 
 public:
   void on_start() override {
-    Shader *lightingShader = new FrameEngine::Shader(
-        "shaders/basic_vertex.glsl", "shaders/basic_fragment.glsl");
+    Shader *lightingShader =
+        new FrameEngine::Shader("shaders/basic.vs", "shaders/basic.fs");
 
     texture = new Texture2D();
     if (!texture->loadFromFile("assets/wood_texture.jpg")) {
@@ -35,6 +36,8 @@ public:
     BasicMaterial *redMat = new FrameEngine::BasicMaterial(
         lightingShader, Vector3(1, 0, 0), Vector3(1, 1, 1), 64.0f);
 
+    redMat->setEmissiveColor(Vector3(0, 1, 0));
+    redMat->setEmissiveEnabled(true);
     cubeObject->setMaterial(redMat);
     cubeObject->transform->position = Vector3(-2.0f, 0.0f, 0.0f);
 
