@@ -1,9 +1,8 @@
-// DefaultPostProcessingShaders.hpp
-#ifndef DEFAULT_POSTPROCESSING_SHADERS_HPP
-#define DEFAULT_POSTPROCESSING_SHADERS_HPP
+#ifndef DEFAULT_POSTPROCESSING_SHADER_HPP
+#define DEFAULT_POSTPROCESSING_SHADER_HPP
 
 namespace FrameEngine {
-namespace DefaultPostProcessingShaders {
+namespace DefaultPostProcessingShader {
 
 // A minimal full–screen quad vertex shader.
 static const char *quadVertexShaderSource = R"glsl(
@@ -30,7 +29,7 @@ void main()
 }
 )glsl";
 
-} // namespace DefaultPostProcessingShaders
+} // namespace DefaultPostProcessingShader
 } // namespace FrameEngine
 
 #endif // DEFAULT_POSTPROCESSING_SHADERS_HPP

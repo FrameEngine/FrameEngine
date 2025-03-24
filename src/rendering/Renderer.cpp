@@ -2,7 +2,9 @@
 #include "Window.hpp"
 #include "objects/Object.hpp"
 #include "rendering/PostProcessingPipeline.hpp"
-#include "rendering/shaders/DefaultPostProcessingShaders.hpp"
+#include "rendering/Shader.hpp"
+#include "rendering/shaders/BasicShader.hpp"
+#include "rendering/shaders/DefaultPostProcessingShader.hpp"
 #include <glad/glad.h>
 
 namespace FrameEngine {
@@ -119,7 +121,8 @@ void Renderer::render() {
     Material *material = pair.first;
     Shader *shader = material->getShader();
     if (!shader)
-      continue;
+      shader = new Shader(BasicShader::basicVertexShaderSource,
+                          BasicShader::basicFragmentShaderSource, true);
 
     shader->bind();
     shader->setUniformVec3("ambientColor", Vector3(0.2f, 0.2f, 0.2f));
@@ -152,13 +155,9 @@ void Renderer::render() {
   // Use a default built-in shader for the final pass.
   static Shader *screenShader = nullptr;
   if (!screenShader) {
-    // Create the shader using our built-in source strings.
-    screenShader =
-        new Shader(DefaultPostProcessingShaders::quadVertexShaderSource,
-                   DefaultPostProcessingShaders::screenFragmentShaderSource,
-                   true // This flag indicates that the given strings are direct
-                        // shader source.
-        );
+    screenShader = new Shader(
+        DefaultPostProcessingShader::quadVertexShaderSource,
+        DefaultPostProcessingShader::screenFragmentShaderSource, true);
   }
   screenShader->bind();
   glActiveTexture(GL_TEXTURE0);
