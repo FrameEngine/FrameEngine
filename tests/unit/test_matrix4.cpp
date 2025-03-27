@@ -3,6 +3,8 @@
 #include "catch2/catch_all.hpp"
 #include "math/Matrix4.hpp"
 
+using namespace FrameEngine;
+
 TEST_CASE("Matrix4: Should initialize as Identity Matrix",
           "[Matrix4][Identity]") {
   Matrix4 identity;
